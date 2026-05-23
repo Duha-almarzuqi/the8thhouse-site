@@ -4,36 +4,36 @@
 
 /* ── TOKENS ─────────────────────────────────────────────────── */
 :root {
-  /* Palette */
-  --ink:          #0A0507;
-  --ink-2:        #110810;
-  --ink-3:        #1A0E14;
+  /* Palette — Brand Purple */
+  --ink:          #09060F;
+  --ink-2:        #0E0A1A;
+  --ink-3:        #150E28;
 
-  --wine:         #3A0A14;
-  --wine-mid:     #5C1628;
-  --wine-lift:    #7A2238;
+  --purple:       #2D1B69;
+  --purple-mid:   #4A2C8A;
+  --purple-lift:  #6840B0;
 
-  --lavender:     #C4B5D5;
-  --lavender-dim: rgba(196,181,213,.14);
-  --lavender-faint: rgba(196,181,213,.07);
+  --lavender:     #9B82CE;
+  --lavender-dim: rgba(155,130,206,.15);
+  --lavender-faint: rgba(155,130,206,.07);
 
-  --blush:        #E8C5BF;
-  --blush-pale:   #F2E8E4;
+  --blush:        #C8B8E8;
+  --blush-pale:   #EDE8F8;
 
-  --gold:         #C49558;
-  --gold-warm:    #D4A96A;
+  --gold:         #C9A84C;
+  --gold-warm:    #D4B860;
 
-  --cream:        #F2EAE4;
-  --parchment:    #EBE0D8;
+  --cream:        #F5F2FF;
+  --parchment:    #EDE8F5;
 
-  --text:         #F0E8E0;
-  --text-dim:     rgba(240,232,224,.55);
-  --text-ghost:   rgba(240,232,224,.25);
-  --text-dark:    #1A0E10;
-  --text-dark-2:  #6B5058;
+  --text:         #F0ECF8;
+  --text-dim:     rgba(240,236,248,.55);
+  --text-ghost:   rgba(240,236,248,.25);
+  --text-dark:    #120820;
+  --text-dark-2:  #5A4875;
 
-  --border:       rgba(196,181,213,.12);
-  --border-pale:  rgba(240,232,224,.08);
+  --border:       rgba(155,130,206,.15);
+  --border-pale:  rgba(240,236,248,.08);
 
   /* Typography */
   --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -85,6 +85,30 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 300px;
+}
+
+/* ── DIVIDER 8 ───────────────────────────────────────────────── */
+.d8 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.d8__line {
+  flex: 0 0 3.5rem;
+  height: 1px;
+  background: rgba(201,168,76,.35);
+}
+
+.d8__mark {
+  font-family: var(--f-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
 }
 
 /* ── PRELOADER ───────────────────────────────────────────────── */
@@ -208,7 +232,7 @@ body::after {
   flex-shrink: 0;
 }
 
-.eyebrow--wine { color: var(--wine-mid); }
+.eyebrow--purple { color: var(--purple-mid); }
 
 /* ── UTILITY: BUTTONS ────────────────────────────────────────── */
 .btn {
@@ -255,12 +279,12 @@ body::after {
 .btn--border::before { background: rgba(240,232,224,.08); }
 
 /* wine / burgundy */
-.btn--wine {
-  background: var(--wine);
+.btn--purple {
+  background: var(--purple);
   color: var(--text);
-  border-color: var(--wine-mid);
+  border-color: var(--purple-mid);
 }
-.btn--wine::before { background: var(--wine-mid); }
+.btn--purple::before { background: var(--purple-mid); }
 
 /* text link with arrow */
 .text-link {
@@ -328,9 +352,22 @@ body::after {
 
 .nav__logo {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .75rem;
+  line-height: 1;
+}
+
+.nav__logo-icon {
+  width: 30px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.nav__logo-words {
+  display: flex;
   flex-direction: column;
   gap: .1rem;
-  line-height: 1;
 }
 
 .nav__logo-en {
@@ -378,8 +415,8 @@ body::after {
 }
 
 .nav__cta:hover {
-  background: var(--wine-mid);
-  border-color: var(--wine-mid);
+  background: var(--purple-mid);
+  border-color: var(--purple-mid);
 }
 
 .nav__toggle {
@@ -484,10 +521,10 @@ body::after {
   z-index: 1;
   background:
     linear-gradient(180deg,
-      rgba(10,5,7,.55)   0%,
-      rgba(10,5,7,.18)  35%,
-      rgba(10,5,7,.6)   70%,
-      rgba(10,5,7,.96) 100%);
+      rgba(9,6,15,.55)   0%,
+      rgba(30,16,60,.25) 30%,
+      rgba(20,10,45,.65) 70%,
+      rgba(9,6,15,.97)  100%);
 }
 
 .hero__body {
@@ -639,6 +676,15 @@ body::after {
 .about {
   background: var(--cream);
   padding: clamp(5rem,12vw,10rem) var(--pad);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 80% 50%, rgba(74,44,138,.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .about__container {
@@ -650,8 +696,8 @@ body::after {
   align-items: center;
 }
 
-.about__copy .eyebrow { color: var(--wine-mid); }
-.about__copy .eyebrow::before { background: var(--wine-mid); }
+.about__copy .eyebrow { color: var(--purple-mid); }
+.about__copy .eyebrow::before { background: var(--purple-mid); }
 
 .about__h {
   font-family: var(--f-serif);
@@ -665,7 +711,7 @@ body::after {
 
 .about__h em {
   font-style: italic;
-  color: var(--wine-mid);
+  color: var(--purple-mid);
 }
 
 .about__prose {
@@ -706,10 +752,10 @@ body::after {
   font-family: var(--f-serif);
   font-size: .72rem;
   letter-spacing: .18em;
-  color: var(--wine-mid);
+  color: var(--purple-mid);
   writing-mode: vertical-rl;
   padding: 1rem .6rem;
-  border-right: 1px solid var(--wine-mid);
+  border-right: 1px solid var(--purple-mid);
   pointer-events: none;
 }
 
@@ -722,7 +768,7 @@ body::after {
 
 /* ── TICKER ──────────────────────────────────────────────────── */
 .ticker {
-  background: var(--wine);
+  background: var(--purple);
   overflow: hidden;
   padding: 1.1rem 0;
   white-space: nowrap;
@@ -761,6 +807,15 @@ body::after {
 .services {
   background: var(--ink-2);
   padding: clamp(5rem,12vw,10rem) var(--pad);
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(74,44,138,.18) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .services__container {
@@ -799,7 +854,7 @@ body::after {
   position: relative;
 }
 
-.svc-card:hover { background: rgba(92,22,40,.22); }
+.svc-card:hover { background: rgba(74,44,138,.25); }
 
 .svc-card__no {
   display: block;
@@ -888,7 +943,7 @@ body::after {
 .invest__frame-veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(58,10,20,.55), transparent 55%);
+  background: linear-gradient(to top, rgba(20,10,50,.55), transparent 55%);
 }
 
 .invest__badge {
@@ -919,8 +974,8 @@ body::after {
   line-height: 1;
 }
 
-.invest__copy .eyebrow { color: var(--wine-mid); }
-.invest__copy .eyebrow::before { background: var(--wine-mid); }
+.invest__copy .eyebrow { color: var(--purple-mid); }
+.invest__copy .eyebrow::before { background: var(--purple-mid); }
 
 .invest__h {
   font-family: var(--f-serif);
@@ -932,7 +987,7 @@ body::after {
   margin-bottom: 1.5rem;
 }
 
-.invest__h em { font-style: italic; color: var(--wine-mid); }
+.invest__h em { font-style: italic; color: var(--purple-mid); }
 
 .invest__lead {
   font-size: .93rem;
@@ -960,7 +1015,7 @@ body::after {
 }
 
 .invest__arrow {
-  color: var(--wine-mid);
+  color: var(--purple-mid);
   flex-shrink: 0;
   font-size: .85rem;
 }
@@ -973,6 +1028,15 @@ body::after {
 .owners {
   background: var(--ink-2);
   padding: clamp(5rem,12vw,10rem) var(--pad);
+  position: relative;
+}
+
+.owners::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(104,64,176,.14) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .owners__container {
@@ -1069,6 +1133,16 @@ body::after {
 .gallery {
   background: var(--ink);
   padding: clamp(5rem,12vw,10rem) var(--pad);
+  position: relative;
+}
+
+.gallery::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74,44,138,.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .gallery__hd {
@@ -1207,7 +1281,7 @@ body::after {
 
 /* ── STATS ───────────────────────────────────────────────────── */
 .stats {
-  background: var(--wine);
+  background: var(--purple);
   padding: clamp(5rem,10vw,8rem) var(--pad);
 }
 
@@ -1301,7 +1375,7 @@ body::after {
 .cta__veil {
   position: absolute;
   inset: 0;
-  background: rgba(58,10,20,.82);
+  background: rgba(14,8,32,.88);
 }
 
 .cta__body {

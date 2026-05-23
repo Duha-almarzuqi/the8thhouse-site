@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The 8th House — Premium luxury hospitality and real estate in the heart of Riyadh, Saudi Arabia.">
-  <meta name="theme-color" content="#0A0507">
-  <meta property="og:title" content="The 8th House | البيت الثامن">
-  <meta property="og:description" content="Where Luxury Finds Its Address. Premium hospitality and real estate in Riyadh.">
-  <title>The 8th House | البيت الثامن — Luxury Hospitality</title>
+  <meta name="description" content="البيت الثامن — شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بالرياض. The 8th House — Furnished apartment management in Riyadh.">
+  <meta name="theme-color" content="#09060F">
+  <title>THE 8TH HOUSE | البيت الثامن — Riyadh</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +19,11 @@
   <!-- Preloader -->
   <div class="preloader" id="preloader">
     <div class="preloader__mark">
+      <!-- House icon -->
+      <svg class="preloader__icon" width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 2L40 17V46H2V17L21 2Z" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+        <text x="21" y="39" font-family="Georgia, serif" font-size="20" text-anchor="middle" fill="#C9A84C" font-weight="400">8</text>
+      </svg>
       <div class="preloader__logo">THE 8TH HOUSE</div>
       <div class="preloader__arabic">البيت الثامن</div>
       <div class="preloader__bar"><span></span></div>
@@ -35,16 +38,22 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo">
-        <span class="nav__logo-en">The 8th House</span>
-        <span class="nav__logo-ar">البيت الثامن</span>
+        <svg class="nav__logo-icon" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M21 2L40 17V46H2V17L21 2Z" stroke="#C9A84C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <text x="21" y="39" font-family="Georgia, serif" font-size="20" text-anchor="middle" fill="#C9A84C">8</text>
+        </svg>
+        <div class="nav__logo-words">
+          <span class="nav__logo-en">THE 8TH HOUSE</span>
+          <span class="nav__logo-ar">البيت الثامن</span>
+        </div>
       </a>
 
       <nav class="nav__menu" role="navigation" aria-label="Main navigation">
-        <a href="#about" class="nav__link">About</a>
-        <a href="#services" class="nav__link">Services</a>
+        <a href="#about"      class="nav__link">About</a>
+        <a href="#services"   class="nav__link">Services</a>
         <a href="#investment" class="nav__link">Investment</a>
-        <a href="#gallery" class="nav__link">Collection</a>
-        <a href="#contact" class="nav__cta">Contact</a>
+        <a href="#gallery"    class="nav__link">Collection</a>
+        <a href="#contact"    class="nav__cta">Contact</a>
       </nav>
 
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -53,14 +62,14 @@
     </div>
   </header>
 
-  <!-- Mobile overlay -->
+  <!-- Mobile menu -->
   <div class="mobile-nav" id="mobileNav" aria-hidden="true">
     <div class="mobile-nav__inner">
-      <a href="#about" class="mobile-nav__link">About</a>
-      <a href="#services" class="mobile-nav__link">Services</a>
+      <a href="#about"      class="mobile-nav__link">About</a>
+      <a href="#services"   class="mobile-nav__link">Services</a>
       <a href="#investment" class="mobile-nav__link">Investment</a>
-      <a href="#gallery" class="mobile-nav__link">Collection</a>
-      <a href="#contact" class="mobile-nav__link">Contact</a>
+      <a href="#gallery"    class="mobile-nav__link">Collection</a>
+      <a href="#contact"    class="mobile-nav__link">Contact</a>
       <p class="mobile-nav__tagline">البيت الثامن</p>
     </div>
   </div>
@@ -82,22 +91,30 @@
     <div class="hero__body">
       <p class="hero__location">
         <span class="hero__dash"></span>
-        Riyadh, Saudi Arabia
+        الرياض · Riyadh, Saudi Arabia
         <span class="hero__dash"></span>
       </p>
 
-      <h1 class="hero__title" aria-label="The 8th House">
-        <span class="hero__word hero__word--serif">The</span>
-        <span class="hero__word hero__word--outline">8th</span>
-        <span class="hero__word hero__word--serif">House</span>
+      <h1 class="hero__title" aria-label="THE 8TH HOUSE — البيت الثامن">
+        <span class="hero__word hero__word--serif">THE</span>
+        <span class="hero__word hero__word--outline">8TH</span>
+        <span class="hero__word hero__word--serif">HOUSE</span>
       </h1>
 
       <p class="hero__ar" lang="ar">البيت الثامن</p>
-      <p class="hero__sub">Where Luxury Finds Its Address</p>
+
+      <div class="d8">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
+
+      <p class="hero__sub" lang="ar">إدارة وتشغيل الشقق السكنية المؤثثة بالرياض</p>
+      <p class="hero__sub hero__sub--en">Furnished apartment management &amp; hospitality · Riyadh</p>
 
       <div class="hero__actions">
-        <a href="#gallery" class="btn btn--pale">Explore Collection</a>
-        <a href="#contact" class="btn btn--border">Get in Touch</a>
+        <a href="#gallery"  class="btn btn--pale">Explore Collection</a>
+        <a href="#contact"  class="btn btn--border">تواصل معنا</a>
       </div>
     </div>
 
@@ -106,24 +123,29 @@
       <span>Scroll</span>
     </div>
 
-    <p class="hero__stamp" aria-hidden="true">Est. 2021 · Riyadh</p>
+    <p class="hero__stamp" aria-hidden="true">Est. 2019 · الرياض</p>
   </section>
 
   <!-- ═══════════════════════════════════════
-       ABOUT
+       ABOUT / MISSION
   ═══════════════════════════════════════ -->
   <section class="about" id="about">
     <div class="about__container">
 
       <div class="about__copy">
-        <p class="eyebrow eyebrow--wine">About The House</p>
+        <p class="eyebrow eyebrow--purple">رسالتنا · Our Mission</p>
         <h2 class="about__h">
-          A New Standard<br>
-          <em>of Luxury Living</em>
+          إدارة بعقلية<br>
+          <em>المالك</em>
         </h2>
         <div class="about__prose">
-          <p>The 8th House is a premier luxury hospitality and real estate company operating at the heart of Riyadh. We curate exceptional residential experiences — from fully managed short-term luxury rentals to exclusive long-term investment properties.</p>
-          <p>Every detail is considered. Every property is handpicked. Every guest experience is crafted with precision and quiet warmth.</p>
+          <p lang="ar">نعتبر أصولك شراكة حقيقية ونتصرف بعقلية المالك. نحل المشكلات قبل أن تلاحظها، ونضمن أداءً مستقراً لكل عقار.</p>
+          <p>We manage and operate furnished residential apartments with the highest level of professionalism — increasing occupancy, protecting owners' assets through transparent financial management, and building long-term partnerships based on trust.</p>
+        </div>
+        <div class="d8">
+          <span class="d8__line"></span>
+          <span class="d8__mark">8</span>
+          <span class="d8__line"></span>
         </div>
         <a href="#services" class="text-link">Discover Our Services <span aria-hidden="true">→</span></a>
       </div>
@@ -132,29 +154,36 @@
         <div class="about__frame">
           <img
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
-            alt="Luxury apartment interior — The 8th House"
+            alt="Luxury furnished apartment — The 8th House"
             class="about__img js-reveal-img"
             loading="lazy">
         </div>
-        <p class="about__aside" aria-hidden="true">Luxury · حياة راقية</p>
+        <p class="about__aside" aria-hidden="true">Riyadh · الرياض</p>
       </div>
 
     </div>
   </section>
 
-  <!-- Running marquee -->
+  <!-- Ticker -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
-      <span>Luxury Rentals</span><span class="ticker__gem">✦</span>
-      <span>Property Management</span><span class="ticker__gem">✦</span>
-      <span>Investment Advisory</span><span class="ticker__gem">✦</span>
-      <span>Riyadh's Finest</span><span class="ticker__gem">✦</span>
-      <span>الفخامة والرقي</span><span class="ticker__gem">✦</span>
-      <span>Luxury Rentals</span><span class="ticker__gem">✦</span>
-      <span>Property Management</span><span class="ticker__gem">✦</span>
-      <span>Investment Advisory</span><span class="ticker__gem">✦</span>
-      <span>Riyadh's Finest</span><span class="ticker__gem">✦</span>
-      <span>الفخامة والرقي</span><span class="ticker__gem">✦</span>
+      <span lang="ar">إدارة مالية شفافة</span><span class="ticker__gem">✦</span>
+      <span>Transparent Management</span><span class="ticker__gem">✦</span>
+      <span lang="ar">التشغيل الكامل للعقار</span><span class="ticker__gem">✦</span>
+      <span>Hospitality First</span><span class="ticker__gem">✦</span>
+      <span lang="ar">حماية قيمة العقار</span><span class="ticker__gem">✦</span>
+      <span>Owner Mindset</span><span class="ticker__gem">✦</span>
+      <span lang="ar">الرياض — البيت الثامن</span><span class="ticker__gem">✦</span>
+      <span>THE 8TH HOUSE</span><span class="ticker__gem">✦</span>
+      <!-- repeat for seamless loop -->
+      <span lang="ar">إدارة مالية شفافة</span><span class="ticker__gem">✦</span>
+      <span>Transparent Management</span><span class="ticker__gem">✦</span>
+      <span lang="ar">التشغيل الكامل للعقار</span><span class="ticker__gem">✦</span>
+      <span>Hospitality First</span><span class="ticker__gem">✦</span>
+      <span lang="ar">حماية قيمة العقار</span><span class="ticker__gem">✦</span>
+      <span>Owner Mindset</span><span class="ticker__gem">✦</span>
+      <span lang="ar">الرياض — البيت الثامن</span><span class="ticker__gem">✦</span>
+      <span>THE 8TH HOUSE</span><span class="ticker__gem">✦</span>
     </div>
   </div>
 
@@ -165,9 +194,9 @@
     <div class="services__container">
 
       <header class="services__hd">
-        <p class="eyebrow">What We Offer</p>
+        <p class="eyebrow">خدماتنا · What We Offer</p>
         <h2 class="services__h">
-          Crafted for the<br><em>Discerning Few</em>
+          شركاؤك في<br><em>كل خطوة</em>
         </h2>
       </header>
 
@@ -176,35 +205,45 @@
         <article class="svc-card js-reveal">
           <span class="svc-card__no">01</span>
           <span class="svc-card__gem" aria-hidden="true">◇</span>
-          <h3 class="svc-card__title">Luxury Short-Term Rentals</h3>
-          <p class="svc-card__desc">Fully furnished, exquisitely designed properties for distinguished guests seeking a home above ordinary.</p>
-          <div class="svc-card__rule" aria-hidden="true"></div>
+          <h3 class="svc-card__title" lang="ar">إدارة مالية شفافة</h3>
+          <p class="svc-card__sub">Transparent Financial Management</p>
+          <p class="svc-card__desc">Monthly reports, direct transfers, and full clarity on every riyal your property earns.</p>
+          <div class="svc-card__rule"></div>
         </article>
 
         <article class="svc-card js-reveal" style="--d:0.12s">
           <span class="svc-card__no">02</span>
           <span class="svc-card__gem" aria-hidden="true">◇</span>
-          <h3 class="svc-card__title">Full Property Management</h3>
-          <p class="svc-card__desc">End-to-end management of your luxury asset — from guest curation to maintenance and returns optimisation.</p>
-          <div class="svc-card__rule" aria-hidden="true"></div>
+          <h3 class="svc-card__title" lang="ar">التشغيل الكامل للعقار</h3>
+          <p class="svc-card__sub">Comprehensive Property Operation</p>
+          <p class="svc-card__desc">From guest check-in to maintenance — we operate your property like owners, not agents.</p>
+          <div class="svc-card__rule"></div>
         </article>
 
         <article class="svc-card js-reveal" style="--d:0.24s">
           <span class="svc-card__no">03</span>
           <span class="svc-card__gem" aria-hidden="true">◇</span>
-          <h3 class="svc-card__title">Investment Portfolio</h3>
-          <p class="svc-card__desc">Strategic real estate opportunities in Riyadh's most coveted addresses with curated premium returns.</p>
-          <div class="svc-card__rule" aria-hidden="true"></div>
+          <h3 class="svc-card__title" lang="ar">حماية قيمة العقار</h3>
+          <p class="svc-card__sub">Protecting Property Value</p>
+          <p class="svc-card__desc">Continuous maintenance and quality standards ensure your asset grows in value over time.</p>
+          <div class="svc-card__rule"></div>
         </article>
 
         <article class="svc-card js-reveal" style="--d:0.36s">
           <span class="svc-card__no">04</span>
           <span class="svc-card__gem" aria-hidden="true">◇</span>
-          <h3 class="svc-card__title">Interior Consultation</h3>
-          <p class="svc-card__desc">Bespoke design direction that elevates every property to meet the highest standards of luxury living.</p>
-          <div class="svc-card__rule" aria-hidden="true"></div>
+          <h3 class="svc-card__title" lang="ar">ضيافة في كل إقامة</h3>
+          <p class="svc-card__sub">Hospitality in Every Stay</p>
+          <p class="svc-card__desc">Hospitality isn't an extra service — it's our way of managing every stay from day one.</p>
+          <div class="svc-card__rule"></div>
         </article>
 
+      </div>
+
+      <div class="d8" style="margin-top:3rem">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
       </div>
     </div>
   </section>
@@ -219,32 +258,38 @@
         <div class="invest__frame">
           <img
             src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=85"
-            alt="Luxury investment property"
+            alt="Investment property"
             class="invest__img js-reveal-img"
             loading="lazy">
           <div class="invest__frame-veil"></div>
           <div class="invest__badge">
-            <p class="invest__badge-label">Annual Yield</p>
-            <p class="invest__badge-value">12–18%</p>
+            <p class="invest__badge-label">Average Occupancy</p>
+            <p class="invest__badge-value">83.6%</p>
           </div>
         </div>
       </div>
 
       <div class="invest__copy js-reveal">
-        <p class="eyebrow eyebrow--wine">Investment Opportunities</p>
+        <p class="eyebrow eyebrow--purple">فرص الاستثمار · Investment</p>
         <h2 class="invest__h">
-          Grow Your Wealth<br><em>With Purpose</em>
+          الدقة في المعلومات<br><em>أساس الثقة</em>
         </h2>
-        <p class="invest__lead">Riyadh's luxury real estate market is one of the fastest growing in the GCC. The 8th House offers curated investment opportunities with consistent premium returns, backed by expert management and deep market insight.</p>
+        <p class="invest__lead">In real estate investment, accurate information is the foundation of trust. Every recommendation we make and every management decision we take is built on full data transparency — reflecting the true performance of your property.</p>
 
         <ul class="invest__feats">
-          <li><span class="invest__arrow">→</span> Prime Riyadh locations only</li>
-          <li><span class="invest__arrow">→</span> Transparent performance reporting</li>
-          <li><span class="invest__arrow">→</span> Dedicated investment manager</li>
-          <li><span class="invest__arrow">→</span> Minimum 12% annual yield target</li>
+          <li><span class="invest__arrow">→</span> <span lang="ar">الرياض تتحول لوجهة سياحية عالمية</span></li>
+          <li><span class="invest__arrow">→</span> Growing hospitality sector — Vision 2030 tailwind</li>
+          <li><span class="invest__arrow">→</span> Smart management adapts to all market shifts</li>
+          <li><span class="invest__arrow">→</span> Performance reports every month, no surprises</li>
         </ul>
 
-        <a href="#contact" class="btn btn--wine">Explore Investment</a>
+        <div class="d8" style="justify-content:flex-start; margin:1.5rem 0">
+          <span class="d8__line"></span>
+          <span class="d8__mark">8</span>
+          <span class="d8__line"></span>
+        </div>
+
+        <a href="#contact" class="btn btn--purple">Explore Investment</a>
       </div>
 
     </div>
@@ -257,47 +302,45 @@
     <div class="owners__container">
 
       <div class="owners__copy js-reveal">
-        <p class="eyebrow">For Property Owners</p>
+        <p class="eyebrow">للملاك · For Property Owners</p>
         <h2 class="owners__h">
-          Your Property.<br><em>Our Expertise.</em>
+          شريككم الاستراتيجي<br><em>في التشغيل</em>
         </h2>
-        <p class="owners__lead">Partner with The 8th House and let your luxury property generate premium returns while we handle every detail — from styling and guest experience to financials and maintenance.</p>
+        <p class="owners__lead">As a property owner, the most important question is: does your property's performance truly reflect its investment value? At The 8th House, we partner with owners to ensure it does — every month, every year.</p>
 
         <ol class="owners__list">
           <li class="owners__item">
             <span class="owners__n">01</span>
             <div>
-              <strong>Premium Positioning</strong>
-              <p>Your property marketed to a curated audience of discerning travellers and long-term renters.</p>
+              <strong lang="ar">عقلية المالك</strong>
+              <p>We treat your assets as a true partnership and act with the mindset of an owner — not just an operator.</p>
             </div>
           </li>
           <li class="owners__item">
             <span class="owners__n">02</span>
             <div>
-              <strong>Hands-Free Management</strong>
-              <p>From check-in to maintenance — white-glove attention at every stage.</p>
+              <strong lang="ar">حل المشكلات قبل أن تلاحظها</strong>
+              <p>We solve problems before you even notice them. Continuous monitoring keeps your asset performing.</p>
             </div>
           </li>
           <li class="owners__item">
             <span class="owners__n">03</span>
             <div>
-              <strong>Transparent Returns</strong>
-              <p>Monthly reports and direct transfers. Your earnings, always clear.</p>
+              <strong lang="ar">دخل مستقر وشراكة طويلة الأمد</strong>
+              <p>Transparent financials, steady income stream, and a long-term partnership built on trust.</p>
             </div>
           </li>
         </ol>
 
-        <a href="#contact" class="btn btn--pale">Partner With Us</a>
+        <a href="#contact" class="btn btn--pale">تواصل معنا · Partner With Us</a>
       </div>
 
       <div class="owners__figure">
-        <div class="owners__frame">
-          <img
-            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
-            alt="Luxury bedroom suite"
-            class="owners__img js-reveal-img"
-            loading="lazy">
-        </div>
+        <img
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
+          alt="Luxury furnished apartment"
+          class="owners__img js-reveal-img"
+          loading="lazy">
       </div>
 
     </div>
@@ -308,9 +351,9 @@
   ═══════════════════════════════════════ -->
   <section class="gallery" id="gallery">
     <div class="gallery__hd">
-      <p class="eyebrow">The Collection</p>
+      <p class="eyebrow">مجموعتنا · The Collection</p>
       <h2 class="gallery__h">
-        Our Finest<br><em>Properties</em>
+        شققنا<br><em>المختارة</em>
       </h2>
     </div>
 
@@ -318,122 +361,120 @@
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=85"
-            alt="The Penthouse"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=85"
+               alt="The Penthouse" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The Penthouse</span>
-          <span class="g-cell__loc">Al Olaya · Riyadh</span>
+          <span class="g-cell__loc">العليا · Al Olaya</span>
         </div>
       </div>
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
-            alt="The Garden Suite"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
+               alt="The Garden Suite" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The Garden Suite</span>
-          <span class="g-cell__loc">Hittin · Riyadh</span>
+          <span class="g-cell__loc">حطين · Hittin</span>
         </div>
       </div>
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
-            alt="The Ivory Residence"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+               alt="The Ivory Residence" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The Ivory Residence</span>
-          <span class="g-cell__loc">Al Nakheel · Riyadh</span>
+          <span class="g-cell__loc">النخيل · Al Nakheel</span>
         </div>
       </div>
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85"
-            alt="The Crown Villa"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85"
+               alt="The Crown Villa" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The Crown Villa</span>
-          <span class="g-cell__loc">Diplomats Quarter · Riyadh</span>
+          <span class="g-cell__loc">حي الدبلوماسيين</span>
         </div>
       </div>
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa52284?auto=format&fit=crop&w=1600&q=85"
-            alt="The Marble Suite"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa52284?auto=format&fit=crop&w=1600&q=85"
+               alt="The Marble Suite" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The Marble Suite</span>
-          <span class="g-cell__loc">King Abdullah Financial District · Riyadh</span>
+          <span class="g-cell__loc">KAFD · الرياض</span>
         </div>
       </div>
 
       <div class="g-cell">
         <div class="g-cell__frame">
-          <img
-            src="https://images.unsplash.com/photo-1560185009-5bf9f2849488?auto=format&fit=crop&w=900&q=85"
-            alt="The City View"
-            loading="lazy">
+          <img src="https://images.unsplash.com/photo-1560185009-5bf9f2849488?auto=format&fit=crop&w=900&q=85"
+               alt="The City View" loading="lazy">
         </div>
         <div class="g-cell__caption">
           <span class="g-cell__name">The City View</span>
-          <span class="g-cell__loc">Al Yasmin · Riyadh</span>
+          <span class="g-cell__loc">الياسمين · Al Yasmin</span>
         </div>
       </div>
 
     </div>
 
     <div class="gallery__foot">
-      <a href="#contact" class="btn btn--wine">Enquire About Availability</a>
+      <a href="#contact" class="btn btn--purple">استفسر عن الإتاحة · Enquire</a>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       STATISTICS
+       STATISTICS — real brand numbers
   ═══════════════════════════════════════ -->
   <section class="stats" id="stats">
     <div class="stats__container">
       <div class="stats__eyebrow">
-        <p class="eyebrow">By The Numbers</p>
+        <p class="eyebrow">أرقامنا · By The Numbers</p>
         <div class="stats__rule"></div>
       </div>
 
       <div class="stats__grid">
         <div class="stat js-reveal">
-          <p class="stat__val"><span class="js-count" data-to="50">0</span>+</p>
-          <p class="stat__label">Premium Properties</p>
+          <p class="stat__val"><span class="js-count" data-to="83" data-decimal=".6">0</span>%</p>
+          <p class="stat__label" lang="ar">متوسط نسبة الإشغال</p>
+          <p class="stat__label-en">Average Occupancy Rate</p>
         </div>
         <div class="stat js-reveal" style="--d:0.12s">
-          <p class="stat__val"><span class="js-count" data-to="98">0</span>%</p>
-          <p class="stat__label">Client Satisfaction</p>
+          <p class="stat__val"><span class="js-count" data-to="96" data-decimal=".6">0</span>%</p>
+          <p class="stat__label" lang="ar">نسبة تقييم 5 نجوم</p>
+          <p class="stat__label-en">Five-Star Guest Rating</p>
         </div>
         <div class="stat js-reveal" style="--d:0.24s">
-          <p class="stat__val"><span class="js-count" data-to="500">0</span>+</p>
-          <p class="stat__label">Guests Hosted</p>
+          <p class="stat__val">24<span style="font-size:.5em;opacity:.7">/7</span></p>
+          <p class="stat__label" lang="ar">تلبية احتياجات العملاء</p>
+          <p class="stat__label-en">Client Support</p>
         </div>
         <div class="stat js-reveal" style="--d:0.36s">
-          <p class="stat__val"><span class="js-count" data-to="3">0</span></p>
-          <p class="stat__label">Years of Excellence</p>
+          <p class="stat__val"><span class="js-count" data-to="6">0</span></p>
+          <p class="stat__label" lang="ar">سنوات خبرة في الضيافة</p>
+          <p class="stat__label-en">Years in Hospitality</p>
         </div>
+      </div>
+
+      <div class="d8" style="margin-top:2.5rem">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       CTA / CONTACT
+       CTA
   ═══════════════════════════════════════ -->
   <section class="cta" id="contact">
     <div class="cta__media">
@@ -446,15 +487,21 @@
     <div class="cta__veil"></div>
 
     <div class="cta__body js-reveal">
-      <p class="eyebrow">Begin Your Journey</p>
+      <p class="eyebrow">تواصل معنا · Begin Your Journey</p>
       <h2 class="cta__h">
-        Experience Living<br><em>Redefined</em>
+        نسّق وقتك،<br><em>ودع التشغيل علينا</em>
       </h2>
-      <p class="cta__sub">Whether you're seeking an elevated residence or a premium investment, The 8th House is ready to welcome you.</p>
+      <p class="cta__sub">سواء كنت تبحث عن شريك لإدارة عقارك أو ضيفاً يبحث عن إقامة استثنائية — البيت الثامن يرحب بك.<br>Whether you're a property owner or a discerning guest, The 8th House is ready.</p>
+
+      <div class="d8" style="margin:1.5rem 0">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
 
       <div class="cta__actions">
-        <a href="tel:+966500000000" class="btn btn--pale">+966 50 000 0000</a>
-        <a href="mailto:hello@the8thhouse.sa" class="btn btn--border">hello@the8thhouse.sa</a>
+        <a href="https://wa.me/966569945365" rel="noopener noreferrer" class="btn btn--pale">واتساب · +966-56-994-5365</a>
+        <a href="mailto:info@the8hhouse.sa" class="btn btn--border">info@the8hhouse.sa</a>
       </div>
 
       <p class="cta__ar" lang="ar">نرحب بكم</p>
@@ -469,9 +516,15 @@
       <div class="footer__top">
 
         <div class="footer__brand">
-          <p class="footer__logo">The 8th House</p>
+          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem">
+            <svg width="26" height="30" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 2L40 17V46H2V17L21 2Z" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <text x="21" y="39" font-family="Georgia,serif" font-size="20" text-anchor="middle" fill="#C9A84C">8</text>
+            </svg>
+            <p class="footer__logo">THE 8TH HOUSE</p>
+          </div>
           <p class="footer__logo-ar" lang="ar">البيت الثامن</p>
-          <p class="footer__tagline">Luxury Hospitality &amp; Real Estate<br>Riyadh, Saudi Arabia</p>
+          <p class="footer__tagline">إدارة وتشغيل الشقق السكنية المؤثثة<br>Furnished Apartment Management · Riyadh, KSA</p>
         </div>
 
         <nav class="footer__nav" aria-label="Footer navigation">
@@ -483,19 +536,18 @@
             <a href="#gallery">Collection</a>
           </div>
           <div class="footer__col">
-            <p class="footer__col-hd">Connect</p>
-            <a href="#" rel="noopener noreferrer">Instagram</a>
-            <a href="#" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#" rel="noopener noreferrer">WhatsApp</a>
-            <a href="mailto:hello@the8thhouse.sa">Email</a>
+            <p class="footer__col-hd">تواصل</p>
+            <a href="https://instagram.com/8th.house.ksa" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/966569945365" rel="noopener noreferrer">واتساب · +966-56-994-5365</a>
+            <a href="mailto:info@the8hhouse.sa">info@the8hhouse.sa</a>
           </div>
         </nav>
 
       </div>
 
       <div class="footer__btm">
-        <p>&copy; 2024 The 8th House. All rights reserved.</p>
-        <p lang="ar">البيت الثامن · الرياض</p>
+        <p>&copy; 2025 The 8th House. All rights reserved.</p>
+        <p lang="ar">البيت الثامن · الرياض · المملكة العربية السعودية</p>
       </div>
     </div>
   </footer>

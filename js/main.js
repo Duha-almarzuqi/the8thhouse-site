@@ -162,17 +162,20 @@
   const countObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
-      const el     = entry.target;
-      const target = parseInt(el.getAttribute('data-to'), 10);
-      const dur    = 1900;
-      const start  = performance.now();
+      const el      = entry.target;
+      const target  = parseFloat(el.getAttribute('data-to'));
+      const decimal = el.getAttribute('data-decimal') || '';
+      const suffix  = el.getAttribute('data-suffix') || '';
+      const dur     = 1900;
+      const start   = performance.now();
 
       function step (now) {
-        const t = Math.min((now - start) / dur, 1);
+        const t    = Math.min((now - start) / dur, 1);
         const ease = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(ease * target);
+        const val  = ease * target;
+        el.textContent = Math.round(val) + decimal + suffix;
         if (t < 1) requestAnimationFrame(step);
-        else el.textContent = target;
+        else el.textContent = target + decimal + suffix;
       }
 
       requestAnimationFrame(step);

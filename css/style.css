@@ -4,24 +4,24 @@
 
 /* ── TOKENS ─────────────────────────────────────────────────── */
 :root {
-  /* Palette — Brand Purple */
-  --ink:          #09060F;
-  --ink-2:        #0E0A1A;
-  --ink-3:        #150E28;
+  /* Palette — Brand Purple (exact from identity) */
+  --ink:          #0C0430;
+  --ink-2:        #130740;
+  --ink-3:        #1C0C55;
 
-  --purple:       #2D1B69;
-  --purple-mid:   #4A2C8A;
-  --purple-lift:  #6840B0;
+  --purple:       #2D0E78;
+  --purple-mid:   #481EA0;
+  --purple-lift:  #6830BF;
 
   --lavender:     #9B82CE;
-  --lavender-dim: rgba(155,130,206,.15);
-  --lavender-faint: rgba(155,130,206,.07);
+  --lavender-dim: rgba(155,130,206,.18);
+  --lavender-faint: rgba(155,130,206,.08);
 
   --blush:        #C8B8E8;
   --blush-pale:   #EDE8F8;
 
-  --gold:         #C9A84C;
-  --gold-warm:    #D4B860;
+  --gold:         #C4A030;
+  --gold-warm:    #D4B440;
 
   --cream:        #F5F2FF;
   --parchment:    #EDE8F5;
@@ -38,7 +38,7 @@
   /* Typography */
   --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --f-sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
-  --f-ar:    'Noto Naskh Arabic', serif;
+  --f-ar:    'Tajawal', 'Noto Naskh Arabic', serif;
 
   /* Easing */
   --ease:      cubic-bezier(.23,1,.32,1);
@@ -99,7 +99,7 @@ body::after {
 .d8__line {
   flex: 0 0 3.5rem;
   height: 1px;
-  background: rgba(201,168,76,.35);
+  background: rgba(196,160,48,.35);
 }
 
 .d8__mark {
@@ -337,8 +337,8 @@ body::after {
 }
 
 .nav.scrolled {
-  background: rgba(10,5,7,.88);
-  backdrop-filter: blur(22px) saturate(1.2);
+  background: rgba(12,4,48,.92);
+  backdrop-filter: blur(22px) saturate(1.4);
   padding: 1.1rem var(--pad);
 }
 
@@ -521,10 +521,10 @@ body::after {
   z-index: 1;
   background:
     linear-gradient(180deg,
-      rgba(9,6,15,.55)   0%,
-      rgba(30,16,60,.25) 30%,
-      rgba(20,10,45,.65) 70%,
-      rgba(9,6,15,.97)  100%);
+      rgba(12,4,48,.45)  0%,
+      rgba(45,14,120,.2) 30%,
+      rgba(20,8,72,.62)  70%,
+      rgba(12,4,48,.97)  100%);
 }
 
 .hero__body {
@@ -683,7 +683,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 40% at 80% 50%, rgba(74,44,138,.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 40% at 80% 50%, rgba(72,30,160,.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -814,7 +814,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(74,44,138,.18) 0%, transparent 65%);
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(72,30,160,.22) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -854,7 +854,7 @@ body::after {
   position: relative;
 }
 
-.svc-card:hover { background: rgba(74,44,138,.25); }
+.svc-card:hover { background: rgba(72,30,160,.28); }
 
 .svc-card__no {
   display: block;
@@ -950,7 +950,7 @@ body::after {
   position: absolute;
   bottom: 1.75rem;
   left: 1.75rem;
-  background: rgba(10,5,7,.82);
+  background: rgba(12,4,48,.88);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(196,181,213,.18);
   padding: 1rem 1.5rem;
@@ -1035,7 +1035,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(104,64,176,.14) 0%, transparent 65%);
+  background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(104,48,191,.18) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -1141,7 +1141,7 @@ body::after {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 50%;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74,44,138,.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(72,30,160,.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1210,7 +1210,7 @@ body::after {
   position: absolute;
   inset: auto 0 0;
   padding: 1.5rem 1.25rem 1.25rem;
-  background: linear-gradient(to top, rgba(10,5,7,.85), transparent);
+  background: linear-gradient(to top, rgba(12,4,48,.9), transparent);
   display: flex;
   flex-direction: column;
   gap: .2rem;

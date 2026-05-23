@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#09060F" rx="8"/>
-  <!-- House outline -->
-  <path d="M32 6 L54 24 L54 58 L44 58 L44 62 L20 62 L20 58 L10 58 L10 24 Z"
-        stroke="#C9A84C" stroke-width="2" fill="none" stroke-linejoin="miter"/>
-  <!-- Figure-8: top oval -->
-  <ellipse cx="32" cy="31" rx="8" ry="9.5" stroke="#C9A84C" stroke-width="2" fill="none"/>
-  <!-- Figure-8: bottom oval -->
-  <ellipse cx="32" cy="47" rx="10" ry="11" stroke="#C9A84C" stroke-width="2" fill="none"/>
+  <rect width="64" height="64" fill="#0C0430" rx="8"/>
+  <path d="M32 6 L54 24 L54 58 L10 58 L10 24 Z" stroke="#C4A030" stroke-width="1.8" fill="none" stroke-linejoin="miter"/>
+  <line x1="20" y1="24" x2="20" y2="56" stroke="#C4A030" stroke-width="1.8"/>
+  <line x1="44" y1="24" x2="44" y2="56" stroke="#C4A030" stroke-width="1.8"/>
+  <text x="32" y="52" font-family="Georgia,serif" font-size="24" font-weight="400" text-anchor="middle" fill="#C4A030">8</text>
 </svg>

@@ -38,7 +38,7 @@
   /* Typography */
   --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --f-sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
-  --f-ar:    'Somar', 'Tajawal', 'Noto Naskh Arabic', serif;
+  --f-ar:    'Almarai', sans-serif;
 
   /* Easing */
   --ease:      cubic-bezier(.23,1,.32,1);
@@ -714,7 +714,7 @@ body::after {
 
 .about__h em {
   font-style: normal;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--purple-mid);
 }
 
@@ -841,7 +841,7 @@ body::after {
   direction: rtl;
 }
 
-.services__h em { font-style: normal; font-weight: 900; color: var(--gold); }
+.services__h em { font-style: normal; font-weight: 800; color: var(--gold); }
 
 .services__grid {
   display: grid;
@@ -991,7 +991,7 @@ body::after {
   direction: rtl;
 }
 
-.invest__h em { font-style: normal; font-weight: 900; color: var(--purple-mid); }
+.invest__h em { font-style: normal; font-weight: 800; color: var(--purple-mid); }
 
 .invest__lead {
   font-size: .93rem;
@@ -1062,7 +1062,7 @@ body::after {
   direction: rtl;
 }
 
-.owners__h em { font-style: normal; font-weight: 900; color: var(--gold); }
+.owners__h em { font-style: normal; font-weight: 800; color: var(--gold); }
 
 .owners__lead {
   font-size: .93rem;
@@ -1164,7 +1164,7 @@ body::after {
   direction: rtl;
 }
 
-.gallery__h em { font-style: normal; font-weight: 900; color: var(--gold); }
+.gallery__h em { font-style: normal; font-weight: 800; color: var(--gold); }
 
 /* mosaic grid */
 .gallery__mosaic {
@@ -1407,7 +1407,7 @@ body::after {
   direction: rtl;
 }
 
-.cta__h em { font-style: normal; font-weight: 900; color: var(--gold); }
+.cta__h em { font-style: normal; font-weight: 800; color: var(--gold); }
 
 .cta__sub {
   font-size: .93rem;

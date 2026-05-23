@@ -136,6 +136,11 @@ body::after {
   gap: .5rem;
 }
 
+.preloader__icon {
+  width: 56px;
+  height: auto;
+}
+
 .preloader__logo {
   font-family: var(--f-serif);
   font-size: clamp(1.2rem, 3.5vw, 2rem);
@@ -359,8 +364,8 @@ body::after {
 }
 
 .nav__logo-icon {
-  width: 30px;
-  height: 34px;
+  width: 28px;
+  height: auto;
   flex-shrink: 0;
 }
 

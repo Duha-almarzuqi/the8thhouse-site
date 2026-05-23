@@ -1461,26 +1461,40 @@ body::after {
   border-bottom: 1px solid var(--border);
 }
 
+.footer__brand-logo {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: .65rem;
+  margin-bottom: .9rem;
+}
+
+.footer__brand-words {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .15rem;
+}
+
 .footer__logo {
   font-family: var(--f-serif);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: .12em;
+  letter-spacing: .14em;
   color: var(--text);
-  margin-bottom: .2rem;
+  white-space: nowrap;
 }
 
 .footer__logo-ar {
   font-family: var(--f-ar);
-  font-size: .85rem;
+  font-size: .75rem;
   color: var(--lavender);
-  direction: rtl;
-  display: block;
-  margin-bottom: 1rem;
+  letter-spacing: .04em;
+  white-space: nowrap;
 }
 
 .footer__tagline {
-  font-size: .8rem;
+  font-size: .78rem;
   color: var(--text-dim);
   line-height: 1.7;
   font-weight: 300;

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The 8th House — Premium luxury hospitality and real estate in the heart of Riyadh, Saudi Arabia.">
+  <meta name="theme-color" content="#0A0507">
+  <meta property="og:title" content="The 8th House | البيت الثامن">
+  <meta property="og:description" content="Where Luxury Finds Its Address. Premium hospitality and real estate in Riyadh.">
+  <title>The 8th House | البيت الثامن — Luxury Hospitality</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__mark">
+      <div class="preloader__logo">THE 8TH HOUSE</div>
+      <div class="preloader__arabic">البيت الثامن</div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-en">The 8th House</span>
+        <span class="nav__logo-ar">البيت الثامن</span>
+      </a>
+
+      <nav class="nav__menu" role="navigation" aria-label="Main navigation">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#investment" class="nav__link">Investment</a>
+        <a href="#gallery" class="nav__link">Collection</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#services" class="mobile-nav__link">Services</a>
+      <a href="#investment" class="mobile-nav__link">Investment</a>
+      <a href="#gallery" class="mobile-nav__link">Collection</a>
+      <a href="#contact" class="mobile-nav__link">Contact</a>
+      <p class="mobile-nav__tagline">البيت الثامن</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <img
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2400&q=85"
+        alt=""
+        class="hero__img"
+        fetchpriority="high"
+        aria-hidden="true">
+    </div>
+    <div class="hero__veil"></div>
+
+    <div class="hero__body">
+      <p class="hero__location">
+        <span class="hero__dash"></span>
+        Riyadh, Saudi Arabia
+        <span class="hero__dash"></span>
+      </p>
+
+      <h1 class="hero__title" aria-label="The 8th House">
+        <span class="hero__word hero__word--serif">The</span>
+        <span class="hero__word hero__word--outline">8th</span>
+        <span class="hero__word hero__word--serif">House</span>
+      </h1>
+
+      <p class="hero__ar" lang="ar">البيت الثامن</p>
+      <p class="hero__sub">Where Luxury Finds Its Address</p>
+
+      <div class="hero__actions">
+        <a href="#gallery" class="btn btn--pale">Explore Collection</a>
+        <a href="#contact" class="btn btn--border">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-thread"></div>
+      <span>Scroll</span>
+    </div>
+
+    <p class="hero__stamp" aria-hidden="true">Est. 2021 · Riyadh</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about__container">
+
+      <div class="about__copy">
+        <p class="eyebrow eyebrow--wine">About The House</p>
+        <h2 class="about__h">
+          A New Standard<br>
+          <em>of Luxury Living</em>
+        </h2>
+        <div class="about__prose">
+          <p>The 8th House is a premier luxury hospitality and real estate company operating at the heart of Riyadh. We curate exceptional residential experiences — from fully managed short-term luxury rentals to exclusive long-term investment properties.</p>
+          <p>Every detail is considered. Every property is handpicked. Every guest experience is crafted with precision and quiet warmth.</p>
+        </div>
+        <a href="#services" class="text-link">Discover Our Services <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="about__figure">
+        <div class="about__frame">
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
+            alt="Luxury apartment interior — The 8th House"
+            class="about__img js-reveal-img"
+            loading="lazy">
+        </div>
+        <p class="about__aside" aria-hidden="true">Luxury · حياة راقية</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Running marquee -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Luxury Rentals</span><span class="ticker__gem">✦</span>
+      <span>Property Management</span><span class="ticker__gem">✦</span>
+      <span>Investment Advisory</span><span class="ticker__gem">✦</span>
+      <span>Riyadh's Finest</span><span class="ticker__gem">✦</span>
+      <span>الفخامة والرقي</span><span class="ticker__gem">✦</span>
+      <span>Luxury Rentals</span><span class="ticker__gem">✦</span>
+      <span>Property Management</span><span class="ticker__gem">✦</span>
+      <span>Investment Advisory</span><span class="ticker__gem">✦</span>
+      <span>Riyadh's Finest</span><span class="ticker__gem">✦</span>
+      <span>الفخامة والرقي</span><span class="ticker__gem">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="services__container">
+
+      <header class="services__hd">
+        <p class="eyebrow">What We Offer</p>
+        <h2 class="services__h">
+          Crafted for the<br><em>Discerning Few</em>
+        </h2>
+      </header>
+
+      <div class="services__grid">
+
+        <article class="svc-card js-reveal">
+          <span class="svc-card__no">01</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title">Luxury Short-Term Rentals</h3>
+          <p class="svc-card__desc">Fully furnished, exquisitely designed properties for distinguished guests seeking a home above ordinary.</p>
+          <div class="svc-card__rule" aria-hidden="true"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.12s">
+          <span class="svc-card__no">02</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title">Full Property Management</h3>
+          <p class="svc-card__desc">End-to-end management of your luxury asset — from guest curation to maintenance and returns optimisation.</p>
+          <div class="svc-card__rule" aria-hidden="true"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.24s">
+          <span class="svc-card__no">03</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title">Investment Portfolio</h3>
+          <p class="svc-card__desc">Strategic real estate opportunities in Riyadh's most coveted addresses with curated premium returns.</p>
+          <div class="svc-card__rule" aria-hidden="true"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.36s">
+          <span class="svc-card__no">04</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title">Interior Consultation</h3>
+          <p class="svc-card__desc">Bespoke design direction that elevates every property to meet the highest standards of luxury living.</p>
+          <div class="svc-card__rule" aria-hidden="true"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       INVESTMENT
+  ═══════════════════════════════════════ -->
+  <section class="invest" id="investment">
+    <div class="invest__container">
+
+      <div class="invest__figure js-reveal-img-wrap">
+        <div class="invest__frame">
+          <img
+            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=85"
+            alt="Luxury investment property"
+            class="invest__img js-reveal-img"
+            loading="lazy">
+          <div class="invest__frame-veil"></div>
+          <div class="invest__badge">
+            <p class="invest__badge-label">Annual Yield</p>
+            <p class="invest__badge-value">12–18%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="invest__copy js-reveal">
+        <p class="eyebrow eyebrow--wine">Investment Opportunities</p>
+        <h2 class="invest__h">
+          Grow Your Wealth<br><em>With Purpose</em>
+        </h2>
+        <p class="invest__lead">Riyadh's luxury real estate market is one of the fastest growing in the GCC. The 8th House offers curated investment opportunities with consistent premium returns, backed by expert management and deep market insight.</p>
+
+        <ul class="invest__feats">
+          <li><span class="invest__arrow">→</span> Prime Riyadh locations only</li>
+          <li><span class="invest__arrow">→</span> Transparent performance reporting</li>
+          <li><span class="invest__arrow">→</span> Dedicated investment manager</li>
+          <li><span class="invest__arrow">→</span> Minimum 12% annual yield target</li>
+        </ul>
+
+        <a href="#contact" class="btn btn--wine">Explore Investment</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROPERTY OWNERS
+  ═══════════════════════════════════════ -->
+  <section class="owners" id="owners">
+    <div class="owners__container">
+
+      <div class="owners__copy js-reveal">
+        <p class="eyebrow">For Property Owners</p>
+        <h2 class="owners__h">
+          Your Property.<br><em>Our Expertise.</em>
+        </h2>
+        <p class="owners__lead">Partner with The 8th House and let your luxury property generate premium returns while we handle every detail — from styling and guest experience to financials and maintenance.</p>
+
+        <ol class="owners__list">
+          <li class="owners__item">
+            <span class="owners__n">01</span>
+            <div>
+              <strong>Premium Positioning</strong>
+              <p>Your property marketed to a curated audience of discerning travellers and long-term renters.</p>
+            </div>
+          </li>
+          <li class="owners__item">
+            <span class="owners__n">02</span>
+            <div>
+              <strong>Hands-Free Management</strong>
+              <p>From check-in to maintenance — white-glove attention at every stage.</p>
+            </div>
+          </li>
+          <li class="owners__item">
+            <span class="owners__n">03</span>
+            <div>
+              <strong>Transparent Returns</strong>
+              <p>Monthly reports and direct transfers. Your earnings, always clear.</p>
+            </div>
+          </li>
+        </ol>
+
+        <a href="#contact" class="btn btn--pale">Partner With Us</a>
+      </div>
+
+      <div class="owners__figure">
+        <div class="owners__frame">
+          <img
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
+            alt="Luxury bedroom suite"
+            class="owners__img js-reveal-img"
+            loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       GALLERY
+  ═══════════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__hd">
+      <p class="eyebrow">The Collection</p>
+      <h2 class="gallery__h">
+        Our Finest<br><em>Properties</em>
+      </h2>
+    </div>
+
+    <div class="gallery__mosaic">
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=85"
+            alt="The Penthouse"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Penthouse</span>
+          <span class="g-cell__loc">Al Olaya · Riyadh</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
+            alt="The Garden Suite"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Garden Suite</span>
+          <span class="g-cell__loc">Hittin · Riyadh</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+            alt="The Ivory Residence"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Ivory Residence</span>
+          <span class="g-cell__loc">Al Nakheel · Riyadh</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85"
+            alt="The Crown Villa"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Crown Villa</span>
+          <span class="g-cell__loc">Diplomats Quarter · Riyadh</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa52284?auto=format&fit=crop&w=1600&q=85"
+            alt="The Marble Suite"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Marble Suite</span>
+          <span class="g-cell__loc">King Abdullah Financial District · Riyadh</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img
+            src="https://images.unsplash.com/photo-1560185009-5bf9f2849488?auto=format&fit=crop&w=900&q=85"
+            alt="The City View"
+            loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The City View</span>
+          <span class="g-cell__loc">Al Yasmin · Riyadh</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery__foot">
+      <a href="#contact" class="btn btn--wine">Enquire About Availability</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STATISTICS
+  ═══════════════════════════════════════ -->
+  <section class="stats" id="stats">
+    <div class="stats__container">
+      <div class="stats__eyebrow">
+        <p class="eyebrow">By The Numbers</p>
+        <div class="stats__rule"></div>
+      </div>
+
+      <div class="stats__grid">
+        <div class="stat js-reveal">
+          <p class="stat__val"><span class="js-count" data-to="50">0</span>+</p>
+          <p class="stat__label">Premium Properties</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.12s">
+          <p class="stat__val"><span class="js-count" data-to="98">0</span>%</p>
+          <p class="stat__label">Client Satisfaction</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.24s">
+          <p class="stat__val"><span class="js-count" data-to="500">0</span>+</p>
+          <p class="stat__label">Guests Hosted</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.36s">
+          <p class="stat__val"><span class="js-count" data-to="3">0</span></p>
+          <p class="stat__label">Years of Excellence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA / CONTACT
+  ═══════════════════════════════════════ -->
+  <section class="cta" id="contact">
+    <div class="cta__media">
+      <img
+        src="https://images.unsplash.com/photo-1551038247-3d9af20df552?auto=format&fit=crop&w=2400&q=80"
+        alt=""
+        loading="lazy"
+        aria-hidden="true">
+    </div>
+    <div class="cta__veil"></div>
+
+    <div class="cta__body js-reveal">
+      <p class="eyebrow">Begin Your Journey</p>
+      <h2 class="cta__h">
+        Experience Living<br><em>Redefined</em>
+      </h2>
+      <p class="cta__sub">Whether you're seeking an elevated residence or a premium investment, The 8th House is ready to welcome you.</p>
+
+      <div class="cta__actions">
+        <a href="tel:+966500000000" class="btn btn--pale">+966 50 000 0000</a>
+        <a href="mailto:hello@the8thhouse.sa" class="btn btn--border">hello@the8thhouse.sa</a>
+      </div>
+
+      <p class="cta__ar" lang="ar">نرحب بكم</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <p class="footer__logo">The 8th House</p>
+          <p class="footer__logo-ar" lang="ar">البيت الثامن</p>
+          <p class="footer__tagline">Luxury Hospitality &amp; Real Estate<br>Riyadh, Saudi Arabia</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <p class="footer__col-hd">Navigate</p>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#investment">Investment</a>
+            <a href="#gallery">Collection</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-hd">Connect</p>
+            <a href="#" rel="noopener noreferrer">Instagram</a>
+            <a href="#" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:hello@the8thhouse.sa">Email</a>
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="footer__btm">
+        <p>&copy; 2024 The 8th House. All rights reserved.</p>
+        <p lang="ar">البيت الثامن · الرياض</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -683,6 +683,71 @@ body::after {
   animation: fadeIn .9s 2.2s ease forwards;
 }
 
+/* ── WHO WE ARE ──────────────────────────────────────────────── */
+.whoweare {
+  background: var(--ink);
+  padding: clamp(5rem,12vw,9rem) var(--pad);
+}
+.whoweare__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  direction: rtl;
+}
+.whoweare__rule {
+  width: 2px;
+  height: 3rem;
+  background: var(--gold);
+  margin: 1.25rem auto 2rem;
+  opacity: .6;
+}
+.whoweare__h {
+  font-size: clamp(2.2rem,5vw,3.8rem);
+  font-weight: 800;
+  color: var(--cream);
+  margin-bottom: 1.75rem;
+  letter-spacing: .01em;
+}
+.whoweare__h em {
+  font-style: normal;
+  color: var(--gold);
+}
+.whoweare__body {
+  font-size: clamp(1rem,2vw,1.2rem);
+  line-height: 2;
+  color: var(--text-dim);
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+.whoweare__pillars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.whoweare__pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: .02em;
+}
+.whoweare__pillar-no {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.whoweare__sep {
+  color: var(--gold);
+  opacity: .45;
+  font-size: 1rem;
+}
+
 /* ── ABOUT ───────────────────────────────────────────────────── */
 .about {
   background: var(--cream);

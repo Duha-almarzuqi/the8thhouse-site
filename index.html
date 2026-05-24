@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="البيت الثامن — شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بالرياض. The 8th House — Furnished apartment management in Riyadh.">
+  <meta name="theme-color" content="#24124B">
+  <title>THE 8TH HOUSE | البيت الثامن — Riyadh</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__mark">
+      <!-- House icon -->
+      <svg class="preloader__icon" viewBox="487 394 128 148" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#8F7C56" d="M 551.5349 399.1823 L 511.5979 436.8603 L 511.5979 536.0643 L 515.6759 536.0643 L 515.6759 530.5853 L 515.5419 530.5853 L 515.5419 439.7633 L 551.5269 405.8123 L 588.2359 440.7503 L 588.2359 530.5853 L 588.1179 530.5853 L 588.1179 536.0643 L 592.1809 536.0643 L 592.1809 437.8633 Z"/>
+        <path fill="#8F7C56" d="M 552.2474 525.9358 L 544.1684 526.0188 C 542.4964 525.4318 539.6714 521.9338 537.1144 518.4708 C 536.8284 518.1548 536.8464 517.7528 536.7974 517.3418 C 536.2324 512.5808 537.1134 506.0288 536.9794 501.0908 L 548.1464 490.4488 L 542.2064 484.6928 C 537.7874 488.9568 532.9104 492.6028 528.7804 497.2438 L 528.8824 521.6098 L 539.5814 534.0078 L 564.9574 534.0078 L 575.9484 521.7268 L 575.9484 500.6028 L 574.5464 498.8588 L 537.2074 464.8018 L 537.2034 449.4648 C 538.9344 447.6818 542.5514 442.0628 544.7364 441.7198 L 561.1054 441.9298 L 567.2014 449.0908 C 566.9484 453.7338 567.7634 459.4618 567.2874 463.9688 C 567.2434 464.3808 567.2794 464.7818 566.9384 465.0608 L 554.6374 477.0098 L 559.8244 482.2558 C 560.0464 482.4568 560.2364 482.3588 560.4724 482.2828 C 561.2524 482.0338 566.9444 476.4118 568.0694 475.3208 C 569.0034 474.4148 574.8434 468.8708 574.9754 468.3478 L 574.9764 445.3588 L 564.4474 433.2268 L 540.8464 433.1308 C 540.4544 433.0828 540.1904 433.2938 539.8734 433.5038 C 539.4294 433.7968 536.5504 437.0488 535.8374 437.8108 C 534.8084 438.9108 529.1844 445.1988 529.0454 446.0368 L 529.2064 468.6048 L 567.8444 504.5238 C 567.5394 507.3738 568.6224 516.4358 567.6094 518.4638 C 567.3864 518.9108 561.6784 525.4848 561.2914 525.7428 Z"/>
+        <path fill="#8F7C56" d="M 609.2426 536.0506 L 492.7546 536.0506 L 492.7546 534.0796 L 607.8236 534.0796 L 607.8236 444.7156 L 571.3746 410.0276 L 565.5956 418.5376 L 564.3736 417.5326 L 570.9256 407.2096 L 609.2426 443.6766 Z"/>
+        <path fill="#8F7C56" d="M 494.1761 534.3636 L 494.1761 444.9996 L 530.6251 410.3116 L 536.1641 419.3226 L 537.3861 418.3186 L 531.0741 407.4936 L 492.7571 443.9606 L 492.7541 535.9506 Z"/>
+      </svg>
+      <div class="preloader__logo">THE 8TH HOUSE</div>
+      <div class="preloader__arabic">البيت الثامن</div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <svg class="nav__logo-icon" viewBox="487 394 128 148" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#8F7C56" d="M 551.5349 399.1823 L 511.5979 436.8603 L 511.5979 536.0643 L 515.6759 536.0643 L 515.6759 530.5853 L 515.5419 530.5853 L 515.5419 439.7633 L 551.5269 405.8123 L 588.2359 440.7503 L 588.2359 530.5853 L 588.1179 530.5853 L 588.1179 536.0643 L 592.1809 536.0643 L 592.1809 437.8633 Z"/>
+          <path fill="#8F7C56" d="M 552.2474 525.9358 L 544.1684 526.0188 C 542.4964 525.4318 539.6714 521.9338 537.1144 518.4708 C 536.8284 518.1548 536.8464 517.7528 536.7974 517.3418 C 536.2324 512.5808 537.1134 506.0288 536.9794 501.0908 L 548.1464 490.4488 L 542.2064 484.6928 C 537.7874 488.9568 532.9104 492.6028 528.7804 497.2438 L 528.8824 521.6098 L 539.5814 534.0078 L 564.9574 534.0078 L 575.9484 521.7268 L 575.9484 500.6028 L 574.5464 498.8588 L 537.2074 464.8018 L 537.2034 449.4648 C 538.9344 447.6818 542.5514 442.0628 544.7364 441.7198 L 561.1054 441.9298 L 567.2014 449.0908 C 566.9484 453.7338 567.7634 459.4618 567.2874 463.9688 C 567.2434 464.3808 567.2794 464.7818 566.9384 465.0608 L 554.6374 477.0098 L 559.8244 482.2558 C 560.0464 482.4568 560.2364 482.3588 560.4724 482.2828 C 561.2524 482.0338 566.9444 476.4118 568.0694 475.3208 C 569.0034 474.4148 574.8434 468.8708 574.9754 468.3478 L 574.9764 445.3588 L 564.4474 433.2268 L 540.8464 433.1308 C 540.4544 433.0828 540.1904 433.2938 539.8734 433.5038 C 539.4294 433.7968 536.5504 437.0488 535.8374 437.8108 C 534.8084 438.9108 529.1844 445.1988 529.0454 446.0368 L 529.2064 468.6048 L 567.8444 504.5238 C 567.5394 507.3738 568.6224 516.4358 567.6094 518.4638 C 567.3864 518.9108 561.6784 525.4848 561.2914 525.7428 Z"/>
+          <path fill="#8F7C56" d="M 609.2426 536.0506 L 492.7546 536.0506 L 492.7546 534.0796 L 607.8236 534.0796 L 607.8236 444.7156 L 571.3746 410.0276 L 565.5956 418.5376 L 564.3736 417.5326 L 570.9256 407.2096 L 609.2426 443.6766 Z"/>
+          <path fill="#8F7C56" d="M 494.1761 534.3636 L 494.1761 444.9996 L 530.6251 410.3116 L 536.1641 419.3226 L 537.3861 418.3186 L 531.0741 407.4936 L 492.7571 443.9606 L 492.7541 535.9506 Z"/>
+        </svg>
+        <div class="nav__logo-words">
+          <span class="nav__logo-en">THE 8TH HOUSE</span>
+          <span class="nav__logo-ar">البيت الثامن</span>
+        </div>
+      </a>
+
+      <nav class="nav__menu" role="navigation" aria-label="Main navigation">
+        <a href="#about"      class="nav__link">About</a>
+        <a href="#services"   class="nav__link">Services</a>
+        <a href="#investment" class="nav__link">Investment</a>
+        <a href="#gallery"    class="nav__link">Collection</a>
+        <a href="#contact"    class="nav__cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <a href="#about"      class="mobile-nav__link">About</a>
+      <a href="#services"   class="mobile-nav__link">Services</a>
+      <a href="#investment" class="mobile-nav__link">Investment</a>
+      <a href="#gallery"    class="mobile-nav__link">Collection</a>
+      <a href="#contact"    class="mobile-nav__link">Contact</a>
+      <p class="mobile-nav__tagline">البيت الثامن</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <img
+        src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2400&q=85"
+        alt=""
+        class="hero__img"
+        fetchpriority="high"
+        aria-hidden="true">
+    </div>
+    <div class="hero__veil"></div>
+
+    <div class="hero__body">
+      <p class="hero__location">
+        <span class="hero__dash"></span>
+        الرياض · Riyadh, Saudi Arabia
+        <span class="hero__dash"></span>
+      </p>
+
+      <h1 class="hero__title" aria-label="THE 8TH HOUSE — البيت الثامن">
+        <span class="hero__word hero__word--serif">THE</span>
+        <span class="hero__word hero__word--outline">8TH</span>
+        <span class="hero__word hero__word--serif">HOUSE</span>
+      </h1>
+
+      <p class="hero__ar" lang="ar">البيت الثامن</p>
+
+      <div class="d8">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
+
+      <p class="hero__sub" lang="ar">إدارة وتشغيل الشقق السكنية المؤثثة بالرياض</p>
+      <p class="hero__sub hero__sub--en">Furnished apartment management &amp; hospitality · Riyadh</p>
+
+      <div class="hero__actions">
+        <a href="#gallery"  class="btn btn--pale">Explore Collection</a>
+        <a href="#contact"  class="btn btn--border">تواصل معنا</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-thread"></div>
+      <span>Scroll</span>
+    </div>
+
+    <p class="hero__stamp" aria-hidden="true">Est. 2019 · الرياض</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHO WE ARE / من نحن
+  ═══════════════════════════════════════ -->
+  <section class="whoweare" id="whoweare">
+    <div class="whoweare__inner">
+      <p class="eyebrow eyebrow--gold">من نحن · Who We Are</p>
+      <div class="whoweare__rule"></div>
+      <h2 class="whoweare__h" lang="ar">
+        <em>البيت الثامن</em>
+      </h2>
+      <p class="whoweare__body" lang="ar">
+        شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بمدينة الرياض.
+        نقدم للملاك حلول تشغيل متكاملة تضمن لهم نسبة إشغال عالية،
+        تشغيل احترافي وصيانة مستمرة للعقار،
+        مع شفافية كاملة في التقارير والعوائد.
+      </p>
+      <div class="whoweare__pillars">
+        <div class="whoweare__pillar">
+          <span class="whoweare__pillar-no">١</span>
+          <span lang="ar">إشغال عالي</span>
+        </div>
+        <div class="whoweare__sep">◇</div>
+        <div class="whoweare__pillar">
+          <span class="whoweare__pillar-no">٢</span>
+          <span lang="ar">تشغيل احترافي</span>
+        </div>
+        <div class="whoweare__sep">◇</div>
+        <div class="whoweare__pillar">
+          <span class="whoweare__pillar-no">٣</span>
+          <span lang="ar">شفافية كاملة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT / MISSION
+  ═══════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about__container">
+
+      <div class="about__copy">
+        <p class="eyebrow eyebrow--purple">رسالتنا · Our Mission</p>
+        <h2 class="about__h">
+          إدارة بعقلية<br>
+          <em>المالك</em>
+        </h2>
+        <div class="about__prose">
+          <p lang="ar">نعتبر أصولك شراكة حقيقية ونتصرف بعقلية المالك. نحل المشكلات قبل أن تلاحظها، ونضمن أداءً مستقراً لكل عقار.</p>
+          <p>We manage and operate furnished residential apartments with the highest level of professionalism — increasing occupancy, protecting owners' assets through transparent financial management, and building long-term partnerships based on trust.</p>
+        </div>
+        <div class="d8">
+          <span class="d8__line"></span>
+          <span class="d8__mark">8</span>
+          <span class="d8__line"></span>
+        </div>
+        <a href="#services" class="text-link">Discover Our Services <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="about__figure">
+        <div class="about__frame">
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
+            alt="Luxury furnished apartment — The 8th House"
+            class="about__img js-reveal-img"
+            loading="lazy">
+        </div>
+        <p class="about__aside" aria-hidden="true">Riyadh · الرياض</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span lang="ar">إدارة مالية شفافة</span><span class="ticker__gem">✦</span>
+      <span>Transparent Management</span><span class="ticker__gem">✦</span>
+      <span lang="ar">التشغيل الكامل للعقار</span><span class="ticker__gem">✦</span>
+      <span>Hospitality First</span><span class="ticker__gem">✦</span>
+      <span lang="ar">حماية قيمة العقار</span><span class="ticker__gem">✦</span>
+      <span>Owner Mindset</span><span class="ticker__gem">✦</span>
+      <span lang="ar">الرياض — البيت الثامن</span><span class="ticker__gem">✦</span>
+      <span>THE 8TH HOUSE</span><span class="ticker__gem">✦</span>
+      <!-- repeat for seamless loop -->
+      <span lang="ar">إدارة مالية شفافة</span><span class="ticker__gem">✦</span>
+      <span>Transparent Management</span><span class="ticker__gem">✦</span>
+      <span lang="ar">التشغيل الكامل للعقار</span><span class="ticker__gem">✦</span>
+      <span>Hospitality First</span><span class="ticker__gem">✦</span>
+      <span lang="ar">حماية قيمة العقار</span><span class="ticker__gem">✦</span>
+      <span>Owner Mindset</span><span class="ticker__gem">✦</span>
+      <span lang="ar">الرياض — البيت الثامن</span><span class="ticker__gem">✦</span>
+      <span>THE 8TH HOUSE</span><span class="ticker__gem">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="services__container">
+
+      <header class="services__hd">
+        <p class="eyebrow">خدماتنا · What We Offer</p>
+        <h2 class="services__h">
+          شركاؤك في<br><em>كل خطوة</em>
+        </h2>
+      </header>
+
+      <div class="services__grid">
+
+        <article class="svc-card js-reveal">
+          <span class="svc-card__no">01</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title" lang="ar">إدارة مالية شفافة</h3>
+          <p class="svc-card__sub">Transparent Financial Management</p>
+          <p class="svc-card__desc">Monthly reports, direct transfers, and full clarity on every riyal your property earns.</p>
+          <div class="svc-card__rule"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.12s">
+          <span class="svc-card__no">02</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title" lang="ar">التشغيل الكامل للعقار</h3>
+          <p class="svc-card__sub">Comprehensive Property Operation</p>
+          <p class="svc-card__desc">From guest check-in to maintenance — we operate your property like owners, not agents.</p>
+          <div class="svc-card__rule"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.24s">
+          <span class="svc-card__no">03</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title" lang="ar">حماية قيمة العقار</h3>
+          <p class="svc-card__sub">Protecting Property Value</p>
+          <p class="svc-card__desc">Continuous maintenance and quality standards ensure your asset grows in value over time.</p>
+          <div class="svc-card__rule"></div>
+        </article>
+
+        <article class="svc-card js-reveal" style="--d:0.36s">
+          <span class="svc-card__no">04</span>
+          <span class="svc-card__gem" aria-hidden="true">◇</span>
+          <h3 class="svc-card__title" lang="ar">ضيافة في كل إقامة</h3>
+          <p class="svc-card__sub">Hospitality in Every Stay</p>
+          <p class="svc-card__desc">Hospitality isn't an extra service — it's our way of managing every stay from day one.</p>
+          <div class="svc-card__rule"></div>
+        </article>
+
+      </div>
+
+      <div class="d8" style="margin-top:3rem">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       INVESTMENT
+  ═══════════════════════════════════════ -->
+  <section class="invest" id="investment">
+    <div class="invest__container">
+
+      <div class="invest__figure js-reveal-img-wrap">
+        <div class="invest__frame">
+          <img
+            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=85"
+            alt="Investment property"
+            class="invest__img js-reveal-img"
+            loading="lazy">
+          <div class="invest__frame-veil"></div>
+          <div class="invest__badge">
+            <p class="invest__badge-label">Average Occupancy</p>
+            <p class="invest__badge-value">83.6%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="invest__copy js-reveal">
+        <p class="eyebrow eyebrow--purple">فرص الاستثمار · Investment</p>
+        <h2 class="invest__h">
+          الدقة في المعلومات<br><em>أساس الثقة</em>
+        </h2>
+        <p class="invest__lead">In real estate investment, accurate information is the foundation of trust. Every recommendation we make and every management decision we take is built on full data transparency — reflecting the true performance of your property.</p>
+
+        <ul class="invest__feats">
+          <li><span class="invest__arrow">→</span> <span lang="ar">الرياض تتحول لوجهة سياحية عالمية</span></li>
+          <li><span class="invest__arrow">→</span> Growing hospitality sector — Vision 2030 tailwind</li>
+          <li><span class="invest__arrow">→</span> Smart management adapts to all market shifts</li>
+          <li><span class="invest__arrow">→</span> Performance reports every month, no surprises</li>
+        </ul>
+
+        <div class="d8" style="justify-content:flex-start; margin:1.5rem 0">
+          <span class="d8__line"></span>
+          <span class="d8__mark">8</span>
+          <span class="d8__line"></span>
+        </div>
+
+        <a href="#contact" class="btn btn--purple">Explore Investment</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROPERTY OWNERS
+  ═══════════════════════════════════════ -->
+  <section class="owners" id="owners">
+    <div class="owners__container">
+
+      <div class="owners__copy js-reveal">
+        <p class="eyebrow">للملاك · For Property Owners</p>
+        <h2 class="owners__h">
+          شريككم الاستراتيجي<br><em>في التشغيل</em>
+        </h2>
+        <p class="owners__lead">As a property owner, the most important question is: does your property's performance truly reflect its investment value? At The 8th House, we partner with owners to ensure it does — every month, every year.</p>
+
+        <ol class="owners__list">
+          <li class="owners__item">
+            <span class="owners__n">01</span>
+            <div>
+              <strong lang="ar">عقلية المالك</strong>
+              <p>We treat your assets as a true partnership and act with the mindset of an owner — not just an operator.</p>
+            </div>
+          </li>
+          <li class="owners__item">
+            <span class="owners__n">02</span>
+            <div>
+              <strong lang="ar">حل المشكلات قبل أن تلاحظها</strong>
+              <p>We solve problems before you even notice them. Continuous monitoring keeps your asset performing.</p>
+            </div>
+          </li>
+          <li class="owners__item">
+            <span class="owners__n">03</span>
+            <div>
+              <strong lang="ar">دخل مستقر وشراكة طويلة الأمد</strong>
+              <p>Transparent financials, steady income stream, and a long-term partnership built on trust.</p>
+            </div>
+          </li>
+        </ol>
+
+        <a href="#contact" class="btn btn--pale">تواصل معنا · Partner With Us</a>
+      </div>
+
+      <div class="owners__figure">
+        <img
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
+          alt="Luxury furnished apartment"
+          class="owners__img js-reveal-img"
+          loading="lazy">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       GALLERY
+  ═══════════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__hd">
+      <p class="eyebrow">مجموعتنا · The Collection</p>
+      <h2 class="gallery__h">
+        شققنا<br><em>المختارة</em>
+      </h2>
+    </div>
+
+    <div class="gallery__mosaic">
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=85"
+               alt="The Penthouse" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Penthouse</span>
+          <span class="g-cell__loc">العليا · Al Olaya</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
+               alt="The Garden Suite" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Garden Suite</span>
+          <span class="g-cell__loc">حطين · Hittin</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+               alt="The Ivory Residence" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Ivory Residence</span>
+          <span class="g-cell__loc">النخيل · Al Nakheel</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85"
+               alt="The Crown Villa" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Crown Villa</span>
+          <span class="g-cell__loc">حي الدبلوماسيين</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa52284?auto=format&fit=crop&w=1600&q=85"
+               alt="The Marble Suite" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The Marble Suite</span>
+          <span class="g-cell__loc">KAFD · الرياض</span>
+        </div>
+      </div>
+
+      <div class="g-cell">
+        <div class="g-cell__frame">
+          <img src="https://images.unsplash.com/photo-1560185009-5bf9f2849488?auto=format&fit=crop&w=900&q=85"
+               alt="The City View" loading="lazy">
+        </div>
+        <div class="g-cell__caption">
+          <span class="g-cell__name">The City View</span>
+          <span class="g-cell__loc">الياسمين · Al Yasmin</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery__foot">
+      <a href="#contact" class="btn btn--purple">استفسر عن الإتاحة · Enquire</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       GUESTS / TESTIMONIALS
+  ═══════════════════════════════════════ -->
+  <section class="guests" id="guests">
+    <div class="guests__hd">
+      <p class="eyebrow">ضيوفنا · Our Guests</p>
+      <h2 class="guests__h">ماذا قال ضيوفنا</h2>
+      <div class="guests__stars" aria-label="5 stars">★★★★★</div>
+    </div>
+
+    <!-- Row 1 — scrolls left -->
+    <div class="guests__belt" aria-hidden="true">
+      <div class="guests__track guests__track--fwd">
+
+        <article class="r-card">
+          <p class="r-card__text">"The words that come to mind are: Comfortable. Luxurious. Modern. Elegant. Spacious. It doesn't even compare to a 5-star hotel. If I could give a rating, it would be 100 out of 10."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Huge</span>
+            <span class="r-card__meta">Tabuk, Saudi Arabia · June 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad is a sweetheart!!! And the place is a gem!!! The moment you enter, the air inside kinda tells you 'welcome home'!!! This place is more than the photos — just go ahead and have the best time!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Soumik</span>
+            <span class="r-card__meta">10 years on Airbnb</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad is an exceptional and responsive host! I booked for my business executive and their family — feedback was overwhelmingly positive. Emad's attention to detail and hospitality made a lasting impression. I've already secured the apartment for next month."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Noman Ali</span>
+            <span class="r-card__meta">January 2025 · Stayed over a week</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"What a truly lovely place! From the moment you arrive, you immediately feel at home. The space is spotless, private, and beautifully maintained. The location is fantastic — close to everything, yet still peaceful."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Luay</span>
+            <span class="r-card__meta">9 years on Airbnb · August 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Our stay was fantastic. Emad responded straightaway and within an hour we were in the property. The apartment was set up in the most welcoming way. He even accommodated a later checkout to help with our schedule."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hammad</span>
+            <span class="r-card__meta">9 years on Airbnb · September 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"The apartment was clean, stylish, and matched the description perfectly. The bed was incredibly comfortable, and thoughtful touches like provided toiletries added a homey feel. I'd highly recommend this place."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Ramah</span>
+            <span class="r-card__meta">Jeddah, Saudi Arabia · July 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"انصح بها وبشده — نظيفة ومتكاملة والمضيف مرن ومتعاون. أشكره على حسن تعامله وسرعة رده. مكان الشقة جميل جداً والحي هادي والسعر في متناول الجميع. شكراً عماد."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">منيرة</span>
+            <span class="r-card__meta">المملكة العربية السعودية · أغسطس 2025</span>
+          </footer>
+        </article>
+
+        <!-- duplicate for seamless loop -->
+        <article class="r-card">
+          <p class="r-card__text">"The words that come to mind are: Comfortable. Luxurious. Modern. Elegant. Spacious. It doesn't even compare to a 5-star hotel. If I could give a rating, it would be 100 out of 10."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Huge</span>
+            <span class="r-card__meta">Tabuk, Saudi Arabia · June 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad is a sweetheart!!! And the place is a gem!!! The moment you enter, the air inside kinda tells you 'welcome home'!!! This place is more than the photos — just go ahead and have the best time!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Soumik</span>
+            <span class="r-card__meta">10 years on Airbnb</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad is an exceptional and responsive host! I booked for my business executive and their family — feedback was overwhelmingly positive. Emad's attention to detail and hospitality made a lasting impression. I've already secured the apartment for next month."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Noman Ali</span>
+            <span class="r-card__meta">January 2025 · Stayed over a week</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"What a truly lovely place! From the moment you arrive, you immediately feel at home. The space is spotless, private, and beautifully maintained. The location is fantastic — close to everything, yet still peaceful."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Luay</span>
+            <span class="r-card__meta">9 years on Airbnb · August 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Our stay was fantastic. Emad responded straightaway and within an hour we were in the property. The apartment was set up in the most welcoming way. He even accommodated a later checkout to help with our schedule."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hammad</span>
+            <span class="r-card__meta">9 years on Airbnb · September 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"The apartment was clean, stylish, and matched the description perfectly. The bed was incredibly comfortable, and thoughtful touches like provided toiletries added a homey feel. I'd highly recommend this place."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Ramah</span>
+            <span class="r-card__meta">Jeddah, Saudi Arabia · July 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"انصح بها وبشده — نظيفة ومتكاملة والمضيف مرن ومتعاون. أشكره على حسن تعامله وسرعة رده. مكان الشقة جميل جداً والحي هادي والسعر في متناول الجميع. شكراً عماد."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">منيرة</span>
+            <span class="r-card__meta">المملكة العربية السعودية · أغسطس 2025</span>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Row 2 — scrolls right -->
+    <div class="guests__belt" aria-hidden="true">
+      <div class="guests__track guests__track--rev">
+
+        <article class="r-card">
+          <p class="r-card__text">"I had a great time. The place was spotless, and everything was well-prepared. The new modern furniture made me so happy. The host was generous, professional, and proactive. 10/10 without any doubt."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Bassam</span>
+            <span class="r-card__meta">August 2025 · Stayed a few nights</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Eng. Emad is an amazing and helpful person. His home is fully equipped with everything you might need, and he clearly has an eye for high-quality, efficient household items. Truly outstanding and beyond description."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hassan</span>
+            <span class="r-card__meta">Al Khobar, Saudi Arabia · August 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad was a fantastic host, super responsive. Clear instructions, always available for any request. The unit is spacious, nice setup, has a cozy feel. The bed is really nice to fall asleep into. Squeaky clean. Definitely will stay again!!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hasan</span>
+            <span class="r-card__meta">12 years on Airbnb · October 2024</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Mr Emad was very kind and made check-in super easy. The place was exactly as described — clean, comfortable, and in a great location. I would definitely come back again. Thank you for the great hospitality!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Fay</span>
+            <span class="r-card__meta">June 2025 · Stayed a few nights</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"My stay was amazing, the location is perfect and everything was exactly as described! The host is very helpful and responsive!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Yara</span>
+            <span class="r-card__meta">January 2025 · Stayed over a week</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"الغرفة جميلة ومريحة، مهتمين بكل التفاصيل، والمطبخ متكامل. شقه متكامله بموقع ممتاز ونظافه عاليه."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">أمل · فاطمة</span>
+            <span class="r-card__meta">أغسطس 2025 · مارس 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"I highly recommend this place for people looking for a clean place with new furniture in a wonderful area."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Khalifa</span>
+            <span class="r-card__meta">Doha, Qatar · August 2025</span>
+          </footer>
+        </article>
+
+        <!-- duplicate -->
+        <article class="r-card">
+          <p class="r-card__text">"I had a great time. The place was spotless, and everything was well-prepared. The new modern furniture made me so happy. The host was generous, professional, and proactive. 10/10 without any doubt."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Bassam</span>
+            <span class="r-card__meta">August 2025 · Stayed a few nights</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Eng. Emad is an amazing and helpful person. His home is fully equipped with everything you might need, and he clearly has an eye for high-quality, efficient household items. Truly outstanding and beyond description."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hassan</span>
+            <span class="r-card__meta">Al Khobar, Saudi Arabia · August 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Emad was a fantastic host, super responsive. Clear instructions, always available for any request. The unit is spacious, nice setup, has a cozy feel. The bed is really nice to fall asleep into. Squeaky clean. Definitely will stay again!!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Hasan</span>
+            <span class="r-card__meta">12 years on Airbnb · October 2024</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"Mr Emad was very kind and made check-in super easy. The place was exactly as described — clean, comfortable, and in a great location. I would definitely come back again. Thank you for the great hospitality!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Fay</span>
+            <span class="r-card__meta">June 2025 · Stayed a few nights</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"My stay was amazing, the location is perfect and everything was exactly as described! The host is very helpful and responsive!"</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Yara</span>
+            <span class="r-card__meta">January 2025 · Stayed over a week</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"الغرفة جميلة ومريحة، مهتمين بكل التفاصيل، والمطبخ متكامل. شقه متكامله بموقع ممتاز ونظافه عاليه."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">أمل · فاطمة</span>
+            <span class="r-card__meta">أغسطس 2025 · مارس 2025</span>
+          </footer>
+        </article>
+
+        <article class="r-card">
+          <p class="r-card__text">"I highly recommend this place for people looking for a clean place with new furniture in a wonderful area."</p>
+          <footer class="r-card__foot">
+            <span class="r-card__name">Khalifa</span>
+            <span class="r-card__meta">Doha, Qatar · August 2025</span>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STATISTICS — real brand numbers
+  ═══════════════════════════════════════ -->
+  <section class="stats" id="stats">
+    <div class="stats__container">
+      <div class="stats__eyebrow">
+        <p class="eyebrow">أرقامنا · By The Numbers</p>
+        <div class="stats__rule"></div>
+      </div>
+
+      <div class="stats__grid">
+        <div class="stat js-reveal">
+          <p class="stat__val"><span class="js-count" data-to="83" data-decimal=".6">0</span>%</p>
+          <p class="stat__label" lang="ar">متوسط نسبة الإشغال</p>
+          <p class="stat__label-en">Average Occupancy Rate</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.12s">
+          <p class="stat__val"><span class="js-count" data-to="96" data-decimal=".6">0</span>%</p>
+          <p class="stat__label" lang="ar">نسبة تقييم 5 نجوم</p>
+          <p class="stat__label-en">Five-Star Guest Rating</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.24s">
+          <p class="stat__val">24<span style="font-size:.5em;opacity:.7">/7</span></p>
+          <p class="stat__label" lang="ar">تلبية احتياجات العملاء</p>
+          <p class="stat__label-en">Client Support</p>
+        </div>
+        <div class="stat js-reveal" style="--d:0.36s">
+          <p class="stat__val"><span class="js-count" data-to="6">0</span></p>
+          <p class="stat__label" lang="ar">سنوات خبرة في الضيافة</p>
+          <p class="stat__label-en">Years in Hospitality</p>
+        </div>
+      </div>
+
+      <div class="d8" style="margin-top:2.5rem">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA
+  ═══════════════════════════════════════ -->
+  <section class="cta" id="contact">
+    <div class="cta__media">
+      <img
+        src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2400&q=85"
+        alt=""
+        loading="lazy"
+        aria-hidden="true">
+    </div>
+    <div class="cta__veil"></div>
+
+    <div class="cta__body js-reveal">
+      <p class="eyebrow">تواصل معنا · Begin Your Journey</p>
+      <h2 class="cta__h">
+        نسّق وقتك،<br><em>ودع التشغيل علينا</em>
+      </h2>
+      <p class="cta__sub">سواء كنت تبحث عن شريك لإدارة عقارك أو ضيفاً يبحث عن إقامة استثنائية — البيت الثامن يرحب بك.<br>Whether you're a property owner or a discerning guest, The 8th House is ready.</p>
+
+      <div class="d8" style="margin:1.5rem 0">
+        <span class="d8__line"></span>
+        <span class="d8__mark">8</span>
+        <span class="d8__line"></span>
+      </div>
+
+      <div class="cta__actions">
+        <a href="https://wa.me/966569945365" rel="noopener noreferrer" class="btn btn--pale">واتساب · +966-56-994-5365</a>
+        <a href="mailto:info@the8hhouse.sa" class="btn btn--border">info@the8hhouse.sa</a>
+      </div>
+
+      <p class="cta__ar" lang="ar">نرحب بكم</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <div class="footer__brand-words">
+              <p class="footer__logo">THE 8TH HOUSE</p>
+              <p class="footer__logo-ar" lang="ar">البيت الثامن</p>
+            </div>
+            <svg width="30" height="35" viewBox="487 394 128 148" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#8F7C56" d="M 551.5349 399.1823 L 511.5979 436.8603 L 511.5979 536.0643 L 515.6759 536.0643 L 515.6759 530.5853 L 515.5419 530.5853 L 515.5419 439.7633 L 551.5269 405.8123 L 588.2359 440.7503 L 588.2359 530.5853 L 588.1179 530.5853 L 588.1179 536.0643 L 592.1809 536.0643 L 592.1809 437.8633 Z"/>
+              <path fill="#8F7C56" d="M 552.2474 525.9358 L 544.1684 526.0188 C 542.4964 525.4318 539.6714 521.9338 537.1144 518.4708 C 536.8284 518.1548 536.8464 517.7528 536.7974 517.3418 C 536.2324 512.5808 537.1134 506.0288 536.9794 501.0908 L 548.1464 490.4488 L 542.2064 484.6928 C 537.7874 488.9568 532.9104 492.6028 528.7804 497.2438 L 528.8824 521.6098 L 539.5814 534.0078 L 564.9574 534.0078 L 575.9484 521.7268 L 575.9484 500.6028 L 574.5464 498.8588 L 537.2074 464.8018 L 537.2034 449.4648 C 538.9344 447.6818 542.5514 442.0628 544.7364 441.7198 L 561.1054 441.9298 L 567.2014 449.0908 C 566.9484 453.7338 567.7634 459.4618 567.2874 463.9688 C 567.2434 464.3808 567.2794 464.7818 566.9384 465.0608 L 554.6374 477.0098 L 559.8244 482.2558 C 560.0464 482.4568 560.2364 482.3588 560.4724 482.2828 C 561.2524 482.0338 566.9444 476.4118 568.0694 475.3208 C 569.0034 474.4148 574.8434 468.8708 574.9754 468.3478 L 574.9764 445.3588 L 564.4474 433.2268 L 540.8464 433.1308 C 540.4544 433.0828 540.1904 433.2938 539.8734 433.5038 C 539.4294 433.7968 536.5504 437.0488 535.8374 437.8108 C 534.8084 438.9108 529.1844 445.1988 529.0454 446.0368 L 529.2064 468.6048 L 567.8444 504.5238 C 567.5394 507.3738 568.6224 516.4358 567.6094 518.4638 C 567.3864 518.9108 561.6784 525.4848 561.2914 525.7428 Z"/>
+              <path fill="#8F7C56" d="M 609.2426 536.0506 L 492.7546 536.0506 L 492.7546 534.0796 L 607.8236 534.0796 L 607.8236 444.7156 L 571.3746 410.0276 L 565.5956 418.5376 L 564.3736 417.5326 L 570.9256 407.2096 L 609.2426 443.6766 Z"/>
+              <path fill="#8F7C56" d="M 494.1761 534.3636 L 494.1761 444.9996 L 530.6251 410.3116 L 536.1641 419.3226 L 537.3861 418.3186 L 531.0741 407.4936 L 492.7571 443.9606 L 492.7541 535.9506 Z"/>
+            </svg>
+          </div>
+          <p class="footer__tagline">إدارة وتشغيل الشقق السكنية المؤثثة<br>Furnished Apartment Management · Riyadh, KSA</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__col">
+            <p class="footer__col-hd">Navigate</p>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#investment">Investment</a>
+            <a href="#gallery">Collection</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-hd">تواصل</p>
+            <a href="https://instagram.com/8th.house.ksa" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/966569945365" rel="noopener noreferrer">واتساب · +966-56-994-5365</a>
+            <a href="mailto:info@the8hhouse.sa">info@the8hhouse.sa</a>
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="footer__btm">
+        <p>&copy; 2025 The 8th House. All rights reserved.</p>
+        <p lang="ar">البيت الثامن · الرياض · المملكة العربية السعودية</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

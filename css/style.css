@@ -1291,6 +1291,105 @@ body::after {
   .g-cell:nth-child(5) { grid-column: unset; }
 }
 
+/* ── GUESTS / TESTIMONIALS ───────────────────────────────────── */
+.guests {
+  padding: 6rem 0 5rem;
+  background: var(--ink-2);
+  overflow: hidden;
+}
+
+.guests__hd {
+  text-align: center;
+  padding: 0 var(--pad);
+  margin-bottom: 3.5rem;
+}
+
+.guests__h {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  direction: rtl;
+}
+
+.guests__stars {
+  font-size: 1.6rem;
+  color: var(--gold);
+  letter-spacing: .15em;
+}
+
+.guests__belt {
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.guests__track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+}
+
+.guests__track--fwd {
+  animation: scrollFwd 55s linear infinite;
+}
+
+.guests__track--rev {
+  animation: scrollRev 60s linear infinite;
+}
+
+.guests__belt:hover .guests__track { animation-play-state: paused; }
+
+@keyframes scrollFwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scrollRev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.r-card {
+  flex-shrink: 0;
+  width: 340px;
+  background: var(--ink-3);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 1.75rem 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.r-card__text {
+  font-size: .9rem;
+  line-height: 1.75;
+  color: var(--text-dim);
+  font-style: italic;
+  flex: 1;
+}
+
+.r-card__foot {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  border-top: 1px solid var(--border-pale);
+  padding-top: 1rem;
+}
+
+.r-card__name {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.r-card__meta {
+  font-size: .72rem;
+  color: var(--text-ghost);
+}
+
 /* ── STATS ───────────────────────────────────────────────────── */
 .stats {
   background: var(--purple);

@@ -536,51 +536,22 @@ ol         { list-style: none; }
   font-weight: 300;
 }
 
-.about__gallery {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 155px);
-  gap: .6rem;
-  height: clamp(340px, 55vh, 500px);
+.about__img-wrap {
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--purple-mid);
   margin-bottom: 2rem;
-  direction: ltr;
-}
-
-.about__gal-main {
-  overflow: hidden;
   border: 1px solid var(--border-gold);
-  background: var(--purple-mid);
 }
 
-.about__gal-main img {
+.about__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform .9s var(--ease);
 }
 
-.about__gal-main:hover img { transform: scale(1.04); }
-
-.about__gal-side {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-}
-
-.about__gal-sm {
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid var(--border-gold);
-  background: var(--purple-mid);
-}
-
-.about__gal-sm img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .9s var(--ease);
-}
-
-.about__gal-sm:hover img { transform: scale(1.06); }
+.about__img-wrap:hover .about__img { transform: scale(1.04); }
 
 .about__pillars {
   display: flex;
@@ -623,10 +594,7 @@ ol         { list-style: none; }
 
 @media (max-width: 860px) {
   .about__inner { grid-template-columns: 1fr; }
-  .about__gallery {
-    grid-template-columns: 1fr minmax(0, 110px);
-    height: clamp(220px, 44vw, 340px);
-  }
+  .about__img-wrap { aspect-ratio: 16/10; }
 }
 
 /* ── PROOF BAND ──────────────────────────────────────────────── */
@@ -694,14 +662,14 @@ ol         { list-style: none; }
 .property__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 300px 300px 260px;
+  grid-template-rows: 360px 260px;
   gap: .5rem;
 }
 
-/* Exterior: top-left 2×2 block */
+/* Exterior: top-left, spans 2 columns */
 .property__cell--feat {
   grid-column: 1 / 3;
-  grid-row: 1 / 3;
+  grid-row: 1;
 }
 
 /* Lounge: top-right */
@@ -752,7 +720,7 @@ ol         { list-style: none; }
 @media (max-width: 860px) {
   .property__grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 260px 200px 200px 200px;
+    grid-template-rows: 260px 200px 200px;
   }
   .property__cell--feat {
     grid-column: 1 / -1;
@@ -764,7 +732,7 @@ ol         { list-style: none; }
 @media (max-width: 480px) {
   .property__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 240px);
+    grid-template-rows: repeat(5, 230px);
   }
   .property__cell--feat { grid-column: 1; grid-row: 1; }
 }

@@ -114,4 +114,54 @@
     });
   });
 
+  /* ── LEAD MODAL ────────────────────────────────────────────── */
+  var lm        = document.getElementById('leadModal');
+  var lmOpen    = document.getElementById('openLead');
+  var lmClose   = document.getElementById('lmClose');
+  var lmOverlay = document.getElementById('lmOverlay');
+
+  var contactInput = document.getElementById('lm-contact');
+  var contactLabel = document.getElementById('lm-contact-label');
+
+  var contactHints = {
+    'واتساب': { label: 'رقم الواتساب', placeholder: '05xxxxxxxx' },
+    'مكالمة': { label: 'رقم الجوال',   placeholder: '05xxxxxxxx' },
+    'إيميل':  { label: 'البريد الإلكتروني', placeholder: 'example@email.com' }
+  };
+
+  function openModal() {
+    if (!lm) return;
+    lm.classList.add('open');
+    lm.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { lm.querySelector('.lm__close').focus(); }, 50);
+  }
+
+  function closeModal() {
+    if (!lm) return;
+    lm.classList.remove('open');
+    lm.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lmOpen) lmOpen.focus();
+  }
+
+  if (lmOpen)    lmOpen.addEventListener('click', openModal);
+  if (lmClose)   lmClose.addEventListener('click', closeModal);
+  if (lmOverlay) lmOverlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lm && lm.classList.contains('open')) closeModal();
+  });
+
+  /* update contact field label/placeholder based on method */
+  document.querySelectorAll('input[name="وسيلة_التواصل"]').forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      var hint = contactHints[this.value];
+      if (!hint || !contactLabel || !contactInput) return;
+      contactLabel.textContent  = hint.label;
+      contactInput.placeholder  = hint.placeholder;
+      contactInput.type = this.value === 'إيميل' ? 'email' : 'tel';
+    });
+  });
+
 })();

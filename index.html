@@ -94,12 +94,17 @@
         <span class="hero__sub-rest">IN OPERATING FURNISHED APARTMENTS</span>
       </p>
 
-      <a href="#contact" class="hero__cta">
-        ابدأ الشراكة
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <div class="hero__actions">
+        <a href="#contact" class="hero__cta">
+          ابدأ الشراكة
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="hero__cta hero__cta--outline" id="openLead" type="button">
+          سجّل عقارك
+        </button>
+      </div>
     </div>
 
     <div class="hero__scroll" aria-hidden="true">
@@ -865,6 +870,162 @@
       <p lang="en">Riyadh, Kingdom of Saudi Arabia</p>
     </div>
   </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       LEAD MODAL
+  ══════════════════════════════════════════════════════ -->
+  <div class="lm" id="leadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lm-title">
+    <div class="lm__overlay" id="lmOverlay"></div>
+    <div class="lm__box" role="document">
+
+      <button class="lm__close" id="lmClose" aria-label="إغلاق النافذة">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="lm__head">
+        <p class="lm__eyebrow" lang="en">PROPERTY INQUIRY</p>
+        <h2 class="lm__title" id="lm-title">أخبرنا عن عقارك</h2>
+        <p class="lm__sub">سنتواصل معك بأقرب وقت</p>
+      </div>
+
+      <form class="lm__form"
+            action="https://formsubmit.co/Dhuha.almarzuqi@hotmail.com"
+            method="POST">
+
+        <input type="hidden" name="_subject"  value="طلب جديد — البيت الثامن">
+        <input type="hidden" name="_captcha"  value="false">
+        <input type="hidden" name="_template" value="box">
+
+        <!-- نوع الوحدة -->
+        <fieldset class="lm__fieldset">
+          <legend class="lm__legend">نوع الوحدة</legend>
+          <div class="lm__type-cards">
+            <label class="lm__type-card">
+              <input type="radio" name="نوع_الوحدة" value="مؤثثة" required>
+              <span class="lm__type-inner">
+                <span class="lm__type-ar">مؤثثة</span>
+                <span class="lm__type-en">Furnished</span>
+              </span>
+            </label>
+            <label class="lm__type-card">
+              <input type="radio" name="نوع_الوحدة" value="غير مؤثثة">
+              <span class="lm__type-inner">
+                <span class="lm__type-ar">غير مؤثثة</span>
+                <span class="lm__type-en">Unfurnished</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- عدد الشقق -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-count">عدد الشقق</label>
+          <input class="lm__input" type="number" id="lm-count" name="عدد_الشقق"
+                 min="1" max="999" placeholder="مثال: 3" required>
+        </div>
+
+        <!-- الحي -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-nbhd">الحي · الرياض</label>
+          <select class="lm__select" id="lm-nbhd" name="الحي" required>
+            <option value="" disabled selected>اختر الحي</option>
+            <optgroup label="شمال الرياض">
+              <option>الملقا</option>
+              <option>النرجس</option>
+              <option>العليا</option>
+              <option>حطين</option>
+              <option>الياسمين</option>
+              <option>الغدير</option>
+              <option>القيروان</option>
+              <option>الرحمانية</option>
+              <option>العقيق</option>
+              <option>الإزدهار</option>
+              <option>الصحافة</option>
+              <option>المحمدية</option>
+              <option>قرطبة</option>
+            </optgroup>
+            <optgroup label="وسط الرياض">
+              <option>السفارات</option>
+              <option>الورود</option>
+              <option>العزيزية</option>
+              <option>الروضة</option>
+              <option>الحمراء</option>
+              <option>المنصورة</option>
+              <option>النزهة</option>
+              <option>الفلاح</option>
+              <option>الفيحاء</option>
+              <option>السليمانية</option>
+              <option>الوزارات</option>
+              <option>المربع</option>
+            </optgroup>
+            <optgroup label="شرق الرياض">
+              <option>الخليج</option>
+              <option>الربوة</option>
+              <option>النسيم</option>
+              <option>المشاعل</option>
+            </optgroup>
+            <optgroup label="غرب الرياض">
+              <option>لبن</option>
+              <option>عرقة</option>
+              <option>الشهداء</option>
+              <option>الحزم</option>
+              <option>الرمال</option>
+            </optgroup>
+            <optgroup label="جنوب الرياض">
+              <option>بدر</option>
+              <option>الحائر</option>
+              <option>عكاظ</option>
+              <option>الشعلة</option>
+            </optgroup>
+            <option value="أخرى">حي آخر</option>
+          </select>
+        </div>
+
+        <!-- الاسم -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-name">الاسم</label>
+          <input class="lm__input" type="text" id="lm-name" name="الاسم"
+                 placeholder="اسمك الكريم" required autocomplete="name">
+        </div>
+
+        <!-- وسيلة التواصل -->
+        <fieldset class="lm__fieldset">
+          <legend class="lm__legend">وسيلة التواصل المفضلة</legend>
+          <div class="lm__radios">
+            <label class="lm__radio">
+              <input type="radio" name="وسيلة_التواصل" value="واتساب" id="lm-wa" checked>
+              <span>واتساب</span>
+            </label>
+            <label class="lm__radio">
+              <input type="radio" name="وسيلة_التواصل" value="مكالمة" id="lm-call">
+              <span>مكالمة</span>
+            </label>
+            <label class="lm__radio">
+              <input type="radio" name="وسيلة_التواصل" value="إيميل" id="lm-email">
+              <span>إيميل</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- رقم / إيميل -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-contact" id="lm-contact-label">رقم الجوال</label>
+          <input class="lm__input" type="text" id="lm-contact" name="بيانات_التواصل"
+                 placeholder="05xxxxxxxx" required autocomplete="tel">
+        </div>
+
+        <button class="lm__submit" type="submit">
+          إرسال الطلب
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+      </form>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

@@ -21,7 +21,7 @@
   --gold-rule-dk:  rgba(197,165,114,.12);
 
   --off-white:     #F5F1EB;
-  --text-muted:    rgba(245,241,235,.7);
+  --text-muted:    rgba(245,241,235,.82);
   --text-ghost:    rgba(245,241,235,.35);
 
   --border-gold:   rgba(197,165,114,.2);
@@ -478,7 +478,7 @@ ol         { list-style: none; }
 /* ── ABOUT (من نحن) ──────────────────────────────────────────── */
 .about {
   position: relative;
-  background: linear-gradient(180deg, var(--purple-deep) 0%, var(--midnight) 100%);
+  background: linear-gradient(180deg, var(--purple-royal) 0%, var(--purple-mid) 100%);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -491,7 +491,7 @@ ol         { list-style: none; }
   background-size: cover;
   background-position: center;
   mix-blend-mode: multiply;
-  opacity: .35;
+  opacity: .18;
   pointer-events: none;
   z-index: 0;
 }
@@ -636,7 +636,7 @@ ol         { list-style: none; }
 
 /* ── PROPERTY GALLERY (مساحاتنا) ────────────────────────────── */
 .property {
-  background: linear-gradient(180deg, var(--midnight) 0%, var(--purple-deep) 50%, var(--midnight) 100%);
+  background: linear-gradient(180deg, var(--purple-mid) 0%, var(--purple-royal) 50%, var(--purple-mid) 100%);
   padding: var(--sec) var(--pad);
 }
 
@@ -835,7 +835,7 @@ ol         { list-style: none; }
 /* ── WHY (لماذا نحن) ─────────────────────────────────────────── */
 .why {
   position: relative;
-  background: linear-gradient(180deg, var(--purple-deep) 0%, var(--midnight) 100%);
+  background: linear-gradient(180deg, var(--purple-royal) 0%, var(--purple-lift) 100%);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -848,7 +848,7 @@ ol         { list-style: none; }
   background-size: cover;
   background-position: center;
   mix-blend-mode: multiply;
-  opacity: .25;
+  opacity: .14;
   pointer-events: none;
 }
 
@@ -877,7 +877,7 @@ ol         { list-style: none; }
 
 .why__stat {
   padding: 2.25rem 1.5rem;
-  background: rgba(26,11,46,.9);
+  background: rgba(43,21,86,.7);
   text-align: center;
   transition: background .35s ease;
 }
@@ -1029,7 +1029,7 @@ ol         { list-style: none; }
 .quote {
   flex-shrink: 0;
   width: 320px;
-  background: rgba(26,11,46,.85);
+  background: rgba(43,21,86,.75);
   border: 1px solid var(--border-gold);
   border-top: 1px solid var(--gold);
   border-radius: 4px;
@@ -1077,7 +1077,7 @@ ol         { list-style: none; }
 /* ── CONTACT (تواصل معنا) ────────────────────────────────────── */
 .contact {
   position: relative;
-  background: linear-gradient(135deg, var(--purple-royal) 0%, var(--purple-deep) 60%, var(--midnight) 100%);
+  background: linear-gradient(135deg, var(--purple-lift) 0%, var(--purple-royal) 55%, var(--purple-mid) 100%);
   padding: var(--sec) var(--pad);
   text-align: center;
   overflow: hidden;

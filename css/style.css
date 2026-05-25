@@ -853,7 +853,6 @@ ol         { list-style: none; }
 .property__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: clamp(200px, 26vw, 360px);
   gap: .6rem;
 }
 
@@ -865,6 +864,7 @@ ol         { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 4 / 3;
   transition: border-color .35s ease;
 }
 

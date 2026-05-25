@@ -662,17 +662,9 @@ ol         { list-style: none; }
 .property__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  gap: .5rem;
+  grid-template-rows: clamp(260px, 38vw, 440px);
+  gap: .75rem;
 }
-
-/* Bedroom spans 2 rows on the left */
-.property__grid .property__cell:nth-child(1) {
-  grid-row: 1 / 3;
-}
-
-/* Lounge: top-right */
-/* grid auto-placement handles cells 2-6 */
 
 .property__cell {
   position: relative;
@@ -716,12 +708,31 @@ ol         { list-style: none; }
   transform: translateY(0);
 }
 
+.property__rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.property__rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-rule), transparent);
+}
+
+.property__rule-gem {
+  color: var(--gold-dim);
+  font-size: .7rem;
+  letter-spacing: .15em;
+  flex-shrink: 0;
+}
+
 @media (max-width: 860px) {
   .property__grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 240px);
+    grid-template-rows: clamp(200px, 40vw, 280px);
   }
-  .property__grid .property__cell:nth-child(1) { grid-row: 1; }
   .property__lbl { opacity: 1; transform: none; }
 }
 

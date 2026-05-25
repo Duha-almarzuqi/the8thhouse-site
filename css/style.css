@@ -61,6 +61,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: lining-nums;
   text-rendering: optimizeLegibility;
 }
 
@@ -579,6 +580,8 @@ ol         { list-style: none; }
   color: var(--text-primary);
   line-height: 1;
   letter-spacing: -.02em;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .about__pillar-name {
@@ -661,30 +664,46 @@ ol         { list-style: none; }
   margin-top: .6rem;
 }
 
+.property__frame {
+  border: 1px solid rgba(197,165,114,.35);
+  padding: .85rem;
+  background: var(--warm-white);
+  box-shadow: 0 2px 28px rgba(43,21,86,.06);
+  border-radius: 4px;
+}
+
 .property__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: clamp(260px, 38vw, 440px);
-  gap: .75rem;
+  grid-auto-rows: clamp(200px, 26vw, 360px);
+  gap: .6rem;
 }
 
 .property__cell {
   position: relative;
   overflow: hidden;
-  background: var(--warm-beige);
-  border: 1px solid var(--border-gold);
+  background: var(--warm-white);
+  border: 1px solid rgba(197,165,114,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .35s ease;
+}
+
+.property__cell:hover {
+  border-color: rgba(197,165,114,.4);
 }
 
 .property__cell img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 1.1s var(--ease);
+  object-fit: contain;
+  transition: opacity .4s ease;
   display: block;
 }
 
 .property__cell:hover img {
-  transform: scale(1.06);
+  opacity: .88;
 }
 
 .property__lbl {
@@ -733,7 +752,7 @@ ol         { list-style: none; }
 @media (max-width: 860px) {
   .property__grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: clamp(200px, 40vw, 280px);
+    grid-auto-rows: clamp(160px, 35vw, 260px);
   }
   .property__lbl { opacity: 1; transform: none; }
 }
@@ -741,7 +760,7 @@ ol         { list-style: none; }
 @media (max-width: 480px) {
   .property__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 260px);
+    grid-auto-rows: clamp(200px, 75vw, 320px);
   }
 }
 
@@ -892,6 +911,8 @@ ol         { list-style: none; }
   align-items: baseline;
   justify-content: center;
   gap: .1em;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .why__stat-label {

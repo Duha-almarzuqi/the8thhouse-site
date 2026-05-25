@@ -536,23 +536,53 @@ ol         { list-style: none; }
   font-weight: 300;
 }
 
-.about__img-wrap {
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  background: var(--purple-mid);
+.about__gallery {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 155px);
+  gap: .6rem;
+  height: clamp(340px, 55vh, 500px);
   margin-bottom: 2rem;
-  border: 1px solid var(--border-gold);
+  direction: ltr;
 }
 
-.about__img {
+.about__gal-main {
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  background: var(--purple-mid);
+}
+
+.about__gal-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: .88;
   transition: transform .9s var(--ease);
-  opacity: .85;
 }
 
-.about__img-wrap:hover .about__img { transform: scale(1.04); }
+.about__gal-main:hover img { transform: scale(1.04); }
+
+.about__gal-side {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.about__gal-sm {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  background: var(--purple-mid);
+}
+
+.about__gal-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .88;
+  transition: transform .9s var(--ease);
+}
+
+.about__gal-sm:hover img { transform: scale(1.06); }
 
 .about__pillars {
   display: flex;
@@ -595,7 +625,10 @@ ol         { list-style: none; }
 
 @media (max-width: 860px) {
   .about__inner { grid-template-columns: 1fr; }
-  .about__img-wrap { aspect-ratio: 16/10; }
+  .about__gallery {
+    grid-template-columns: 1fr minmax(0, 110px);
+    height: clamp(220px, 44vw, 340px);
+  }
 }
 
 /* ── PROOF BAND ──────────────────────────────────────────────── */

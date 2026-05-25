@@ -93,7 +93,7 @@ ol         { list-style: none; }
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--text-primary);
   outline-offset: 3px;
 }
 
@@ -527,9 +527,6 @@ ol         { list-style: none; }
   overflow: hidden;
 }
 
-.about::before {
-  display: none;
-}
 
 .about__inner {
   position: relative;
@@ -736,6 +733,7 @@ ol         { list-style: none; }
 
 .values__card:hover {
   background: var(--warm-white);
+  box-shadow: inset 0 0 0 1px rgba(197,165,114,.25);
 }
 
 .values__gem {
@@ -977,7 +975,11 @@ ol         { list-style: none; }
   transition: background .35s ease;
 }
 
-.svc:hover { background: rgba(43,21,86,.025); }
+.svc:hover {
+  background: rgba(43,21,86,.025);
+  padding-right: .35rem;
+  transition: background .35s ease, padding-right .35s var(--ease);
+}
 
 .svc__no {
   font-size: .58rem;
@@ -1210,7 +1212,7 @@ ol         { list-style: none; }
 .journey__steps::before {
   content: '';
   position: absolute;
-  right: 1.35rem;
+  right: 1.375rem;
   top: 2rem;
   bottom: 2rem;
   width: 1px;
@@ -1224,6 +1226,17 @@ ol         { list-style: none; }
   padding: 1.75rem 0;
   align-items: start;
   position: relative;
+  transition: opacity .3s ease;
+}
+
+.journey__steps:hover .journey__step { opacity: .55; }
+.journey__steps:hover .journey__step:hover { opacity: 1; }
+
+.journey__step:hover .journey__num {
+  border-color: rgba(197,165,114,.7);
+  background: var(--cream);
+  color: var(--text-primary);
+  transition: border-color .3s ease, background .3s ease, color .3s ease;
 }
 
 .journey__num {
@@ -1258,6 +1271,18 @@ ol         { list-style: none; }
   line-height: 1.85;
   color: var(--text-secondary);
   font-weight: 400;
+}
+
+@media (max-width: 480px) {
+  .journey__inner { max-width: 100%; }
+  .journey__steps::before { right: 1.25rem; }
+  .journey__step { gap: 1rem; padding: 1.4rem 0; }
+  .journey__num { width: 2.5rem; height: 2.5rem; font-size: .52rem; }
+}
+
+@media (max-width: 600px) {
+  .essence__ar { font-size: .95rem; padding: 1.4rem 0; }
+  .essence__en { font-size: .78rem; }
 }
 
 /* ── TESTIMONIALS (آراء العملاء) ─────────────────────────────── */
@@ -1492,8 +1517,8 @@ ol         { list-style: none; }
 }
 
 .contact__btn--primary:hover {
-  background: #3D1F73;
-  border-color: #3D1F73;
+  background: var(--purple-mid);
+  border-color: var(--purple-mid);
 }
 
 .contact__btn--ghost {

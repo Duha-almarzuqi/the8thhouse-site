@@ -1176,6 +1176,90 @@ ol         { list-style: none; }
   .why__grid { grid-template-columns: 1fr; }
 }
 
+/* ── CUSTOMER JOURNEY (رحلة العميل) ─────────────────────────── */
+.journey {
+  background: var(--cream);
+  padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
+}
+
+.journey__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  direction: rtl;
+}
+
+.journey__hd {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.journey__h {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: .02em;
+  margin-top: .4rem;
+}
+
+.journey__steps {
+  list-style: none;
+  position: relative;
+}
+
+.journey__steps::before {
+  content: '';
+  position: absolute;
+  right: 1.35rem;
+  top: 2rem;
+  bottom: 2rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(197,165,114,.3) 10%, rgba(197,165,114,.3) 90%, transparent);
+}
+
+.journey__step {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  align-items: start;
+  position: relative;
+}
+
+.journey__num {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(197,165,114,.4);
+  background: var(--warm-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  color: var(--gold-dim);
+  flex-shrink: 0;
+  direction: ltr;
+  position: relative;
+  z-index: 1;
+}
+
+.journey__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: .45rem;
+  line-height: 1.3;
+}
+
+.journey__desc {
+  font-size: .88rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
 /* ── TESTIMONIALS (آراء العملاء) ─────────────────────────────── */
 .testimonials {
   background: var(--warm-white);

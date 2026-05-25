@@ -1016,6 +1016,31 @@ ol         { list-style: none; }
   font-weight: 400;
 }
 
+.svc__bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.svc__bullets li {
+  font-size: .87rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 400;
+  padding-right: 1.1rem;
+  position: relative;
+}
+
+.svc__bullets li::before {
+  content: '◇';
+  position: absolute;
+  right: 0;
+  top: .05em;
+  font-size: .5rem;
+  color: var(--gold-dim);
+}
+
 @media (max-width: 860px) {
   .services__inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }

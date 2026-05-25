@@ -103,7 +103,7 @@ ol         { list-style: none; }
   align-items: center;
   gap: .75rem;
   font-size: .58rem;
-  letter-spacing: .12em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   font-weight: 400;
   color: var(--text-muted);
@@ -381,7 +381,7 @@ ol         { list-style: none; }
   align-items: center;
   gap: .75rem;
   font-size: .58rem;
-  letter-spacing: .12em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 2.5rem;
@@ -438,17 +438,32 @@ ol         { list-style: none; }
   gap: .25em;
 }
 
+.hero__eight {
+  display: block;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: .05em;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeIn .5s 1s ease forwards;
+  direction: ltr;
+}
+
 .hero__sub-main {
   color: var(--text-primary);
   font-size: 1em;
-  font-weight: 400;
-  letter-spacing: .03em;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
 }
 
 .hero__sub-rest {
   color: var(--text-muted);
-  font-size: .88em;
+  font-size: .82em;
   font-weight: 300;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 .hero__cta {
@@ -656,8 +671,9 @@ ol         { list-style: none; }
 
 .vm__en {
   font-size: .55rem;
-  letter-spacing: .14em;
+  letter-spacing: .2em;
   text-transform: uppercase;
+  font-weight: 300;
   color: var(--gold-dim);
   margin-bottom: .5rem;
   direction: ltr;
@@ -982,10 +998,10 @@ ol         { list-style: none; }
 }
 
 .svc__no {
-  font-size: .58rem;
-  font-weight: 400;
-  letter-spacing: .06em;
-  color: var(--gold-dim);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--gold);
   padding-top: .4rem;
   text-align: center;
   direction: ltr;
@@ -1002,9 +1018,10 @@ ol         { list-style: none; }
 }
 
 .svc__sub {
-  font-size: .82rem;
+  font-size: .58rem;
   font-weight: 300;
-  letter-spacing: .015em;
+  letter-spacing: .18em;
+  text-transform: uppercase;
   color: var(--gold-dim);
   margin-bottom: .9rem;
   direction: ltr;

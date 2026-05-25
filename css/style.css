@@ -634,6 +634,63 @@ ol         { list-style: none; }
   .about__img-wrap { aspect-ratio: 16/10; }
 }
 
+/* ── VISION & MISSION ────────────────────────────────────────── */
+.vm {
+  background: var(--cream);
+  padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
+}
+
+.vm__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+  direction: rtl;
+}
+
+.vm__div {
+  background: linear-gradient(to bottom, transparent, rgba(197,165,114,.3) 30%, rgba(197,165,114,.3) 70%, transparent);
+  align-self: stretch;
+  min-height: 180px;
+}
+
+.vm__en {
+  font-size: .55rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: .5rem;
+  direction: ltr;
+  text-align: right;
+}
+
+.vm__h {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: .02em;
+  line-height: 1.3;
+}
+
+.vm__body {
+  font-size: .92rem;
+  line-height: 1.95;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .vm__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .vm__div { display: none; }
+}
+
 /* ── PROOF BAND ──────────────────────────────────────────────── */
 .proof-band {
   background: var(--warm-beige);

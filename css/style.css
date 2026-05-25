@@ -555,7 +555,6 @@ ol         { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .88;
   transition: transform .9s var(--ease);
 }
 
@@ -578,7 +577,6 @@ ol         { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .88;
   transition: transform .9s var(--ease);
 }
 
@@ -720,14 +718,12 @@ ol         { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .92;
-  transition: transform 1.1s var(--ease), opacity .4s;
+  transition: transform 1.1s var(--ease);
   display: block;
 }
 
 .property__cell:hover img {
   transform: scale(1.06);
-  opacity: 1;
 }
 
 .property__lbl {

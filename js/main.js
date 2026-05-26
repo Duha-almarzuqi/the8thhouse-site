@@ -207,7 +207,7 @@
     var query = q.trim();
     var anyVisible = false;
     nbhdOpts.forEach(function (opt) {
-      var match = !query || opt.textContent.includes(query);
+      var match = !query || opt.textContent.toLowerCase().includes(query.toLowerCase());
       opt.hidden = !match;
       if (match) anyVisible = true;
     });

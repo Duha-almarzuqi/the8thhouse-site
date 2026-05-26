@@ -238,18 +238,52 @@
     if (nbhdWidget && !nbhdWidget.contains(e.target)) nbhdClose();
   });
 
-  /* ── FORM VALIDATION: require neighbourhood ────────────────── */
-  var lmForm = document.querySelector('.lm__form');
+  /* ── GOOGLE SHEETS FORM SUBMIT ─────────────────────────────── */
+  var SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+  var lmForm   = document.querySelector('.lm__form');
+  var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;
+  var lmBox    = document.querySelector('.lm__box');
+
+  function showSuccess() {
+    if (!lmBox) return;
+    lmBox.innerHTML =
+      '<div class="lm__done">' +
+        '<div class="lm__done-icon">✓</div>' +
+        '<h3 class="lm__done-title">تم استلام طلبك</h3>' +
+        '<p class="lm__done-sub">سنتواصل معك بأقرب وقت</p>' +
+        '<button class="lm__submit" style="margin-top:1.5rem" onclick="document.getElementById(\'leadModal\').classList.remove(\'open\');document.body.style.overflow=\'\'">إغلاق</button>' +
+      '</div>';
+  }
+
   if (lmForm) {
     lmForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      /* validate neighbourhood */
       if (nbhdValInp && !nbhdValInp.value) {
-        e.preventDefault();
         if (nbhdTrigger) {
           nbhdTrigger.style.borderColor = '#c0392b';
           nbhdOpen();
           setTimeout(function () { nbhdTrigger.style.borderColor = ''; }, 2000);
         }
+        return;
       }
+
+      /* collect data */
+      var fd = new FormData(lmForm);
+      var params = new URLSearchParams(fd);
+
+      /* disable button while sending */
+      if (lmSubmit) { lmSubmit.disabled = true; lmSubmit.textContent = 'جاري الإرسال...'; }
+
+      fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: params })
+        .then(function () { showSuccess(); })
+        .catch(function () {
+          /* even with no-cors the fetch resolves — this handles network failures */
+          if (lmSubmit) { lmSubmit.disabled = false; lmSubmit.textContent = 'إرسال الطلب'; }
+          alert('حدث خطأ، يرجى المحاولة مرة أخرى.');
+        });
     });
   }
 

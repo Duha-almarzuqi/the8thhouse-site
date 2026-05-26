@@ -383,6 +383,17 @@ html[lang="en"] .footer__nav        { direction: ltr; }
 html[lang="en"] .footer__inner      { direction: ltr; }
 html[lang="en"] .footer__btm        { direction: ltr; }
 html[lang="en"] .lm__eyebrow        { text-align: left; }
+/* lead modal full LTR flip */
+html[lang="en"] .lm__box            { direction: ltr; }
+html[lang="en"] .lm__close          { left: auto; right: 1.25rem; }
+html[lang="en"] .lm__title          { text-align: center; }
+html[lang="en"] .lm__sub            { text-align: center; }
+html[lang="en"] .lm__legend         { text-align: left; }
+html[lang="en"] .lm__label          { text-align: left; }
+html[lang="en"] .lm__input,
+html[lang="en"] .lm__select         { direction: ltr; text-align: left; }
+html[lang="en"] .nbhd               { direction: ltr; }
+html[lang="en"] .nbhd__search       { direction: ltr; text-align: left; }
 html[lang="en"] .lm__type-en   {
   font-size: .9rem;
   font-weight: 700;

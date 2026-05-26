@@ -339,7 +339,7 @@ html[lang="ar"] .hero__eight      { margin-bottom: 3rem; }
 html[lang="en"] .hero__sub        { text-align: left; direction: ltr; }
 html[lang="en"] .about__inner  { direction: ltr; }
 html[lang="en"] .about__lead   { direction: ltr; text-align: left; }
-html[lang="en"] .about__h      { text-align: left; max-width: 56ch; }
+html[lang="en"] .about__h      { text-align: left; }
 html[lang="en"] .footer__nav   { direction: ltr; }
 html[lang="en"] .lm__eyebrow   { text-align: left; }
 html[lang="en"] .lm__type-en   {
@@ -675,12 +675,13 @@ html[lang="en"] .lm__type-en   {
 .about__lead { direction: rtl; }
 
 .about__h {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: .02em;
   color: var(--text-primary);
   margin-bottom: 2rem;
+  max-width: 56ch;
 }
 
 .about__body {
@@ -840,11 +841,14 @@ html[lang="en"] .lm__type-en   {
 }
 
 .values__h {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   color: var(--text-primary);
   letter-spacing: .02em;
   margin-top: .4rem;
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .values__grid {
@@ -952,11 +956,14 @@ html[lang="en"] .lm__type-en   {
 }
 
 .property__h {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   color: var(--text-primary);
   line-height: 1.3;
   margin-top: .6rem;
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .property__frame {
@@ -1086,7 +1093,7 @@ html[lang="en"] .lm__type-en   {
 .services__hd { direction: rtl; }
 
 .services__h {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: .02em;
@@ -1260,7 +1267,7 @@ html[lang="en"] .lm__type-en   {
 .why__col-points { direction: rtl; }
 
 .why__h {
-  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   line-height: 1.3;
   letter-spacing: .02em;
@@ -1331,11 +1338,14 @@ html[lang="en"] .lm__type-en   {
 }
 
 .journey__h {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   color: var(--text-primary);
   letter-spacing: .02em;
   margin-top: .4rem;
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .journey__steps {
@@ -1434,11 +1444,14 @@ html[lang="en"] .lm__type-en   {
 }
 
 .testimonials__h {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 300;
   letter-spacing: .02em;
   color: var(--text-primary);
   margin-bottom: .75rem;
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonials__stars {
@@ -1554,10 +1567,11 @@ html[lang="en"] .lm__type-en   {
 }
 
 .essence__h {
-  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: 300;
   color: var(--text-primary);
   letter-spacing: .03em;
+  max-width: 65ch;
 }
 
 .essence__ar {
@@ -1610,7 +1624,7 @@ html[lang="en"] .lm__type-en   {
 .contact__inner .label { justify-content: center; }
 
 .contact__h {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: .02em;

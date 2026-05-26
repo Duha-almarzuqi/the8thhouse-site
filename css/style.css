@@ -341,6 +341,7 @@ html[lang="ar"] .hero__title-rest { color: var(--warm-white); font-size: .82em; 
 html[lang="en"] .hero__body       { direction: ltr; text-align: left; }
 html[lang="en"] .hero__sub        { text-align: left; direction: ltr; }
 html[lang="en"] .hero__actions    { justify-content: flex-start; }
+html[lang="en"] .hero__cta svg    { transform: scaleX(-1); }
 html[lang="en"] .about__inner    { direction: ltr; }
 html[lang="en"] .about__lead     { direction: ltr; text-align: left; }
 html[lang="en"] .about__pillars  { direction: ltr; }

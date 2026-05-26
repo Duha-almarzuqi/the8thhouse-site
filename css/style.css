@@ -333,7 +333,7 @@ html[lang="ar"] .lm__type-en     { display: none; }
 
 /* ── i18n layout direction ───────────────────────────────────── */
 html[lang="ar"] .hero__title      { font-size: clamp(1.1rem, 2.2vw, 1.9rem); letter-spacing: .06em; }
-html[lang="ar"] .hero__title-main { color: var(--cream); }
+html[lang="ar"] .hero__title-main { color: var(--purple-royal); }
 html[lang="ar"] .hero__title-rest { color: var(--warm-beige); font-size: .82em; }
 html[lang="ar"] .hero__eight      { margin-bottom: 3rem; }
 html[lang="en"] .hero__body       { direction: ltr; text-align: left; }

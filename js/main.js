@@ -286,7 +286,7 @@
   }
 
   /* update contact field label/placeholder based on method */
-  document.querySelectorAll('input[name="وسيلة_التواصل"]').forEach(function (radio) {
+  document.querySelectorAll('input[name="entry.25795692"]').forEach(function (radio) {
     radio.addEventListener('change', function () {
       var hint = contactHints[this.value];
       if (!hint || !contactLabel || !contactInput) return;

@@ -521,13 +521,12 @@ html[lang="en"] .lm__type-en   {
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--purple-royal);
-  background: var(--cream);
-  padding: .4rem .9rem;
-  border-radius: 2rem;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeUp .7s .5s var(--ease) forwards;
 }
+
+.hero__label-city  { color: var(--cream); }
 
 .hero__rule {
   display: inline-block;

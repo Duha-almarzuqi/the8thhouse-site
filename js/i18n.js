@@ -9,7 +9,8 @@
       nav_testimonials: 'آراء العملاء',
       nav_cta:          'تواصل معنا',
 
-      hero_label:       'الرياض · منذ 2019',
+      hero_label_city:  'الرياض',
+      hero_label_since: ' · منذ 2019',
       hero_title_main:  'شريككم الاستراتيجي',
       hero_title_rest:  'في تشغيل الشقق المؤثثة',
       hero_cta_start:   'ابدأ الشراكة',
@@ -141,7 +142,8 @@
       nav_testimonials: 'Guest Reviews',
       nav_cta:          'Contact Us',
 
-      hero_label:       'Riyadh · Since 2019',
+      hero_label_city:  'Riyadh',
+      hero_label_since: ' · Since 2019',
       hero_title_main:  'Your Strategic Partner',
       hero_title_rest:  'in Operating Furnished Apartments',
       hero_cta_start:   'Begin Partnership',

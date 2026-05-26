@@ -267,6 +267,105 @@
     }
   };
 
+  var NBHD = {
+    'الملقا':              'Al Malqa',
+    'النرجس':             'Al Narjis',
+    'العليا':              'Al Olaya',
+    'حطين':               'Hittin',
+    'الياسمين':           'Al Yasmin',
+    'الغدير':             'Al Ghadir',
+    'القيروان':           'Al Qirawan',
+    'الرحمانية':          'Al Rahmaniyah',
+    'العقيق':             'Al Aqiq',
+    'الإزدهار':           'Al Izdihar',
+    'الصحافة':            'Al Sahafa',
+    'المحمدية':           'Al Muhammadiyah',
+    'قرطبة':              'Qurtuba',
+    'الندى':              'Al Nada',
+    'الخزامى':            'Al Khuzama',
+    'العارض':             'Al Arid',
+    'الجنادرية':          'Al Janadriyah',
+    'النخيل':             'Al Nakhil',
+    'الربيع':             'Al Rabie',
+    'الريان':             'Al Rayan',
+    'الأندلس':            'Al Andalus',
+    'إشبيلية':            'Ishbiliyah',
+    'المرجان':            'Al Murjan',
+    'الجوهرة':            'Al Jawharah',
+    'الواحة':             'Al Waha',
+    'البساتين':           'Al Basatin',
+    'الوادي':             'Al Wadi',
+    'المنار':             'Al Manar',
+    'السفارات':           'Al Safarat',
+    'الورود':             'Al Wurud',
+    'العزيزية':           'Al Aziziyah',
+    'الروضة':             'Al Rawdah',
+    'الحمراء':            'Al Hamra',
+    'المنصورة':           'Al Mansura',
+    'النزهة':             'Al Nuzha',
+    'الفلاح':             'Al Falah',
+    'الفيحاء':            'Al Fayha',
+    'السليمانية':         'Al Sulaymaniyah',
+    'الوزارات':           'Al Wizarat',
+    'المربع':             'Al Muraba',
+    'الملز':              'Al Malaz',
+    'المروج':             'Al Muruj',
+    'الزهرة':             'Al Zahrah',
+    'الفيصلية':           'Al Faisaliyah',
+    'صلاح الدين':         'Salah Al-Din',
+    'اليرموك':            'Al Yarmouk',
+    'القادسية':           'Al Qadisiyah',
+    'الضباط':             'Al Dubat',
+    'المرسلات':           'Al Mursalat',
+    'المصيف':             'Al Masif',
+    'الناصرية':           'Al Nasriyah',
+    'الفرسان':            'Al Fursan',
+    'الكوثر':             'Al Kawthar',
+    'المعذر':             'Al Muadhar',
+    'الخليج':             'Al Khalij',
+    'الربوة':             'Al Rabwah',
+    'النسيم':             'Al Naseem',
+    'المشاعل':            'Al Mashaiel',
+    'الشفاء':             'Al Shifa',
+    'الرماية':            'Al Rimayah',
+    'النهضة':             'Al Nahdah',
+    'الحناء':             'Al Hana',
+    'أم الحمام الشرقي':  'Umm Al Hamam East',
+    'البديعة':            'Al Badeah',
+    'المعادن':            'Al Maadn',
+    'لبن':                'Laban',
+    'عرقة':               'Arqa',
+    'الشهداء':            'Al Shuhada',
+    'الحزم':              'Al Hazm',
+    'الرمال':             'Al Rimal',
+    'طويق':               'Tuwaiq',
+    'ديراب':              'Dirab',
+    'الدار البيضاء':      'Al Dar Al Baida',
+    'أم الحمام الغربي':  'Umm Al Hamam West',
+    'الثليم':             'Al Thulaim',
+    'المهدية':            'Al Muhaidib',
+    'نمار':               'Namar',
+    'الرفيعة':            'Al Rafiah',
+    'بدر':                'Badr',
+    'الحائر':             'Al Haer',
+    'عكاظ':               'Okaz',
+    'الشعلة':             'Al Shuala',
+    'منفوحة':             'Manfuhah',
+    'منفوحة الجديدة':    'New Manfuhah',
+    'الجزيرة':            'Al Jazirah',
+    'العود':              'Al Oud',
+    'الشميسي':            'Al Shumaisi',
+    'البطحاء':            'Al Batha',
+    'الديرة':             'Al Dirah',
+    'دخنة':               'Dakhna',
+    'السلام':             'Al Salam',
+    'التضامن':            'Al Tadamun',
+    'الجنوبية':           'Al Janubiyah',
+    'شبرا':               'Shubra',
+    'خشم العان':          'Khashm Al Aan',
+    'أخرى':               'Other'
+  };
+
   function applyLang(lang) {
     var t = T[lang] || T.ar;
 
@@ -291,6 +390,12 @@
     document.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria-label');
       if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    });
+
+    document.querySelectorAll('.nbhd__opt').forEach(function (el) {
+      var ar = el.getAttribute('data-ar') || el.textContent.trim();
+      if (!el.getAttribute('data-ar')) el.setAttribute('data-ar', ar);
+      el.textContent = lang === 'en' ? (NBHD[ar] || ar) : ar;
     });
 
     var nbhdVal = document.getElementById('lm-nbhd-val');

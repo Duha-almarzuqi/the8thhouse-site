@@ -1967,13 +1967,13 @@ html[lang="en"] .lm__type-en   {
 }
 
 .lm__type-card input:checked + .lm__type-inner {
-  border-color: var(--gold);
-  background: rgba(197,165,114,.14);
-  box-shadow: inset 0 0 0 2px var(--gold);
+  border-color: var(--purple-royal);
+  background: var(--purple-royal);
+  box-shadow: none;
 }
 .lm__type-card input:checked + .lm__type-inner .lm__type-ar,
 .lm__type-card input:checked + .lm__type-inner .lm__type-en {
-  color: var(--gold);
+  color: var(--warm-white);
   font-weight: 700;
 }
 

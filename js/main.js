@@ -272,9 +272,14 @@
 
       if (lmSubmit) { lmSubmit.disabled = true; lmSubmit.textContent = 'جاري الإرسال...'; }
 
-      var data = new FormData(lmForm);
+      var body = new URLSearchParams(new FormData(lmForm)).toString();
 
-      fetch(lmForm.action, { method: 'POST', mode: 'no-cors', body: data })
+      fetch(lmForm.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      })
         .then(function () { showSuccess(); })
         .catch(function () { showSuccess(); });
     });

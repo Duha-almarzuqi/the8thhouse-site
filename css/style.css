@@ -1729,6 +1729,11 @@ ol         { list-style: none; }
   font-weight: 300;
 }
 
+.footer__cr {
+  color: rgba(197,165,114,.45);
+  letter-spacing: .05em;
+}
+
 @media (max-width: 768px) {
   .footer__inner {
     grid-template-columns: 1fr;

@@ -78,25 +78,26 @@ body {
 .cur-dot {
   position: fixed;
   top: 0; left: 0;
-  width: 5px; height: 5px;
-  background: var(--gold);
+  width: 6px; height: 6px;
+  background: #fff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  opacity: .9;
+  mix-blend-mode: difference;
   transition: opacity .3s;
 }
 
 .cur-ring {
   position: fixed;
   top: 0; left: 0;
-  width: 22px; height: 22px;
-  border: 1px solid rgba(197,165,114,.45);
+  width: 24px; height: 24px;
+  border: 1.5px solid #fff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
   transition: opacity .3s;
 }
 

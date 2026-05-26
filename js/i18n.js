@@ -101,6 +101,7 @@
       contact_sub:      'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
       contact_whatsapp: 'واتساب · 966-56-994-5365+',
 
+      footer_whatsapp: 'واتساب',
       footer_tagline: 'إدارة وتشغيل الشقق المؤثثة · الرياض',
       footer_nav1:    'التنقل',
       footer_nav2:    'تواصل',
@@ -207,6 +208,7 @@
       contact_sub:      "Tell us about your property and we'll explain in detail how we work and what you can expect each month.",
       contact_whatsapp: 'WhatsApp · +966-56-994-5365',
 
+      footer_whatsapp: 'WhatsApp',
       footer_tagline: 'Furnished Apartment Management · Riyadh',
       footer_nav1:    'Navigation',
       footer_nav2:    'Contact',

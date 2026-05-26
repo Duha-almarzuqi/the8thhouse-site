@@ -375,6 +375,8 @@ html[lang="en"] .quote              { direction: ltr; text-align: left; }
 html[lang="en"] .essence__inner     { direction: ltr; }
 /* contact */
 html[lang="en"] .contact__inner     { direction: ltr; }
+html[lang="en"] .contact__h         { text-align: center; }
+html[lang="en"] .contact__sub       { text-align: center; }
 /* footer */
 html[lang="en"] .footer__nav        { direction: ltr; }
 html[lang="en"] .footer__inner      { direction: ltr; }

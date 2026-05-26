@@ -238,12 +238,10 @@
     if (nbhdWidget && !nbhdWidget.contains(e.target)) nbhdClose();
   });
 
-  /* ── GOOGLE SHEETS — hidden iframe submit ───────────────────── */
-  var lmForm    = document.querySelector('.lm__form');
-  var lmSubmit  = lmForm  ? lmForm.querySelector('.lm__submit') : null;
-  var lmBox     = document.querySelector('.lm__box');
-  var lmIframe  = document.getElementById('lm-iframe');
-  var formSent  = false;
+  /* ── GOOGLE FORMS — fetch no-cors submit ────────────────────── */
+  var lmForm   = document.querySelector('.lm__form');
+  var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;
+  var lmBox    = document.querySelector('.lm__box');
 
   function showSuccess() {
     if (!lmBox) return;
@@ -258,20 +256,12 @@
       '</div>';
   }
 
-  /* show success when iframe loads after submission */
-  if (lmIframe) {
-    lmIframe.addEventListener('load', function () {
-      if (!formSent) return;
-      formSent = false;
-      showSuccess();
-    });
-  }
-
   if (lmForm) {
     lmForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
       /* validate neighbourhood */
       if (nbhdValInp && !nbhdValInp.value) {
-        e.preventDefault();
         if (nbhdTrigger) {
           nbhdTrigger.style.borderColor = '#c0392b';
           nbhdOpen();
@@ -279,9 +269,14 @@
         }
         return;
       }
-      /* mark sent + disable button — form submits naturally to iframe */
-      formSent = true;
+
       if (lmSubmit) { lmSubmit.disabled = true; lmSubmit.textContent = 'جاري الإرسال...'; }
+
+      var data = new FormData(lmForm);
+
+      fetch(lmForm.action, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () { showSuccess(); })
+        .catch(function () { showSuccess(); });
     });
   }
 

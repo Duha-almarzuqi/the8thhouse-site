@@ -36,13 +36,14 @@
       </a>
 
       <nav class="nav__links" role="navigation" aria-label="القائمة الرئيسية">
-        <a href="#about"        class="nav__link">من نحن</a>
-        <a href="#services"     class="nav__link">خدماتنا</a>
-        <a href="#why"          class="nav__link">لماذا نحن</a>
-        <a href="#testimonials" class="nav__link">آراء العملاء</a>
-        <a href="#contact"      class="nav__cta">تواصل معنا</a>
+        <a href="#about"        class="nav__link" data-i18n="nav_about">من نحن</a>
+        <a href="#services"     class="nav__link" data-i18n="nav_services">خدماتنا</a>
+        <a href="#why"          class="nav__link" data-i18n="nav_why">لماذا نحن</a>
+        <a href="#testimonials" class="nav__link" data-i18n="nav_testimonials">آراء العملاء</a>
+        <a href="#contact"      class="nav__cta" data-i18n="nav_cta">تواصل معنا</a>
       </nav>
 
+      <button class="nav__lang" id="langToggle" aria-label="Switch language">EN</button>
       <button class="nav__burger" id="navBurger" aria-label="فتح القائمة" aria-expanded="false">
         <span></span>
         <span></span>
@@ -54,11 +55,11 @@
   <!-- Mobile drawer -->
   <div class="drawer" id="drawer" aria-hidden="true">
     <nav class="drawer__nav" aria-label="قائمة الجوال">
-      <a href="#about"        class="drawer__link">من نحن</a>
-      <a href="#services"     class="drawer__link">خدماتنا</a>
-      <a href="#why"          class="drawer__link">لماذا نحن</a>
-      <a href="#testimonials" class="drawer__link">آراء العملاء</a>
-      <a href="#contact"      class="drawer__link drawer__link--cta">تواصل معنا</a>
+      <a href="#about"        class="drawer__link" data-i18n="nav_about">من نحن</a>
+      <a href="#services"     class="drawer__link" data-i18n="nav_services">خدماتنا</a>
+      <a href="#why"          class="drawer__link" data-i18n="nav_why">لماذا نحن</a>
+      <a href="#testimonials" class="drawer__link" data-i18n="nav_testimonials">آراء العملاء</a>
+      <a href="#contact"      class="drawer__link drawer__link--cta" data-i18n="nav_cta">تواصل معنا</a>
     </nav>
   </div>
 
@@ -79,12 +80,12 @@
     <div class="hero__body">
       <p class="hero__label" aria-hidden="true">
         <span class="hero__rule"></span>
-        الرياض · منذ 2019
+        <span data-i18n="hero_label">الرياض · منذ 2019</span>
       </p>
 
       <h1 class="hero__title" id="hero-title">
-        <span class="hero__title-main">شريككم الاستراتيجي</span>
-        <span class="hero__title-rest">في تشغيل الشقق المؤثثة</span>
+        <span class="hero__title-main" data-i18n="hero_title_main">شريككم الاستراتيجي</span>
+        <span class="hero__title-rest" data-i18n="hero_title_rest">في تشغيل الشقق المؤثثة</span>
       </h1>
 
       <span class="hero__eight" aria-hidden="true">8</span>
@@ -96,7 +97,7 @@
 
       <div class="hero__actions">
         <a href="#contact" class="hero__cta">
-          ابدأ الشراكة
+          <span data-i18n="hero_cta_start">ابدأ الشراكة</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -106,7 +107,7 @@
             <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
             <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
-          سجّل عقارك
+          <span data-i18n="hero_cta_register">سجّل عقارك</span>
         </button>
       </div>
     </div>
@@ -125,11 +126,11 @@
     <div class="about__inner">
 
       <div class="about__lead js-reveal">
-        <p class="label">من نحن</p>
+        <p class="label" data-i18n="about_label">من نحن</p>
         <h2 class="about__h" id="about-title">
-          شراكة حقيقية<br>مع ملاك الشقق المؤثثة
+          <span data-i18n-html="about_title">شراكة حقيقية<br>مع ملاك الشقق المؤثثة</span>
         </h2>
-        <p class="about__body">
+        <p class="about__body" data-i18n="about_body">
           "البيت الثامن" شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بمدينة الرياض.
           نقدّم للمُلّاك حلول تشغيل متكاملة تضمن لهم نسبة إشغال عالية، تشغيل احترافي
           وصيانة مستمرة للعقار، مع شفافية كاملة في التقارير والعوائد.
@@ -152,17 +153,17 @@
         <div class="about__pillars">
           <div class="about__pillar js-reveal">
             <span class="about__pillar-n">1</span>
-            <span class="about__pillar-name">إشغال عالٍ</span>
+            <span class="about__pillar-name" data-i18n="about_pillar_1">إشغال عالٍ</span>
           </div>
           <span class="about__sep" aria-hidden="true">◇</span>
           <div class="about__pillar js-reveal" style="--d:.1s">
             <span class="about__pillar-n">2</span>
-            <span class="about__pillar-name">تشغيل احترافي</span>
+            <span class="about__pillar-name" data-i18n="about_pillar_2">تشغيل احترافي</span>
           </div>
           <span class="about__sep" aria-hidden="true">◇</span>
           <div class="about__pillar js-reveal" style="--d:.2s">
             <span class="about__pillar-n">3</span>
-            <span class="about__pillar-name">شفافية كاملة</span>
+            <span class="about__pillar-name" data-i18n="about_pillar_3">شفافية كاملة</span>
           </div>
         </div>
       </div>
@@ -178,7 +179,7 @@
 
       <div class="vm__col js-reveal">
         <p class="vm__en" lang="en">Vision</p>
-        <h3 class="vm__h">رؤيتنا</h3>
+        <h3 class="vm__h" data-i18n="vm_vision_title">رؤيتنا</h3>
         <p class="vm__body">
           أن نكون الاختيار الأول لمُلّاك الشقق في الرياض،
           عبر تحويل عقاراتهم إلى أصول عالية العائد تُدار باحترافية
@@ -190,7 +191,7 @@
 
       <div class="vm__col js-reveal" style="--d:.12s">
         <p class="vm__en" lang="en">Mission</p>
-        <h3 class="vm__h">رسالتنا</h3>
+        <h3 class="vm__h" data-i18n="vm_mission_title">رسالتنا</h3>
         <p class="vm__body">
           في البيت الثامن رسالتنا هي إدارة وتشغيل الشقق السكنية المؤثثة
           باحترافية عالية، من خلال رفع نسب الإشغال، ضمان تجربة ضيافة راقية،
@@ -210,45 +211,45 @@
 
       <header class="values__hd js-reveal">
         <p class="label" lang="en">VALUES</p>
-        <h2 class="values__h" id="values-title">قيمنا</h2>
+        <h2 class="values__h" id="values-title" data-i18n="values_title">قيمنا</h2>
       </header>
 
       <div class="values__grid">
 
         <div class="values__card js-reveal">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الموثوقية</h3>
-          <p class="values__desc">نحرص على بناء علاقة ثقة طويلة الأمد مع المُلّاك.</p>
+          <h3 class="values__name" data-i18n="v1_name">الموثوقية</h3>
+          <p class="values__desc" data-i18n="v1_desc">نحرص على بناء علاقة ثقة طويلة الأمد مع المُلّاك.</p>
         </div>
 
         <div class="values__card js-reveal" style="--d:.07s">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الشفافية</h3>
-          <p class="values__desc">نوفر تقارير واضحة وصادقة بلا تكاليف مخفية.</p>
+          <h3 class="values__name" data-i18n="v2_name">الشفافية</h3>
+          <p class="values__desc" data-i18n="v2_desc">نوفر تقارير واضحة وصادقة بلا تكاليف مخفية.</p>
         </div>
 
         <div class="values__card js-reveal" style="--d:.14s">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الابتكار</h3>
-          <p class="values__desc">نعتمد على أنظمة تسعير وتقنيات تشغيل حديثة ترفع العوائد.</p>
+          <h3 class="values__name" data-i18n="v3_name">الابتكار</h3>
+          <p class="values__desc" data-i18n="v3_desc">نعتمد على أنظمة تسعير وتقنيات تشغيل حديثة ترفع العوائد.</p>
         </div>
 
         <div class="values__card js-reveal" style="--d:.21s">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الاحترافية</h3>
-          <p class="values__desc">نلتزم بأعلى معايير الضيافة الاحترافية وإدارة العقار.</p>
+          <h3 class="values__name" data-i18n="v4_name">الاحترافية</h3>
+          <p class="values__desc" data-i18n="v4_desc">نلتزم بأعلى معايير الضيافة الاحترافية وإدارة العقار.</p>
         </div>
 
         <div class="values__card js-reveal" style="--d:.28s">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الاستدامة</h3>
-          <p class="values__desc">نحافظ على قيمة العقار وجودته عبر الصيانة الوقائية المستمرة.</p>
+          <h3 class="values__name" data-i18n="v5_name">الاستدامة</h3>
+          <p class="values__desc" data-i18n="v5_desc">نحافظ على قيمة العقار وجودته عبر الصيانة الوقائية المستمرة.</p>
         </div>
 
         <div class="values__card js-reveal" style="--d:.35s">
           <span class="values__gem" aria-hidden="true">◇</span>
-          <h3 class="values__name">الشراكة</h3>
-          <p class="values__desc">نعتبر عقارات المُلّاك جزءاً من استثماراتنا ونعمل لتحقيق نموها.</p>
+          <h3 class="values__name" data-i18n="v6_name">الشراكة</h3>
+          <p class="values__desc" data-i18n="v6_desc">نعتبر عقارات المُلّاك جزءاً من استثماراتنا ونعمل لتحقيق نموها.</p>
         </div>
 
       </div>
@@ -282,8 +283,8 @@
     <div class="property__inner">
 
       <header class="property__hd js-reveal">
-        <p class="label label--light">مساحاتنا</p>
-        <h2 class="property__h" id="property-title">نماذج من شققنا<br>في حي الملقا · الرياض</h2>
+        <p class="label label--light" data-i18n="property_label">مساحاتنا</p>
+        <h2 class="property__h" id="property-title"><span data-i18n-html="property_title">نماذج من شققنا<br>في حي الملقا · الرياض</span></h2>
       </header>
 
       <div class="property__frame">
@@ -291,17 +292,17 @@
 
           <div class="property__cell js-reveal-img">
             <img src="assets/img/apt-bedroom.jpg" alt="غرفة النوم الرئيسية" loading="lazy">
-            <span class="property__lbl">غرفة النوم</span>
+            <span class="property__lbl" data-i18n="property_bedroom">غرفة النوم</span>
           </div>
 
           <div class="property__cell js-reveal-img" style="--d:.08s">
             <img src="assets/img/apt-living.jpg" alt="غرفة المعيشة" loading="lazy">
-            <span class="property__lbl">غرفة المعيشة</span>
+            <span class="property__lbl" data-i18n="property_living">غرفة المعيشة</span>
           </div>
 
           <div class="property__cell js-reveal-img" style="--d:.16s">
             <img src="assets/img/apt-fireplace.jpg" alt="جلسة الاسترخاء" loading="lazy">
-            <span class="property__lbl">جلسة الاسترخاء</span>
+            <span class="property__lbl" data-i18n="property_relax">جلسة الاسترخاء</span>
           </div>
 
         </div>
@@ -323,10 +324,8 @@
     <div class="services__inner">
 
       <header class="services__hd js-reveal">
-        <p class="label label--light">خدماتنا</p>
-        <h2 class="services__h" id="services-title">
-          خدمات البيت الثامن<br>للمُلاك
-        </h2>
+        <p class="label label--light" data-i18n="services_label">خدماتنا</p>
+        <h2 class="services__h" id="services-title"><span data-i18n-html="services_title">خدمات البيت الثامن<br>للمُلاك</span></h2>
       </header>
 
       <ol class="services__list" role="list">
@@ -334,7 +333,7 @@
         <li class="svc js-reveal">
           <span class="svc__no" aria-hidden="true">01</span>
           <div class="svc__body">
-            <h3 class="svc__title">التشغيل الكامل للعقار</h3>
+            <h3 class="svc__title" data-i18n="svc1_title">التشغيل الكامل للعقار</h3>
             <p class="svc__sub" lang="en">Full Property Operation</p>
             <ul class="svc__bullets">
               <li>تأثيث وتنسيق داخلي يناسب معايير التأجير القصير</li>
@@ -349,7 +348,7 @@
         <li class="svc js-reveal" style="--d:.08s">
           <span class="svc__no" aria-hidden="true">02</span>
           <div class="svc__body">
-            <h3 class="svc__title">إدارة مالية شفافة</h3>
+            <h3 class="svc__title" data-i18n="svc2_title">إدارة مالية شفافة</h3>
             <p class="svc__sub" lang="en">Transparent Financial Management</p>
             <ul class="svc__bullets">
               <li>تقارير شهرية عن نسب الإشغال والعوائد</li>
@@ -361,7 +360,7 @@
         <li class="svc js-reveal" style="--d:.16s">
           <span class="svc__no" aria-hidden="true">03</span>
           <div class="svc__body">
-            <h3 class="svc__title">حماية قيمة العقار</h3>
+            <h3 class="svc__title" data-i18n="svc3_title">حماية قيمة العقار</h3>
             <p class="svc__sub" lang="en">Protecting Property Value</p>
             <ul class="svc__bullets">
               <li>متابعة الصيانة الوقائية</li>
@@ -382,71 +381,71 @@
     <div class="why__inner">
 
       <div class="why__col-stats">
-        <p class="label">أرقامنا</p>
+        <p class="label" data-i18n="why_label">أرقامنا</p>
         <div class="why__grid">
           <div class="why__stat js-reveal">
             <p class="why__val"><span class="js-count" data-to="83" data-decimal=".6">0</span>%</p>
-            <p class="why__stat-label">متوسط نسبة الإشغال</p>
+            <p class="why__stat-label" data-i18n="why_stat1">متوسط نسبة الإشغال</p>
             <p class="why__stat-en" lang="en">Average Occupancy</p>
           </div>
           <div class="why__stat js-reveal" style="--d:.1s">
             <p class="why__val"><span class="js-count" data-to="96" data-decimal=".6">0</span>%</p>
-            <p class="why__stat-label">تقييمات 5 نجوم</p>
+            <p class="why__stat-label" data-i18n="why_stat2">تقييمات 5 نجوم</p>
             <p class="why__stat-en" lang="en">Five-Star Reviews</p>
           </div>
           <div class="why__stat js-reveal" style="--d:.2s">
             <p class="why__val">24/7</p>
-            <p class="why__stat-label">دعم مستمر</p>
+            <p class="why__stat-label" data-i18n="why_stat3">دعم مستمر</p>
             <p class="why__stat-en" lang="en">Client Support</p>
           </div>
           <div class="why__stat js-reveal" style="--d:.3s">
             <p class="why__val"><span class="js-count" data-to="6">0</span></p>
-            <p class="why__stat-label">سنوات خبرة</p>
+            <p class="why__stat-label" data-i18n="why_stat4">سنوات خبرة</p>
             <p class="why__stat-en" lang="en">Years in Hospitality</p>
           </div>
         </div>
       </div>
 
       <div class="why__col-points">
-        <h2 class="why__h" id="why-title">مزايا البيت الثامن<br>للمُلاك</h2>
+        <h2 class="why__h" id="why-title"><span data-i18n-html="why_title">مزايا البيت الثامن<br>للمُلاك</span></h2>
         <div class="why__list">
 
           <div class="why__point js-reveal">
             <span class="why__marker" aria-hidden="true">—</span>
             <div>
-              <strong>دخل مستمر</strong>
-              <p>رفع نسب الإشغال وتحقيق أعلى عائد.</p>
+              <strong data-i18n="why_b1_title">دخل مستمر</strong>
+              <p data-i18n="why_b1_desc">رفع نسب الإشغال وتحقيق أعلى عائد.</p>
             </div>
           </div>
 
           <div class="why__point js-reveal" style="--d:.08s">
             <span class="why__marker" aria-hidden="true">—</span>
             <div>
-              <strong>راحة كاملة</strong>
-              <p>نحن ندير كل التفاصيل التشغيلية.</p>
+              <strong data-i18n="why_b2_title">راحة كاملة</strong>
+              <p data-i18n="why_b2_desc">نحن ندير كل التفاصيل التشغيلية.</p>
             </div>
           </div>
 
           <div class="why__point js-reveal" style="--d:.16s">
             <span class="why__marker" aria-hidden="true">—</span>
             <div>
-              <strong>احترافية تشغيلية</strong>
-              <p>فريق متخصص في إدارة وتأجير الشقق.</p>
+              <strong data-i18n="why_b3_title">احترافية تشغيلية</strong>
+              <p data-i18n="why_b3_desc">فريق متخصص في إدارة وتأجير الشقق.</p>
             </div>
           </div>
 
           <div class="why__point js-reveal" style="--d:.24s">
             <span class="why__marker" aria-hidden="true">—</span>
             <div>
-              <strong>شفافية مالية</strong>
-              <p>تقارير واضحة، بدون أي تكاليف مخفية.</p>
+              <strong data-i18n="why_b4_title">شفافية مالية</strong>
+              <p data-i18n="why_b4_desc">تقارير واضحة، بدون أي تكاليف مخفية.</p>
             </div>
           </div>
 
           <div class="why__point js-reveal" style="--d:.32s">
             <span class="why__marker" aria-hidden="true">—</span>
             <div>
-              <strong>شراكة طويلة الأمد</strong>
+              <strong data-i18n="why_b5_title">شراكة طويلة الأمد</strong>
               <p>نعتبر عقاراتكم جزءاً من استثماراتنا، ونقدم استشارات عقارية مالية لضمان نماء المحفظة الاستثمارية العقارية.</p>
             </div>
           </div>
@@ -465,7 +464,7 @@
 
       <header class="journey__hd js-reveal">
         <p class="label" lang="en">CUSTOMER JOURNEY</p>
-        <h2 class="journey__h" id="journey-title">رحلة العميل معنا</h2>
+        <h2 class="journey__h" id="journey-title" data-i18n="journey_title">رحلة العميل معنا</h2>
       </header>
 
       <ol class="journey__steps" role="list">
@@ -473,7 +472,7 @@
         <li class="journey__step js-reveal">
           <span class="journey__num" aria-hidden="true">01</span>
           <div class="journey__content">
-            <h3 class="journey__title">الاستفسار والتواصل</h3>
+            <h3 class="journey__title" data-i18n="j1_title">الاستفسار والتواصل</h3>
             <p class="journey__desc">يتواصل المالك معنا عبر الهاتف أو الإيميل، ونقدم له استشارة مبدئية مجانية حول خيارات تشغيل عقاره.</p>
           </div>
         </li>
@@ -481,7 +480,7 @@
         <li class="journey__step js-reveal" style="--d:.07s">
           <span class="journey__num" aria-hidden="true">02</span>
           <div class="journey__content">
-            <h3 class="journey__title">المعاينة والتقييم</h3>
+            <h3 class="journey__title" data-i18n="j2_title">المعاينة والتقييم</h3>
             <p class="journey__desc">نقوم بزيارة الشقة (أو استلام تفاصيلها) وتقييم جاهزيتها للتشغيل، مع تقديم مقترح تفصيلي يتضمن التأثيث المناسب، التسويق، والعوائد المتوقعة.</p>
           </div>
         </li>
@@ -489,7 +488,7 @@
         <li class="journey__step js-reveal" style="--d:.14s">
           <span class="journey__num" aria-hidden="true">03</span>
           <div class="journey__content">
-            <h3 class="journey__title">توقيع العقد</h3>
+            <h3 class="journey__title" data-i18n="j3_title">توقيع العقد</h3>
             <p class="journey__desc">نبرم عقد شراكة واضح وشفاف، يحدد نسب العوائد، مسؤوليات الطرفين، وفترة التشغيل.</p>
           </div>
         </li>
@@ -497,7 +496,7 @@
         <li class="journey__step js-reveal" style="--d:.21s">
           <span class="journey__num" aria-hidden="true">04</span>
           <div class="journey__content">
-            <h3 class="journey__title">التأثيث والتجهيز</h3>
+            <h3 class="journey__title" data-i18n="j4_title">التأثيث والتجهيز</h3>
             <p class="journey__desc">يتم تأثيث الشقة وتنسيقها داخلياً حسب معايير Airbnb والضيافة الراقية، مع جلسة تصوير احترافية.</p>
           </div>
         </li>
@@ -505,7 +504,7 @@
         <li class="journey__step js-reveal" style="--d:.28s">
           <span class="journey__num" aria-hidden="true">05</span>
           <div class="journey__content">
-            <h3 class="journey__title">الإطلاق والتسويق</h3>
+            <h3 class="journey__title" data-i18n="j5_title">الإطلاق والتسويق</h3>
             <p class="journey__desc">إدراج الشقة على المنصات العالمية مثل Airbnb وتفعيل نظام التسعير الديناميكي.</p>
           </div>
         </li>
@@ -513,7 +512,7 @@
         <li class="journey__step js-reveal" style="--d:.35s">
           <span class="journey__num" aria-hidden="true">06</span>
           <div class="journey__content">
-            <h3 class="journey__title">إدارة الحجوزات والضيوف</h3>
+            <h3 class="journey__title" data-i18n="j6_title">إدارة الحجوزات والضيوف</h3>
             <p class="journey__desc">استقبال الضيوف، متابعة إقامتهم، التنظيف الدوري، وخدمة العملاء على مدار الساعة.</p>
           </div>
         </li>
@@ -521,7 +520,7 @@
         <li class="journey__step js-reveal" style="--d:.42s">
           <span class="journey__num" aria-hidden="true">07</span>
           <div class="journey__content">
-            <h3 class="journey__title">التقارير والعوائد</h3>
+            <h3 class="journey__title" data-i18n="j7_title">التقارير والعوائد</h3>
             <p class="journey__desc">تزويد المالك بتقارير شهرية شفافة عن نسب الإشغال، العوائد، وحالة العقار.</p>
           </div>
         </li>
@@ -537,8 +536,8 @@
   <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
 
     <div class="testimonials__hd">
-      <p class="label">آراء العملاء</p>
-      <h2 class="testimonials__h" id="testimonials-title">ماذا يقول ضيوفنا</h2>
+      <p class="label" data-i18n="test_label">آراء العملاء</p>
+      <h2 class="testimonials__h" id="testimonials-title" data-i18n="test_title">ماذا يقول ضيوفنا</h2>
       <p class="testimonials__stars" aria-label="تقييم 5 نجوم">★★★★★</p>
     </div>
 
@@ -790,7 +789,7 @@
   <section class="essence" aria-label="جوهر شراكتنا">
     <div class="essence__inner js-reveal">
       <span class="essence__gem" aria-hidden="true">◇</span>
-      <h2 class="essence__h">جوهر شراكتنا</h2>
+      <h2 class="essence__h" data-i18n="essence_title">جوهر شراكتنا</h2>
       <p class="essence__ar">
         ما يهم المُلاك هو الحفاظ على قيمة أصولهم، وضمان تدفق
         دخل منتظم وتفادي أعباء التشغيل. في البيت الثامن، تُدار هذه
@@ -850,19 +849,19 @@
             <p class="footer__name-en" lang="en">THE 8TH HOUSE</p>
           </div>
         </div>
-        <p class="footer__tagline">إدارة وتشغيل الشقق المؤثثة · الرياض</p>
+        <p class="footer__tagline" data-i18n="footer_tagline">إدارة وتشغيل الشقق المؤثثة · الرياض</p>
       </div>
 
       <nav class="footer__nav" aria-label="روابط التذييل">
         <div class="footer__col">
-          <p class="footer__col-hd">التنقل</p>
+          <p class="footer__col-hd" data-i18n="footer_nav1">التنقل</p>
           <a href="#about">من نحن</a>
           <a href="#services">خدماتنا</a>
           <a href="#why">لماذا نحن</a>
           <a href="#testimonials">آراء العملاء</a>
         </div>
         <div class="footer__col">
-          <p class="footer__col-hd">تواصل</p>
+          <p class="footer__col-hd" data-i18n="footer_nav2">تواصل</p>
           <a href="https://instagram.com/8th.house.ksa" rel="noopener noreferrer">Instagram</a>
           <a href="https://wa.me/966569945365" rel="noopener noreferrer">واتساب</a>
           <a href="mailto:info@the8hhouse.sa">info@the8hhouse.sa</a>
@@ -872,8 +871,8 @@
     </div>
 
     <div class="footer__btm">
-      <p>© 2025 البيت الثامن. جميع الحقوق محفوظة.</p>
-      <p class="footer__cr">سجل تجاري&nbsp;7041576534 · الرياض</p>
+      <p data-i18n="footer_copy">© 2025 البيت الثامن. جميع الحقوق محفوظة.</p>
+      <p class="footer__cr" data-i18n="footer_cr">سجل تجاري 7041576534 · الرياض</p>
     </div>
   </footer>
 
@@ -1109,6 +1108,7 @@
     </div>
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

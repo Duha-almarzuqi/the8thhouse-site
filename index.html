@@ -102,6 +102,10 @@
           </svg>
         </a>
         <button class="hero__cta hero__cta--outline" id="openLead" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
           سجّل عقارك
         </button>
       </div>
@@ -926,61 +930,77 @@
                  min="1" max="999" placeholder="مثال: 3" required>
         </div>
 
-        <!-- الحي -->
+        <!-- الحي — searchable dropdown -->
         <div class="lm__field">
-          <label class="lm__label" for="lm-nbhd">الحي · الرياض</label>
-          <select class="lm__select" id="lm-nbhd" name="الحي" required>
-            <option value="" disabled selected>اختر الحي</option>
-            <optgroup label="شمال الرياض">
-              <option>الملقا</option>
-              <option>النرجس</option>
-              <option>العليا</option>
-              <option>حطين</option>
-              <option>الياسمين</option>
-              <option>الغدير</option>
-              <option>القيروان</option>
-              <option>الرحمانية</option>
-              <option>العقيق</option>
-              <option>الإزدهار</option>
-              <option>الصحافة</option>
-              <option>المحمدية</option>
-              <option>قرطبة</option>
-            </optgroup>
-            <optgroup label="وسط الرياض">
-              <option>السفارات</option>
-              <option>الورود</option>
-              <option>العزيزية</option>
-              <option>الروضة</option>
-              <option>الحمراء</option>
-              <option>المنصورة</option>
-              <option>النزهة</option>
-              <option>الفلاح</option>
-              <option>الفيحاء</option>
-              <option>السليمانية</option>
-              <option>الوزارات</option>
-              <option>المربع</option>
-            </optgroup>
-            <optgroup label="شرق الرياض">
-              <option>الخليج</option>
-              <option>الربوة</option>
-              <option>النسيم</option>
-              <option>المشاعل</option>
-            </optgroup>
-            <optgroup label="غرب الرياض">
-              <option>لبن</option>
-              <option>عرقة</option>
-              <option>الشهداء</option>
-              <option>الحزم</option>
-              <option>الرمال</option>
-            </optgroup>
-            <optgroup label="جنوب الرياض">
-              <option>بدر</option>
-              <option>الحائر</option>
-              <option>عكاظ</option>
-              <option>الشعلة</option>
-            </optgroup>
-            <option value="أخرى">حي آخر</option>
-          </select>
+          <label class="lm__label" id="lm-nbhd-label">الحي · الرياض</label>
+          <input type="hidden" name="الحي" id="lm-nbhd-val" required>
+          <div class="nbhd" id="nbhdWidget" role="combobox" aria-expanded="false"
+               aria-haspopup="listbox" aria-labelledby="lm-nbhd-label">
+            <div class="nbhd__trigger" id="nbhdTrigger" tabindex="0"
+                 aria-controls="nbhdList" aria-autocomplete="list">
+              <span class="nbhd__placeholder" id="nbhdDisplay">اختر الحي</span>
+              <svg class="nbhd__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="nbhd__panel" id="nbhdPanel" role="listbox" aria-labelledby="lm-nbhd-label">
+              <div class="nbhd__search-wrap">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+                  <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+                <input class="nbhd__search" id="nbhdSearch" type="text"
+                       placeholder="ابحث عن حي..." autocomplete="off" aria-label="بحث في الأحياء">
+              </div>
+              <ul class="nbhd__list" id="nbhdList">
+                <li class="nbhd__group">شمال الرياض</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الملقا</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">النرجس</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">العليا</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">حطين</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الياسمين</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الغدير</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">القيروان</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الرحمانية</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">العقيق</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الإزدهار</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الصحافة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">المحمدية</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">قرطبة</li>
+                <li class="nbhd__group">وسط الرياض</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">السفارات</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الورود</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">العزيزية</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الروضة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الحمراء</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">المنصورة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">النزهة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الفلاح</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الفيحاء</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">السليمانية</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الوزارات</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">المربع</li>
+                <li class="nbhd__group">شرق الرياض</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الخليج</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الربوة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">النسيم</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">المشاعل</li>
+                <li class="nbhd__group">غرب الرياض</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">لبن</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">عرقة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الشهداء</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الحزم</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الرمال</li>
+                <li class="nbhd__group">جنوب الرياض</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">بدر</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الحائر</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">عكاظ</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">الشعلة</li>
+                <li class="nbhd__opt" role="option" tabindex="-1">أخرى</li>
+                <li class="nbhd__empty" hidden>لا توجد نتائج</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <!-- الاسم -->

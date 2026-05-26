@@ -528,27 +528,28 @@ ol         { list-style: none; }
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  background: var(--purple-royal);
+  color: var(--warm-white);
   padding: 1rem 2.25rem;
-  border: 1px solid rgba(43,21,86,.25);
-  transition: background .4s ease, color .4s ease, border-color .4s ease;
+  border: 1px solid var(--purple-royal);
+  transition: background .4s ease, color .4s ease, border-color .4s ease, opacity .4s ease;
 }
 
 .hero__cta:hover {
-  background: var(--text-primary);
-  border-color: var(--text-primary);
+  background: var(--purple-deep);
+  border-color: var(--purple-deep);
   color: var(--warm-white);
 }
 
 .hero__cta--outline {
-  background: transparent;
-  color: var(--gold);
-  border-color: var(--gold-rule);
+  background: var(--gold);
+  color: var(--warm-white);
+  border-color: var(--gold);
 }
 
 .hero__cta--outline:hover {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
   color: var(--warm-white);
 }
 

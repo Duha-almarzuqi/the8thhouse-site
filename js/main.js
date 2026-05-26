@@ -238,12 +238,12 @@
     if (nbhdWidget && !nbhdWidget.contains(e.target)) nbhdClose();
   });
 
-  /* ── GOOGLE SHEETS FORM SUBMIT ─────────────────────────────── */
-  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxB3HplAECJ7D0stxSDHdMIREe8bviztotT14xEvKqJBBxd-PsH1X1FbvxK7nXRxZ9adg/exec';
-
-  var lmForm   = document.querySelector('.lm__form');
-  var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;
-  var lmBox    = document.querySelector('.lm__box');
+  /* ── GOOGLE SHEETS — hidden iframe submit ───────────────────── */
+  var lmForm    = document.querySelector('.lm__form');
+  var lmSubmit  = lmForm  ? lmForm.querySelector('.lm__submit') : null;
+  var lmBox     = document.querySelector('.lm__box');
+  var lmIframe  = document.getElementById('lm-iframe');
+  var formSent  = false;
 
   function showSuccess() {
     if (!lmBox) return;
@@ -252,16 +252,26 @@
         '<div class="lm__done-icon">✓</div>' +
         '<h3 class="lm__done-title">تم استلام طلبك</h3>' +
         '<p class="lm__done-sub">سنتواصل معك بأقرب وقت</p>' +
-        '<button class="lm__submit" style="margin-top:1.5rem" onclick="document.getElementById(\'leadModal\').classList.remove(\'open\');document.body.style.overflow=\'\'">إغلاق</button>' +
+        '<button class="lm__submit" style="margin-top:1.5rem" ' +
+          'onclick="document.getElementById(\'leadModal\').classList.remove(\'open\')' +
+          ';document.body.style.overflow=\'\'">إغلاق</button>' +
       '</div>';
+  }
+
+  /* show success when iframe loads after submission */
+  if (lmIframe) {
+    lmIframe.addEventListener('load', function () {
+      if (!formSent) return;
+      formSent = false;
+      showSuccess();
+    });
   }
 
   if (lmForm) {
     lmForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
       /* validate neighbourhood */
       if (nbhdValInp && !nbhdValInp.value) {
+        e.preventDefault();
         if (nbhdTrigger) {
           nbhdTrigger.style.borderColor = '#c0392b';
           nbhdOpen();
@@ -269,21 +279,9 @@
         }
         return;
       }
-
-      /* collect data */
-      var fd = new FormData(lmForm);
-      var params = new URLSearchParams(fd);
-
-      /* disable button while sending */
+      /* mark sent + disable button — form submits naturally to iframe */
+      formSent = true;
       if (lmSubmit) { lmSubmit.disabled = true; lmSubmit.textContent = 'جاري الإرسال...'; }
-
-      fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body: params })
-        .then(function () { showSuccess(); })
-        .catch(function () {
-          /* even with no-cors the fetch resolves — this handles network failures */
-          if (lmSubmit) { lmSubmit.disabled = false; lmSubmit.textContent = 'إرسال الطلب'; }
-          alert('حدث خطأ، يرجى المحاولة مرة أخرى.');
-        });
     });
   }
 

@@ -122,6 +122,10 @@ ol         { list-style: none; }
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
   }
+  .belt__track--fwd,
+  .belt__track--rev {
+    animation: none !important;
+  }
 }
 
 :focus-visible {

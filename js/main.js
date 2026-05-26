@@ -37,14 +37,6 @@
     updateNav();
   }
 
-  /* ── BELT DUPLICATE — seamless infinite scroll ─────────────── */
-  document.querySelectorAll('.belt__track').forEach(function (track) {
-    var items = Array.from(track.children);
-    items.forEach(function (item) {
-      track.appendChild(item.cloneNode(true));
-    });
-  });
-
   /* ── MOBILE DRAWER ─────────────────────────────────────────── */
   var burger = document.getElementById('navBurger');
   var drawer = document.getElementById('drawer');

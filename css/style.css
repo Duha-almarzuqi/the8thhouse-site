@@ -71,6 +71,41 @@ body {
   color: var(--text-secondary);
   overflow-x: hidden;
   line-height: 1.8;
+  cursor: none;
+}
+
+/* ── CUSTOM CURSOR ─────────────────────────────────────── */
+.cur-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform .08s, opacity .3s;
+}
+
+.cur-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: .55;
+  transition: width .25s, height .25s, opacity .3s;
+}
+
+a:hover ~ .cur-ring,
+button:hover ~ .cur-ring { width: 44px; height: 44px; opacity: .8; }
+
+@media (pointer: coarse) {
+  body { cursor: auto; }
+  .cur-dot, .cur-ring { display: none; }
 }
 
 img {
@@ -346,8 +381,7 @@ ol         { list-style: none; }
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  mix-blend-mode: multiply;
-  opacity: .55;
+  opacity: .9;
   transform: scale(1.05);
   transition: transform 10s var(--ease);
   will-change: transform;
@@ -361,9 +395,9 @@ ol         { list-style: none; }
   z-index: 1;
   background: linear-gradient(
     175deg,
-    rgba(255,254,250,.05) 0%,
-    rgba(245,241,235,.35) 55%,
-    rgba(245,241,235,.88) 100%
+    rgba(255,254,250,.0)  0%,
+    rgba(245,241,235,.08) 50%,
+    rgba(245,241,235,.72) 100%
   );
 }
 
@@ -411,7 +445,10 @@ ol         { list-style: none; }
 }
 
 .hero__title-main {
-  color: var(--purple-deep);
+  background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 60%, var(--purple-royal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 1em;
   font-weight: 700;
 }
@@ -1363,10 +1400,8 @@ ol         { list-style: none; }
   width: max-content;
 }
 
-.belt__track--fwd { animation: beltFwd 60s linear infinite; }
-.belt__track--rev { animation: beltRev 68s linear infinite; }
-
-.belt:hover .belt__track { animation-play-state: paused; }
+.belt__track--fwd { animation: beltFwd 50s linear infinite; }
+.belt__track--rev { animation: beltRev 58s linear infinite; }
 
 @keyframes beltFwd {
   from { transform: translateX(0); }

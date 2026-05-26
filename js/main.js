@@ -1,6 +1,34 @@
 (function () {
   'use strict';
 
+  /* ── CUSTOM CURSOR ─────────────────────────────────────────── */
+  var dot  = document.createElement('div'); dot.className  = 'cur-dot';
+  var ring = document.createElement('div'); ring.className = 'cur-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  var mx = -100, my = -100, rx = -100, ry = -100;
+
+  document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; });
+
+  (function loop() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    dot.style.left  = mx + 'px';
+    dot.style.top   = my + 'px';
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+
+  document.addEventListener('mouseleave', function () { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+  document.addEventListener('mouseenter', function () { dot.style.opacity = '1'; ring.style.opacity = '.55'; });
+
+  document.querySelectorAll('a, button').forEach(function (el) {
+    el.addEventListener('mouseenter', function () { ring.style.width = '44px'; ring.style.height = '44px'; ring.style.opacity = '.8'; });
+    el.addEventListener('mouseleave', function () { ring.style.width = '28px'; ring.style.height = '28px'; ring.style.opacity = '.55'; });
+  });
+
   /* ── NAV SCROLL STATE ──────────────────────────────────────── */
   var nav = document.getElementById('nav');
 

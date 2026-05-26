@@ -883,16 +883,16 @@
     <div class="lm__overlay" id="lmOverlay"></div>
     <div class="lm__box" role="document">
 
-      <button class="lm__close" id="lmClose" aria-label="إغلاق النافذة">
+      <button class="lm__close" id="lmClose" data-i18n-aria-label="lm_close" aria-label="إغلاق النافذة">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
       </button>
 
       <div class="lm__head">
-        <p class="lm__eyebrow" lang="en">PROPERTY INQUIRY</p>
-        <h2 class="lm__title" id="lm-title">أخبرنا عن عقارك</h2>
-        <p class="lm__sub">سنتواصل معك بأقرب وقت</p>
+        <p class="lm__eyebrow" data-i18n="lm_eyebrow">استفسار عقاري</p>
+        <h2 class="lm__title" id="lm-title" data-i18n="lm_title">أخبرنا عن عقارك</h2>
+        <p class="lm__sub" data-i18n="lm_sub">سنتواصل معك بأقرب وقت</p>
       </div>
 
       <form class="lm__form"
@@ -902,7 +902,7 @@
 
         <!-- نوع الوحدة -->
         <fieldset class="lm__fieldset">
-          <legend class="lm__legend">نوع الوحدة</legend>
+          <legend class="lm__legend" data-i18n="lm_unit_type">نوع الوحدة</legend>
           <div class="lm__type-cards">
             <label class="lm__type-card">
               <input type="radio" name="entry.1461119662" value="مؤثثة" required>
@@ -923,14 +923,14 @@
 
         <!-- عدد الشقق -->
         <div class="lm__field">
-          <label class="lm__label" for="lm-count">عدد الشقق</label>
+          <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد الشقق</label>
           <input class="lm__input" type="number" id="lm-count" name="entry.1884290589"
-                 min="1" max="999" placeholder="مثال: 3" required>
+                 min="1" max="999" placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder" required>
         </div>
 
         <!-- الحي — searchable dropdown -->
         <div class="lm__field">
-          <label class="lm__label" id="lm-nbhd-label">الحي · الرياض</label>
+          <label class="lm__label" id="lm-nbhd-label" data-i18n="lm_nbhd_label">الحي · الرياض</label>
           <input type="hidden" name="entry.1923592827" id="lm-nbhd-val" required>
           <div class="nbhd" id="nbhdWidget" role="combobox" aria-expanded="false"
                aria-haspopup="listbox" aria-labelledby="lm-nbhd-label">
@@ -948,10 +948,11 @@
                   <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                 </svg>
                 <input class="nbhd__search" id="nbhdSearch" type="text"
-                       placeholder="ابحث عن حي..." autocomplete="off" aria-label="بحث في الأحياء">
+                       placeholder="ابحث عن حي..." data-i18n-placeholder="lm_nbhd_search"
+                       autocomplete="off" aria-label="بحث في الأحياء" data-i18n-aria-label="lm_nbhd_search">
               </div>
               <ul class="nbhd__list" id="nbhdList">
-                <li class="nbhd__group">شمال الرياض</li>
+                <li class="nbhd__group" data-i18n="lm_group_north">شمال الرياض</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الملقا</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">النرجس</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">العليا</li>
@@ -980,7 +981,7 @@
                 <li class="nbhd__opt" role="option" tabindex="-1">البساتين</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الوادي</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">المنار</li>
-                <li class="nbhd__group">وسط الرياض</li>
+                <li class="nbhd__group" data-i18n="lm_group_central">وسط الرياض</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">السفارات</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الورود</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">العزيزية</li>
@@ -1007,7 +1008,7 @@
                 <li class="nbhd__opt" role="option" tabindex="-1">الفرسان</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الكوثر</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">المعذر</li>
-                <li class="nbhd__group">شرق الرياض</li>
+                <li class="nbhd__group" data-i18n="lm_group_east">شرق الرياض</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الخليج</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الربوة</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">النسيم</li>
@@ -1019,7 +1020,7 @@
                 <li class="nbhd__opt" role="option" tabindex="-1">أم الحمام الشرقي</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">البديعة</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">المعادن</li>
-                <li class="nbhd__group">غرب الرياض</li>
+                <li class="nbhd__group" data-i18n="lm_group_west">غرب الرياض</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">لبن</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">عرقة</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الشهداء</li>
@@ -1033,7 +1034,7 @@
                 <li class="nbhd__opt" role="option" tabindex="-1">المهدية</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">نمار</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الرفيعة</li>
-                <li class="nbhd__group">جنوب الرياض</li>
+                <li class="nbhd__group" data-i18n="lm_group_south">جنوب الرياض</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">بدر</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">الحائر</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">عكاظ</li>
@@ -1052,7 +1053,7 @@
                 <li class="nbhd__opt" role="option" tabindex="-1">شبرا</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">خشم العان</li>
                 <li class="nbhd__opt" role="option" tabindex="-1">أخرى</li>
-                <li class="nbhd__empty" hidden>لا توجد نتائج</li>
+                <li class="nbhd__empty" hidden data-i18n="lm_no_results">لا توجد نتائج</li>
               </ul>
             </div>
           </div>
@@ -1060,33 +1061,33 @@
 
         <!-- الاسم -->
         <div class="lm__field">
-          <label class="lm__label" for="lm-name">الاسم</label>
+          <label class="lm__label" for="lm-name" data-i18n="lm_name_label">الاسم</label>
           <input class="lm__input" type="text" id="lm-name" name="entry.280690203"
-                 placeholder="اسمك الكريم" required autocomplete="name">
+                 placeholder="اسمك الكريم" data-i18n-placeholder="lm_name_placeholder" required autocomplete="name">
         </div>
 
         <!-- وسيلة التواصل -->
         <fieldset class="lm__fieldset">
-          <legend class="lm__legend">وسيلة التواصل المفضلة</legend>
+          <legend class="lm__legend" data-i18n="lm_contact_pref">وسيلة التواصل المفضلة</legend>
           <div class="lm__radios">
             <label class="lm__radio">
               <input type="radio" name="entry.25795692" value="واتساب" id="lm-wa" checked>
-              <span>واتساب</span>
+              <span data-i18n="lm_wa">واتساب</span>
             </label>
             <label class="lm__radio">
               <input type="radio" name="entry.25795692" value="مكالمة" id="lm-call">
-              <span>مكالمة</span>
+              <span data-i18n="lm_call">مكالمة</span>
             </label>
             <label class="lm__radio">
               <input type="radio" name="entry.25795692" value="إيميل" id="lm-email">
-              <span>إيميل</span>
+              <span data-i18n="lm_email">إيميل</span>
             </label>
           </div>
         </fieldset>
 
         <!-- رقم / إيميل -->
         <div class="lm__field">
-          <label class="lm__label" for="lm-contact" id="lm-contact-label">رقم الجوال</label>
+          <label class="lm__label" for="lm-contact" id="lm-contact-label" data-i18n="lm_phone_label">رقم الجوال</label>
           <input class="lm__input" type="text" id="lm-contact" name="entry.1132443070"
                  placeholder="05xxxxxxxx" required autocomplete="tel">
         </div>
@@ -1098,7 +1099,7 @@
         <input type="hidden" name="partialResponse" value="[null,null,&quot;-3082437196889274287&quot;]">
 
         <button class="lm__submit" type="submit">
-          إرسال الطلب
+          <span data-i18n="lm_submit">إرسال الطلب</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

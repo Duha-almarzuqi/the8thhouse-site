@@ -101,6 +101,31 @@
       contact_sub:      'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
       contact_whatsapp: 'واتساب · 966-56-994-5365+',
 
+      lm_eyebrow:           'استفسار عقاري',
+      lm_title:             'أخبرنا عن عقارك',
+      lm_sub:               'سنتواصل معك بأقرب وقت',
+      lm_close:             'إغلاق النافذة',
+      lm_unit_type:         'نوع الوحدة',
+      lm_count_label:       'عدد الشقق',
+      lm_count_placeholder: 'مثال: 3',
+      lm_nbhd_label:        'الحي · الرياض',
+      lm_nbhd_placeholder:  'اختر الحي',
+      lm_nbhd_search:       'ابحث عن حي...',
+      lm_group_north:       'شمال الرياض',
+      lm_group_central:     'وسط الرياض',
+      lm_group_east:        'شرق الرياض',
+      lm_group_west:        'غرب الرياض',
+      lm_group_south:       'جنوب الرياض',
+      lm_no_results:        'لا توجد نتائج',
+      lm_name_label:        'الاسم',
+      lm_name_placeholder:  'اسمك الكريم',
+      lm_contact_pref:      'وسيلة التواصل المفضلة',
+      lm_wa:                'واتساب',
+      lm_call:              'مكالمة',
+      lm_email:             'إيميل',
+      lm_phone_label:       'رقم الجوال',
+      lm_submit:            'إرسال الطلب',
+
       footer_whatsapp: 'واتساب',
       footer_tagline: 'إدارة وتشغيل الشقق المؤثثة · الرياض',
       footer_nav1:    'التنقل',
@@ -208,6 +233,31 @@
       contact_sub:      "Tell us about your property and we'll explain in detail how we work and what you can expect each month.",
       contact_whatsapp: 'WhatsApp · +966-56-994-5365',
 
+      lm_eyebrow:           'Property Inquiry',
+      lm_title:             'Tell Us About Your Property',
+      lm_sub:               "We'll get back to you as soon as possible",
+      lm_close:             'Close window',
+      lm_unit_type:         'Unit Type',
+      lm_count_label:       'Number of Units',
+      lm_count_placeholder: 'e.g. 3',
+      lm_nbhd_label:        'District · Riyadh',
+      lm_nbhd_placeholder:  'Select District',
+      lm_nbhd_search:       'Search district...',
+      lm_group_north:       'North Riyadh',
+      lm_group_central:     'Central Riyadh',
+      lm_group_east:        'East Riyadh',
+      lm_group_west:        'West Riyadh',
+      lm_group_south:       'South Riyadh',
+      lm_no_results:        'No results found',
+      lm_name_label:        'Name',
+      lm_name_placeholder:  'Your name',
+      lm_contact_pref:      'Preferred Contact Method',
+      lm_wa:                'WhatsApp',
+      lm_call:              'Phone Call',
+      lm_email:             'Email',
+      lm_phone_label:       'Phone Number',
+      lm_submit:            'Submit Request',
+
       footer_whatsapp: 'WhatsApp',
       footer_tagline: 'Furnished Apartment Management · Riyadh',
       footer_nav1:    'Navigation',
@@ -232,6 +282,22 @@
       var key = el.getAttribute('data-i18n-html');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria-label');
+      if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    });
+
+    var nbhdVal = document.getElementById('lm-nbhd-val');
+    var nbhdDisplay = document.getElementById('nbhdDisplay');
+    if (nbhdDisplay && t['lm_nbhd_placeholder'] && (!nbhdVal || !nbhdVal.value)) {
+      nbhdDisplay.textContent = t['lm_nbhd_placeholder'];
+    }
 
     var btn = document.getElementById('langToggle');
     if (btn) btn.textContent = lang === 'ar' ? 'EN' : 'عر';

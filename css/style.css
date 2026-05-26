@@ -326,12 +326,23 @@ html[lang="ar"] .about__body--en { display: none; }
 html[lang="en"] .about__body:not(.about__body--en) { display: none; }
 html[lang="en"] .essence__ar     { display: none; }
 html[lang="ar"] .essence__en     { display: none; }
+html[lang="en"] .lm__type-ar     { display: none; }
+html[lang="ar"] .lm__type-en     { display: none; }
 
 /* ── i18n layout direction ───────────────────────────────────── */
 html[lang="en"] .about__inner  { direction: ltr; }
 html[lang="en"] .about__lead   { direction: ltr; text-align: left; }
 html[lang="en"] .about__h      { text-align: left; }
 html[lang="en"] .footer__nav   { direction: ltr; }
+html[lang="en"] .lm__eyebrow   { text-align: left; }
+html[lang="en"] .lm__type-en   {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: .02em;
+  text-transform: none;
+  direction: ltr;
+}
 
 /* ── DRAWER ──────────────────────────────────────────────────── */
 .drawer {

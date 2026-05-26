@@ -268,14 +268,15 @@
 
   function showSuccess() {
     if (!lmBox) return;
+    var isEn = document.documentElement.lang === 'en';
     lmBox.innerHTML =
       '<div class="lm__done">' +
         '<div class="lm__done-icon">✓</div>' +
-        '<h3 class="lm__done-title">تم استلام طلبك</h3>' +
-        '<p class="lm__done-sub">سنتواصل معك بأقرب وقت</p>' +
+        '<h3 class="lm__done-title">' + (isEn ? 'Request Received' : 'تم استلام طلبك') + '</h3>' +
+        '<p class="lm__done-sub">' + (isEn ? "We'll be in touch shortly" : 'سنتواصل معك بأقرب وقت') + '</p>' +
         '<button class="lm__submit" style="margin-top:1.5rem" ' +
           'onclick="document.getElementById(\'leadModal\').classList.remove(\'open\')' +
-          ';document.body.style.overflow=\'\'">إغلاق</button>' +
+          ';document.body.style.overflow=\'\'">' + (isEn ? 'Close' : 'إغلاق') + '</button>' +
       '</div>';
   }
 
@@ -293,7 +294,13 @@
         return;
       }
 
-      if (lmSubmit) { lmSubmit.disabled = true; lmSubmit.textContent = 'جاري الإرسال...'; }
+      if (lmSubmit) {
+        lmSubmit.disabled = true;
+        var submitSpan = lmSubmit.querySelector('[data-i18n="lm_submit"]');
+        var sendingText = document.documentElement.lang === 'en' ? 'Sending…' : 'جاري الإرسال…';
+        if (submitSpan) submitSpan.textContent = sendingText;
+        else lmSubmit.textContent = sendingText;
+      }
 
       var body = new URLSearchParams(new FormData(lmForm)).toString();
 
@@ -318,5 +325,76 @@
       contactInput.type = this.value === 'إيميل' ? 'email' : 'tel';
     });
   });
+
+  /* ── BELT DRAG & SWIPE ─────────────────────────────────────── */
+  (function () {
+    function getTx(el) {
+      var t = getComputedStyle(el).transform;
+      if (!t || t === 'none') return 0;
+      var m = t.match(/matrix\(([^)]+)\)/);
+      return m ? parseFloat(m[1].split(',')[4]) : 0;
+    }
+
+    document.querySelectorAll('.belt').forEach(function (belt) {
+      var track = belt.querySelector('.belt__track');
+      if (!track) return;
+
+      var dragging = false;
+      var startX = 0;
+      var startTx = 0;
+      var curTx  = 0;
+
+      function onStart(x) {
+        dragging = true;
+        startX   = x;
+        startTx  = getTx(track);
+        curTx    = startTx;
+        track.classList.add('belt__track--dragging');
+        track.style.transform = 'translateX(' + startTx + 'px)';
+        belt.classList.add('belt--grabbing');
+      }
+
+      function onMove(x) {
+        if (!dragging) return;
+        curTx = startTx + (x - startX);
+        track.style.transform = 'translateX(' + curTx + 'px)';
+      }
+
+      function onEnd() {
+        if (!dragging) return;
+        dragging = false;
+        belt.classList.remove('belt--grabbing');
+
+        var halfW = track.offsetWidth / 2;
+        var isFwd = track.classList.contains('belt__track--fwd');
+        var dur   = isFwd ? 50 : 58;
+
+        /* normalise position to [-halfW, 0] */
+        var pos = curTx % halfW;
+        if (pos > 0)     pos -= halfW;
+        if (pos < -halfW) pos += halfW;
+
+        /* map position to animation-delay so playback resumes at pos */
+        var delay = isFwd
+          ? (pos / halfW) * dur
+          : -dur * (pos / halfW + 1);
+
+        track.style.animationDelay = delay + 's';
+        track.classList.remove('belt__track--dragging');
+        track.style.transform = '';
+      }
+
+      belt.addEventListener('mousedown',  function (e) { onStart(e.clientX); });
+      belt.addEventListener('touchstart', function (e) { onStart(e.touches[0].clientX); }, { passive: true });
+
+      window.addEventListener('mousemove',  function (e) { onMove(e.clientX); });
+      belt.addEventListener('touchmove', function (e) {
+        if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX); }
+      }, { passive: false });
+
+      window.addEventListener('mouseup',  onEnd);
+      window.addEventListener('touchend', onEnd);
+    });
+  })();
 
 })();

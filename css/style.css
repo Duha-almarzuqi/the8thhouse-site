@@ -482,7 +482,10 @@ html[lang="en"] .lm__type-en   {
   font-size: .58rem;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--purple-royal);
+  background: var(--cream);
+  padding: .4rem .9rem;
+  border-radius: 2rem;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeUp .7s .5s var(--ease) forwards;
@@ -492,7 +495,7 @@ html[lang="en"] .lm__type-en   {
   display: inline-block;
   width: 1.75rem;
   height: 1px;
-  background: var(--gold-rule);
+  background: var(--purple-royal);
 }
 
 .hero__title {

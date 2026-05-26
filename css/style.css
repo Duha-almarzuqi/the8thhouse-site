@@ -321,7 +321,7 @@ ol         { list-style: none; }
 }
 
 /* ── i18n visibility ─────────────────────────────────────────── */
-html[lang="en"] .hero__sub       { display: none; }
+.hero__sub                        { display: none; }
 html[lang="ar"] .about__body--en { display: none; }
 html[lang="en"] .about__body:not(.about__body--en) { display: none; }
 html[lang="en"] .essence__ar     { display: none; }
@@ -550,6 +550,7 @@ html[lang="en"] .footer__nav   { direction: ltr; }
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 3rem;
   opacity: 0;
   animation: fadeIn .7s 1.35s ease forwards;
 }

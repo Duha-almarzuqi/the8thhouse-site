@@ -239,7 +239,7 @@
   });
 
   /* ── GOOGLE SHEETS FORM SUBMIT ─────────────────────────────── */
-  var SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxB3HplAECJ7D0stxSDHdMIREe8bviztotT14xEvKqJBBxd-PsH1X1FbvxK7nXRxZ9adg/exec';
 
   var lmForm   = document.querySelector('.lm__form');
   var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;

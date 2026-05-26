@@ -78,30 +78,27 @@ body {
 .cur-dot {
   position: fixed;
   top: 0; left: 0;
-  width: 6px; height: 6px;
+  width: 5px; height: 5px;
   background: var(--gold);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform .08s, opacity .3s;
+  opacity: .9;
+  transition: opacity .3s;
 }
 
 .cur-ring {
   position: fixed;
   top: 0; left: 0;
-  width: 28px; height: 28px;
-  border: 1.5px solid var(--gold);
+  width: 22px; height: 22px;
+  border: 1px solid rgba(197,165,114,.45);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  opacity: .55;
-  transition: width .25s, height .25s, opacity .3s;
+  transition: opacity .3s;
 }
-
-a:hover ~ .cur-ring,
-button:hover ~ .cur-ring { width: 44px; height: 44px; opacity: .8; }
 
 @media (pointer: coarse) {
   body { cursor: auto; }
@@ -445,10 +442,7 @@ ol         { list-style: none; }
 }
 
 .hero__title-main {
-  background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 60%, var(--purple-royal) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--gold);
   font-size: 1em;
   font-weight: 700;
 }

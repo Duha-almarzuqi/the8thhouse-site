@@ -94,9 +94,12 @@
 
       essence_title: 'جوهر شراكتنا',
 
-      contact_label: 'تواصل معنا',
-      contact_title: 'ابدأ شراكتك مع<br>البيت الثامن اليوم',
-      contact_sub:   'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
+      brand_name:    'البيت الثامن',
+
+      contact_label:    'تواصل معنا',
+      contact_title:    'ابدأ شراكتك مع<br>البيت الثامن اليوم',
+      contact_sub:      'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
+      contact_whatsapp: 'واتساب · 966-56-994-5365+',
 
       footer_tagline: 'إدارة وتشغيل الشقق المؤثثة · الرياض',
       footer_nav1:    'التنقل',
@@ -197,9 +200,12 @@
 
       essence_title: 'The Essence of Our Partnership',
 
-      contact_label: 'Contact Us',
-      contact_title: 'Begin Your Partnership<br>with The 8th House Today',
-      contact_sub:   'Tell us about your property and we\'ll explain in detail how we work and what you can expect each month.',
+      brand_name:    'The 8th House',
+
+      contact_label:    'Contact Us',
+      contact_title:    'Begin Your Partnership<br>with The 8th House Today',
+      contact_sub:      "Tell us about your property and we'll explain in detail how we work and what you can expect each month.",
+      contact_whatsapp: 'WhatsApp · +966-56-994-5365',
 
       footer_tagline: 'Furnished Apartment Management · Riyadh',
       footer_nav1:    'Navigation',

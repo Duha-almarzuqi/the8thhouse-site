@@ -1731,14 +1731,6 @@ ol         { list-style: none; }
   transition: opacity .4s var(--ease), transform .4s var(--ease);
 }
 
-.lm__gform {
-  display: block;
-  width: 100%;
-  height: 560px;
-  border: none;
-  margin-top: .75rem;
-}
-
 .lm.open .lm__box {
   opacity: 1;
   transform: translateY(0) scale(1);

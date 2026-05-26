@@ -366,7 +366,8 @@ html[lang="en"] .why__inner         { direction: ltr; }
 html[lang="en"] .why__col-stats     { direction: ltr; }
 html[lang="en"] .why__col-points    { direction: ltr; }
 /* journey */
-html[lang="en"] .journey__inner     { direction: ltr; }
+html[lang="en"] .journey__inner          { direction: ltr; }
+html[lang="en"] .journey__steps::before  { right: auto; left: 1.375rem; }
 /* testimonials */
 html[lang="en"] .testimonials__hd   { direction: ltr; }
 html[lang="en"] .quote              { direction: ltr; text-align: left; }

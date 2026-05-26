@@ -558,7 +558,7 @@ html[lang="en"] .lm__type-en   {
 }
 
 .hero__sub-rest {
-  color: var(--text-muted);
+  color: var(--warm-beige);
   font-size: .82em;
   font-weight: 300;
   letter-spacing: .12em;

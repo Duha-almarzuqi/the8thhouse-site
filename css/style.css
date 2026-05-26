@@ -323,6 +323,8 @@ ol         { list-style: none; }
 /* ── i18n visibility ─────────────────────────────────────────── */
 html[lang="ar"] .hero__sub     { display: none; }
 html[lang="ar"] .hero__eight   { display: none; }
+html[lang="en"] .proof-band__track span[lang="ar"]   { display: none; }
+html[lang="en"] .proof-band__track .proof-band__gem--ar { display: none; }
 html[lang="en"] .hero__title   { display: none; }
 html[lang="en"] .hero__eight   { display: none; }
 html[lang="ar"] .about__body--en { display: none; }

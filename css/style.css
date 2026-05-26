@@ -346,8 +346,39 @@ html[lang="en"] .about__lead     { direction: ltr; text-align: left; }
 html[lang="en"] .about__pillars  { direction: ltr; }
 html[lang="en"] .about__h      { text-align: left; max-width: 100%; }
 html[lang="en"] .about__body--en { max-width: 100%; }
-html[lang="en"] .footer__nav   { direction: ltr; }
-html[lang="en"] .lm__eyebrow   { text-align: left; }
+/* nav */
+html[lang="en"] .nav__links         { direction: ltr; }
+html[lang="en"] .drawer__nav        { direction: ltr; }
+/* vision & mission */
+html[lang="en"] .vm__inner          { direction: ltr; }
+html[lang="en"] .vm__col            { text-align: left; }
+/* values */
+html[lang="en"] .values__inner      { direction: ltr; }
+/* property */
+html[lang="en"] .property__inner    { direction: ltr; }
+/* services */
+html[lang="en"] .services__inner    { direction: ltr; }
+html[lang="en"] .services__hd       { direction: ltr; text-align: left; }
+html[lang="en"] .services__list     { direction: ltr; }
+html[lang="en"] .svc__body          { direction: ltr; }
+/* why */
+html[lang="en"] .why__inner         { direction: ltr; }
+html[lang="en"] .why__col-stats     { direction: ltr; }
+html[lang="en"] .why__col-points    { direction: ltr; }
+/* journey */
+html[lang="en"] .journey__inner     { direction: ltr; }
+/* testimonials */
+html[lang="en"] .testimonials__hd   { direction: ltr; }
+html[lang="en"] .quote              { direction: ltr; text-align: left; }
+/* essence */
+html[lang="en"] .essence__inner     { direction: ltr; }
+/* contact */
+html[lang="en"] .contact__inner     { direction: ltr; }
+/* footer */
+html[lang="en"] .footer__nav        { direction: ltr; }
+html[lang="en"] .footer__inner      { direction: ltr; }
+html[lang="en"] .footer__btm        { direction: ltr; }
+html[lang="en"] .lm__eyebrow        { text-align: left; }
 html[lang="en"] .lm__type-en   {
   font-size: .9rem;
   font-weight: 700;

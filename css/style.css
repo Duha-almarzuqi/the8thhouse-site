@@ -1737,6 +1737,41 @@ html[lang="en"] .about__body:not(.about__body--en) { display: none; }
 
 .footer__col a:hover { color: var(--gold); }
 
+.footer__col--social { gap: .6rem; }
+
+.footer__social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .7rem 1.2rem;
+  border: 1px solid rgba(197,165,114,.3);
+  border-radius: 4px;
+  color: rgba(245,241,235,.75) !important;
+  background: transparent;
+  transition: background .3s ease, border-color .3s ease, color .3s ease;
+}
+
+.footer__social-btn:hover {
+  color: var(--warm-white) !important;
+  border-color: var(--gold-dim);
+  background: rgba(197,165,114,.08);
+}
+
+.footer__social-btn--primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--purple-deep) !important;
+}
+
+.footer__social-btn--primary:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  color: var(--purple-deep) !important;
+}
+
 .footer__btm {
   max-width: var(--max);
   margin: 0 auto;

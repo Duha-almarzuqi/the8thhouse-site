@@ -332,11 +332,13 @@ html[lang="en"] .lm__type-ar     { display: none; }
 html[lang="ar"] .lm__type-en     { display: none; }
 
 /* ── i18n layout direction ───────────────────────────────────── */
-html[lang="ar"] .hero__title      { font-size: clamp(.85rem, 1.7vw, 1.1rem); }
+html[lang="ar"] .hero__title      { font-size: clamp(1.4rem, 2.8vw, 2.4rem); }
 html[lang="ar"] .hero__title-main { color: var(--text-primary); }
 html[lang="ar"] .hero__title-rest { color: var(--text-muted); font-size: .82em; }
 html[lang="ar"] .hero__eight      { margin-bottom: 3rem; }
+html[lang="en"] .hero__body       { direction: ltr; text-align: left; }
 html[lang="en"] .hero__sub        { text-align: left; direction: ltr; }
+html[lang="en"] .hero__actions    { justify-content: flex-start; }
 html[lang="en"] .about__inner  { direction: ltr; }
 html[lang="en"] .about__lead   { direction: ltr; text-align: left; }
 html[lang="en"] .about__h      { text-align: left; }

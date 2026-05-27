@@ -180,7 +180,7 @@
       v6_desc: "We treat every owner's property as part of our own portfolio — invested in its growth.",
 
       property_label:   'Our Spaces',
-      property_title:   'A Glimpse of Our Apartments<br>in Al Malqa · Riyadh',
+      property_title:   'Step Inside Our Spaces<br>in Al Malqa · Riyadh',
       property_bedroom: 'Master Bedroom',
       property_living:  'Living Room',
       property_relax:   'Lounge Area',

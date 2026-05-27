@@ -7,17 +7,18 @@
   document.body.appendChild(dot);
   document.body.appendChild(ring);
 
-  var mx = -100, my = -100, rx = -100, ry = -100;
+  var mx = -100, my = -100, rx = -100, ry = -100, curMoved = false;
 
-  document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; });
+  document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; curMoved = true; });
 
   (function loop() {
-    rx += (mx - rx) * 0.1;
-    ry += (my - ry) * 0.1;
-    dot.style.left  = mx + 'px';
-    dot.style.top   = my + 'px';
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
+    if (curMoved || Math.abs(rx - mx) > 0.05 || Math.abs(ry - my) > 0.05) {
+      rx += (mx - rx) * 0.1;
+      ry += (my - ry) * 0.1;
+      dot.style.transform  = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
+      curMoved = false;
+    }
     requestAnimationFrame(loop);
   })();
 
@@ -396,5 +397,19 @@
       window.addEventListener('touchend', onEnd);
     });
   })();
+
+  /* ── PAUSE ANIMATIONS WHEN OFF-SCREEN ─────────────────────── */
+  var animPauseObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var state = entry.isIntersecting ? 'running' : 'paused';
+      entry.target.querySelectorAll('.belt__track, .proof-band__track').forEach(function (t) {
+        t.style.animationPlayState = state;
+      });
+    });
+  }, { rootMargin: '200px 0px 200px 0px' });
+
+  document.querySelectorAll('.belt, .proof-band').forEach(function (el) {
+    animPauseObs.observe(el);
+  });
 
 })();

@@ -83,9 +83,10 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
+  transform: translate(-100px, -100px);
   mix-blend-mode: difference;
   transition: opacity .3s;
+  will-change: transform;
 }
 
 .cur-ring {
@@ -96,9 +97,10 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
-  transform: translate(-50%, -50%);
+  transform: translate(-100px, -100px);
   mix-blend-mode: difference;
   transition: opacity .3s;
+  will-change: transform;
 }
 
 @media (pointer: coarse) {
@@ -972,6 +974,7 @@ html[lang="en"] .lm__type-en   {
   align-items: center;
   gap: 2rem;
   animation: bandScroll 28s linear infinite;
+  will-change: transform;
 }
 
 .proof-band__track span {
@@ -1533,6 +1536,7 @@ html[lang="en"] .lm__type-en   {
   display: flex;
   gap: 1rem;
   width: max-content;
+  will-change: transform;
 }
 
 .belt__track--fwd { animation: beltFwd 50s linear infinite; }

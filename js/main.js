@@ -460,9 +460,9 @@
   /* ── PAUSE ANIMATIONS WHEN OFF-SCREEN ─────────────────────── */
   var animPauseObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      var state = entry.isIntersecting ? 'running' : 'paused';
       entry.target.querySelectorAll('.belt__track, .proof-band__track, .property__reel-track').forEach(function (t) {
-        t.style.animationPlayState = state;
+        /* off-screen → force paused; on-screen → let CSS hover rule control */
+        t.style.animationPlayState = entry.isIntersecting ? '' : 'paused';
       });
     });
   }, { rootMargin: '200px 0px 200px 0px' });

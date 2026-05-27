@@ -440,7 +440,7 @@
       var cur = getTrackX();
       var hw  = halfWidth();
       var pos = ((cur % hw) + hw) % hw - hw;
-      var dur = 32;
+      var dur = 18;
       var delay = (pos / hw) * dur;
       track.style.transform = '';
       track.style.animationDelay = delay + 's';

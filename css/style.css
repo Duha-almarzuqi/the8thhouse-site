@@ -1039,7 +1039,7 @@ html[lang="en"] .lm__type-en   {
   gap: .75rem;
   width: max-content;
   padding: 0 var(--pad);
-  animation: reelScroll 32s linear infinite;
+  animation: reelScroll 18s linear infinite;
   will-change: transform;
 }
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>بطاقات المعايدة · البيت الثامن</title>
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     :root {
       --purple-royal:   #2B1556;
@@ -27,6 +28,26 @@
       padding: 60px 40px 100px;
       font-family: 'Almarai', sans-serif;
     }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--warm-white);
+      font-family: 'Almarai', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 14px 32px;
+      border: none;
+      cursor: pointer;
+      margin-top: -28px;
+      transition: background .3s ease;
+    }
+    .dl-btn:hover { background: #D4B585; }
+    .dl-btn svg   { width: 16px; height: 16px; }
+    .dl-btn.loading { opacity: .6; pointer-events: none; }
 
     .section-label {
       font-size: 0.62rem;
@@ -308,6 +329,11 @@
 </div>
 
 
+<button class="dl-btn" onclick="saveCard('card-ar','بطاقة-عيد-عربي.png')">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4v-2h14v2H5z" fill="currentColor"/></svg>
+  حفظ النسخة العربية
+</button>
+
 <!-- ════════════════════════════════════════════════════
      CARD 2 — ENGLISH
 ════════════════════════════════════════════════════ -->
@@ -372,6 +398,11 @@
 
 </div>
 
+
+<button class="dl-btn" onclick="saveCard('card-en','eid-card-english.png')" style="direction:ltr;">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4v-2h14v2H5z" fill="currentColor"/></svg>
+  Save English Version
+</button>
 
 <!-- ════════════════════════════════════════════════════
      CARD 3 — MIXED
@@ -438,6 +469,43 @@
   </div>
 
 </div>
+
+<button class="dl-btn" onclick="saveCard('card-mixed','بطاقة-عيد-مزيج.png')">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4v-2h14v2H5z" fill="currentColor"/></svg>
+  حفظ النسخة المزيجة
+</button>
+
+<script>
+async function saveCard(id, filename) {
+  const btn = event.currentTarget;
+  const orig = btn.innerHTML;
+  btn.classList.add('loading');
+  btn.textContent = '... جاري التحميل';
+
+  const el = document.getElementById(id);
+  try {
+    const canvas = await html2canvas(el, {
+      width:       1080,
+      height:      1920,
+      scale:       1,
+      useCORS:     true,
+      allowTaint:  true,
+      logging:     false,
+      imageTimeout: 0
+    });
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    alert('حدث خطأ أثناء التحميل. تأكد أن الملف مفتوح من متصفح وليس مباشرة من المجلد.');
+    console.error(e);
+  } finally {
+    btn.classList.remove('loading');
+    btn.innerHTML = orig;
+  }
+}
+</script>
 
 </body>
 </html>

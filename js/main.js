@@ -398,17 +398,76 @@
     });
   })();
 
+  /* ── PROPERTY REEL DRAG ────────────────────────────────────── */
+  (function () {
+    var reel  = document.querySelector('.property__reel');
+    var track = reel && reel.querySelector('.property__reel-track');
+    if (!reel || !track) return;
+
+    var dragging = false, startX = 0, startTx = 0;
+
+    function getTrackX() {
+      var m = new DOMMatrix(getComputedStyle(track).transform);
+      return m.m41;
+    }
+
+    function halfWidth() {
+      return track.scrollWidth / 2;
+    }
+
+    function onStart(x) {
+      dragging = true;
+      startX   = x;
+      startTx  = getTrackX();
+      track.classList.add('property__reel-track--dragging');
+      reel.classList.add('property__reel--grabbing');
+    }
+
+    function onMove(x) {
+      if (!dragging) return;
+      var dx  = x - startX;
+      var raw = startTx + dx;
+      var hw  = halfWidth();
+      /* keep in [-hw, 0] */
+      raw = ((raw % hw) + hw) % hw - hw;
+      track.style.transform = 'translateX(' + raw + 'px)';
+    }
+
+    function onEnd() {
+      if (!dragging) return;
+      dragging = false;
+      reel.classList.remove('property__reel--grabbing');
+      var cur = getTrackX();
+      var hw  = halfWidth();
+      var pos = ((cur % hw) + hw) % hw - hw;
+      var dur = 32;
+      var delay = (pos / hw) * dur;
+      track.style.transform = '';
+      track.style.animationDelay = delay + 's';
+      track.classList.remove('property__reel-track--dragging');
+    }
+
+    reel.addEventListener('mousedown',  function (e) { onStart(e.clientX); e.preventDefault(); });
+    reel.addEventListener('touchstart', function (e) { onStart(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('mousemove', function (e) { onMove(e.clientX); });
+    reel.addEventListener('touchmove',  function (e) {
+      if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX); }
+    }, { passive: false });
+    window.addEventListener('mouseup',  onEnd);
+    window.addEventListener('touchend', onEnd);
+  })();
+
   /* ── PAUSE ANIMATIONS WHEN OFF-SCREEN ─────────────────────── */
   var animPauseObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       var state = entry.isIntersecting ? 'running' : 'paused';
-      entry.target.querySelectorAll('.belt__track, .proof-band__track').forEach(function (t) {
+      entry.target.querySelectorAll('.belt__track, .proof-band__track, .property__reel-track').forEach(function (t) {
         t.style.animationPlayState = state;
       });
     });
   }, { rootMargin: '200px 0px 200px 0px' });
 
-  document.querySelectorAll('.belt, .proof-band').forEach(function (el) {
+  document.querySelectorAll('.belt, .proof-band, .property__reel').forEach(function (el) {
     animPauseObs.observe(el);
   });
 

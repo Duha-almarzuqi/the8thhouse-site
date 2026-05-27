@@ -47,6 +47,10 @@
       property_bedroom: 'غرفة النوم',
       property_living:  'غرفة المعيشة',
       property_relax:   'جلسة الاسترخاء',
+      property_dining:  'غرفة الطعام',
+      property_lounge:  'صالة الاستقبال',
+      property_exterior:'الواجهة الخارجية',
+      property_drag:    'اسحب لاستعراض الصور',
 
       services_label:   'خدماتنا',
       services_title:   'خدمات البيت الثامن<br>للمُلاك',
@@ -180,6 +184,10 @@
       property_bedroom: 'Master Bedroom',
       property_living:  'Living Room',
       property_relax:   'Lounge Area',
+      property_dining:  'Dining Room',
+      property_lounge:  'Reception Hall',
+      property_exterior:'Building Exterior',
+      property_drag:    'Drag to explore',
 
       services_label:   'Our Services',
       services_title:   'The 8th House Services<br>for Property Owners',

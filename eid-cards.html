@@ -63,11 +63,7 @@
       opacity: .92;
     }
 
-    /*
-      Two-layer veil — exact same logic as the website hero:
-      • top:    dark purple → transparent by 35%
-      • bottom: diagonal cream building from 55% → 85% at 100%
-    */
+    /* veil: dark purple at top (logo), slight dark at bottom */
     .card__veil {
       position: absolute;
       inset: 0;
@@ -75,15 +71,15 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(43,21,86,.72)   0%,
-          rgba(43,21,86,.30)  20%,
-          rgba(43,21,86,.0)   38%
+          rgba(43,21,86,.75)   0%,
+          rgba(43,21,86,.30)  18%,
+          rgba(43,21,86,.0)   36%
         ),
         linear-gradient(
-          175deg,
-          rgba(255,254,250,.0)   0%,
-          rgba(245,241,235,.05) 50%,
-          rgba(245,241,235,.90) 100%
+          to top,
+          rgba(43,21,86,.45)   0%,
+          rgba(43,21,86,.10)  18%,
+          rgba(43,21,86,.0)   35%
         );
     }
 
@@ -99,55 +95,59 @@
       direction: rtl;
     }
     .card__nav svg {
-      width: 50px;
+      width: 44px;
       height: auto;
-      color: var(--warm-white);
+      color: var(--gold);           /* matches nav__mark exactly */
     }
     .card__nav .logo-svg path { fill: currentColor; }
     .card__wordmark { display: flex; flex-direction: column; gap: 2px; align-items: flex-start; }
-    .card__name-ar  { font-size: 1.15rem; font-weight: 700; color: var(--warm-white); letter-spacing: .03em; line-height: 1; }
-    .card__name-en  { font-size: 0.55rem; font-weight: 300; color: rgba(197,165,114,.85); letter-spacing: .2em; text-transform: uppercase; line-height: 1; }
+    .card__name-ar  { font-size: 1.05rem; font-weight: 700; color: var(--warm-white); letter-spacing: .02em; line-height: 1; }
+    .card__name-en  { font-size: 0.5rem; font-weight: 400; color: rgba(255,254,250,.55); letter-spacing: .09em; text-transform: uppercase; line-height: 1; direction: ltr; }
 
-    /* ── body (bottom section) ── */
+    /* ── body (centered panel) ── */
     .card__body {
       position: absolute;
-      bottom: 0;
-      inset-inline: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 80px;
+      right: 80px;
       z-index: 2;
-      padding: 0 72px 80px;
+      padding: 56px 64px;
+      background: rgba(250,247,242,0.90);
+      border: 1px solid rgba(197,165,114,0.28);
       direction: rtl;
     }
 
-    /* label row — mirrors hero__label */
+    /* label row */
     .card__lbl {
       display: inline-flex;
       align-items: center;
-      gap: .85rem;
-      font-size: 0.7rem;
+      gap: .75rem;
+      font-size: 0.55rem;
       letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--purple-royal);
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.4rem;
     }
     .card__lbl-rule {
       display: inline-block;
-      width: 2rem;
+      width: 1.75rem;
       height: 1px;
       background: var(--purple-royal);
     }
-    .card__lbl-city { color: var(--cream); }
+    .card__lbl-city { color: var(--gold); }
 
-    /* main title — mirrors hero__title */
+    /* main title */
     .card__title {
-      font-size: 3.5rem;
+      font-size: 2.2rem;
       font-weight: 300;
       line-height: 1.2;
       letter-spacing: .01em;
       color: var(--text-primary);
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
       display: flex;
       flex-direction: column;
-      gap: .22em;
+      gap: .2em;
     }
     .card__title-main {
       color: var(--purple-royal);
@@ -156,7 +156,7 @@
     }
     .card__title-rest {
       color: var(--text-secondary);
-      font-size: .68em;
+      font-size: .66em;
       font-weight: 300;
       letter-spacing: .025em;
     }
@@ -165,43 +165,41 @@
     .card__div {
       width: 100%;
       height: 1px;
-      background: rgba(43,21,86,.12);
-      margin: 1.6rem 0;
+      background: rgba(197,165,114,.35);
+      margin: 1.4rem 0;
     }
 
     /* sender row */
     .card__sender {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
-    .card__sender-name  { font-size: 0.88rem; font-weight: 700; color: var(--purple-royal); letter-spacing: .03em; }
-    .card__sender-dot   { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-    .card__sender-title { font-size: 0.72rem; font-weight: 300; color: var(--text-muted); letter-spacing: .1em; }
+    .card__sender-name  { font-size: 0.68rem; font-weight: 700; color: var(--purple-royal); letter-spacing: .03em; }
+    .card__sender-dot   { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .card__sender-title { font-size: 0.55rem; font-weight: 300; color: var(--text-muted); letter-spacing: .1em; }
 
     /* contact row */
-    .card__contact { display: flex; align-items: center; gap: 1.6rem; direction: ltr; flex-wrap: wrap; }
+    .card__contact { display: flex; align-items: center; gap: 1.4rem; direction: ltr; flex-wrap: wrap; }
     .card__ci {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.7rem;
+      gap: 7px;
+      font-size: 0.55rem;
       font-weight: 300;
       color: var(--text-secondary);
       letter-spacing: .04em;
       white-space: nowrap;
     }
-    .card__ci svg { width: 15px; height: 15px; opacity: .7; flex-shrink: 0; }
+    .card__ci svg { width: 12px; height: 12px; opacity: .65; flex-shrink: 0; }
     .card__csep   { width: 3px; height: 3px; border-radius: 50%; background: rgba(197,165,114,.5); }
 
     /* ══════════════════════════════════════════════
        ENGLISH variant
     ══════════════════════════════════════════════ */
     .card--en .card__nav     { right: auto; left: 72px; direction: ltr; }
-    .card--en .card__name-ar { font-size: 0.58rem; font-weight: 300; color: rgba(197,165,114,.8); letter-spacing: .18em; text-transform: uppercase; }
-    .card--en .card__name-en { font-size: 0.82rem; font-weight: 700; color: var(--warm-white); letter-spacing: .06em; }
     .card--en .card__body    { direction: ltr; }
     .card--en .card__title   { direction: ltr; }
     .card--en .card__lbl     { direction: ltr; }
@@ -215,17 +213,16 @@
       color: var(--text-primary);
     }
     .card--en .card__title-rest {
-      color: var(--warm-white);
+      color: var(--text-secondary);
       letter-spacing: .1em;
       text-transform: uppercase;
       font-weight: 300;
-      text-shadow: 0 1px 10px rgba(10,6,18,.55);
     }
 
     /* ══════════════════════════════════════════════
        MIXED variant
     ══════════════════════════════════════════════ */
-    .card--mixed .card__title { font-size: 3rem; }
+    .card--mixed .card__title { font-size: 2rem; }
     .card__title-en-sub {
       font-size: .48em;
       font-weight: 300;

@@ -161,7 +161,7 @@
       about_pillar_3:   'Full Transparency',
 
       vm_vision_title:  'Our Vision',
-      vm_vision_body:   'To be the first choice for apartment owners in Riyadh — transforming their properties into high-yield assets managed with the professionalism and reliability that matches the finest global hospitality standards.',
+      vm_vision_body:   'To be the first choice for apartment owners in Riyadh — transforming their properties into high-yield assets managed with the professionalism and reliability that match the finest global hospitality standards.',
       vm_mission_title: 'Our Mission',
       vm_mission_body:  'At The 8th House, our mission is to manage and operate furnished residential apartments with the highest level of professionalism — raising occupancy rates, ensuring a premium hospitality experience, and protecting owners\' assets through transparent financial management and ongoing maintenance, delivering a stable income stream built on a long-term partnership of trust.',
 
@@ -196,7 +196,7 @@
       svc2_title:       'Transparent Financial Management',
       svc2_bullets:     '<li>Monthly reports on occupancy rates and returns</li><li>Dynamic pricing that accounts for seasons and demand</li>',
       svc3_title:       'Asset Value Protection',
-      svc3_bullets:     '<li>Preventive maintenance monitoring</li><li>Usage standards that preserve apartment quality and its contents</li>',
+      svc3_bullets:     '<li>Preventive maintenance monitoring</li><li>Usage standards that preserve apartment quality and its furnishings</li>',
 
       why_label:        'Our Numbers',
       why_stat1:        'Average Occupancy Rate',
@@ -209,11 +209,11 @@
       why_b2_title:     'Complete Peace of Mind',
       why_b2_desc:      "We manage every operational detail, so you don't have to.",
       why_b3_title:     'Operational Excellence',
-      why_b3_desc:      'A specialist team dedicated to apartment management and leasing.',
+      why_b3_desc:      'A specialist team dedicated to apartment management and operations.',
       why_b4_title:     'Financial Transparency',
       why_b4_desc:      'Clear reports with absolutely no hidden costs.',
       why_b5_title:     'Long-Term Partnership',
-      why_b5_desc:      'We consider your property part of our portfolio and provide real estate financial advisory to ensure portfolio growth.',
+      why_b5_desc:      'We consider your property part of our portfolio and provide real estate financial advisory services to ensure portfolio growth.',
 
       journey_title: 'Customer Journey',
       j1_title: 'Initial Enquiry',
@@ -223,7 +223,7 @@
       j3_title: 'Contract Signing',
       j3_desc:  'We establish a clear and transparent partnership agreement specifying return rates, responsibilities of both parties, and the management period.',
       j4_title: 'Furnishing & Setup',
-      j4_desc:  'The apartment is furnished and styled by the owner according to Airbnb and premium hospitality standards, followed by a professional photography session.',
+      j4_desc:  'The apartment is furnished and styled by our team to Airbnb and premium hospitality standards, followed by a professional photography session.',
       j5_title: 'Launch & Marketing',
       j5_desc:  'The apartment is listed on global platforms such as Airbnb with dynamic pricing activated.',
       j6_title: 'Booking & Guest Management',

@@ -2028,40 +2028,13 @@ html[lang="en"] .lm__type-en   {
 
 .footer__logo {
   display: flex;
-  align-items: center;
-  gap: .65rem;
 }
 
-.footer__mark {
-  width: 26px;
-  height: auto;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-
-.footer__wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: .1rem;
-  align-items: flex-start;
-}
-
-.footer__name {
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--warm-white);
-  letter-spacing: .02em;
-  line-height: 1;
-}
-
-.footer__name-en {
-  font-size: .5rem;
-  font-weight: 400;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: rgba(245,241,235,.55);
-  direction: ltr;
-  line-height: 1;
+.footer__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  opacity: .9;
 }
 
 .footer__tagline {

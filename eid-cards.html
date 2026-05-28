@@ -14,7 +14,6 @@
     @font-face { font-family:'Almarai'; font-weight:700; src:url('assets/fonts/Almarai-700-latin.woff2')  format('woff2'); }
     @font-face { font-family:'Almarai'; font-weight:800; src:url('assets/fonts/Almarai-800-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC; }
     @font-face { font-family:'Almarai'; font-weight:800; src:url('assets/fonts/Almarai-800-latin.woff2')  format('woff2'); }
-
     @font-face { font-family:'Readex Pro'; font-weight:100 700; src:url('assets/fonts/ReadexPro-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC; }
     @font-face { font-family:'Readex Pro'; font-weight:100 700; src:url('assets/fonts/ReadexPro-latin.woff2')  format('woff2'); }
   </style>
@@ -23,208 +22,238 @@
 
   <style>
     :root {
-      --purple-royal:   #2B1556;
-      --gold:           #C5A572;
-      --warm-white:     #FFFEFA;
-      --text-primary:   #2B1556;
-      --text-secondary: #4A3D5C;
-      --text-muted:     #8A7E96;
+      --purple-royal: #2B1556;
+      --gold:         #C5A572;
+      --cream:        #F5F1EB;
+      --warm-white:   #FFFEFA;
+      --text-primary: #2B1556;
+      --text-secondary:#4A3D5C;
+      --text-muted:   #8A7E96;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       background: #EAE3D7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      padding: 60px 40px 100px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 40px; padding: 60px 40px 100px;
       font-family: 'Almarai', sans-serif;
     }
 
-    /* ════════════════ CARD 1080 × 1920 ════════════════ */
+    /* ════ CARD 1080 × 1920 ════ */
     .card {
-      width: 1080px;
-      height: 1920px;
-      position: relative;
-      overflow: hidden;
-      background: var(--warm-white);
-      flex-shrink: 0;
+      width: 1080px; height: 1920px;
+      position: relative; overflow: hidden;
+      background: var(--warm-white); flex-shrink: 0;
     }
-
-    /* photo */
     .card__bg { position:absolute; inset:0; }
     .card__bg img { width:100%; height:100%; object-fit:cover; object-position:center 25%; opacity:.92; }
 
-    /* veil */
     .card__veil {
-      position: absolute; inset: 0; z-index: 1;
+      position:absolute; inset:0; z-index:1;
       background:
-        linear-gradient(to bottom, rgba(43,21,86,.80) 0%, rgba(43,21,86,.30) 16%, rgba(43,21,86,0) 32%),
-        linear-gradient(to top,   rgba(43,21,86,.50) 0%, rgba(43,21,86,.12) 18%, rgba(43,21,86,0) 34%);
+        linear-gradient(to bottom, rgba(43,21,86,.82) 0%, rgba(43,21,86,.32) 16%, rgba(43,21,86,0) 32%),
+        linear-gradient(to top,   rgba(43,21,86,.52) 0%, rgba(43,21,86,.14) 18%, rgba(43,21,86,0) 34%);
     }
 
-    /* ── logo (top-right, actual brand PNG) ── */
-    .card__nav { position:absolute; top:56px; right:64px; z-index:3; }
-    .card__nav img { width:300px; height:auto; display:block; }
+    /* ── LOGO — SVG icon (gold) + Arabic text (cream) + English text (muted gold) ── */
+    .card__nav { position:absolute; top:60px; right:68px; z-index:3; direction:rtl; }
+    .card__nav .nav__logo {
+      display:flex; align-items:center; gap:.65rem;
+      transform:scale(3.5); transform-origin:top right;
+    }
+    .card__nav .nav__mark { width:22px; height:auto; color:var(--gold); flex-shrink:0; }
+    .card__nav .nav__mark path { fill:currentColor; }
+    .card__nav .nav__wordmark { display:flex; flex-direction:column; gap:.1rem; align-items:flex-start; }
+    .card__nav .nav__name-ar {
+      font-family:'Almarai',sans-serif;
+      font-size:.95rem; font-weight:700;
+      color: var(--cream);          /* بيج */
+      letter-spacing:.02em; line-height:1;
+    }
+    .card__nav .nav__name-en {
+      font-size:.5rem; font-weight:400;
+      color:rgba(197,165,114,.55);
+      letter-spacing:.09em; text-transform:uppercase; line-height:1; direction:ltr;
+    }
 
     /* ══════════════════════════════════════════
-       TALL BODY PANEL — full-height, split in two
+       TALL BODY PANEL — transparent, split columns
     ══════════════════════════════════════════ */
     .card__body {
       position: absolute;
-      top: 236px;
-      bottom: 60px;
+      top: 220px;
+      bottom: 64px;
       left: 44px;
       right: 44px;
       z-index: 2;
-      background: rgba(250,247,242,0.90);
-      border: 1px solid rgba(197,165,114,0.28);
+      background: transparent;
+      border: 1px solid rgba(197,165,114,0.24);
       display: flex;
       flex-direction: column;
     }
 
-    /* two-column section */
+    /* columns with gap — gap area shows the dark photo background */
     .card__columns {
       display: flex;
       flex: 1;
       min-height: 0;
+      gap: 68px;
+      position: relative;
     }
 
     .card__col {
       flex: 1;
-      padding: 60px 52px 48px;
+      padding: 52px 44px 44px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
+      background: rgba(250,247,242,0.90);
     }
-    .card__col--ar {
-      direction: rtl;
-      text-align: right;
-      border-left: 1px solid rgba(197,165,114,0.22);
-    }
-    .card__col--en {
-      direction: ltr;
-      text-align: left;
-    }
+    .card__col--ar { direction:rtl; text-align:right; }
+    .card__col--en { direction:ltr; text-align:left; }
 
-    /* label (eyebrow) */
-    .card__lbl {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 44px;
-    }
-    .card__lbl-rule { display:inline-block; width:28px; height:1px; background:var(--gold); flex-shrink:0; }
-    .card__lbl-city {
-      font-family: 'Readex Pro', sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: .07em;
-    }
-    .card__col--en .card__lbl-city { letter-spacing: .06em; font-size: 17px; }
-
-    /* main greeting */
-    .card__title { display:flex; flex-direction:column; gap:.2em; }
-    .card__title-main {
-      font-family: 'Readex Pro', sans-serif;
-      font-size: 58px;
-      font-weight: 700;
-      color: var(--purple-royal);
-      line-height: 1.12;
-    }
-    .card__title-rest {
-      font-family: 'Readex Pro', sans-serif;
-      font-size: 34px;
-      font-weight: 400;
-      color: var(--text-secondary);
-      line-height: 1.35;
-    }
-    .card__col--en .card__title-main { font-size: 48px; }
-    .card__col--en .card__title-rest { font-size: 28px; }
-
-    /* gold rule divider */
-    .card__div { width:40px; height:2px; background:var(--gold); margin:44px 0 36px; }
-    .card__col--en .card__div { margin-left: 0; }
-
-    /* sender */
-    .card__sender { display:flex; flex-direction:column; gap:10px; margin-top:40px; }
-    .card__sender-name  { font-family:'Readex Pro',sans-serif; font-size:28px; font-weight:700; color:var(--purple-royal); }
-    .card__sender-title { font-family:'Almarai',sans-serif; font-size:20px; font-weight:300; color:var(--text-muted); letter-spacing:.04em; }
-    .card__col--en .card__sender-title { font-family:'Readex Pro',sans-serif; letter-spacing:.06em; }
-
-    /* ══════════════════════════════════════════
-       CONTACT SECTION — full width, clickable
-    ══════════════════════════════════════════ */
-    .card__contact {
-      border-top: 1px solid rgba(197,165,114,0.25);
-      padding: 48px 68px;
+    /* ── CENTER BADGE (floats over the dark gap) ── */
+    .card__badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 6;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      flex-shrink: 0;
+      align-items: center;
+      gap: 7px;
+      text-align: center;
+      white-space: nowrap;
+      background: rgba(30,12,68,0.82);
+      border: 1px solid rgba(197,165,114,0.42);
+      padding: 22px 20px 18px;
+    }
+    .badge__ar {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 17px; font-weight: 600;
+      color: #FFFEFA;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+      letter-spacing: .03em;
+    }
+    .badge__rule { width:28px; height:1px; background:rgba(197,165,114,0.50); }
+    .badge__en {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 10px; font-weight: 400;
+      color: rgba(197,165,114,0.78);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+      letter-spacing: .11em; text-transform: uppercase;
+    }
+    .badge__year {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 15px; font-weight: 700;
+      color: #4A7FA8;   /* كحلي / navy */
+      letter-spacing: .06em;
+      margin-top: 2px;
     }
 
+    /* ── GREETING TITLE ── */
+    .card__title { display:flex; flex-direction:column; gap:.18em; }
+    .card__title-main {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 46px; font-weight: 700;
+      color: var(--purple-royal);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .card__title-rest {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 28px; font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+    .card__col--en .card__title-main { font-size: 32px; }
+    .card__col--en .card__title-rest { font-size: 22px; }
+
+    /* ── GOLD RULE ── */
+    .card__div { width:36px; height:2px; background:var(--gold); margin:32px 0 24px; }
+
+    /* ── SENDER ── */
+    .card__sender { display:flex; flex-direction:column; gap:8px; }
+    .card__sender-name {
+      font-family:'Readex Pro',sans-serif;
+      font-size: 26px; font-weight: 700; color: var(--purple-royal);
+    }
+    .card__sender-title {
+      font-family:'Almarai',sans-serif;
+      font-size: 19px; font-weight: 300; color: var(--text-muted); letter-spacing:.03em;
+    }
+    .card__col--en .card__sender-title { font-family:'Readex Pro',sans-serif; }
+
+    /* ══════════════════════════════════════════
+       CONTACT — full width, cream bg, clickable
+    ══════════════════════════════════════════ */
+    .card__contact {
+      background: rgba(250,247,242,0.90);
+      border-top: 1px solid rgba(197,165,114,0.25);
+      padding: 44px 64px;
+      display: flex; flex-direction: column; gap: 22px;
+      flex-shrink: 0;
+    }
     .card__ci {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-family: 'Readex Pro', sans-serif;
-      font-size: 26px;
-      font-weight: 300;
+      display: flex; align-items: center; gap: 18px;
+      font-family:'Readex Pro',sans-serif;
+      font-size: 25px; font-weight: 300;
       color: var(--text-secondary);
       letter-spacing: .03em;
       text-decoration: none;
       direction: ltr;
-      transition: color .2s ease;
+      transition: color .2s;
     }
     .card__ci:hover { color: var(--gold); }
-    .card__ci svg { width:28px; height:28px; flex-shrink:0; opacity:.70; }
+    .card__ci svg { width:27px; height:27px; flex-shrink:0; opacity:.70; }
 
-    /* ════════ download button (outside card) ════════ */
+    /* ── download button ── */
     .dl-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--gold); color: var(--warm-white);
-      font-family: 'Almarai', sans-serif; font-size: .75rem; font-weight: 700;
-      letter-spacing: .08em; padding: 14px 32px; border: none; cursor: pointer;
-      transition: background .3s;
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--gold); color:var(--warm-white);
+      font-family:'Almarai',sans-serif; font-size:.75rem; font-weight:700;
+      letter-spacing:.08em; padding:14px 32px; border:none; cursor:pointer;
+      transition:background .3s;
     }
-    .dl-btn:hover { background: #D4B585; }
+    .dl-btn:hover { background:#D4B585; }
     .dl-btn svg { width:16px; height:16px; }
     .dl-btn.loading { opacity:.6; pointer-events:none; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════
-     BILINGUAL CARD — Arabic (right) · English (left)
-══════════════════════════════════════════════════ -->
 <div class="card" id="card-bilingual">
 
-  <div class="card__bg">
-    <img src="assets/img/hero-new.jpg" alt="">
-  </div>
+  <div class="card__bg"><img src="assets/img/hero-new.jpg" alt=""></div>
   <div class="card__veil"></div>
 
-  <!-- logo -->
+  <!-- ── Logo: SVG icon (gold) · Arabic (cream) · English (muted gold) ── -->
   <div class="card__nav">
-    <img src="assets/logo-gold.png" alt="البيت الثامن · The 8th House">
+    <div class="nav__logo">
+      <svg class="nav__mark" viewBox="487 394 128 148" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 551.5349 399.1823 L 511.5979 436.8603 L 511.5979 536.0643 L 515.6759 536.0643 L 515.6759 530.5853 L 515.5419 530.5853 L 515.5419 439.7633 L 551.5269 405.8123 L 588.2359 440.7503 L 588.2359 530.5853 L 588.1179 530.5853 L 588.1179 536.0643 L 592.1809 536.0643 L 592.1809 437.8633 Z"/>
+        <path d="M 552.2474 525.9358 L 544.1684 526.0188 C 542.4964 525.4318 539.6714 521.9338 537.1144 518.4708 C 536.8284 518.1548 536.8464 517.7528 536.7974 517.3418 C 536.2324 512.5808 537.1134 506.0288 536.9794 501.0908 L 548.1464 490.4488 L 542.2064 484.6928 C 537.7874 488.9568 532.9104 492.6028 528.7804 497.2438 L 528.8824 521.6098 L 539.5814 534.0078 L 564.9574 534.0078 L 575.9484 521.7268 L 575.9484 500.6028 L 574.5464 498.8588 L 537.2074 464.8018 L 537.2034 449.4648 C 538.9344 447.6818 542.5514 442.0628 544.7364 441.7198 L 561.1054 441.9298 L 567.2014 449.0908 C 566.9484 453.7338 567.7634 459.4618 567.2874 463.9688 C 567.2434 464.3808 567.2794 464.7818 566.9384 465.0608 L 554.6374 477.0098 L 559.8244 482.2558 C 560.0464 482.4568 560.2364 482.3588 560.4724 482.2828 C 561.2524 482.0338 566.9444 476.4118 568.0694 475.3208 C 569.0034 474.4148 574.8434 468.8708 574.9754 468.3478 L 574.9764 445.3588 L 564.4474 433.2268 L 540.8464 433.1308 C 540.4544 433.0828 540.1904 433.2938 539.8734 433.5038 C 539.4294 433.7968 536.5504 437.0488 535.8374 437.8108 C 534.8084 438.9108 529.1844 445.1988 529.0454 446.0368 L 529.2064 468.6048 L 567.8444 504.5238 C 567.5394 507.3738 568.6224 516.4358 567.6094 518.4638 C 567.3864 518.9108 561.6784 525.4848 561.2914 525.7428 Z"/>
+        <path d="M 609.2426 536.0506 L 492.7546 536.0506 L 492.7546 534.0796 L 607.8236 534.0796 L 607.8236 444.7156 L 571.3746 410.0276 L 565.5956 418.5376 L 564.3736 417.5326 L 570.9256 407.2096 L 609.2426 443.6766 Z"/>
+        <path d="M 494.1761 534.3636 L 494.1761 444.9996 L 530.6251 410.3116 L 536.1641 419.3226 L 537.3861 418.3186 L 531.0741 407.4936 L 492.7571 443.9606 L 492.7541 535.9506 Z"/>
+      </svg>
+      <div class="nav__wordmark">
+        <span class="nav__name-ar">البيت الثامن</span>
+        <span class="nav__name-en">THE 8TH HOUSE</span>
+      </div>
+    </div>
   </div>
 
-  <!-- tall body panel -->
+  <!-- ── Tall body panel ── -->
   <div class="card__body">
 
     <div class="card__columns">
 
-      <!-- ▶ Arabic column (right) -->
+      <!-- Arabic column (right) -->
       <div class="card__col card__col--ar">
-        <p class="card__lbl">
-          <span class="card__lbl-rule"></span>
-          <span class="card__lbl-city">عيد الأضحى المبارك · ١٤٤٧</span>
-        </p>
         <div class="card__title">
           <span class="card__title-main">عيد أضحى مبارك</span>
           <span class="card__title-rest">كل عام وأنتم بخير</span>
@@ -236,12 +265,16 @@
         </div>
       </div>
 
-      <!-- ▶ English column (left) -->
+      <!-- ── Center badge (floats over dark gap) ── -->
+      <div class="card__badge">
+        <span class="badge__ar">عيد الأضحى المبارك</span>
+        <span class="badge__rule"></span>
+        <span class="badge__en">Eid Al-Adha Mubarak</span>
+        <span class="badge__year">١٤٤٧</span>
+      </div>
+
+      <!-- English column (left) -->
       <div class="card__col card__col--en">
-        <p class="card__lbl">
-          <span class="card__lbl-rule"></span>
-          <span class="card__lbl-city">Eid Al-Adha · 1447</span>
-        </p>
         <div class="card__title">
           <span class="card__title-main">Blessed Eid Al-Adha</span>
           <span class="card__title-rest">Wishing you joy &amp; peace</span>
@@ -255,7 +288,7 @@
 
     </div><!-- /columns -->
 
-    <!-- ▶ Contact (full width, clickable) -->
+    <!-- ── Contact (full-width, clickable) ── -->
     <div class="card__contact">
       <a class="card__ci" href="https://wa.me/966569945365">
         <svg viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.57A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52ZM12 22c-1.87 0-3.7-.5-5.3-1.46l-.38-.22-3.93.99 1.03-3.83-.25-.39A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.65 0 5.16 1.03 7.04 2.9A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10Zm5.47-7.53c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.79-1.67-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.59-.5-.51-.68-.52l-.58-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48c0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34Z" fill="var(--gold)"/></svg>
@@ -288,7 +321,10 @@ async function saveCard(id, filename) {
   btn.textContent = '... جاري التحميل';
   const el = document.getElementById(id);
   try {
-    const canvas = await html2canvas(el, { width:1080, height:1920, scale:1, useCORS:true, allowTaint:true, logging:false, imageTimeout:0 });
+    const canvas = await html2canvas(el, {
+      width:1080, height:1920, scale:1,
+      useCORS:true, allowTaint:true, logging:false, imageTimeout:0
+    });
     const link = document.createElement('a');
     link.download = filename;
     link.href = canvas.toDataURL('image/png');

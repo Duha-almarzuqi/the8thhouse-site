@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="assets/img/hero-new.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -44,6 +44,7 @@
         <a href="#contact"      class="nav__cta" data-i18n="nav_cta">تواصل معنا</a>
       </nav>
 
+      <a href="#contact" class="nav__cta-btn" data-i18n="nav_cta">تواصل معنا</a>
       <button class="nav__lang" id="langToggle" aria-label="Switch language">EN</button>
       <button class="nav__burger" id="navBurger" aria-label="فتح القائمة" aria-expanded="false">
         <span></span>
@@ -55,6 +56,20 @@
 
   <!-- Mobile drawer -->
   <div class="drawer" id="drawer" aria-hidden="true">
+    <button class="drawer__close" id="drawerClose" aria-label="إغلاق القائمة">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="drawer__brand" aria-hidden="true">
+      <svg class="drawer__mark" viewBox="487 394 128 148" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M 551.5349 399.1823 L 511.5979 436.8603 L 511.5979 536.0643 L 515.6759 536.0643 L 515.6759 530.5853 L 515.5419 530.5853 L 515.5419 439.7633 L 551.5269 405.8123 L 588.2359 440.7503 L 588.2359 530.5853 L 588.1179 530.5853 L 588.1179 536.0643 L 592.1809 536.0643 L 592.1809 437.8633 Z"/>
+        <path fill="currentColor" d="M 552.2474 525.9358 L 544.1684 526.0188 C 542.4964 525.4318 539.6714 521.9338 537.1144 518.4708 C 536.8284 518.1548 536.8464 517.7528 536.7974 517.3418 C 536.2324 512.5808 537.1134 506.0288 536.9794 501.0908 L 548.1464 490.4488 L 542.2064 484.6928 C 537.7874 488.9568 532.9104 492.6028 528.7804 497.2438 L 528.8824 521.6098 L 539.5814 534.0078 L 564.9574 534.0078 L 575.9484 521.7268 L 575.9484 500.6028 L 574.5464 498.8588 L 537.2074 464.8018 L 537.2034 449.4648 C 538.9344 447.6818 542.5514 442.0628 544.7364 441.7198 L 561.1054 441.9298 L 567.2014 449.0908 C 566.9484 453.7338 567.7634 459.4618 567.2874 463.9688 C 567.2434 464.3808 567.2794 464.7818 566.9384 465.0608 L 554.6374 477.0098 L 559.8244 482.2558 C 560.0464 482.4568 560.2364 482.3588 560.4724 482.2828 C 561.2524 482.0338 566.9444 476.4118 568.0694 475.3208 C 569.0034 474.4148 574.8434 468.8708 574.9754 468.3478 L 574.9764 445.3588 L 564.4474 433.2268 L 540.8464 433.1308 C 540.4544 433.0828 540.1904 433.2938 539.8734 433.5038 C 539.4294 433.7968 536.5504 437.0488 535.8374 437.8108 C 534.8084 438.9108 529.1844 445.1988 529.0454 446.0368 L 529.2064 468.6048 L 567.8444 504.5238 C 567.5394 507.3738 568.6224 516.4358 567.6094 518.4638 C 567.3864 518.9108 561.6784 525.4848 561.2914 525.7428 Z"/>
+        <path fill="currentColor" d="M 609.2426 536.0506 L 492.7546 536.0506 L 492.7546 534.0796 L 607.8236 534.0796 L 607.8236 444.7156 L 571.3746 410.0276 L 565.5956 418.5376 L 564.3736 417.5326 L 570.9256 407.2096 L 609.2426 443.6766 Z"/>
+        <path fill="currentColor" d="M 494.1761 534.3636 L 494.1761 444.9996 L 530.6251 410.3116 L 536.1641 419.3226 L 537.3861 418.3186 L 531.0741 407.4936 L 492.7571 443.9606 L 492.7541 535.9506 Z"/>
+      </svg>
+      <span class="drawer__brand-name">البيت الثامن</span>
+    </div>
     <nav class="drawer__nav" aria-label="قائمة الجوال">
       <a href="#about"        class="drawer__link" data-i18n="nav_about">من نحن</a>
       <a href="#services"     class="drawer__link" data-i18n="nav_services">خدماتنا</a>
@@ -62,6 +77,7 @@
       <a href="#testimonials" class="drawer__link" data-i18n="nav_testimonials">آراء العملاء</a>
       <a href="#contact"      class="drawer__link drawer__link--cta" data-i18n="nav_cta">تواصل معنا</a>
     </nav>
+    <p class="drawer__foot" aria-hidden="true">96.6% ★★★★★</p>
   </div>
 
   <!-- ══════════════════════════════════════════════════════
@@ -77,6 +93,12 @@
         fetchpriority="high">
     </div>
     <div class="hero__veil" aria-hidden="true"></div>
+
+    <!-- Desktop: right-side image panel -->
+    <div class="hero__panel" aria-hidden="true">
+      <img src="assets/img/apt-lounge.jpg" alt="" class="hero__panel-img" loading="lazy">
+      <div class="hero__panel-veil"></div>
+    </div>
 
     <div class="hero__body">
       <p class="hero__label" aria-hidden="true">
@@ -97,6 +119,24 @@
         <span class="hero__sub-rest">IN OPERATING FURNISHED APARTMENTS</span>
       </p>
 
+      <!-- Stats strip -->
+      <div class="hero__stats" aria-label="أرقامنا">
+        <div class="hero__stat">
+          <span class="hero__stat-val">83.6%</span>
+          <span class="hero__stat-lbl" data-i18n="why_stat1">متوسط الإشغال</span>
+        </div>
+        <span class="hero__stat-div" aria-hidden="true"></span>
+        <div class="hero__stat">
+          <span class="hero__stat-val">96.6%</span>
+          <span class="hero__stat-lbl" data-i18n="why_stat2">تقييمات 5 نجوم</span>
+        </div>
+        <span class="hero__stat-div" aria-hidden="true"></span>
+        <div class="hero__stat">
+          <span class="hero__stat-val">6</span>
+          <span class="hero__stat-lbl" data-i18n="why_stat4">سنوات خبرة</span>
+        </div>
+      </div>
+
       <div class="hero__actions">
         <a href="#contact" class="hero__cta">
           <span data-i18n="hero_cta_start">ابدأ الشراكة</span>
@@ -112,6 +152,12 @@
           <span data-i18n="hero_cta_register">سجّل عقارك</span>
         </button>
       </div>
+
+      <!-- Trust badge -->
+      <p class="hero__trust" aria-label="تقييم 5 نجوم">
+        <span class="hero__trust-stars" aria-hidden="true">★★★★★</span>
+        <span data-i18n="hero_trust">96.6% تقييمات إيجابية من ضيوفنا</span>
+      </p>
     </div>
 
     <div class="hero__scroll" aria-hidden="true">
@@ -292,29 +338,35 @@
       <div class="property__reel" aria-label="معرض الصور" role="region">
         <div class="property__reel-track">
 
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-bedroom.jpg" data-lb-cap="غرفة النوم">
             <img src="assets/img/apt-bedroom.jpg" alt="غرفة النوم الرئيسية" loading="lazy">
             <span class="property__lbl" data-i18n="property_bedroom">غرفة النوم</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-living.jpg" data-lb-cap="غرفة المعيشة">
             <img src="assets/img/apt-living.jpg" alt="غرفة المعيشة" loading="lazy">
             <span class="property__lbl" data-i18n="property_living">غرفة المعيشة</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-fireplace.jpg" data-lb-cap="جلسة الاسترخاء">
             <img src="assets/img/apt-fireplace.jpg" alt="جلسة الاسترخاء" loading="lazy">
             <span class="property__lbl" data-i18n="property_relax">جلسة الاسترخاء</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-lounge.jpg" data-lb-cap="صالة الاستقبال">
             <img src="assets/img/apt-lounge.jpg" alt="صالة الاستقبال" loading="lazy">
             <span class="property__lbl" data-i18n="property_lounge">صالة الاستقبال</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-dining.jpg" data-lb-cap="غرفة الطعام">
             <img src="assets/img/apt-dining.jpg" alt="غرفة الطعام" loading="lazy">
             <span class="property__lbl" data-i18n="property_dining">غرفة الطعام</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
-          <div class="property__slide">
+          <div class="property__slide" data-lb-src="assets/img/apt-exterior.jpg" data-lb-cap="الواجهة الخارجية">
             <img src="assets/img/apt-exterior.jpg" alt="الواجهة الخارجية" loading="lazy">
             <span class="property__lbl" data-i18n="property_exterior">الواجهة الخارجية</span>
+            <span class="property__zoom" aria-hidden="true">⊕</span>
           </div>
 
           <!-- duplicate for seamless loop -->
@@ -1146,6 +1198,55 @@
 
       </form>
     </div>
+  </div>
+
+  <!-- Property Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+    <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="السابق">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="التالي">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M11 4l-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="lightbox__inner">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+      <p class="lightbox__cap" id="lightboxCap"></p>
+    </div>
+    <div class="lightbox__overlay" id="lightboxOverlay"></div>
+  </div>
+
+  <!-- Desktop WhatsApp bubble -->
+  <a href="https://wa.me/966569945365" rel="noopener noreferrer"
+     class="wa-bubble" id="waBubble" aria-label="تواصل عبر واتساب" title="تواصل عبر واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Floating mobile CTA bar -->
+  <div class="float-cta" id="floatCta" aria-hidden="true">
+    <a href="https://wa.me/966569945365" rel="noopener noreferrer" class="float-cta__btn float-cta__btn--wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span data-i18n="contact_whatsapp_short">واتساب</span>
+    </a>
+    <button class="float-cta__btn float-cta__btn--reg" id="floatOpenLead" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span data-i18n="hero_cta_register">سجّل عقارك</span>
+    </button>
   </div>
 
   <script src="js/i18n.js"></script>

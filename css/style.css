@@ -199,7 +199,7 @@ ol         { list-style: none; }
 /* ── NAV ─────────────────────────────────────────────────────── */
 .nav {
   position: fixed;
-  top: 3px;
+  top: 0;
   inset-inline: 0;
   z-index: 200;
   padding: 1.5rem var(--pad);

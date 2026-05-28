@@ -190,8 +190,8 @@ ol         { list-style: none; }
   top: 0;
   inset-inline: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-soft) 70%, transparent 100%);
-  opacity: .65;
+  background: linear-gradient(90deg, transparent 0%, #1A0B2E 20%, #2B1556 50%, #1A0B2E 80%, transparent 100%);
+  opacity: 1;
   z-index: 201;
   pointer-events: none;
 }
@@ -886,6 +886,7 @@ html[lang="en"] .lm__type-en   {
 .hero__cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: .75rem;
   font-size: .7rem;
   font-weight: 700;
@@ -894,6 +895,7 @@ html[lang="en"] .lm__type-en   {
   background: var(--gold);
   color: var(--warm-white);
   padding: 1rem 2.25rem;
+  min-width: 160px;
   border: 1px solid var(--gold);
   transition: background .4s ease, color .4s ease, border-color .4s ease, opacity .4s ease;
 }
@@ -1973,39 +1975,36 @@ html[lang="en"] .lm__type-en   {
 .contact__btn {
   display: inline-flex;
   align-items: center;
-  gap: .65rem;
+  gap: .55rem;
   font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: 1rem 2rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  padding: .7rem 1.5rem;
   border: 1px solid transparent;
-  border-radius: 4px;
-  transition: background .35s ease, border-color .35s ease, color .35s ease;
+  border-radius: 3px;
+  transition: background .35s ease, border-color .35s ease, color .35s ease, opacity .35s ease;
 }
 
 .contact__btn--primary {
-  background: var(--gold);
-  color: var(--warm-white);
-  border-color: var(--gold);
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold-rule);
 }
 
 .contact__btn--primary:hover {
-  background: var(--gold-soft);
-  border-color: var(--gold-soft);
-  color: var(--warm-white);
+  background: rgba(197,165,114,.1);
+  border-color: var(--gold);
 }
 
 .contact__btn--ghost {
-  background: var(--purple-royal);
-  color: var(--warm-white);
-  border-color: var(--purple-royal);
+  background: transparent;
+  color: var(--purple-royal);
+  border-color: rgba(43,21,86,.2);
 }
 
 .contact__btn--ghost:hover {
-  background: var(--purple-deep);
-  border-color: var(--purple-deep);
-  color: var(--warm-white);
+  background: rgba(43,21,86,.06);
+  border-color: var(--purple-royal);
 }
 
 /* ── FOOTER ──────────────────────────────────────────────────── */

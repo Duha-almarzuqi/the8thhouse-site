@@ -179,14 +179,17 @@
     /* divider */
     .card__div { width: 100%; height: 1px; background: rgba(197,165,114,.35); margin: 44px 0; }
 
-    /* sender */
-    .card__sender { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+    /* sender — stacked vertically */
+    .card__sender { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
     .card__sender-name  { font-size: 32px; font-weight: 700; color: var(--purple-royal); letter-spacing: .03em; }
-    .card__sender-dot   { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-    .card__sender-title { font-size: 24px; font-weight: 300; color: var(--text-muted); letter-spacing: .08em; }
+    .card__sender-dot   { display: none; }
+    .card__sender-title { font-size: 24px; font-weight: 300; color: var(--text-muted); letter-spacing: .06em; }
 
-    /* contact */
-    .card__contact { display: flex; align-items: center; gap: 28px; direction: ltr; flex-wrap: wrap; }
+    /* contact — stacked vertically */
+    .card__contact { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; direction: ltr; }
+    .card__ci { display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 300; color: var(--text-secondary); letter-spacing: .03em; white-space: nowrap; }
+    .card__ci svg { width: 26px; height: 26px; opacity: .7; flex-shrink: 0; }
+    .card__csep { display: none; }
     .card__ci { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 300; color: var(--text-secondary); letter-spacing: .03em; white-space: nowrap; }
     .card__ci svg { width: 26px; height: 26px; opacity: .7; flex-shrink: 0; }
     .card__csep   { width: 5px; height: 5px; border-radius: 50%; background: rgba(197,165,114,.5); }
@@ -197,7 +200,8 @@
     .card--en .card__body    { direction: ltr; }
     .card--en .card__title   { direction: ltr; }
     .card--en .card__lbl     { direction: ltr; }
-    .card--en .card__sender  { direction: ltr; }
+    .card--en .card__sender  { direction: ltr; align-items: flex-start; }
+    .card--en .card__contact { align-items: flex-start; }
 
     /* en title mirrors hero__sub */
     .card--en .card__title-main {

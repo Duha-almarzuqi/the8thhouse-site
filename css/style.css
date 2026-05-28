@@ -1967,45 +1967,42 @@ html[lang="en"] .lm__type-en   {
 
 .contact__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: .85rem;
+  flex-wrap: nowrap;
+  gap: .75rem;
   justify-content: center;
 }
 
 .contact__btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: .55rem;
   font-size: .68rem;
-  font-weight: 400;
-  letter-spacing: .04em;
-  padding: .7rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  padding: .85rem 1.5rem;
+  flex: 1;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background .35s ease, border-color .35s ease, color .35s ease, opacity .35s ease;
+  transition: background .35s ease, opacity .35s ease;
+  white-space: nowrap;
 }
 
 .contact__btn--primary {
-  background: transparent;
-  color: var(--gold);
-  border-color: var(--gold-rule);
-}
-
-.contact__btn--primary:hover {
-  background: rgba(197,165,114,.1);
+  background: var(--gold);
+  color: var(--warm-white);
   border-color: var(--gold);
 }
 
-.contact__btn--ghost {
-  background: transparent;
-  color: var(--purple-royal);
-  border-color: rgba(43,21,86,.2);
-}
+.contact__btn--primary:hover { background: var(--gold-soft); }
 
-.contact__btn--ghost:hover {
-  background: rgba(43,21,86,.06);
+.contact__btn--ghost {
+  background: var(--purple-royal);
+  color: var(--warm-white);
   border-color: var(--purple-royal);
 }
+
+.contact__btn--ghost:hover { background: var(--purple-deep); }
 
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .footer {

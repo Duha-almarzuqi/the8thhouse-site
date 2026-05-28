@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>بطاقات المعايدة · البيت الثامن</title>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     :root {
@@ -149,17 +149,18 @@
 
     /* label */
     .card__lbl {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 18px;
       font-size: 22px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      letter-spacing: .06em;
       color: var(--purple-royal);
       margin-bottom: 36px;
+      width: 100%;
     }
-    .card__lbl-rule { display: inline-block; width: 40px; height: 1px; background: var(--purple-royal); }
+    .card__lbl-rule { display: inline-block; width: 40px; height: 1px; background: var(--gold); flex-shrink: 0; }
     .card__lbl-city { color: var(--gold); }
+    .card--en .card__lbl { direction: ltr; letter-spacing: .12em; text-transform: uppercase; font-size: 20px; }
 
     /* main title */
     .card__title {
@@ -173,48 +174,51 @@
       flex-direction: column;
       gap: .2em;
     }
-    .card__title-main { color: var(--purple-royal); font-weight: 700; font-size: 1em; font-family: 'Amiri', serif; }
-    .card__title-rest { color: var(--text-secondary); font-size: .62em; font-weight: 400; font-family: 'Amiri', serif; letter-spacing: .01em; }
+    .card__title-main { color: var(--purple-royal); font-weight: 700; font-size: 1em; font-family: 'El Messiri', sans-serif; }
+    .card__title-rest { color: var(--text-secondary); font-size: .62em; font-weight: 400; font-family: 'El Messiri', sans-serif; letter-spacing: .01em; }
 
     /* divider */
     .card__div { width: 100%; height: 1px; background: rgba(197,165,114,.35); margin: 44px 0; }
 
-    /* sender — stacked vertically */
+    /* sender — stacked vertically, inherits direction from .card__body */
     .card__sender { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
     .card__sender-name  { font-size: 32px; font-weight: 700; color: var(--purple-royal); letter-spacing: .03em; }
     .card__sender-dot   { display: none; }
     .card__sender-title { font-size: 24px; font-weight: 300; color: var(--text-muted); letter-spacing: .06em; }
 
-    /* contact — stacked vertically */
-    .card__contact { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; direction: ltr; }
-    .card__ci { display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 300; color: var(--text-secondary); letter-spacing: .03em; white-space: nowrap; }
+    /* contact — stacked vertically, full-width rows, each row always LTR (phone/email/handle) */
+    .card__contact { display: flex; flex-direction: column; gap: 16px; }
+    .card__ci { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 300; color: var(--text-secondary); letter-spacing: .03em; white-space: nowrap; direction: ltr; }
     .card__ci svg { width: 26px; height: 26px; opacity: .7; flex-shrink: 0; }
     .card__csep { display: none; }
-    .card__ci { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 300; color: var(--text-secondary); letter-spacing: .03em; white-space: nowrap; }
-    .card__ci svg { width: 26px; height: 26px; opacity: .7; flex-shrink: 0; }
-    .card__csep   { width: 5px; height: 5px; border-radius: 50%; background: rgba(197,165,114,.5); }
+
+    /* bilingual row for mixed card */
+    .card__sender-bilingual { display: flex; justify-content: space-between; align-items: baseline; width: 100%; gap: 20px; }
+    .card__sender-name--en  { direction: ltr; font-size: 26px; font-weight: 600; color: var(--text-secondary); font-family: 'El Messiri', sans-serif; }
+    .card__sender-title--en { direction: ltr; font-size: 20px; color: var(--text-muted); }
 
     /* ══════════════════════════════════════════════
        ENGLISH variant
     ══════════════════════════════════════════════ */
-    .card--en .card__body    { direction: ltr; }
-    .card--en .card__title   { direction: ltr; }
-    .card--en .card__lbl     { direction: ltr; }
+    .card--en .card__body    { direction: ltr; text-align: left; }
+    .card--en .card__title   { direction: ltr; text-align: left; }
     .card--en .card__sender  { direction: ltr; align-items: flex-start; }
-    .card--en .card__contact { align-items: flex-start; }
+    .card--en .card__contact { direction: ltr; }
 
-    /* en title mirrors hero__sub */
+    /* en title */
     .card--en .card__title-main {
+      font-family: 'El Messiri', sans-serif;
       font-weight: 700;
-      letter-spacing: .13em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--text-primary);
     }
     .card--en .card__title-rest {
+      font-family: 'El Messiri', sans-serif;
       color: var(--text-secondary);
-      letter-spacing: .1em;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ══════════════════════════════════════════════
@@ -228,6 +232,8 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       direction: ltr;
+      text-align: left;
+      width: 100%;
       margin-top: .1em;
     }
   </style>
@@ -415,10 +421,14 @@
     </h1>
     <div class="card__div"></div>
     <div class="card__sender">
-      <span class="card__sender-name">المهندس عماد مقادمي &nbsp;·&nbsp; Eng. Emad Maqadmi</span>
-    </div>
-    <div class="card__sender" style="margin-bottom:1rem;">
-      <span class="card__sender-title">شريك مؤسس · Co-Founder · البيت الثامن · The 8th House</span>
+      <div class="card__sender-bilingual">
+        <span class="card__sender-name">المهندس عماد مقادمي</span>
+        <span class="card__sender-name card__sender-name--en">Eng. Emad Maqadmi</span>
+      </div>
+      <div class="card__sender-bilingual">
+        <span class="card__sender-title">شريك مؤسس · البيت الثامن</span>
+        <span class="card__sender-title card__sender-title--en">Co-Founder · The 8th House</span>
+      </div>
     </div>
     <div class="card__contact">
       <div class="card__ci">

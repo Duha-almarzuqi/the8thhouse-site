@@ -2632,7 +2632,9 @@ html[lang="en"] .lm__type-en   {
 
   .contact__btn {
     min-height: 48px;
-    flex: 1 1 100%;
+    flex: 1 1 auto;
+    font-size: .72rem;
+    padding: .9rem 1rem;
   }
 
   /* مسافة إضافية في الأسفل بحيث لا يغطي الـ float bar المحتوى */

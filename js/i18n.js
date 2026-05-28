@@ -15,6 +15,8 @@
       hero_title_rest:  'في تشغيل الشقق المؤثثة',
       hero_cta_start:   'ابدأ الشراكة',
       hero_cta_register:'سجّل عقارك',
+      hero_trust:       '96.6% تقييمات إيجابية من ضيوفنا',
+      contact_whatsapp_short: 'واتساب',
 
       about_label:      'من نحن',
       about_title:      'شراكة حقيقية<br>مع ملاك الشقق المؤثثة',
@@ -152,6 +154,8 @@
       hero_title_rest:  'in Operating Furnished Apartments',
       hero_cta_start:   'Begin Partnership',
       hero_cta_register:'List Your Property',
+      hero_trust:       '96.6% positive guest reviews',
+      contact_whatsapp_short: 'WhatsApp',
 
       about_label:      'Who We Are',
       about_title:      'A True Partnership<br>with Furnished Apartment Owners',

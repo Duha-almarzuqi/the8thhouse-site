@@ -457,6 +457,31 @@
     window.addEventListener('touchend', onEnd);
   })();
 
+  /* ── FLOATING MOBILE CTA ───────────────────────────────────── */
+  var floatCta     = document.getElementById('floatCta');
+  var floatOpenBtn = document.getElementById('floatOpenLead');
+  var heroSection  = document.getElementById('hero');
+  var contactSection = document.getElementById('contact');
+
+  if (floatCta && heroSection) {
+    var floatObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target === heroSection) {
+          floatCta.classList.toggle('visible', !entry.isIntersecting);
+          floatCta.setAttribute('aria-hidden', String(entry.isIntersecting));
+        }
+        if (entry.target === contactSection) {
+          floatCta.classList.toggle('hide', entry.isIntersecting);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    floatObs.observe(heroSection);
+    if (contactSection) floatObs.observe(contactSection);
+  }
+
+  if (floatOpenBtn) floatOpenBtn.addEventListener('click', openModal);
+
   /* ── PAUSE ANIMATIONS WHEN OFF-SCREEN ─────────────────────── */
   var animPauseObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

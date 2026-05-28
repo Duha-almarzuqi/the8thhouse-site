@@ -1970,23 +1970,22 @@ html[lang="en"] .lm__type-en   {
 }
 
 .contact__btn {
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 18px 1fr 18px;
+  column-gap: .6rem;
   align-items: center;
-  justify-content: center;
+  padding: .75rem 1.25rem;
+  width: 100%;
   font-size: .7rem;
   font-weight: 400;
   letter-spacing: .05em;
-  padding: .7rem 2rem;
-  width: 100%;
   border: 1px solid transparent;
   border-radius: 2px;
   transition: background .35s ease, opacity .35s ease;
 }
 
-.contact__btn svg {
-  position: absolute;
-  right: .9rem;
+.contact__btn span {
+  text-align: center;
 }
 
 .contact__btn--primary {

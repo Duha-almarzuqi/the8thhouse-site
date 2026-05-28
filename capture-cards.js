@@ -11,9 +11,7 @@ async function capture() {
   await new Promise(r => setTimeout(r, 2500));
 
   const cards = [
-    { id: 'card-ar',    file: 'assets/eid-card-arabic.png'  },
-    { id: 'card-en',    file: 'assets/eid-card-english.png' },
-    { id: 'card-mixed', file: 'assets/eid-card-mixed.png'   },
+    { id: 'card-bilingual', file: 'assets/eid-card-bilingual.png' },
   ];
 
   for (const { id, file } of cards) {

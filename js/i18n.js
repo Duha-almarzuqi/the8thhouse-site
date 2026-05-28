@@ -432,8 +432,21 @@
     var btn = document.getElementById('langToggle');
     if (btn) {
       btn.addEventListener('click', function () {
-        var cur = document.documentElement.lang || 'ar';
-        applyLang(cur === 'ar' ? 'en' : 'ar');
+        var cur  = document.documentElement.lang || 'ar';
+        var next = cur === 'ar' ? 'en' : 'ar';
+        var outCls = next === 'en' ? 'lang-out-ltr' : 'lang-out-rtl';
+        var inCls  = next === 'en' ? 'lang-in-ltr'  : 'lang-in-rtl';
+
+        document.body.classList.add(outCls);
+
+        setTimeout(function () {
+          applyLang(next);
+          document.body.classList.remove(outCls);
+          document.body.classList.add(inCls);
+          setTimeout(function () {
+            document.body.classList.remove(inCls);
+          }, 300);
+        }, 220);
       });
     }
   }

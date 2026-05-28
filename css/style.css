@@ -2031,8 +2031,9 @@ html[lang="en"] .lm__type-en   {
 }
 
 .footer__logo-img {
-  height: 38px;
-  width: auto;
+  height: auto;
+  width: 180px;
+  max-width: 100%;
   display: block;
   opacity: .9;
 }

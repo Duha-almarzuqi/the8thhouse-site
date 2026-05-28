@@ -2,8 +2,12 @@
    THE 8TH HOUSE — Quiet Luxury Brand Identity
    Register: Brand · Reference: Aman, Rosewood morning lobby aesthetic
    Strategy: Cream-based light luxury — purple as accent, gold as detail
-   Font: Almarai exclusive (300 / 400 / 700 / 800)
+   Font: Readex Pro (Arabic + Latin)
    ================================================================ */
+
+/* ── LOCAL FONTS ─────────────────────────────────────────────── */
+@font-face { font-family:'Readex Pro'; font-weight:100 700; font-display:swap; src:url('../assets/fonts/ReadexPro-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC; }
+@font-face { font-family:'Readex Pro'; font-weight:100 700; font-display:swap; src:url('../assets/fonts/ReadexPro-latin.woff2')  format('woff2'); }
 
 /* ── TOKENS ──────────────────────────────────────────────────── */
 :root {
@@ -39,7 +43,7 @@
   --border-light:   rgba(43,21,86,.08);
 
   /* Typography */
-  --f: 'Almarai', sans-serif;
+  --f: 'Readex Pro', sans-serif;
 
   /* Easing */
   --ease: cubic-bezier(.23,1,.32,1);
@@ -218,36 +222,11 @@ ol         { list-style: none; }
   gap: .65rem;
 }
 
-.nav__mark {
-  width: 22px;
-  height: auto;
-  color: var(--gold);
-  flex-shrink: 0;
+.nav__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
 }
-
-.nav__wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: .1rem;
-  align-items: flex-start;
-}
-
-.nav__name-ar {
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--warm-white);
-  letter-spacing: .02em;
-  line-height: 1;
-}
-
-.nav__name-en {
-  font-size: .5rem;
-  font-weight: 400;
-  color: rgba(255,254,250,.55);
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  line-height: 1;
-  direction: ltr;
 }
 
 .nav__links {
@@ -660,6 +639,15 @@ html[lang="en"] .lm__type-en   {
   background: var(--purple-deep);
   border-color: var(--purple-deep);
   color: var(--warm-white);
+}
+
+/* أيقونة البيت على اليسار في العربي */
+html[lang="ar"] .hero__cta--outline svg { order: 2; }
+
+/* أزرار الجوال — نفس الحجم والمحاذاة */
+@media (max-width: 520px) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__cta { justify-content: center; width: 100%; }
 }
 
 .hero__scroll {
@@ -1783,39 +1771,12 @@ html[lang="en"] .lm__type-en   {
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: .65rem;
 }
 
-.footer__mark {
-  width: 26px;
+.footer__logo-img {
   height: auto;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-
-.footer__wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: .1rem;
-  align-items: flex-start;
-}
-
-.footer__name {
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--warm-white);
-  letter-spacing: .02em;
-  line-height: 1;
-}
-
-.footer__name-en {
-  font-size: .5rem;
-  font-weight: 400;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: rgba(245,241,235,.55);
-  direction: ltr;
-  line-height: 1;
+  width: 160px;
+  display: block;
 }
 
 .footer__tagline {

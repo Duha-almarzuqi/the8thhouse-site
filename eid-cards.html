@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بطاقة المعايدة · البيت الثامن</title>
+
+  <style>
+    /* ── local fonts ── */
+    @font-face { font-family:'Almarai'; font-weight:300; src:url('assets/fonts/Almarai-300-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC; }
+    @font-face { font-family:'Almarai'; font-weight:300; src:url('assets/fonts/Almarai-300-latin.woff2')  format('woff2'); }
+    @font-face { font-family:'Almarai'; font-weight:400; src:url('assets/fonts/Almarai-400-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC; }
+    @font-face { font-family:'Almarai'; font-weight:400; src:url('assets/fonts/Almarai-400-latin.woff2')  format('woff2'); }
+    @font-face { font-family:'Almarai'; font-weight:700; src:url('assets/fonts/Almarai-700-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC; }
+    @font-face { font-family:'Almarai'; font-weight:700; src:url('assets/fonts/Almarai-700-latin.woff2')  format('woff2'); }
+    @font-face { font-family:'Almarai'; font-weight:800; src:url('assets/fonts/Almarai-800-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC; }
+    @font-face { font-family:'Almarai'; font-weight:800; src:url('assets/fonts/Almarai-800-latin.woff2')  format('woff2'); }
+    @font-face { font-family:'Readex Pro'; font-weight:100 700; src:url('assets/fonts/ReadexPro-arabic.woff2') format('woff2'); unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC; }
+    @font-face { font-family:'Readex Pro'; font-weight:100 700; src:url('assets/fonts/ReadexPro-latin.woff2')  format('woff2'); }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    :root {
+      --purple-royal:   #2B1556;
+      --gold:           #C5A572;
+      --warm-white:     #FFFEFA;
+      --text-primary:   #2B1556;
+      --text-secondary: #4A3D5C;
+      --text-muted:     #8A7E96;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: #EAE3D7;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 40px; padding: 60px 40px 100px;
+      font-family: 'Almarai', sans-serif;
+    }
+
+    /* ════ CARD 1080 × 1920 ════ */
+    .card {
+      width: 1080px; height: 1920px;
+      position: relative; overflow: hidden;
+      background: var(--warm-white); flex-shrink: 0;
+    }
+    .card__bg { position:absolute; inset:0; }
+    .card__bg img { width:100%; height:100%; object-fit:cover; object-position:center 25%; opacity:.92; }
+
+    .card__veil {
+      position:absolute; inset:0; z-index:1;
+      background:
+        linear-gradient(to bottom, rgba(43,21,86,.80) 0%, rgba(43,21,86,.30) 16%, rgba(43,21,86,0) 32%),
+        linear-gradient(to top,   rgba(43,21,86,.50) 0%, rgba(43,21,86,.12) 18%, rgba(43,21,86,0) 34%);
+    }
+
+    /* ── LOGO PNG — شكل ذهبي + كتابة كريمية ── */
+    .card__nav { position:absolute; top:56px; right:64px; z-index:3; }
+    .card__nav img { width:300px; height:auto; display:block; }
+
+    /* ══════════════════════════════════════════
+       BODY PANEL — fixed height, centered on card
+    ══════════════════════════════════════════ */
+    .card__body {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 44px;
+      right: 44px;
+      height: 780px;
+      z-index: 2;
+      background: rgba(250,247,242,0.90);
+      border: 1px solid rgba(197,165,114,0.28);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* two-column section — fills remaining space above contact */
+    .card__columns {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .card__col {
+      flex: 1;
+      padding: 44px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .card__col--ar {
+      direction: rtl;
+      text-align: right;
+      border-left: 1px solid rgba(197,165,114,0.22);
+    }
+    .card__col--en {
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* label (eyebrow) */
+    .card__lbl {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .card__lbl-rule { display:inline-block; width:28px; height:1px; background:var(--purple-royal); flex-shrink:0; }
+    .card__lbl-city {
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 18px; font-weight: 400;
+      color: var(--gold);
+      letter-spacing: .07em;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .card__col--en .card__lbl-city { letter-spacing: .06em; font-size: 17px; }
+    .lbl-year { color: var(--purple-royal); text-shadow: none; }
+
+    /* main greeting */
+    .card__title { display:flex; flex-direction:column; gap:.2em; }
+    .card__title-main {
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 42px; font-weight: 700;
+      color: var(--purple-royal);
+      line-height: 1.12;
+      white-space: nowrap;
+    }
+    .card__title-rest {
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 28px; font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    /* gold rule divider */
+    .card__div { width:40px; height:2px; background:var(--gold); margin:32px 0 24px; }
+
+    /* sender */
+    .card__sender { display:flex; flex-direction:column; gap:10px; margin-top:28px; }
+    .card__sender-name  { font-family:'Readex Pro',sans-serif; font-size:28px; font-weight:700; color:var(--purple-royal); }
+    .card__sender-title { font-family:'Almarai',sans-serif; font-size:20px; font-weight:300; color:var(--text-muted); letter-spacing:.04em; }
+    .card__col--en .card__sender-title { font-family:'Readex Pro',sans-serif; letter-spacing:.06em; }
+
+    /* ══════════════════════════════════════════
+       CONTACT SECTION — full width, clickable
+    ══════════════════════════════════════════ */
+    .card__contact {
+      border-top: 1px solid rgba(197,165,114,0.25);
+      padding: 30px 68px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .card__ci {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Readex Pro', sans-serif;
+      font-size: 26px; font-weight: 300;
+      color: var(--text-secondary);
+      letter-spacing: .03em;
+      text-decoration: none;
+      direction: ltr;
+      transition: color .2s ease;
+    }
+    .card__ci:hover { color: var(--gold); }
+    .card__ci svg { width:28px; height:28px; flex-shrink:0; opacity:.70; }
+
+    /* ════ download button ════ */
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: var(--warm-white);
+      font-family: 'Almarai', sans-serif; font-size: .75rem; font-weight: 700;
+      letter-spacing: .08em; padding: 14px 32px; border: none; cursor: pointer;
+      transition: background .3s;
+    }
+    .dl-btn:hover { background: #D4B585; }
+    .dl-btn svg { width:16px; height:16px; }
+    .dl-btn.loading { opacity:.6; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     BILINGUAL CARD — Arabic (right) · English (left)
+══════════════════════════════════════════════════ -->
+<div class="card" id="card-bilingual">
+
+  <div class="card__bg">
+    <img src="assets/img/hero-new.jpg" alt="">
+  </div>
+  <div class="card__veil"></div>
+
+  <!-- logo: شكل ذهبي + كتابة كريمية -->
+  <div class="card__nav">
+    <img src="assets/logo-final.png" alt="البيت الثامن · The 8th House">
+  </div>
+
+  <!-- tall body panel -->
+  <div class="card__body">
+
+    <div class="card__columns">
+
+      <!-- ▶ Arabic column (right) -->
+      <div class="card__col card__col--ar">
+        <p class="card__lbl">
+          <span class="card__lbl-rule"></span>
+          <span class="card__lbl-city">عيد الأضحى المبارك · <span class="lbl-year">١٤٤٧</span></span>
+        </p>
+        <div class="card__title">
+          <span class="card__title-main">عيد أضحى مبارك</span>
+          <span class="card__title-rest">كل عام وأنتم بخير</span>
+        </div>
+        <div class="card__div"></div>
+        <div class="card__sender">
+          <span class="card__sender-name">م. عماد مقادمي</span>
+          <span class="card__sender-title">شريك مؤسس · البيت الثامن</span>
+        </div>
+      </div>
+
+      <!-- ▶ English column (left) -->
+      <div class="card__col card__col--en">
+        <p class="card__lbl">
+          <span class="card__lbl-rule"></span>
+          <span class="card__lbl-city">Eid Al-Adha · <span class="lbl-year">1447</span></span>
+        </p>
+        <div class="card__title">
+          <span class="card__title-main">Blessed Eid Al-Adha</span>
+          <span class="card__title-rest">Wishing you best times</span>
+        </div>
+        <div class="card__div"></div>
+        <div class="card__sender">
+          <span class="card__sender-name">Eng. Emad Magadimi</span>
+          <span class="card__sender-title">Co-Founder · The 8th House</span>
+        </div>
+      </div>
+
+    </div><!-- /columns -->
+
+    <!-- ▶ Contact (full width, clickable) -->
+    <div class="card__contact">
+      <a class="card__ci" href="https://wa.me/966569945365">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.57A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52ZM12 22c-1.87 0-3.7-.5-5.3-1.46l-.38-.22-3.93.99 1.03-3.83-.25-.39A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2c2.65 0 5.16 1.03 7.04 2.9A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10Zm5.47-7.53c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.77.98-.94 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.79-1.67-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.59-.5-.51-.68-.52l-.58-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48c0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34Z" fill="var(--gold)"/></svg>
+        +966 56 994 5365
+      </a>
+
+      <a class="card__ci" href="mailto:info@the8house.sa">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" fill="var(--gold)"/></svg>
+        info@the8house.sa
+      </a>
+      <a class="card__ci" href="https://instagram.com/8th.house.ksa">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z" fill="var(--gold)"/></svg>
+        @8th.house.ksa
+      </a>
+    </div>
+
+  </div><!-- /body -->
+
+</div><!-- /card -->
+
+<button class="dl-btn" onclick="saveCard('card-bilingual','بطاقة-عيد-الأضحى.png')">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4v-2h14v2H5z" fill="currentColor"/></svg>
+  حفظ البطاقة
+</button>
+
+<script>
+async function saveCard(id, filename) {
+  const btn = event.currentTarget;
+  const orig = btn.innerHTML;
+  btn.classList.add('loading');
+  btn.textContent = '... جاري التحميل';
+  const el = document.getElementById(id);
+  try {
+    const canvas = await html2canvas(el, {
+      width:1080, height:1920, scale:1,
+      useCORS:true, allowTaint:true, logging:false, imageTimeout:0
+    });
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) {
+    alert('حدث خطأ. تأكد أن الملف مفتوح من متصفح.');
+    console.error(e);
+  } finally {
+    btn.classList.remove('loading');
+    btn.innerHTML = orig;
+  }
+}
+</script>
+</body>
+</html>

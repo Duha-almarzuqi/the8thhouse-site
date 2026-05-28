@@ -403,6 +403,8 @@ html[lang="en"] .essence__inner     { direction: ltr; }
 html[lang="en"] .contact__inner     { direction: ltr; }
 html[lang="en"] .contact__h         { text-align: center; }
 html[lang="en"] .contact__sub       { text-align: center; }
+html[lang="en"] .contact__btn svg   { grid-column: 3; }
+html[lang="en"] .contact__btn span  { grid-column: 2; }
 /* footer */
 html[lang="en"] .footer__nav        { direction: ltr; }
 html[lang="en"] .footer__inner      { direction: ltr; }

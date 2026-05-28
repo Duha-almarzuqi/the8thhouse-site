@@ -1970,10 +1970,10 @@ html[lang="en"] .lm__type-en   {
 }
 
 .contact__btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
   font-size: .7rem;
   font-weight: 400;
   letter-spacing: .05em;
@@ -1982,6 +1982,11 @@ html[lang="en"] .lm__type-en   {
   border: 1px solid transparent;
   border-radius: 2px;
   transition: background .35s ease, opacity .35s ease;
+}
+
+.contact__btn svg {
+  position: absolute;
+  right: 1.3rem;
 }
 
 .contact__btn--primary {

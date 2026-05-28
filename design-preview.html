@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 اتجاهات تصميمية — البيت الثامن</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #1a1a1a;
+  font-family: 'Tajawal', sans-serif;
+  padding: 40px 24px;
+  direction: rtl;
+}
+
+.page-title {
+  color: #C5A572;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.page-sub {
+  color: rgba(255,255,255,0.4);
+  font-size: .85rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.direction {
+  margin-bottom: 80px;
+}
+
+.direction-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.direction-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; font-weight: 500;
+  flex-shrink: 0;
+}
+.direction-title { font-size: 1rem; font-weight: 300; }
+.direction-desc { font-size: .8rem; font-weight: 300; opacity: .6; margin-top: 2px; }
+
+/* ─── DIRECTION 1: EDITORIAL ─── */
+.d1 .direction-num { background: #2B1556; color: #C5A572; border: 1px solid #C5A572; }
+.d1 .direction-title { color: #fff; }
+
+.hero-editorial {
+  background: #0A0612;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(197,165,114,.15);
+}
+
+.hero-editorial::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 52%;
+  height: 100%;
+  background: #1A0B2E;
+  z-index: 0;
+}
+
+.hero-editorial .vline {
+  position: absolute;
+  top: 0; left: 52%;
+  width: 1px; height: 100%;
+  background: rgba(197,165,114,.35);
+  z-index: 1;
+}
+
+.editorial-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 2;
+}
+.editorial-nav .logo { color: #C5A572; font-size: .95rem; font-weight: 500; }
+.editorial-nav .links { color: rgba(255,255,255,.5); font-size: .75rem; font-weight: 300; }
+
+.editorial-content {
+  position: absolute;
+  top: 80px; right: 40px;
+  z-index: 2;
+  width: 44%;
+}
+.editorial-tag {
+  color: #C5A572;
+  font-size: .7rem;
+  font-weight: 300;
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+}
+.editorial-rule {
+  width: 100px; height: 1px;
+  background: rgba(197,165,114,.5);
+  margin-bottom: 20px;
+}
+.editorial-headline {
+  color: #F5F1EB;
+  font-size: clamp(56px, 7vw, 90px);
+  font-weight: 200;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.editorial-headline span { color: #C5A572; }
+.editorial-sub {
+  color: rgba(245,241,235,.55);
+  font-size: .85rem;
+  font-weight: 300;
+  margin-bottom: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(197,165,114,.2);
+}
+.editorial-cta {
+  display: inline-block;
+  background: #C5A572;
+  color: #2B1556;
+  padding: 14px 36px;
+  font-size: .85rem;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.editorial-stats {
+  position: absolute;
+  top: 100px; left: 5%;
+  z-index: 2;
+  width: 40%;
+}
+.stat-big {
+  color: #C5A572;
+  font-size: clamp(64px, 8vw, 96px);
+  font-weight: 200;
+  line-height: 1;
+}
+.stat-label {
+  color: rgba(245,241,235,.45);
+  font-size: .7rem;
+  font-weight: 300;
+  letter-spacing: .08em;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+.stat-rule { width: 160px; height: 1px; background: rgba(197,165,114,.2); margin: 8px 0 20px; }
+.stat-small {
+  color: rgba(245,241,235,.35);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 200;
+}
+
+/* ─── DIRECTION 2: ESTATE HERITAGE ─── */
+.d2 .direction-num { background: #F5F1EB; color: #2B1556; border: 1px solid rgba(43,21,86,.2); }
+.d2 .direction-title { color: #F5F1EB; }
+
+.hero-estate {
+  background: #F5F1EB;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(197,165,114,.3);
+}
+
+.estate-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(43,21,86,.1);
+}
+.estate-nav .logo { color: #2B1556; font-size: .95rem; font-weight: 400; }
+.estate-nav .links { color: rgba(43,21,86,.5); font-size: .75rem; font-weight: 300; }
+
+.estate-content {
+  position: absolute;
+  top: 80px; left: 50%; transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  z-index: 1;
+}
+.estate-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.estate-ornament span {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: #C5A572;
+}
+.estate-ornament i {
+  width: 8px; height: 8px;
+  background: #C5A572;
+  border-radius: 2px;
+  display: block;
+  font-style: normal;
+}
+.estate-cat {
+  color: #C5A572;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.estate-headline {
+  color: #2B1556;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+.estate-rule {
+  width: 80px; height: 1px;
+  background: #C5A572;
+  margin: 0 auto 16px;
+}
+.estate-sub {
+  color: rgba(43,21,86,.45);
+  font-size: .85rem;
+  font-weight: 300;
+  margin-bottom: 32px;
+  letter-spacing: .04em;
+}
+
+.estate-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 36px;
+}
+.estate-stat {
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+}
+.estate-stat + .estate-stat::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 12px;
+  width: 1px; height: 72px;
+  background: rgba(197,165,114,.3);
+}
+.estate-stat-num {
+  color: #C5A572;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  display: block;
+}
+.estate-stat-lbl {
+  color: rgba(43,21,86,.45);
+  font-size: .7rem;
+  font-weight: 300;
+  display: block;
+  margin-top: 4px;
+}
+
+.estate-cta {
+  display: inline-block;
+  border: 1px solid #2B1556;
+  color: #2B1556;
+  padding: 13px 40px;
+  font-size: .85rem;
+  font-weight: 300;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: .06em;
+}
+
+/* ─── DIRECTION 3: MAISON DE LUXE ─── */
+.d3 .direction-num { background: #2B1556; color: #FAF7F2; border: 1px solid rgba(197,165,114,.3); }
+.d3 .direction-title { color: #FAF7F2; }
+
+.hero-maison {
+  background: #FAF7F2;
+  height: 540px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid rgba(43,21,86,.1);
+}
+
+.maison-left {
+  flex: 0 0 55%;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.maison-topbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 44px;
+  background: #2B1556;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 2;
+}
+.maison-topbar .logo { color: #F5F1EB; font-size: .8rem; font-weight: 300; }
+.maison-topbar .menu { color: rgba(245,241,235,.6); font-size: .75rem; font-weight: 300; }
+
+.maison-inner { margin-top: 44px; padding-top: 40px; }
+
+.maison-year {
+  color: rgba(43,21,86,.3);
+  font-size: .65rem;
+  letter-spacing: .2em;
+  margin-bottom: 12px;
+}
+.maison-rule {
+  width: 28px; height: 1px;
+  background: #C5A572;
+  margin-bottom: 28px;
+  opacity: .7;
+}
+.maison-headline {
+  color: #2B1556;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 300;
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.maison-divider {
+  width: 160px; height: 1px;
+  background: rgba(197,165,114,.4);
+  margin-bottom: 20px;
+}
+.maison-body {
+  color: rgba(43,21,86,.5);
+  font-size: .82rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 36px;
+  max-width: 340px;
+}
+.maison-cta {
+  color: rgba(43,21,86,.65);
+  font-size: .8rem;
+  font-weight: 300;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(43,21,86,.2);
+  display: inline-block;
+  padding-bottom: 4px;
+  letter-spacing: .04em;
+}
+
+.maison-stat-ghost {
+  position: absolute;
+  bottom: 24px; right: 48px;
+  color: #C5A572;
+  font-size: 5rem;
+  font-weight: 200;
+  opacity: .1;
+  line-height: 1;
+  z-index: 0;
+  user-select: none;
+}
+
+.maison-right {
+  flex: 0 0 45%;
+  background: #DDD8CF;
+  position: relative;
+  overflow: hidden;
+}
+.maison-img-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(43,21,86,.25);
+  font-size: .8rem;
+  font-weight: 300;
+  text-align: center;
+  line-height: 2;
+}
+
+/* ─── VOTE BUTTONS ─── */
+.vote-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.vote-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: .85rem;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid rgba(197,165,114,.4);
+  background: rgba(197,165,114,.08);
+  color: #C5A572;
+  text-align: center;
+  transition: all .2s;
+}
+.vote-btn:hover { background: rgba(197,165,114,.2); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero-editorial, .hero-estate, .hero-maison { height: auto; min-height: 480px; }
+  .editorial-stats { display: none; }
+  .editorial-content { width: 90%; right: 5%; }
+  .hero-editorial::after { width: 100%; }
+  .vline { display: none; }
+  .estate-content { width: 94%; }
+  .estate-stats { gap: 0; flex-wrap: wrap; }
+  .estate-stat { padding: 0 16px; }
+  .maison-right { display: none; }
+  .maison-left { flex: 0 0 100%; }
+}
+</style>
+</head>
+<body>
+
+<p class="page-title">3 اتجاهات تصميمية — البيت الثامن</p>
+<p class="page-sub">اختاري الإحساس الأقرب لما تبين، ونبني الموقع عليه</p>
+
+<!-- ═══ DIRECTION 1: EDITORIAL ═══ -->
+<div class="direction d1">
+  <div class="direction-label">
+    <div class="direction-num">١</div>
+    <div>
+      <div class="direction-title">Editorial — الجريء الغير متوقع</div>
+      <div class="direction-desc">كـ Wallpaper* وVogue — عناوين ضخمة، layout مكسور، أرقام كـ artwork</div>
+    </div>
+  </div>
+
+  <div class="hero-editorial">
+    <div class="vline"></div>
+
+    <div class="editorial-nav">
+      <div class="links">تواصل معنا &nbsp;&nbsp; خدماتنا</div>
+      <div class="logo">البيت الثامن</div>
+    </div>
+
+    <div class="editorial-content">
+      <div class="editorial-tag">إدارة الشقق المؤثثة · الرياض</div>
+      <div class="editorial-rule"></div>
+      <div class="editorial-headline">شريككم<br><span>الاستراتيجي</span></div>
+      <div class="editorial-sub">في تشغيل الشقق المؤثثة بمدينة الرياض</div>
+      <div class="editorial-cta">ابدأ الآن</div>
+    </div>
+
+    <div class="editorial-stats">
+      <div class="stat-big">83.6%</div>
+      <div class="stat-label">معدل الإشغال السنوي</div>
+      <div class="stat-rule"></div>
+      <div class="stat-small">96.6%</div>
+      <div class="stat-label">تقييمات 5 نجوم</div>
+    </div>
+  </div>
+
+  <div class="vote-row">
+    <div class="vote-btn">⭐ هذا اللي أبيه</div>
+    <div class="vote-btn">حلو بس مو أنا</div>
+  </div>
+</div>
+
+<!-- ═══ DIRECTION 2: ESTATE HERITAGE ═══ -->
+<div class="direction d2">
+  <div class="direction-label">
+    <div class="direction-num">٢</div>
+    <div>
+      <div class="direction-title">Estate Heritage — الفخامة الرسمية</div>
+      <div class="direction-desc">كـ Aman وFour Seasons — تناظر رسمي، أرقام ذهبية، خطوط هيكلية</div>
+    </div>
+  </div>
+
+  <div class="hero-estate">
+    <div class="estate-nav">
+      <div class="links">تواصل معنا &nbsp;&nbsp; خدماتنا</div>
+      <div class="logo">البيت الثامن</div>
+    </div>
+
+    <div class="estate-content">
+      <div class="estate-ornament">
+        <span></span><i></i><span></span>
+      </div>
+      <div class="estate-cat">إدارة الشقق المؤثثة الفاخرة · الرياض</div>
+      <div class="estate-headline">شريككم الاستراتيجي<br>في تشغيل الشقق المؤثثة</div>
+      <div class="estate-rule"></div>
+      <div class="estate-sub">إشغال عالٍ &nbsp;·&nbsp; تشغيل احترافي &nbsp;·&nbsp; شفافية كاملة</div>
+
+      <div class="estate-stats">
+        <div class="estate-stat">
+          <span class="estate-stat-num">83.6%</span>
+          <span class="estate-stat-lbl">متوسط الإشغال</span>
+        </div>
+        <div class="estate-stat">
+          <span class="estate-stat-num">96.6%</span>
+          <span class="estate-stat-lbl">تقييمات 5 نجوم</span>
+        </div>
+        <div class="estate-stat">
+          <span class="estate-stat-num">6</span>
+          <span class="estate-stat-lbl">سنوات خبرة</span>
+        </div>
+      </div>
+
+      <div class="estate-cta">تواصل معنا</div>
+    </div>
+  </div>
+
+  <div class="vote-row">
+    <div class="vote-btn">⭐ هذا اللي أبيه</div>
+    <div class="vote-btn">حلو بس مو أنا</div>
+  </div>
+</div>
+
+<!-- ═══ DIRECTION 3: MAISON DE LUXE ═══ -->
+<div class="direction d3">
+  <div class="direction-label">
+    <div class="direction-num">٣</div>
+    <div>
+      <div class="direction-title">Maison de Luxe — الهادئ المتقن</div>
+      <div class="direction-desc">كـ Hermès وAesop — نصوص مدروسة، مساحات واسعة، تفاصيل مخفية</div>
+    </div>
+  </div>
+
+  <div class="hero-maison">
+    <div class="maison-topbar">
+      <div class="menu">القائمة</div>
+      <div class="logo">البيت الثامن</div>
+    </div>
+
+    <div class="maison-left">
+      <div class="maison-inner">
+        <div class="maison-year">٢٠٢٥</div>
+        <div class="maison-rule"></div>
+        <div class="maison-headline">شريككم الاستراتيجي<br>في تشغيل الشقق<br>المؤثثة بالرياض</div>
+        <div class="maison-divider"></div>
+        <div class="maison-body">نؤمن أن إدارة العقار تستحق مستوى<br>من الرعاية يوازي قيمته الحقيقية.</div>
+        <div class="maison-cta">← ابدأ المحادثة</div>
+      </div>
+      <div class="maison-stat-ghost">83.6</div>
+    </div>
+
+    <div class="maison-right">
+      <div class="maison-img-label">صورة معمارية<br>فاخرة</div>
+    </div>
+  </div>
+
+  <div class="vote-row">
+    <div class="vote-btn">⭐ هذا اللي أبيه</div>
+    <div class="vote-btn">حلو بس مو أنا</div>
+  </div>
+</div>
+
+</body>
+</html>

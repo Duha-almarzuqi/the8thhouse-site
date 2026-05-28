@@ -252,14 +252,34 @@ ol         { list-style: none; }
   line-height: 1;
 }
 
-.nav__name-en {
-  font-size: .5rem;
-  font-weight: 400;
-  color: rgba(255,254,250,.55);
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  line-height: 1;
+.nav__name-row {
+  display: flex;
+  align-items: center;
+  gap: .3em;
   direction: ltr;
+  line-height: 1;
+}
+
+.nav__name-en {
+  font-size: .48rem;
+  font-weight: 400;
+  color: rgba(255,254,250,.45);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.nav__name-sep {
+  font-size: .45rem;
+  color: var(--gold);
+  opacity: .6;
+}
+
+.nav__name-est {
+  font-size: .45rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: .12em;
+  opacity: .8;
 }
 
 .nav__links {

@@ -225,8 +225,34 @@ ol         { list-style: none; }
   display: block;
 }
 
-/* EN: flip logo so mark is on left, text on right */
-html[lang="en"] .nav__logo-img { transform: scaleX(-1); }
+html[lang="ar"] .nav__logo-en { display: none; }
+html[lang="en"] .nav__logo-ar { display: none; }
+
+.nav__logo-en {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .45rem;
+  direction: ltr;
+}
+
+.nav__mark {
+  height: 30px;
+  width: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.nav__logo-en-text {
+  font-family: var(--f);
+  font-size: .6rem;
+  font-weight: 700;
+  color: rgba(255,254,250,.92);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.35;
+}
 
 .nav__est {
   font-size: .52rem;
@@ -1804,8 +1830,34 @@ html[lang="en"] .lm__type-en   {
   max-width: 100%;
 }
 
-/* EN: flip logo so mark is on left, text on right */
-html[lang="en"] .footer__logo-img { transform: scaleX(-1); }
+html[lang="ar"] .footer__logo-en { display: none; }
+html[lang="en"] .footer__logo-ar { display: none; }
+
+.footer__logo-en {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .6rem;
+  direction: ltr;
+}
+
+.footer__mark {
+  height: 52px;
+  width: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.footer__logo-en-name {
+  font-family: var(--f);
+  font-size: .88rem;
+  font-weight: 700;
+  color: rgba(255,254,250,.9);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.35;
+}
 
 .footer__tagline {
   font-size: .75rem;

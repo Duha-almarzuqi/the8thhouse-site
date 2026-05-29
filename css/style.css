@@ -225,6 +225,34 @@ ol         { list-style: none; }
   display: block;
 }
 
+/* AR: PNG, EN: SVG mark + text */
+html[lang="ar"] .nav__logo--en { display: none; }
+html[lang="en"] .nav__logo--ar { display: none; }
+
+.nav__logo--en {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+}
+
+.nav__mark {
+  width: 22px;
+  height: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.nav__logo-en-text {
+  font-size: .55rem;
+  font-weight: 400;
+  color: rgba(255,254,250,.8);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  direction: ltr;
+  white-space: nowrap;
+}
+
 .nav__est {
   font-size: .52rem;
   letter-spacing: .22em;
@@ -364,6 +392,7 @@ html[lang="en"] .essence__inner     { direction: ltr; }
 html[lang="en"] .contact__inner     { direction: ltr; }
 html[lang="en"] .contact__h         { text-align: center; }
 html[lang="en"] .contact__sub       { text-align: center; }
+html[lang="en"] .contact__btn svg   { right: auto; left: 1.35rem; }
 /* footer */
 html[lang="en"] .footer__nav        { direction: ltr; }
 html[lang="en"] .footer__inner      { direction: ltr; }

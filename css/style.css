@@ -244,10 +244,11 @@ html[lang="en"] .nav__logo--ar { display: none; }
 }
 
 .nav__logo-en-text {
-  font-size: .55rem;
-  font-weight: 400;
-  color: rgba(255,254,250,.8);
-  letter-spacing: .12em;
+  font-family: var(--f);
+  font-size: .68rem;
+  font-weight: 700;
+  color: rgba(255,254,250,.9);
+  letter-spacing: .08em;
   text-transform: uppercase;
   direction: ltr;
   white-space: nowrap;
@@ -1847,7 +1848,8 @@ html[lang="en"] .footer__logo--ar { display: none; }
 }
 
 .footer__logo-en-name {
-  font-size: .85rem;
+  font-family: var(--f);
+  font-size: .95rem;
   font-weight: 700;
   color: var(--warm-white);
   letter-spacing: .08em;

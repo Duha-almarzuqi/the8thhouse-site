@@ -459,17 +459,6 @@ html[lang="en"] .lm__type-en   {
   overflow: hidden;
 }
 
-/* Bottom fade — hero bleeds into first cream section */
-.hero::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, #F5F1EB);
-  pointer-events: none;
-  z-index: 2;
-}
 
 .hero::after {
   content: '';
@@ -723,43 +712,12 @@ html[lang="en"] .lm__type-en   {
   to   { opacity: 1; }
 }
 
-/* ── FABRIC BACKGROUND ───────────────────────────────────────── */
-.fabric-section {
-  position: relative;
-  background-image: url('../assets/fabric-bg.jpg');
-  background-repeat: repeat;
-  background-size: auto;
-  background-color: #F5F1EB;
-}
-
-/* Overlay + top/bottom fade in one layer */
-.fabric-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
-    linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
-    rgba(245, 241, 235, 0.88);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* All direct children sit above the overlay */
-.fabric-section > * { position: relative; z-index: 1; }
-
-/* Alt modifier — identical to base, kept for semantic grouping only */
-.fabric-section--alt::before {
-  background:
-    linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
-    linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
-    rgba(245, 241, 235, 0.88);
-}
 
 
 /* ── ABOUT (من نحن) ──────────────────────────────────────────── */
 .about {
   position: relative;
+  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -872,7 +830,9 @@ html[lang="en"] .lm__type-en   {
 
 /* ── VISION & MISSION ────────────────────────────────────────── */
 .vm {
+  background: var(--cream);
   padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .vm__inner {
@@ -928,7 +888,9 @@ html[lang="en"] .lm__type-en   {
 
 /* ── VALUES (قيمنا) ──────────────────────────────────────────── */
 .values {
+  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .values__inner {
@@ -1181,6 +1143,7 @@ html[lang="en"] .lm__type-en   {
 /* ── SERVICES (خدماتنا) ──────────────────────────────────────── */
 .services {
   position: relative;
+  background: var(--cream);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -1302,6 +1265,7 @@ html[lang="en"] .lm__type-en   {
 /* ── WHY (لماذا نحن) ─────────────────────────────────────────── */
 .why {
   position: relative;
+  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -1431,7 +1395,9 @@ html[lang="en"] .lm__type-en   {
 
 /* ── CUSTOMER JOURNEY (رحلة العميل) ─────────────────────────── */
 .journey {
+  background: var(--cream);
   padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .journey__inner {
@@ -1653,7 +1619,9 @@ html[lang="en"] .lm__type-en   {
 
 /* ── ESSENCE (جوهر شراكتنا) ─────────────────────────────────── */
 .essence {
+  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
+  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .essence__inner {
@@ -1706,6 +1674,7 @@ html[lang="en"] .lm__type-en   {
 /* ── CONTACT (تواصل معنا) ────────────────────────────────────── */
 .contact {
   position: relative;
+  background: var(--cream);
   padding: var(--sec) var(--pad);
   text-align: center;
   overflow: hidden;

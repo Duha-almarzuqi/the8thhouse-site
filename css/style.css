@@ -1716,10 +1716,10 @@ html[lang="en"] .lm__type-en   {
 }
 
 .contact__btn {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 18px;
+  column-gap: .75rem;
   align-items: center;
-  justify-content: center;
-  gap: .75rem;
   width: 100%;
   font-size: .68rem;
   font-weight: 700;
@@ -1731,7 +1731,8 @@ html[lang="en"] .lm__type-en   {
   transition: background .35s ease, border-color .35s ease, color .35s ease;
 }
 
-.contact__btn svg { flex-shrink: 0; }
+.contact__btn span { text-align: center; }
+.contact__btn svg  { justify-self: center; }
 
 .contact__btn--primary {
   background: var(--gold);

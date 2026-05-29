@@ -457,6 +457,14 @@
     window.addEventListener('touchend', onEnd);
   })();
 
+  /* ── FLOATING WHATSAPP BUTTON ─────────────────────────────── */
+  var waFloat = document.getElementById('waFloat');
+  if (waFloat) {
+    window.addEventListener('scroll', function () {
+      waFloat.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  }
+
   /* ── PAUSE ANIMATIONS WHEN OFF-SCREEN ─────────────────────── */
   var animPauseObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

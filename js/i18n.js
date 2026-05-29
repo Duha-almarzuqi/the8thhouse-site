@@ -7,6 +7,7 @@
       nav_services:     'خدماتنا',
       nav_why:          'لماذا نحن',
       nav_testimonials: 'آراء العملاء',
+      nav_faq:          'الأسئلة الشائعة',
       nav_cta:          'تواصل معنا',
 
       hero_label_city:  'الرياض',
@@ -146,6 +147,7 @@
       nav_services:     'Our Services',
       nav_why:          'Why Us',
       nav_testimonials: 'Guest Reviews',
+      nav_faq:          'FAQ',
       nav_cta:          'Contact Us',
 
       hero_label_city:  'Riyadh',

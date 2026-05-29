@@ -2320,3 +2320,167 @@ html[lang="en"] .footer__logo-ar { display: none; }
 @keyframes langOutRtl { to   { opacity: 0; transform: translateX(14px);  } }
 @keyframes langInLtr  { from { opacity: 0; transform: translateX(14px);  } to { opacity: 1; transform: translateX(0); } }
 @keyframes langInRtl  { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: translateX(0); } }
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+.faq {
+  background: var(--soft-ivory);
+  padding: var(--sec) 0;
+}
+
+.faq__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.faq__hd {
+  margin-bottom: 3.5rem;
+}
+
+.faq__h {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-gold);
+  margin-bottom: 3rem;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--border-gold);
+  transition: background .25s ease;
+}
+
+.faq__item[open] {
+  background: rgba(197,165,114,.05);
+}
+
+.faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f);
+  transition: color .25s ease;
+}
+
+.faq__q::-webkit-details-marker { display: none; }
+
+.faq__q::after {
+  content: '';
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--gold-rule);
+  border-radius: 50%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C5A572' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center/10px no-repeat;
+  transition: transform .3s var(--ease);
+}
+
+.faq__item[open] .faq__q::after {
+  transform: rotate(180deg);
+}
+
+.faq__item[open] .faq__q {
+  color: var(--gold);
+}
+
+.faq__a {
+  padding-bottom: 1.5rem;
+  animation: faqFade .3s ease;
+}
+
+.faq__a p {
+  font-size: .92rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+@keyframes faqFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.faq__cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: .5rem;
+}
+
+.faq__cta-text {
+  font-size: .88rem;
+  color: var(--text-muted);
+}
+
+.faq__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .72rem;
+  font-weight: 700;
+  font-family: var(--f);
+  letter-spacing: .06em;
+  color: #25D366;
+  border: 1px solid rgba(37,211,102,.3);
+  padding: .6rem 1.2rem;
+  border-radius: 50px;
+  transition: background .3s ease, color .3s ease;
+}
+
+.faq__cta-btn:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+/* ── FLOATING WHATSAPP (mobile only) ─────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: #25D366;
+  color: #fff;
+  padding: .75rem 1.1rem;
+  border-radius: 50px;
+  font-size: .72rem;
+  font-weight: 700;
+  font-family: var(--f);
+  letter-spacing: .04em;
+  box-shadow: 0 4px 18px rgba(37,211,102,.38);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), opacity .4s ease, visibility .4s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  text-decoration: none;
+}
+
+.wa-float.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.wa-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(37,211,102,.5);
+}
+
+@media (min-width: 860px) {
+  .wa-float { display: none; }
+}

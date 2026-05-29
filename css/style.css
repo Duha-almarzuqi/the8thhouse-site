@@ -1733,10 +1733,9 @@ html[lang="en"] .lm__type-en   {
 
 .contact__btn svg {
   position: absolute;
-  inset-inline-start: 1.35rem;
+  right: 1.35rem;
   top: 50%;
   transform: translateY(-50%);
-  flex-shrink: 0;
 }
 
 .contact__btn--primary {

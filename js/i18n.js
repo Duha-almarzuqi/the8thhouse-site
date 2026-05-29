@@ -16,7 +16,7 @@
       hero_cta_start:   'ابدأ الشراكة',
       hero_cta_register:'سجّل عقارك',
       hero_trust:       '96.6% تقييمات إيجابية من ضيوفنا',
-      contact_whatsapp_short: 'واتساب',
+      contact_whatsapp_short: 'WhatsApp',
 
       about_label:      'من نحن',
       about_title:      'شراكة حقيقية<br>مع ملاك الشقق المؤثثة',
@@ -133,7 +133,7 @@
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
 
-      footer_whatsapp: 'واتساب',
+      footer_whatsapp: 'WhatsApp',
       footer_tagline: 'إدارة وتشغيل الشقق المؤثثة · الرياض',
       footer_nav1:    'التنقل',
       footer_nav2:    'تواصل',

@@ -785,8 +785,8 @@ html[lang="en"] .lm__type-en   {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  flex-wrap: nowrap;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-gold);
   direction: rtl;

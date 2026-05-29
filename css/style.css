@@ -716,8 +716,7 @@ html[lang="en"] .lm__type-en   {
   position: relative;
   background-image: url('../assets/fabric-bg.jpg');
   background-repeat: repeat;
-  background-size: 320px auto;
-  background-attachment: fixed;
+  background-size: auto;
 }
 
 /* Heavy overlay: hides most of the texture, leaves a subtle hint */
@@ -738,10 +737,6 @@ html[lang="en"] .lm__type-en   {
   background: rgba(234, 227, 215, 0.82);
 }
 
-/* Mobile: scroll instead of fixed (iOS Safari doesn't support fixed bg well) */
-@media (max-width: 859px) {
-  .fabric-section { background-attachment: scroll; }
-}
 
 /* ── ABOUT (من نحن) ──────────────────────────────────────────── */
 .about {

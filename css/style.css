@@ -225,7 +225,8 @@ ol         { list-style: none; }
   display: block;
 }
 
-html[lang="en"] .nav__logo-img { transform: scaleX(-1); }
+html[lang="ar"] .nav__logo-en { display: none; }
+html[lang="en"] .nav__logo-ar { display: none; }
 
 .nav__est {
   font-size: .52rem;
@@ -1803,7 +1804,8 @@ html[lang="en"] .lm__type-en   {
   max-width: 100%;
 }
 
-html[lang="en"] .footer__logo-img { transform: scaleX(-1); }
+html[lang="ar"] .footer__logo-en { display: none; }
+html[lang="en"] .footer__logo-ar { display: none; }
 
 .footer__tagline {
   font-size: .75rem;

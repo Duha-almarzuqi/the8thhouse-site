@@ -756,6 +756,14 @@ html[lang="en"] .lm__type-en   {
   font-weight: 400;
 }
 
+.about__body strong,
+.vm__body strong,
+.journey__desc strong,
+.faq__a strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
 .about__body--en {
   font-size: .8rem;
   direction: ltr;

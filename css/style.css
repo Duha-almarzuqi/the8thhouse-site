@@ -814,6 +814,7 @@ html[lang="en"] .lm__type-en   {
 @media (max-width: 860px) {
   .about__inner { grid-template-columns: 1fr; }
   .about__img-wrap { aspect-ratio: 16/10; }
+  .hero__scroll { display: none; }
 }
 
 /* ── VISION & MISSION ────────────────────────────────────────── */

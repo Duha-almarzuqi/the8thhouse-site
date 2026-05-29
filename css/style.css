@@ -1717,7 +1717,7 @@ html[lang="en"] .lm__type-en   {
 
 .contact__btn {
   display: grid;
-  grid-template-columns: 1fr 18px;
+  grid-template-columns: 18px 1fr;
   column-gap: .75rem;
   align-items: center;
   width: 100%;

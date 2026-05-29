@@ -1718,13 +1718,13 @@ html[lang="en"] .lm__type-en   {
 .contact__btn {
   display: grid;
   grid-template-columns: 18px 1fr;
-  column-gap: 1em;
+  column-gap: .5em;
   align-items: center;
   width: 100%;
   font-size: .68rem;
   font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
+  letter-spacing: .03em;
+  text-transform: none;
   padding: 1.1rem 1.75rem;
   border: 1px solid transparent;
   border-radius: 2px;

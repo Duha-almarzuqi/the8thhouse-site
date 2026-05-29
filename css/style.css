@@ -225,6 +225,10 @@ ol         { list-style: none; }
   display: block;
 }
 
+@media (min-width: 860px) {
+  .nav__logo-img { height: 42px; }
+}
+
 html[lang="ar"] .nav__logo-en { display: none; }
 html[lang="en"] .nav__logo-ar { display: none; }
 

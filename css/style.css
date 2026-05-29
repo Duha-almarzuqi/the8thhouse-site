@@ -728,12 +728,8 @@ html[lang="en"] .lm__type-en   {
   position: relative;
   background-image: url('../assets/fabric-bg.jpg');
   background-repeat: repeat;
-  background-size: 180px auto;
+  background-size: auto;
   background-color: #F5F1EB;
-}
-
-@media (min-width: 860px) {
-  .fabric-section { background-size: 260px auto; }
 }
 
 /* Overlay + top/bottom fade in one layer */

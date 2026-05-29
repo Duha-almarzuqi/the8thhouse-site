@@ -106,7 +106,7 @@
       contact_label:    'تواصل معنا',
       contact_title:    'ابدأ شراكتك مع<br>البيت الثامن اليوم',
       contact_sub:      'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
-      contact_whatsapp: 'واتساب · 966-56-994-5365+',
+      contact_whatsapp: '966-56-994-5365+',
 
       lm_eyebrow:           'استفسار عقاري',
       lm_title:             'أخبرنا عن عقارك',
@@ -245,7 +245,7 @@
       contact_label:    'Contact Us',
       contact_title:    'Begin Your Partnership<br>with The 8th House Today',
       contact_sub:      "Tell us about your property and we'll explain in detail how we work and what you can expect each month.",
-      contact_whatsapp: 'WhatsApp · +966-56-994-5365',
+      contact_whatsapp: '+966-56-994-5365',
 
       lm_eyebrow:           'Property Inquiry',
       lm_title:             'Tell Us About Your Property',

@@ -1707,24 +1707,32 @@ html[lang="en"] .lm__type-en   {
 
 .contact__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: .85rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  max-width: 340px;
+  margin-inline: auto;
 }
 
 .contact__btn {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  column-gap: 1em;
   align-items: center;
-  gap: .65rem;
+  width: 100%;
   font-size: .68rem;
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
-  padding: 1rem 2rem;
+  padding: 1.1rem 1.75rem;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 2px;
   transition: background .35s ease, border-color .35s ease, color .35s ease;
 }
+
+.contact__btn svg { flex-shrink: 0; }
+.contact__btn span { text-align: center; }
 
 .contact__btn--primary {
   background: var(--gold);

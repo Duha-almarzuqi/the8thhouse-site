@@ -225,34 +225,8 @@ ol         { list-style: none; }
   display: block;
 }
 
-/* AR: PNG, EN: SVG mark + text */
-html[lang="ar"] .nav__logo--en { display: none; }
-html[lang="en"] .nav__logo--ar { display: none; }
-
-.nav__logo--en {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: .5rem;
-}
-
-.nav__mark {
-  width: 22px;
-  height: auto;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-
-.nav__logo-en-text {
-  font-family: var(--f);
-  font-size: .68rem;
-  font-weight: 700;
-  color: rgba(255,254,250,.9);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  direction: ltr;
-  white-space: nowrap;
-}
+/* EN: flip logo so mark is on left, text on right */
+html[lang="en"] .nav__logo-img { transform: scaleX(-1); }
 
 .nav__est {
   font-size: .52rem;
@@ -1830,33 +1804,8 @@ html[lang="en"] .lm__type-en   {
   max-width: 100%;
 }
 
-html[lang="ar"] .footer__logo--en { display: none; }
-html[lang="en"] .footer__logo--ar { display: none; }
-
-.footer__logo--en {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: .65rem;
-}
-
-.footer__mark {
-  width: 32px;
-  height: auto;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-
-.footer__logo-en-name {
-  font-family: var(--f);
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--warm-white);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  direction: ltr;
-  white-space: nowrap;
-}
+/* EN: flip logo so mark is on left, text on right */
+html[lang="en"] .footer__logo-img { transform: scaleX(-1); }
 
 .footer__tagline {
   font-size: .75rem;

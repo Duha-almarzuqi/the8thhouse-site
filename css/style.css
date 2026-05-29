@@ -1829,6 +1829,33 @@ html[lang="en"] .lm__type-en   {
   max-width: 100%;
 }
 
+html[lang="ar"] .footer__logo--en { display: none; }
+html[lang="en"] .footer__logo--ar { display: none; }
+
+.footer__logo--en {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .65rem;
+}
+
+.footer__mark {
+  width: 32px;
+  height: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.footer__logo-en-name {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--warm-white);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  direction: ltr;
+  white-space: nowrap;
+}
+
 .footer__tagline {
   font-size: .75rem;
   color: rgba(245,241,235,.7);

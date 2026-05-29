@@ -740,7 +740,7 @@ html[lang="en"] .lm__type-en   {
   background:
     linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
     linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
-    rgba(245, 241, 235, 0.82);
+    rgba(245, 241, 235, 0.88);
   pointer-events: none;
   z-index: 0;
 }
@@ -748,12 +748,12 @@ html[lang="en"] .lm__type-en   {
 /* All direct children sit above the overlay */
 .fabric-section > * { position: relative; z-index: 1; }
 
-/* Alt modifier — same fade edges, unified overlay colour */
+/* Alt modifier — identical to base, kept for semantic grouping only */
 .fabric-section--alt::before {
   background:
     linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
     linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
-    rgba(245, 241, 235, 0.82);
+    rgba(245, 241, 235, 0.88);
 }
 
 

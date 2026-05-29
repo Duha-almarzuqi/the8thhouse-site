@@ -2433,16 +2433,21 @@ html[lang="en"] .footer__logo-ar { display: none; }
   font-weight: 700;
   font-family: var(--f);
   letter-spacing: .06em;
-  color: #25D366;
-  border: 1px solid rgba(37,211,102,.3);
+  color: var(--off-white);
+  background: var(--purple-deep);
   padding: .6rem 1.2rem;
   border-radius: 50px;
-  transition: background .3s ease, color .3s ease;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.faq__cta-btn svg {
+  color: #25D366;
+  flex-shrink: 0;
 }
 
 .faq__cta-btn:hover {
-  background: #25D366;
-  color: #fff;
+  background: var(--purple-royal);
+  transform: translateY(-1px);
 }
 
 /* ── FLOATING WHATSAPP (mobile only) ─────────────────────────── */

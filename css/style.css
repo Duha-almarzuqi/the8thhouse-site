@@ -1716,10 +1716,10 @@ html[lang="en"] .lm__type-en   {
 }
 
 .contact__btn {
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  column-gap: .75rem;
+  position: relative;
+  display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   font-size: .68rem;
   font-weight: 700;
@@ -1731,8 +1731,13 @@ html[lang="en"] .lm__type-en   {
   transition: background .35s ease, border-color .35s ease, color .35s ease;
 }
 
-.contact__btn span { text-align: center; }
-.contact__btn svg  { justify-self: center; }
+.contact__btn svg {
+  position: absolute;
+  inset-inline-start: 1.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+}
 
 .contact__btn--primary {
   background: var(--gold);

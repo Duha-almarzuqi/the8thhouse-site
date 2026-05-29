@@ -715,18 +715,17 @@ html[lang="en"] .lm__type-en   {
 .fabric-section {
   position: relative;
   background-image: url('../assets/fabric-bg.jpg');
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: 320px auto;
   background-attachment: fixed;
-  background-position: center;
 }
 
-/* Undertone overlay — blends site warmth with fabric via soft-light */
+/* Heavy overlay: hides most of the texture, leaves a subtle hint */
 .fabric-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(245, 241, 235, 0.30);
-  mix-blend-mode: soft-light;
+  background: rgba(245, 241, 235, 0.82);
   pointer-events: none;
   z-index: 0;
 }
@@ -734,12 +733,12 @@ html[lang="en"] .lm__type-en   {
 /* All direct children sit above the overlay */
 .fabric-section > * { position: relative; z-index: 1; }
 
-/* Alternate: sections that use --cream tint get EAE3D7 undertone */
+/* Alt sections (slightly cooler cream) */
 .fabric-section--alt::before {
-  background: rgba(234, 227, 215, 0.30);
+  background: rgba(234, 227, 215, 0.82);
 }
 
-/* Mobile: switch to scroll for performance (fixed is janky on iOS) */
+/* Mobile: scroll instead of fixed (iOS Safari doesn't support fixed bg well) */
 @media (max-width: 859px) {
   .fabric-section { background-attachment: scroll; }
 }

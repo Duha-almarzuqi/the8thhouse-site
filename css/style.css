@@ -459,6 +459,18 @@ html[lang="en"] .lm__type-en   {
   overflow: hidden;
 }
 
+/* Bottom fade — hero bleeds into first cream section */
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #F5F1EB);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -717,14 +729,18 @@ html[lang="en"] .lm__type-en   {
   background-image: url('../assets/fabric-bg.jpg');
   background-repeat: repeat;
   background-size: auto;
+  background-color: #F5F1EB;
 }
 
-/* Heavy overlay: hides most of the texture, leaves a subtle hint */
+/* Overlay + top/bottom fade in one layer */
 .fabric-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(245, 241, 235, 0.82);
+  background:
+    linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
+    linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
+    rgba(245, 241, 235, 0.82);
   pointer-events: none;
   z-index: 0;
 }
@@ -732,9 +748,12 @@ html[lang="en"] .lm__type-en   {
 /* All direct children sit above the overlay */
 .fabric-section > * { position: relative; z-index: 1; }
 
-/* Alt sections (slightly cooler cream) */
+/* Alt modifier — same fade edges, unified overlay colour */
 .fabric-section--alt::before {
-  background: rgba(234, 227, 215, 0.82);
+  background:
+    linear-gradient(to bottom, #F5F1EB 0%,   transparent 80px),
+    linear-gradient(to top,    #F5F1EB 0%,   transparent 80px),
+    rgba(245, 241, 235, 0.82);
 }
 
 
@@ -854,7 +873,6 @@ html[lang="en"] .lm__type-en   {
 /* ── VISION & MISSION ────────────────────────────────────────── */
 .vm {
   padding: var(--sec) var(--pad);
-  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .vm__inner {
@@ -911,7 +929,6 @@ html[lang="en"] .lm__type-en   {
 /* ── VALUES (قيمنا) ──────────────────────────────────────────── */
 .values {
   padding: var(--sec) var(--pad);
-  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .values__inner {
@@ -1415,7 +1432,6 @@ html[lang="en"] .lm__type-en   {
 /* ── CUSTOMER JOURNEY (رحلة العميل) ─────────────────────────── */
 .journey {
   padding: var(--sec) var(--pad);
-  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .journey__inner {
@@ -1638,7 +1654,6 @@ html[lang="en"] .lm__type-en   {
 /* ── ESSENCE (جوهر شراكتنا) ─────────────────────────────────── */
 .essence {
   padding: var(--sec) var(--pad);
-  border-top: 1px solid rgba(197,165,114,.15);
 }
 
 .essence__inner {

@@ -711,10 +711,42 @@ html[lang="en"] .lm__type-en   {
   to   { opacity: 1; }
 }
 
+/* ── FABRIC BACKGROUND ───────────────────────────────────────── */
+.fabric-section {
+  position: relative;
+  background-image: url('../assets/fabric-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Undertone overlay — blends site warmth with fabric via soft-light */
+.fabric-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 241, 235, 0.30);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All direct children sit above the overlay */
+.fabric-section > * { position: relative; z-index: 1; }
+
+/* Alternate: sections that use --cream tint get EAE3D7 undertone */
+.fabric-section--alt::before {
+  background: rgba(234, 227, 215, 0.30);
+}
+
+/* Mobile: switch to scroll for performance (fixed is janky on iOS) */
+@media (max-width: 859px) {
+  .fabric-section { background-attachment: scroll; }
+}
+
 /* ── ABOUT (من نحن) ──────────────────────────────────────────── */
 .about {
   position: relative;
-  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -827,7 +859,6 @@ html[lang="en"] .lm__type-en   {
 
 /* ── VISION & MISSION ────────────────────────────────────────── */
 .vm {
-  background: var(--cream);
   padding: var(--sec) var(--pad);
   border-top: 1px solid rgba(197,165,114,.15);
 }
@@ -885,7 +916,6 @@ html[lang="en"] .lm__type-en   {
 
 /* ── VALUES (قيمنا) ──────────────────────────────────────────── */
 .values {
-  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   border-top: 1px solid rgba(197,165,114,.15);
 }
@@ -1140,7 +1170,6 @@ html[lang="en"] .lm__type-en   {
 /* ── SERVICES (خدماتنا) ──────────────────────────────────────── */
 .services {
   position: relative;
-  background: var(--cream);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -1262,7 +1291,6 @@ html[lang="en"] .lm__type-en   {
 /* ── WHY (لماذا نحن) ─────────────────────────────────────────── */
 .why {
   position: relative;
-  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   overflow: hidden;
 }
@@ -1392,7 +1420,6 @@ html[lang="en"] .lm__type-en   {
 
 /* ── CUSTOMER JOURNEY (رحلة العميل) ─────────────────────────── */
 .journey {
-  background: var(--cream);
   padding: var(--sec) var(--pad);
   border-top: 1px solid rgba(197,165,114,.15);
 }
@@ -1616,7 +1643,6 @@ html[lang="en"] .lm__type-en   {
 
 /* ── ESSENCE (جوهر شراكتنا) ─────────────────────────────────── */
 .essence {
-  background: var(--soft-ivory);
   padding: var(--sec) var(--pad);
   border-top: 1px solid rgba(197,165,114,.15);
 }
@@ -1671,7 +1697,6 @@ html[lang="en"] .lm__type-en   {
 /* ── CONTACT (تواصل معنا) ────────────────────────────────────── */
 .contact {
   position: relative;
-  background: var(--cream);
   padding: var(--sec) var(--pad);
   text-align: center;
   overflow: hidden;

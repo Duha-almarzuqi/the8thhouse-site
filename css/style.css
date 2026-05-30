@@ -331,6 +331,7 @@ html[lang="ar"] .lm__type-en     { display: none; }
 html[lang="ar"] .hero__title      { font-size: clamp(1.1rem, 2.2vw, 1.9rem); letter-spacing: .06em; margin-bottom: 3rem; }
 html[lang="ar"] .hero__title-main { color: var(--purple-royal); }
 html[lang="ar"] .hero__title-rest { color: var(--warm-white); font-size: .82em; text-shadow: 0 1px 10px rgba(10,6,18,.55); }
+html[lang="ar"] .label            { direction: ltr; }
 html[lang="en"] .hero__body       { direction: ltr; text-align: left; }
 html[lang="en"] .hero__sub        { text-align: left; direction: ltr; }
 html[lang="en"] .hero__actions    { justify-content: flex-start; }

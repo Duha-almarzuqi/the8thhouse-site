@@ -20,7 +20,7 @@
       contact_whatsapp_short: 'WhatsApp',
 
       about_label:      'من نحن',
-      about_title:      'شراكة حقيقية<br>مع ملاك الشقق المؤثثة',
+      about_title:      'شراكة حقيقية مع ملاك الشقق المؤثثة',
       about_body:       '"البيت الثامن" شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بمدينة الرياض. نقدّم للمُلّاك حلول تشغيل متكاملة تضمن لهم <strong>نسبة إشغال عالية</strong>، تشغيل احترافي وصيانة مستمرة للعقار، مع <strong>شفافية كاملة في التقارير والعوائد</strong>.',
       about_pillar_1:   'إشغال عالٍ',
       about_pillar_2:   'تشغيل احترافي',
@@ -56,7 +56,7 @@
       property_drag:    'اسحب لاستعراض الصور',
 
       services_label:   'خدماتنا',
-      services_title:   'خدمات البيت الثامن<br>للمُلاك',
+      services_title:   'خدمات البيت الثامن للمُلاك',
       svc1_title:       'التشغيل الكامل للعقار',
       svc1_bullets:     '<li>تأثيث وتنسيق داخلي يناسب معايير التأجير القصير</li><li>تصوير احترافي</li><li>تسويق العقار على المنصات العالمية</li><li>إدارة الحجوزات واستقبال الضيوف</li><li>تنظيف وصيانة دورية</li>',
       svc2_title:       'إدارة مالية شفافة',
@@ -69,7 +69,7 @@
       why_stat2:        'تقييمات 5 نجوم',
       why_stat3:        'دعم مستمر',
       why_stat4:        'سنوات خبرة',
-      why_title:        'مزايا البيت الثامن<br>للمُلاك',
+      why_title:        'مزايا البيت الثامن للمُلاك',
       why_b1_title:     'دخل مستمر',
       why_b1_desc:      'رفع نسب الإشغال وتحقيق أعلى عائد.',
       why_b2_title:     'راحة كاملة',
@@ -105,7 +105,7 @@
       brand_name:    'البيت الثامن',
 
       contact_label:    'تواصل معنا',
-      contact_title:    'ابدأ شراكتك مع<br>البيت الثامن اليوم',
+      contact_title:    'ابدأ شراكتك مع البيت الثامن اليوم',
       contact_sub:      'أخبرنا عن عقارك وسنشرح لك بالتفصيل كيف نعمل وما الذي يمكنك توقعه كل شهر.',
       contact_whatsapp: '966-56-994-5365+',
 
@@ -181,7 +181,7 @@
       contact_whatsapp_short: 'WhatsApp',
 
       about_label:      'Who We Are',
-      about_title:      'A True Partnership<br>with Furnished Apartment Owners',
+      about_title:      'A True Partnership with Furnished Apartment Owners',
       about_body:       'The 8th House specialises in the management and operation of furnished residential apartments in Riyadh. We provide owners with comprehensive operational solutions that ensure <strong>high occupancy rates</strong>, professional management, continuous property maintenance, and <strong>full transparency</strong> in reports and returns.',
       about_pillar_1:   'High Occupancy',
       about_pillar_2:   'Professional Management',
@@ -217,7 +217,7 @@
       property_drag:    'Drag to explore',
 
       services_label:   'Our Services',
-      services_title:   'The 8th House Services<br>for Property Owners',
+      services_title:   'The 8th House Services for Property Owners',
       svc1_title:       'Full Property Operations',
       svc1_bullets:     '<li>Furnishing advisory and interior styling consultation to short-term rental standards</li><li>Professional photography</li><li>Listing the property on global platforms</li><li>Booking management and guest reception</li><li>Regular cleaning and maintenance</li>',
       svc2_title:       'Transparent Financial Management',
@@ -230,7 +230,7 @@
       why_stat2:        'Five-Star Reviews',
       why_stat3:        'Continuous Support',
       why_stat4:        'Years of Experience',
-      why_title:        'The 8th House Advantages<br>for Property Owners',
+      why_title:        'The 8th House Advantages for Property Owners',
       why_b1_title:     'Steady Income',
       why_b1_desc:      'Maximising occupancy rates and delivering the highest possible return.',
       why_b2_title:     'Complete Peace of Mind',
@@ -266,7 +266,7 @@
       brand_name:    'The 8th House',
 
       contact_label:    'Contact Us',
-      contact_title:    'Begin Your Partnership<br>with The 8th House Today',
+      contact_title:    'Begin Your Partnership with The 8th House Today',
       contact_sub:      "Tell us about your property and we'll explain in detail how we work and what you can expect each month.",
       contact_whatsapp: '+966-56-994-5365',
 

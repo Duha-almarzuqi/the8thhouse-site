@@ -1255,15 +1255,14 @@ html[lang="en"] .lm__type-en   {
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 400;
-  padding-right: 1.1rem;
-  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: .45rem;
 }
 
 .svc__bullets li::before {
   content: '◇';
-  position: absolute;
-  right: 0;
-  top: .05em;
+  flex-shrink: 0;
   font-size: .5rem;
   color: var(--gold-dim);
 }

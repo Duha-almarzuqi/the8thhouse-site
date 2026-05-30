@@ -188,9 +188,9 @@
       about_pillar_3:   'Full Transparency',
 
       vm_vision_title:  'Our Vision',
-      vm_vision_body:   'To be the <strong>first choice</strong> for apartment owners in Riyadh — transforming their properties into <strong>high-yield assets</strong> managed with the <strong>professionalism and reliability</strong> that match the finest global hospitality standards.',
+      vm_vision_body:   'To be the first choice for apartment owners in Riyadh — transforming their properties into high-yield assets managed with the professionalism and reliability that match the finest global hospitality standards.',
       vm_mission_title: 'Our Mission',
-      vm_mission_body:  'At The 8th House, our mission is to manage and operate furnished residential apartments with the highest level of professionalism — <strong>raising occupancy rates</strong>, ensuring a <strong>premium hospitality experience</strong>, and protecting owners\' assets through <strong>transparent financial management</strong> and ongoing maintenance, delivering a <strong>stable income stream</strong> built on a long-term partnership of trust.',
+      vm_mission_body:  'At The 8th House, our mission is to manage and operate furnished residential apartments with the highest level of professionalism — raising occupancy rates, ensuring a premium hospitality experience, and protecting owners\' assets through <strong>transparent financial management</strong> and ongoing maintenance, delivering a <strong>stable income stream</strong> built on a long-term partnership of trust.',
 
       values_title: 'Our Values',
       v1_name: 'Reliability',

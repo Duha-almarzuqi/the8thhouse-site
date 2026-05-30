@@ -1553,9 +1553,11 @@ html[lang="en"] .lm__type-en   {
   user-select: none;
 }
 
+.belt:hover .belt__track { animation-play-state: paused; }
+
 .belt__track {
   display: flex;
-  gap: 1rem;
+  gap: 0;
   width: max-content;
   will-change: transform;
 }
@@ -1576,6 +1578,7 @@ html[lang="en"] .lm__type-en   {
 .quote {
   flex-shrink: 0;
   width: 320px;
+  margin-inline-end: 1rem;
   background: var(--cream);
   border: 1px solid rgba(197,165,114,.2);
   border-top: 2px solid var(--gold);

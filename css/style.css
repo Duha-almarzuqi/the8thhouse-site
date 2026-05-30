@@ -198,7 +198,7 @@ ol         { list-style: none; }
 }
 
 .nav.scrolled {
-  background: rgba(26,11,46,.92);
+  background: rgba(26,11,46,.97);
   backdrop-filter: blur(24px) saturate(1.4);
   padding: 1rem var(--pad);
   border-bottom: 1px solid rgba(197,165,114,.25);
@@ -1772,14 +1772,14 @@ html[lang="en"] .lm__type-en   {
 }
 
 .contact__btn--ghost {
-  background: var(--purple-royal);
+  background: var(--purple-deep);
   color: var(--warm-white);
-  border-color: var(--purple-royal);
+  border-color: var(--purple-deep);
 }
 
 .contact__btn--ghost:hover {
-  background: var(--purple-deep);
-  border-color: var(--purple-deep);
+  background: var(--purple-royal);
+  border-color: var(--purple-royal);
   color: var(--warm-white);
 }
 

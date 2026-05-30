@@ -1510,7 +1510,7 @@ html[lang="en"] .lm__type-en   {
 }
 
 .testimonials__hd {
-  text-align: right;
+  text-align: center;
   padding: 0 var(--pad);
   margin-bottom: 3.5rem;
   direction: rtl;
@@ -1518,6 +1518,7 @@ html[lang="en"] .lm__type-en   {
 
 .testimonials__hd .label {
   direction: ltr;
+  justify-content: center;
 }
 
 .testimonials__hd .label::before {

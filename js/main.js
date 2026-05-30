@@ -327,7 +327,92 @@
     });
   });
 
-  /* belt: pure CSS auto-scroll, no drag interaction */
+  /* ── BELT SWIPE + TAP TO HIGHLIGHT ───────────────────────────── */
+  (function () {
+    document.querySelectorAll('.belt').forEach(function (belt) {
+      var track = belt.querySelector('.belt__track');
+      if (!track) return;
+
+      var dragging  = false;
+      var moved     = false;
+      var startX    = 0;
+      var startTx   = 0;
+      var curTx     = 0;
+      var isFwd     = track.classList.contains('belt__track--fwd');
+      var dur       = isFwd ? 110 : 130;
+
+      function getCurrentTx() {
+        /* pause first so getComputedStyle returns the frozen position */
+        track.style.animationPlayState = 'paused';
+        var t = window.getComputedStyle(track).transform;
+        var m = t && t !== 'none' ? t.match(/matrix\(([^)]+)\)/) : null;
+        return m ? parseFloat(m[1].split(',')[4]) : 0;
+      }
+
+      function resumeAt(px) {
+        var halfW = track.scrollWidth / 2;
+        var pos   = ((px % halfW) + halfW) % halfW - halfW; /* clamp to [-halfW, 0] */
+        var delay = isFwd ? (pos / halfW) * dur : -dur - (pos / halfW) * dur;
+        track.style.animationDelay     = delay + 's';
+        track.style.animationPlayState = '';
+        track.style.transform          = '';
+      }
+
+      function onStart(x) {
+        startTx  = getCurrentTx();
+        curTx    = startTx;
+        startX   = x;
+        dragging = true;
+        moved    = false;
+        track.style.transform = 'translateX(' + startTx + 'px)';
+      }
+
+      function onMove(x) {
+        if (!dragging) return;
+        var dx = x - startX;
+        if (Math.abs(dx) > 4) moved = true;
+        curTx = startTx + dx;
+        track.style.transform = 'translateX(' + curTx + 'px)';
+      }
+
+      function onEnd() {
+        if (!dragging) return;
+        dragging = false;
+        resumeAt(curTx);
+      }
+
+      belt.addEventListener('touchstart', function (e) {
+        onStart(e.touches[0].clientX);
+      }, { passive: true });
+
+      belt.addEventListener('touchmove', function (e) {
+        if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX); }
+      }, { passive: false });
+
+      window.addEventListener('touchend', onEnd);
+
+      /* hover pause (desktop) */
+      belt.addEventListener('mouseenter', function () {
+        track.style.animationPlayState = 'paused';
+      });
+      belt.addEventListener('mouseleave', function () {
+        track.style.animationPlayState = '';
+      });
+    });
+
+    /* tap to highlight */
+    document.querySelectorAll('.belt').forEach(function (belt) {
+      belt.addEventListener('click', function (e) {
+        var card = e.target.closest('.quote');
+        if (!card) return;
+        var isActive = card.classList.contains('active');
+        document.querySelectorAll('.quote.active').forEach(function (c) {
+          c.classList.remove('active');
+        });
+        if (!isActive) card.classList.add('active');
+      });
+    });
+  })();
 
   /* ── PROPERTY REEL DRAG ────────────────────────────────────── */
   (function () {

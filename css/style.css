@@ -1552,7 +1552,6 @@ html[lang="en"] .lm__type-en   {
   user-select: none;
 }
 
-.belt:hover .belt__track { animation-play-state: paused; }
 
 .belt__track {
   display: flex;
@@ -1589,6 +1588,15 @@ html[lang="en"] .lm__type-en   {
   gap: 1.25rem;
   direction: rtl;
   box-shadow: 0 4px 20px rgba(43,21,86,.05);
+  cursor: pointer;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.quote.active {
+  border-color: var(--gold);
+  border-top-width: 2px;
+  box-shadow: 0 8px 32px rgba(43,21,86,.15), 0 0 0 1px var(--gold);
+  transform: translateY(-4px);
 }
 
 .quote__text {

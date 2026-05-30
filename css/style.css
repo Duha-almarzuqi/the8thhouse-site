@@ -1510,10 +1510,18 @@ html[lang="en"] .lm__type-en   {
 }
 
 .testimonials__hd {
-  text-align: center;
+  text-align: right;
   padding: 0 var(--pad);
   margin-bottom: 3.5rem;
   direction: rtl;
+}
+
+.testimonials__hd .label {
+  direction: ltr;
+}
+
+.testimonials__hd .label::before {
+  background: var(--gold);
 }
 
 .testimonials__h {

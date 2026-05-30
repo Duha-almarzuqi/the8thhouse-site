@@ -134,6 +134,27 @@
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
 
+      faq_label:  'الأسئلة الشائعة',
+      faq_title:  'أسئلة يسألها المُلاك',
+
+      faq_q1: 'ما نسبة عمولتكم أو رسومكم؟',
+      faq_a1: 'نعتمد نموذج شراكة قائماً على تقاسم العوائد؛ تحصل على نسبة واضحة ومتفق عليها مسبقاً من صافي الإيرادات الشهرية، دون أي رسوم مخفية. تُحدَّد النسبة حسب موقع العقار وحجمه وحالته — تواصل معنا للحصول على عرض مخصص.',
+
+      faq_q2: 'هل أحتاج أن أؤثث الشقة قبل التسليم؟',
+      faq_a2: 'لا يلزمك ذلك من البداية. نقدم لك استشارة متخصصة لاختيار التأثيث الملائم لمعايير التأجير القصير، مع توجيهك نحو أنسب الخيارات التي تعزز <strong>عوائد شقتك</strong> وتعكس مستوى الضيافة الذي نلتزم به.',
+
+      faq_q3: 'كيف أتابع أداء شقتي وعوائدها الشهرية؟',
+      faq_a3: 'تصلك <strong>تقارير شهرية شفافة</strong> تشمل: نسبة الإشغال، العوائد الصافية، أداء المنصات، وحالة الصيانة — دون أي تعقيد.',
+
+      faq_q4: 'ماذا يحدث إذا تعرضت الشقة لضرر من الضيوف؟',
+      faq_a4: 'نطبّق بروتوكولات صارمة لاستقبال الضيوف وضمان استخدام آمن للوحدة. في حال حدوث أي تلف، نتولى التوثيق واسترداد تعويض الضرر من الضيف عبر آليات المنصات، مع إعادة الصيانة الفورية لضمان استمرار التشغيل.',
+
+      faq_q5: 'ما مدة عقد الشراكة؟',
+      faq_a5: 'عادةً ما تبدأ الشراكة بعقد سنوي قابل للتجديد. نحرص على وضوح الشروط والالتزامات من البداية لبناء علاقة طويلة الأمد مبنية على الثقة المتبادلة.',
+
+      faq_q6: 'هل يمكنني استخدام شقتي لأغراض شخصية؟',
+      faq_a6: 'نعم، يمكنك التنسيق معنا لحجز فترات شخصية بشكل مسبق، وفق آليات متفق عليها في العقد لضمان عدم تعطيل جدول الحجوزات القائم.',
+
       footer_whatsapp: 'WhatsApp',
       footer_tagline: 'إدارة وتشغيل الشقق المؤثثة · الرياض',
       footer_nav1:    'التنقل',
@@ -273,6 +294,27 @@
       lm_email:             'Email',
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
+
+      faq_label:  'FAQ',
+      faq_title:  'Questions Property Owners Ask',
+
+      faq_q1: 'What is your commission or fee structure?',
+      faq_a1: 'We operate on a revenue-sharing partnership model — you receive a clear, pre-agreed percentage of net monthly income with no hidden fees. The exact rate depends on the property\'s location, size, and condition. Get in touch for a personalised quote.',
+
+      faq_q2: 'Do I need to furnish my apartment before handing it over?',
+      faq_a2: 'Not necessarily. We provide specialist consultancy on the right furnishing choices for short-term rental standards, guiding you toward options that maximise your apartment\'s <strong>returns</strong> and reflect the hospitality level we commit to.',
+
+      faq_q3: 'How do I track my apartment\'s performance and monthly returns?',
+      faq_a3: 'You receive <strong>transparent monthly reports</strong> covering occupancy rates, net returns, platform performance, and maintenance status — with no complexity.',
+
+      faq_q4: 'What happens if my apartment is damaged by guests?',
+      faq_a4: 'We apply strict guest screening protocols to ensure safe use of the unit. Should any damage occur, we handle the full documentation process and recover compensation from the guest through platform mechanisms, with immediate restoration maintenance to keep operations running.',
+
+      faq_q5: 'How long is the partnership contract?',
+      faq_a5: 'Partnerships typically begin with a one-year renewable contract. We ensure full clarity on all terms and obligations from the outset, building a long-term relationship founded on mutual trust.',
+
+      faq_q6: 'Can I use my apartment for personal purposes?',
+      faq_a6: 'Yes. You can coordinate personal stays with us in advance under agreed terms outlined in the contract, ensuring existing bookings are not disrupted.',
 
       footer_whatsapp: 'WhatsApp',
       footer_tagline: 'Furnished Apartment Management · Riyadh',

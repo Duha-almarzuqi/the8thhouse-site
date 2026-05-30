@@ -624,9 +624,9 @@ html[lang="en"] .lm__type-en   {
 }
 
 .hero__caption {
-  font-size: .62rem;
-  letter-spacing: .2em;
-  color: var(--gold-dim);
+  font-size: .72rem;
+  letter-spacing: .16em;
+  color: var(--gold);
   margin-bottom: 2rem;
   text-align: right;
   opacity: 0;

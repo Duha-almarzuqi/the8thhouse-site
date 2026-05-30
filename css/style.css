@@ -355,6 +355,7 @@ html[lang="en"] .services__inner    { direction: ltr; }
 html[lang="en"] .services__hd       { direction: ltr; text-align: left; }
 html[lang="en"] .services__list     { direction: ltr; }
 html[lang="en"] .svc__body          { direction: ltr; }
+html[lang="en"] .svc__sub           { text-align: left; }
 /* why */
 html[lang="en"] .why__inner         { direction: ltr; }
 html[lang="en"] .why__col-stats     { direction: ltr; }
@@ -1225,13 +1226,14 @@ html[lang="en"] .lm__type-en   {
 
 .svc__sub {
   font-size: .58rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--gold-dim);
+  color: var(--gold);
   margin-bottom: .9rem;
   direction: ltr;
-  text-align: left;
+  text-align: right;
+  text-shadow: 0 1px 4px rgba(197,165,114,.35);
 }
 
 .svc__desc {

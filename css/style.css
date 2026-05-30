@@ -1255,16 +1255,6 @@ html[lang="en"] .lm__type-en   {
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 400;
-  display: flex;
-  align-items: baseline;
-  gap: .45rem;
-}
-
-.svc__bullets li::before {
-  content: '◇';
-  flex-shrink: 0;
-  font-size: .5rem;
-  color: var(--gold-dim);
 }
 
 @media (max-width: 860px) {

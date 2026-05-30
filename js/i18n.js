@@ -12,8 +12,9 @@
 
       hero_label_city:  'الرياض',
       hero_label_since: ' · منذ 2019',
-      hero_title_main:  'شريككم الاستراتيجي',
-      hero_title_rest:  'في تشغيل الشقق المؤثثة',
+      hero_title_main:  'شريككم في إدارة الأصول العقارية',
+      hero_title_rest:  'نُعظّم العوائد ونبني استقرارًا متوسط إلى طويل المدى',
+      hero_caption:     'إدارة احترافية · تشغيل ذكي · نمو مستدام',
       hero_cta_start:   'ابدأ الشراكة',
       hero_cta_register:'سجّل عقارك',
       hero_trust:       '96.6% تقييمات إيجابية من ضيوفنا',
@@ -173,8 +174,9 @@
 
       hero_label_city:  'Riyadh',
       hero_label_since: ' · Since 2019',
-      hero_title_main:  'Your Strategic Partner',
-      hero_title_rest:  'in Operating Furnished Apartments',
+      hero_title_main:  'Your Asset Management Partner',
+      hero_title_rest:  'Maximising returns, building mid-to-long-term stability',
+      hero_caption:     'Professional Management · Smart Operations · Sustainable Growth',
       hero_cta_start:   'Begin Partnership',
       hero_cta_register:'List Your Property',
       hero_trust:       '96.6% positive guest reviews',

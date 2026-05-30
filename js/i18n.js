@@ -182,7 +182,7 @@
 
       about_label:      'Who We Are',
       about_title:      'A True Partnership<br>with Furnished Apartment Owners',
-      about_body:       'The 8th House specialises in the <strong>management and operation</strong> of furnished residential apartments in Riyadh. We provide owners with comprehensive operational solutions that ensure <strong>high occupancy rates</strong>, <strong>professional management</strong>, continuous property maintenance, and <strong>full transparency</strong> in reports and returns.',
+      about_body:       'The 8th House specialises in the management and operation of furnished residential apartments in Riyadh. We provide owners with comprehensive operational solutions that ensure <strong>high occupancy rates</strong>, professional management, continuous property maintenance, and <strong>full transparency</strong> in reports and returns.',
       about_pillar_1:   'High Occupancy',
       about_pillar_2:   'Professional Management',
       about_pillar_3:   'Full Transparency',

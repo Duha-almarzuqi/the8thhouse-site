@@ -989,7 +989,7 @@ html[lang="en"] .lm__type-en   {
   display: inline-flex;
   align-items: center;
   gap: 2rem;
-  animation: bandScroll 28s linear infinite;
+  animation: bandScroll 90s linear infinite;
   will-change: transform;
 }
 

@@ -1550,13 +1550,8 @@ html[lang="en"] .lm__type-en   {
   margin-bottom: 1rem;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  cursor: grab;
   user-select: none;
 }
-.belt.belt--grabbing { cursor: grabbing; }
-
-.belt:not(.belt--grabbing):hover .belt__track { animation-play-state: paused; }
-.belt__track--dragging { animation: none !important; }
 
 .belt__track {
   display: flex;
@@ -1565,8 +1560,8 @@ html[lang="en"] .lm__type-en   {
   will-change: transform;
 }
 
-.belt__track--fwd { animation: beltFwd 50s linear infinite; }
-.belt__track--rev { animation: beltRev 58s linear infinite; }
+.belt__track--fwd { animation: beltFwd 110s linear infinite; }
+.belt__track--rev { animation: beltRev 130s linear infinite; }
 
 @keyframes beltFwd {
   from { transform: translateX(0); }

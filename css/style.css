@@ -771,10 +771,13 @@ html[lang="ar"] .about__lead .label::before {
   font-size: .92rem;
   line-height: 1.8;
   color: var(--text-muted);
+  width: 100%;
   max-width: 56ch;
   margin-bottom: .9rem;
   font-weight: 400;
   text-align: justify;
+  text-justify: inter-word;
+  hyphens: none;
 }
 
 .about__body strong,

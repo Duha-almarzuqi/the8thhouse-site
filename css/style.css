@@ -774,8 +774,7 @@ html[lang="ar"] .about__lead .label::before {
   max-width: 100%;
   margin-bottom: .9rem;
   font-weight: 400;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: right;
 }
 
 .about__body strong,

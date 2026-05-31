@@ -782,7 +782,7 @@ html[lang="ar"] .about__lead .label::before {
 .journey__desc strong,
 .faq__a strong {
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--gold);
 }
 
 .about__body--en {

@@ -2,7 +2,7 @@
    THE 8TH HOUSE — Quiet Luxury Brand Identity
    Register: Brand · Reference: Aman, Rosewood morning lobby aesthetic
    Strategy: Cream-based light luxury — purple as accent, gold as detail
-   Font: Almarai exclusive (300 / 400 / 700 / 800)
+   Font: Cairo exclusive (300 / 400 / 600 / 700 / 800)
    ================================================================ */
 
 /* ── TOKENS ──────────────────────────────────────────────────── */
@@ -39,7 +39,7 @@
   --border-light:   rgba(43,21,86,.08);
 
   /* Typography */
-  --f: 'Almarai', sans-serif;
+  --f: 'Cairo', sans-serif;
 
   /* Easing */
   --ease: cubic-bezier(.23,1,.32,1);

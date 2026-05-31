@@ -22,7 +22,7 @@
 
       about_label:      'من نحن',
       about_title:      'شراكة حقيقية مع ملاك الشقق المؤثثة',
-      about_body:       '"البيت الثامن" شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بمدينة الرياض. نقدّم للمُلّاك حلول تشغيل متكاملة تضمن لهم <strong>نسبة إشغال عالية</strong>، تشغيل احترافي وصيانة مستمرة للعقار، مع <strong>شفافية كاملة في التقارير والعوائد</strong>.',
+      about_body:       '<strong>البيت الثامن</strong> شركة متخصصة في إدارة وتشغيل الشقق السكنية المؤثثة بمدينة الرياض. نقدّم للمُلّاك حلول تشغيل متكاملة تضمن لهم <strong>نسبة إشغال عالية</strong>، تشغيل احترافي وصيانة مستمرة للعقار، مع <strong>شفافية كاملة في التقارير والعوائد</strong>.',
       about_pillar_1:   'إشغال عالٍ',
       about_pillar_2:   'تشغيل احترافي',
       about_pillar_3:   'شفافية كاملة',
@@ -184,7 +184,7 @@
 
       about_label:      'Who We Are',
       about_title:      'A True Partnership with Furnished Apartment Owners',
-      about_body:       'The 8th House specialises in the management and operation of furnished residential apartments in Riyadh. We provide owners with comprehensive operational solutions that ensure <strong>high occupancy rates</strong>, professional management, continuous property maintenance, and <strong>full transparency</strong> in reports and returns.',
+      about_body:       '<strong>The 8th House</strong> specialises in the management and operation of furnished residential apartments in Riyadh. We provide owners with comprehensive operational solutions that ensure <strong>high occupancy rates</strong>, professional management, continuous property maintenance, and <strong>full transparency</strong> in reports and returns.',
       about_pillar_1:   'High Occupancy',
       about_pillar_2:   'Professional Management',
       about_pillar_3:   'Full Transparency',

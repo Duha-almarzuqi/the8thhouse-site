@@ -141,11 +141,11 @@ ol         { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: .75rem;
-  font-size: .58rem;
+  font-size: .72rem;
   letter-spacing: .18em;
   text-transform: uppercase;
-  font-weight: 400;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -765,6 +765,7 @@ html[lang="en"] .lm__type-en   {
   max-width: 56ch;
   margin-bottom: .9rem;
   font-weight: 400;
+  text-align: justify;
 }
 
 .about__body strong,

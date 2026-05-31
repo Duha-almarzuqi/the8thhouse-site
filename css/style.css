@@ -746,24 +746,16 @@ html[lang="en"] .lm__type-en   {
   direction: rtl;
 }
 
-.about__lead {
-  direction: rtl;
-  position: relative;
+.about__lead { direction: rtl; }
+
+html[lang="ar"] .about__lead .label {
+  display: flex;
+  width: 100%;
 }
 
-html[lang="ar"] .about__lead {
-  border-right: 2px solid var(--gold);
-  padding-right: 1.25rem;
+html[lang="ar"] .about__lead .label::before {
+  flex: 1;
 }
-
-html[lang="ar"] .about__lead .label::before { display: none; }
-
-html[lang="en"] .about__lead {
-  border-left: 2px solid var(--gold);
-  padding-left: 1.25rem;
-}
-
-html[lang="en"] .about__lead .label::before { display: none; }
 
 .about__h {
   font-size: clamp(1rem, 2.2vw, 1.75rem);

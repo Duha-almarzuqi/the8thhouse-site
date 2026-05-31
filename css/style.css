@@ -141,11 +141,11 @@ ol         { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: .75rem;
-  font-size: .72rem;
+  font-size: .78rem;
   letter-spacing: .18em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--gold);
   margin-bottom: 1.5rem;
 }
 
@@ -746,7 +746,24 @@ html[lang="en"] .lm__type-en   {
   direction: rtl;
 }
 
-.about__lead { direction: rtl; }
+.about__lead {
+  direction: rtl;
+  position: relative;
+}
+
+html[lang="ar"] .about__lead {
+  border-right: 2px solid var(--gold);
+  padding-right: 1.25rem;
+}
+
+html[lang="ar"] .about__lead .label::before { display: none; }
+
+html[lang="en"] .about__lead {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+}
+
+html[lang="en"] .about__lead .label::before { display: none; }
 
 .about__h {
   font-size: clamp(1rem, 2.2vw, 1.75rem);

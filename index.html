@@ -863,6 +863,70 @@
           <span>info@the8house.sa</span>
         </a>
       </div>
+
+      <!-- ── INLINE CONTACT FORM ─────────────────────────────── -->
+      <form class="cf" id="contactForm" novalidate aria-label="نموذج التواصل">
+        <div class="cf__row">
+          <div class="cf__field">
+            <label class="cf__label" for="cf-name" data-i18n="lm_name_label">الاسم الكريم</label>
+            <input class="cf__input" id="cf-name" name="entry.280690203" type="text" required
+              autocomplete="name" data-i18n-placeholder="lm_name_ph" placeholder="اسمك الكريم">
+          </div>
+          <div class="cf__field">
+            <label class="cf__label" for="cf-contact" data-i18n="lm_contact_label">رقم الجوال أو الإيميل</label>
+            <input class="cf__input" id="cf-contact" name="entry.1132443070" type="text" required
+              autocomplete="tel" data-i18n-placeholder="lm_contact_ph" placeholder="05xxxxxxxx أو email@example.com">
+          </div>
+        </div>
+
+        <div class="cf__row cf__row--3">
+          <div class="cf__field">
+            <label class="cf__label" data-i18n="lm_type_label">نوع الوحدة</label>
+            <div class="cf__radios" role="radiogroup">
+              <label class="cf__radio">
+                <input type="radio" name="entry.1461119662" value="شقة" required>
+                <span data-i18n="lm_type_apt">شقة</span>
+              </label>
+              <label class="cf__radio">
+                <input type="radio" name="entry.1461119662" value="فيلا">
+                <span data-i18n="lm_type_villa">فيلا</span>
+              </label>
+              <label class="cf__radio">
+                <input type="radio" name="entry.1461119662" value="استوديو">
+                <span data-i18n="lm_type_studio">استوديو</span>
+              </label>
+            </div>
+          </div>
+          <div class="cf__field">
+            <label class="cf__label" for="cf-units" data-i18n="lm_units_label">عدد الوحدات</label>
+            <input class="cf__input" id="cf-units" name="entry.1884290589" type="number" min="1"
+              data-i18n-placeholder="lm_units_ph" placeholder="1">
+          </div>
+          <div class="cf__field">
+            <label class="cf__label" for="cf-nbhd" data-i18n="lm_nbhd_label">الحي</label>
+            <input class="cf__input" id="cf-nbhd" name="entry.1923592827" type="text"
+              data-i18n-placeholder="lm_nbhd_ph" placeholder="اسم الحي">
+          </div>
+        </div>
+
+        <div class="cf__success" id="cfSuccess" hidden>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="var(--gold)" stroke-width="1.5"/>
+            <path d="M8 12l3 3 5-5" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p data-i18n="lm_success">شكراً! سنتواصل معك قريباً.</p>
+        </div>
+
+        <button class="cf__submit" type="submit">
+          <span class="cf__submit-text" data-i18n="lm_submit">أرسل طلبك</span>
+          <span class="cf__submit-spinner" hidden aria-hidden="true"></span>
+        </button>
+
+        <input type="hidden" name="fvv" value="1">
+        <input type="hidden" name="fbzx" value="-3082437196889274287">
+        <input type="hidden" name="pageHistory" value="0">
+        <input type="hidden" name="partialResponse" value='[null,null,"-3082437196889274287"]'>
+      </form>
     </div>
   </section>
 

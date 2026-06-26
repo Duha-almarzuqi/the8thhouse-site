@@ -473,6 +473,53 @@
     window.addEventListener('touchend', onEnd);
   })();
 
+  /* ── CONTACT INLINE FORM SUBMIT ──────────────────────────── */
+  (function () {
+    var form    = document.getElementById('contactForm');
+    var success = document.getElementById('cfSuccess');
+    if (!form) return;
+
+    var ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSciuc8CHx66MutIu7deGtbAZAlXZNeQJIvkhynpNA5eiXTg-A/formResponse';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name    = form.querySelector('[name="entry.280690203"]').value.trim();
+      var contact = form.querySelector('[name="entry.1132443070"]').value.trim();
+      var typeEl  = form.querySelector('[name="entry.1461119662"]:checked');
+      if (!name || !contact || !typeEl) {
+        [form.querySelector('[name="entry.280690203"]'),
+         form.querySelector('[name="entry.1132443070"]')].forEach(function (el) {
+          if (!el.value.trim()) el.classList.add('cf__input--err');
+        });
+        return;
+      }
+
+      var btn     = form.querySelector('.cf__submit');
+      var txt     = btn.querySelector('.cf__submit-text');
+      var spinner = btn.querySelector('.cf__submit-spinner');
+
+      btn.disabled   = true;
+      txt.hidden     = true;
+      spinner.hidden = false;
+
+      var data = new FormData(form);
+      fetch(ACTION, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () {
+          form.hidden    = true;
+          success.hidden = false;
+        })
+        .catch(function () {
+          form.hidden    = true;
+          success.hidden = false;
+        });
+    });
+
+    form.querySelectorAll('.cf__input').forEach(function (el) {
+      el.addEventListener('input', function () { el.classList.remove('cf__input--err'); });
+    });
+  })();
+
   /* ── FLOATING WHATSAPP BUTTON ─────────────────────────────── */
   var waFloat = document.getElementById('waFloat');
   if (waFloat) {

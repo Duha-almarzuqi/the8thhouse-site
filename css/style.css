@@ -1887,6 +1887,101 @@ html[lang="en"] .footer__logo-ar { display: none; }
 
 .footer__col a:hover { color: var(--gold); }
 
+/* ── FOOTER TRUST BADGES ─────────────────────────────────────── */
+.footer__trust {
+  max-width: var(--max);
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.footer__trust-hd {
+  font-size: .62rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .85rem;
+  padding: .7rem 1.1rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(197,165,114,.25);
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  text-decoration: none;
+  direction: rtl;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.trust-badge:hover,
+.trust-badge:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.26);
+  border-color: var(--gold);
+  outline: none;
+}
+
+.trust-badge__logo {
+  height: 30px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.trust-badge__sep {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(26,11,46,.12);
+}
+
+.trust-badge__text {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  text-align: right;
+}
+
+.trust-badge__status {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--purple-deep);
+  letter-spacing: .01em;
+}
+
+.trust-badge__status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1f9d57;
+  box-shadow: 0 0 0 3px rgba(31,157,87,.18);
+  flex-shrink: 0;
+}
+
+.trust-badge__cr {
+  font-size: .64rem;
+  color: rgba(26,11,46,.6);
+  letter-spacing: .03em;
+  font-variant-numeric: tabular-nums;
+}
+
+html[lang="en"] .trust-badge       { direction: ltr; }
+html[lang="en"] .trust-badge__text { text-align: left; }
+
 .footer__btm {
   max-width: var(--max);
   margin: 0 auto;
@@ -1917,6 +2012,8 @@ html[lang="en"] .footer__logo-ar { display: none; }
   }
   .footer__nav   { gap: 2.5rem; }
   .footer__btm   { flex-direction: column; align-items: flex-start; }
+  .footer__trust { margin-bottom: 2rem; }
+  .trust-badge   { width: 100%; max-width: 320px; justify-content: center; }
 }
 
 /* ── LEAD MODAL ──────────────────────────────────────────────── */

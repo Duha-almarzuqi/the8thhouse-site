@@ -163,7 +163,12 @@
       footer_nav2:    'تواصل',
       footer_copy:    '© 2025 البيت الثامن. جميع الحقوق محفوظة.',
       footer_cr:      'سجل تجاري 7041576534 · الرياض',
-      footer_privacy: 'سياسة الخصوصية'
+      footer_privacy: 'سياسة الخصوصية',
+
+      trust_heading:     'موثوقية والتزام',
+      trust_status:      'سجل تجاري نشط',
+      trust_cr:          'السجل التجاري · 7041576534',
+      trust_verify_aria: 'تحقّق من السجل التجاري في وزارة التجارة (يفتح في نافذة جديدة)'
     },
 
     en: {
@@ -327,7 +332,12 @@
       footer_nav2:    'Contact',
       footer_copy:    '© 2025 The 8th House. All rights reserved.',
       footer_cr:      'Commercial Registration 7041576534 · Riyadh',
-      footer_privacy: 'Privacy Policy'
+      footer_privacy: 'Privacy Policy',
+
+      trust_heading:     'Trust & Compliance',
+      trust_status:      'Active Commercial Registration',
+      trust_cr:          'Commercial Registration · 7041576534',
+      trust_verify_aria: 'Verify the commercial registration at the Ministry of Commerce (opens in a new window)'
     }
   };
 

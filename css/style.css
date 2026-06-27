@@ -1916,12 +1916,13 @@ html[lang="en"] .footer__logo-ar { display: none; }
 
 .trust-badge__cr-num {
   align-self: center;
-  font-size: .72rem;
+  font-size: .6rem;
   font-weight: 600;
-  color: var(--purple-deep);
-  letter-spacing: .08em;
+  color: #2c2c3a;
+  letter-spacing: .04em;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+  transform: translateY(10px);
 }
 
 html[lang="en"] .trust-badge { direction: ltr; }

@@ -134,7 +134,7 @@
       lm_email:             'إيميل',
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
-      lm_consent:           'أوافق على جمع بياناتي والتواصل معي بخصوص خدمات إدارة العقارات، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
+      lm_consent:           'أوافق على معالجة بياناتي الشخصية من قِبل البيت الثامن للتواصل معي وتقييم خدمتي، وعلى مشاركتها مع مزوّد المنصة (Google) كمعالِج، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>. يمكنني سحب موافقتي في أي وقت.',
 
       faq_label:  'الأسئلة الشائعة',
       faq_title:  'أسئلة يسألها المُلاك',
@@ -298,7 +298,7 @@
       lm_email:             'Email',
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
-      lm_consent:           'I agree to the collection of my data and to being contacted about property-management services, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
+      lm_consent:           'I consent to The 8th House processing my personal data to contact me and assess my service, and to sharing it with our platform provider (Google) as a processor, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I may withdraw consent at any time.',
 
       faq_label:  'FAQ',
       faq_title:  'Questions Property Owners Ask',

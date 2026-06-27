@@ -1,0 +1,13 @@
+# Security headers — applied automatically by Cloudflare Pages / Netlify.
+# (Ignored by GitHub Pages, which cannot serve custom HTTP headers.)
+# These complement the in-page CSP meta tag and add protections that a
+# <meta> tag cannot enforce: clickjacking, MIME-sniffing, HSTS.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com; form-action 'self' https://docs.google.com; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Cross-Origin-Opener-Policy: same-origin

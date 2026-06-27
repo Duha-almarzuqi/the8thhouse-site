@@ -134,6 +134,7 @@
       lm_email:             'إيميل',
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
+      lm_consent:           'أوافق على معالجة بياناتي الشخصية من قِبل البيت الثامن للتواصل معي وتقييم خدمتي، وعلى مشاركتها مع مزوّد المنصة (Google) كمعالِج، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>. يمكنني سحب موافقتي في أي وقت.',
 
       faq_label:  'الأسئلة الشائعة',
       faq_title:  'أسئلة يسألها المُلاك',
@@ -161,7 +162,13 @@
       footer_nav1:    'التنقل',
       footer_nav2:    'تواصل',
       footer_copy:    '© 2025 البيت الثامن. جميع الحقوق محفوظة.',
-      footer_cr:      'سجل تجاري 7041576534 · الرياض'
+      footer_cr:      'سجل تجاري 7041576534 · الرياض',
+      footer_privacy: 'سياسة الخصوصية',
+
+      trust_heading:     'موثوقية والتزام',
+      trust_status:      'موثّق · سجل تجاري نشط',
+      trust_cr:          'السجل التجاري · 7041576534',
+      trust_verify_aria: 'تحقّق من السجل التجاري لدى المركز السعودي للأعمال (يفتح في نافذة جديدة)'
     },
 
     en: {
@@ -296,6 +303,7 @@
       lm_email:             'Email',
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
+      lm_consent:           'I consent to The 8th House processing my personal data to contact me and assess my service, and to sharing it with our platform provider (Google) as a processor, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I may withdraw consent at any time.',
 
       faq_label:  'FAQ',
       faq_title:  'Questions Property Owners Ask',
@@ -323,7 +331,13 @@
       footer_nav1:    'Navigation',
       footer_nav2:    'Contact',
       footer_copy:    '© 2025 The 8th House. All rights reserved.',
-      footer_cr:      'Commercial Registration 7041576534 · Riyadh'
+      footer_cr:      'Commercial Registration 7041576534 · Riyadh',
+      footer_privacy: 'Privacy Policy',
+
+      trust_heading:     'Trust & Compliance',
+      trust_status:      'Authenticated · Active Registration',
+      trust_cr:          'Commercial Registration · 7041576534',
+      trust_verify_aria: 'Verify the commercial registration at the Saudi Business Center (opens in a new window)'
     }
   };
 

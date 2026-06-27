@@ -1887,14 +1887,7 @@ html[lang="en"] .footer__logo-ar { display: none; }
 
 .footer__col a:hover { color: var(--gold); }
 
-/* ── FOOTER TRUST BADGES ─────────────────────────────────────── */
-.footer__trust {
-  max-width: var(--max);
-  margin: 0 auto 2.5rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
+/* ── FOOTER TRUST BADGE (in bottom bar) ──────────────────────── */
 .trust-badge {
   display: inline-flex;
   align-items: center;
@@ -1908,7 +1901,7 @@ html[lang="en"] .footer__logo-ar { display: none; }
 }
 
 .trust-badge__logo {
-  height: 38px;
+  height: 35px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -1921,32 +1914,17 @@ html[lang="en"] .footer__logo-ar { display: none; }
   background: rgba(26,11,46,.12);
 }
 
-.trust-badge__cr {
-  display: flex;
-  flex-direction: column;
-  gap: .15rem;
-  text-align: right;
-}
-
-.trust-badge__cr-label {
-  font-size: .56rem;
-  font-weight: 500;
-  color: rgba(26,11,46,.5);
-  letter-spacing: .02em;
-  white-space: nowrap;
-}
-
 .trust-badge__cr-num {
-  font-size: .8rem;
+  align-self: center;
+  font-size: .72rem;
   font-weight: 600;
   color: var(--purple-deep);
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-html[lang="en"] .trust-badge      { direction: ltr; }
-html[lang="en"] .trust-badge__cr  { text-align: left; }
+html[lang="en"] .trust-badge { direction: ltr; }
 
 .footer__btm {
   max-width: var(--max);
@@ -1957,6 +1935,12 @@ html[lang="en"] .trust-badge__cr  { text-align: left; }
   gap: 1rem;
   flex-wrap: wrap;
   direction: rtl;
+}
+
+.footer__btm-legal {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
 }
 
 .footer__btm p {
@@ -1977,10 +1961,9 @@ html[lang="en"] .trust-badge__cr  { text-align: left; }
     gap: 2.5rem;
   }
   .footer__nav   { gap: 2.5rem; }
-  .footer__btm   { flex-direction: column; align-items: flex-start; }
-  .footer__trust    { margin-bottom: 2rem; }
-  .trust-badge      { gap: .8rem; padding: .6rem 1rem; }
-  .trust-badge__logo { height: 34px; }
+  .footer__btm   { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .trust-badge      { gap: .8rem; padding: .55rem .95rem; }
+  .trust-badge__logo { height: 32px; }
 }
 
 /* ── LEAD MODAL ──────────────────────────────────────────────── */

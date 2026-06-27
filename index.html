@@ -951,9 +951,9 @@
             method="POST"
             novalidate>
 
-        <!-- نوع الوحدة -->
+        <!-- حالة التأثيث -->
         <fieldset class="lm__fieldset">
-          <legend class="lm__legend" data-i18n="lm_unit_type">نوع الوحدة</legend>
+          <legend class="lm__legend" data-i18n="lm_unit_type">حالة التأثيث</legend>
           <div class="lm__type-cards">
             <label class="lm__type-card">
               <input type="radio" name="entry.1461119662" value="مؤثثة" required>
@@ -972,12 +972,32 @@
           </div>
         </fieldset>
 
+        <!-- نوع العقار -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-ptype" data-i18n="lm_ptype_label">نوع العقار</label>
+          <select class="lm__select" id="lm-ptype" name="entry.1042187207" required>
+            <option value="" disabled selected data-i18n="lm_ptype_ph">اختر نوع العقار</option>
+            <option value="شقة"  data-i18n="lm_pt_apartment">شقة</option>
+            <option value="دور"  data-i18n="lm_pt_floor">دور</option>
+            <option value="فيلا" data-i18n="lm_pt_villa">فيلا</option>
+            <option value="شاليه" data-i18n="lm_pt_chalet">شاليه</option>
+          </select>
+        </div>
+
         <!-- عدد العقارات -->
         <div class="lm__field">
           <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد العقارات</label>
           <input class="lm__input" type="text" id="lm-count" name="entry.1884290589"
                  inputmode="numeric" pattern="[0-9]*" maxlength="3"
                  placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder" required>
+        </div>
+
+        <!-- عدد الغرف -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-rooms" data-i18n="lm_rooms_label">عدد الغرف</label>
+          <input class="lm__input" type="text" id="lm-rooms" name="entry.147340700"
+                 inputmode="numeric" pattern="[0-9]*" maxlength="2"
+                 placeholder="مثال: 2" data-i18n-placeholder="lm_rooms_ph" required>
         </div>
 
         <!-- الحي — searchable dropdown -->
@@ -1188,7 +1208,7 @@
     <span data-i18n="contact_whatsapp_short">واتساب</span>
   </a>
 
-  <script src="js/i18n.js?v=13"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/i18n.js?v=14"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

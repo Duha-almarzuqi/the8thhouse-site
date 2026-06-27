@@ -275,14 +275,16 @@
       .replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 0x06F0); });
   }
 
-  /* count field: normalize digits + keep digits only */
-  var lmCount = document.getElementById('lm-count');
-  if (lmCount) {
-    lmCount.addEventListener('input', function () {
-      var v = toWesternDigits(this.value).replace(/[^0-9]/g, '');
-      if (v !== this.value) this.value = v;
-    });
-  }
+  /* count fields: normalize digits + keep digits only */
+  ['lm-count', 'lm-rooms'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function () {
+        var v = toWesternDigits(this.value).replace(/[^0-9]/g, '');
+        if (v !== this.value) this.value = v;
+      });
+    }
+  });
 
   /* contact field: normalize Arabic digits (harmless for emails) */
   var lmContactNum = document.getElementById('lm-contact');

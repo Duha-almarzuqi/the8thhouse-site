@@ -2276,6 +2276,49 @@ html[lang="en"] .footer__logo-ar { display: none; }
   text-align: center;
 }
 
+/* anti-bot honeypot — kept out of view & out of the a11y tree */
+.lm__hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* privacy consent */
+.lm__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  margin: .25rem 0 .5rem;
+  cursor: pointer;
+  font-family: var(--f);
+  font-size: .72rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.7);
+}
+
+.lm__consent input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: .15rem;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.lm__consent-text a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lm__consent--err {
+  color: #e07070;
+}
+
 .lm__submit {
   display: flex;
   align-items: center;

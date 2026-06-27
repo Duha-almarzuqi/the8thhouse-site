@@ -275,15 +275,42 @@
         '<div class="lm__done-icon">✓</div>' +
         '<h3 class="lm__done-title">' + (isEn ? 'Request Received' : 'تم استلام طلبك') + '</h3>' +
         '<p class="lm__done-sub">' + (isEn ? "We'll be in touch shortly" : 'سنتواصل معك بأقرب وقت') + '</p>' +
-        '<button class="lm__submit" style="margin-top:1.5rem" ' +
-          'onclick="document.getElementById(\'leadModal\').classList.remove(\'open\')' +
-          ';document.body.style.overflow=\'\'">' + (isEn ? 'Close' : 'إغلاق') + '</button>' +
+        '<button class="lm__submit" id="lmDoneClose" style="margin-top:1.5rem">' +
+          (isEn ? 'Close' : 'إغلاق') +
+        '</button>' +
       '</div>';
+    var doneClose = document.getElementById('lmDoneClose');
+    if (doneClose) {
+      doneClose.addEventListener('click', function () {
+        var modal = document.getElementById('leadModal');
+        if (modal) modal.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
   }
 
   if (lmForm) {
+    var lmHoneypot = document.getElementById('lm-website');
+    var lmConsent  = document.getElementById('lm-consent');
+
     lmForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      /* anti-bot: honeypot must stay empty — silently drop bot submissions */
+      if (lmHoneypot && lmHoneypot.value.trim() !== '') {
+        showSuccess(); /* show same UI to the bot, but never send */
+        return;
+      }
+
+      /* privacy consent must be checked (PDPL) */
+      if (lmConsent && !lmConsent.checked) {
+        var consentLabel = lmConsent.closest('.lm__consent');
+        if (consentLabel) {
+          consentLabel.classList.add('lm__consent--err');
+          setTimeout(function () { consentLabel.classList.remove('lm__consent--err'); }, 2500);
+        }
+        return;
+      }
 
       /* validate neighbourhood */
       if (nbhdValInp && !nbhdValInp.value) {

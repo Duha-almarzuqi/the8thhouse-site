@@ -134,6 +134,7 @@
       lm_email:             'إيميل',
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
+      lm_consent:           'أوافق على جمع بياناتي والتواصل معي بخصوص خدمات إدارة العقارات، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
 
       faq_label:  'الأسئلة الشائعة',
       faq_title:  'أسئلة يسألها المُلاك',
@@ -161,7 +162,8 @@
       footer_nav1:    'التنقل',
       footer_nav2:    'تواصل',
       footer_copy:    '© 2025 البيت الثامن. جميع الحقوق محفوظة.',
-      footer_cr:      'سجل تجاري 7041576534 · الرياض'
+      footer_cr:      'سجل تجاري 7041576534 · الرياض',
+      footer_privacy: 'سياسة الخصوصية'
     },
 
     en: {
@@ -296,6 +298,7 @@
       lm_email:             'Email',
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
+      lm_consent:           'I agree to the collection of my data and to being contacted about property-management services, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
 
       faq_label:  'FAQ',
       faq_title:  'Questions Property Owners Ask',
@@ -323,7 +326,8 @@
       footer_nav1:    'Navigation',
       footer_nav2:    'Contact',
       footer_copy:    '© 2025 The 8th House. All rights reserved.',
-      footer_cr:      'Commercial Registration 7041576534 · Riyadh'
+      footer_cr:      'Commercial Registration 7041576534 · Riyadh',
+      footer_privacy: 'Privacy Policy'
     }
   };
 

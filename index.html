@@ -960,8 +960,9 @@
         <!-- عدد الشقق -->
         <div class="lm__field">
           <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد الشقق</label>
-          <input class="lm__input" type="number" id="lm-count" name="entry.1884290589"
-                 min="1" max="999" placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder" required>
+          <input class="lm__input" type="text" id="lm-count" name="entry.1884290589"
+                 inputmode="numeric" pattern="[0-9]*" maxlength="3"
+                 placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder" required>
         </div>
 
         <!-- الحي — searchable dropdown -->
@@ -1173,6 +1174,6 @@
   </a>
 
   <script src="js/i18n.js?v=11"></script>
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

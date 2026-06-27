@@ -267,6 +267,36 @@
   var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;
   var lmBox    = document.querySelector('.lm__box');
 
+  /* convert Arabic-Indic (٠-٩) & Persian (۰-۹) digits to Western 0-9
+     so "عدد الوحدات" and phone numbers work when typed in Arabic numerals */
+  function toWesternDigits(s) {
+    return s
+      .replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 0x0660); })
+      .replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 0x06F0); });
+  }
+
+  /* count field: normalize digits + keep digits only */
+  var lmCount = document.getElementById('lm-count');
+  if (lmCount) {
+    lmCount.addEventListener('input', function () {
+      var v = toWesternDigits(this.value).replace(/[^0-9]/g, '');
+      if (v !== this.value) this.value = v;
+    });
+  }
+
+  /* contact field: normalize Arabic digits (harmless for emails) */
+  var lmContactNum = document.getElementById('lm-contact');
+  if (lmContactNum) {
+    lmContactNum.addEventListener('input', function () {
+      var pos = this.selectionStart;
+      var v = toWesternDigits(this.value);
+      if (v !== this.value) {
+        this.value = v;
+        try { this.setSelectionRange(pos, pos); } catch (e) {}
+      }
+    });
+  }
+
   function showSuccess() {
     if (!lmBox) return;
     var isEn = document.documentElement.lang === 'en';

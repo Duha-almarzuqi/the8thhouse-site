@@ -166,6 +166,8 @@
       footer_privacy: 'سياسة الخصوصية',
 
       trust_heading:     'موثوقية والتزام',
+      trust_auth:        'موثّق',
+      trust_active:      'نشط',
       trust_status:      'موثّق · سجل تجاري نشط',
       trust_cr:          'السجل التجاري · 7041576534',
       trust_verify_aria: 'تحقّق من السجل التجاري لدى المركز السعودي للأعمال (يفتح في نافذة جديدة)'
@@ -335,6 +337,8 @@
       footer_privacy: 'Privacy Policy',
 
       trust_heading:     'Trust & Compliance',
+      trust_auth:        'Authenticated',
+      trust_active:      'Active',
       trust_status:      'Authenticated · Active Registration',
       trust_cr:          'Commercial Registration · 7041576534',
       trust_verify_aria: 'Verify the commercial registration at the Saudi Business Center (opens in a new window)'

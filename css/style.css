@@ -1891,34 +1891,19 @@ html[lang="en"] .footer__logo-ar { display: none; }
 .footer__trust {
   max-width: var(--max);
   margin: 0 auto 2.5rem;
-  text-align: center;
-}
-
-.footer__trust-hd {
-  font-size: .62rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-.trust-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
 }
 
 .trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: .85rem;
-  padding: .7rem 1.1rem;
+  gap: 1.4rem;
+  padding: 1rem 1.85rem;
   background: #fff;
-  border-radius: 12px;
-  border: 1px solid rgba(197,165,114,.25);
-  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  border-radius: 16px;
+  border: 1px solid rgba(197,165,114,.28);
+  box-shadow: 0 12px 38px rgba(0,0,0,.20);
   text-decoration: none;
   direction: rtl;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -1927,13 +1912,13 @@ html[lang="en"] .footer__logo-ar { display: none; }
 .trust-badge:hover,
 .trust-badge:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.26);
+  box-shadow: 0 16px 46px rgba(0,0,0,.26);
   border-color: var(--gold);
   outline: none;
 }
 
 .trust-badge__logo {
-  height: 42px;
+  height: 50px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -1942,40 +1927,33 @@ html[lang="en"] .footer__logo-ar { display: none; }
 .trust-badge__sep {
   width: 1px;
   align-self: stretch;
+  margin: .15rem 0;
   background: rgba(26,11,46,.12);
 }
 
 .trust-badge__text {
   display: flex;
   flex-direction: column;
-  gap: .15rem;
+  gap: .35rem;
   text-align: right;
 }
 
 .trust-badge__status {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  font-size: .72rem;
-  font-weight: 600;
+  font-size: .98rem;
+  font-weight: 700;
   color: var(--purple-deep);
   letter-spacing: .01em;
+  line-height: 1.1;
 }
 
-.trust-badge__status::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #1f9d57;
-  box-shadow: 0 0 0 3px rgba(31,157,87,.18);
-  flex-shrink: 0;
-}
+.trust-badge__active { color: #1f9d57; }
+.trust-badge__colon  { color: var(--purple-deep); }
 
 .trust-badge__cr {
-  font-size: .64rem;
-  color: rgba(26,11,46,.6);
-  letter-spacing: .03em;
+  font-size: .76rem;
+  font-weight: 400;
+  color: rgba(26,11,46,.55);
+  letter-spacing: .02em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -2012,8 +1990,10 @@ html[lang="en"] .trust-badge__text { text-align: left; }
   }
   .footer__nav   { gap: 2.5rem; }
   .footer__btm   { flex-direction: column; align-items: flex-start; }
-  .footer__trust { margin-bottom: 2rem; }
-  .trust-badge   { width: 100%; max-width: 320px; justify-content: center; }
+  .footer__trust    { margin-bottom: 2rem; }
+  .trust-badge      { width: 100%; max-width: 360px; gap: 1rem; padding: .9rem 1.1rem; justify-content: center; }
+  .trust-badge__logo { height: 42px; }
+  .trust-badge__status { font-size: .9rem; }
 }
 
 /* ── LEAD MODAL ──────────────────────────────────────────────── */

@@ -170,6 +170,7 @@
       trust_active:      'نشط',
       trust_status:      'موثّق · سجل تجاري نشط',
       trust_cr:          'السجل التجاري 7041576534',
+      trust_cr_label:    'السجل التجاري',
       trust_verify_aria: 'تحقّق من السجل التجاري 7041576534 لدى وزارة التجارة (يفتح في نافذة جديدة)'
     },
 
@@ -341,6 +342,7 @@
       trust_active:      'Active',
       trust_status:      'Authenticated · Active Registration',
       trust_cr:          'Commercial Registration 7041576534',
+      trust_cr_label:    'Commercial Registration',
       trust_verify_aria: 'Verify commercial registration 7041576534 at the Ministry of Commerce (opens in a new window)'
     }
   };

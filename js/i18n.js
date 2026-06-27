@@ -170,7 +170,7 @@
       trust_active:      'نشط',
       trust_status:      'موثّق · سجل تجاري نشط',
       trust_cr:          'السجل التجاري · 7041576534',
-      trust_verify_aria: 'تحقّق من السجل التجاري لدى المركز السعودي للأعمال (يفتح في نافذة جديدة)'
+      trust_verify_aria: 'تحقّق من السجل التجاري 7041576534 لدى وزارة التجارة (يفتح في نافذة جديدة)'
     },
 
     en: {
@@ -341,7 +341,7 @@
       trust_active:      'Active',
       trust_status:      'Authenticated · Active Registration',
       trust_cr:          'Commercial Registration · 7041576534',
-      trust_verify_aria: 'Verify the commercial registration at the Saudi Business Center (opens in a new window)'
+      trust_verify_aria: 'Verify commercial registration 7041576534 at the Ministry of Commerce (opens in a new window)'
     }
   };
 

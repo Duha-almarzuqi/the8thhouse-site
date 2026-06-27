@@ -1892,7 +1892,7 @@ html[lang="en"] .footer__logo-ar { display: none; }
   max-width: var(--max);
   margin: 0 auto 2.5rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .trust-badge {

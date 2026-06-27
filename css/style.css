@@ -1932,12 +1932,13 @@ html[lang="en"] .footer__logo-ar { display: none; }
   outline: none;
 }
 
-.trust-badge__logo {
-  height: 30px;
-  width: auto;
-  display: block;
+.trust-badge__seal {
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
 }
+
+.trust-badge__seal svg { display: block; }
 
 .trust-badge__sep {
   width: 1px;

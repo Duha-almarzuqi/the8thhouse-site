@@ -166,9 +166,9 @@
       footer_privacy: 'سياسة الخصوصية',
 
       trust_heading:     'موثوقية والتزام',
-      trust_status:      'سجل تجاري نشط',
+      trust_status:      'موثّق لدى المركز السعودي للأعمال',
       trust_cr:          'السجل التجاري · 7041576534',
-      trust_verify_aria: 'تحقّق من السجل التجاري في وزارة التجارة (يفتح في نافذة جديدة)'
+      trust_verify_aria: 'تحقّق من توثيق عقد الشركة لدى المركز السعودي للأعمال (يفتح في نافذة جديدة)'
     },
 
     en: {
@@ -335,9 +335,9 @@
       footer_privacy: 'Privacy Policy',
 
       trust_heading:     'Trust & Compliance',
-      trust_status:      'Active Commercial Registration',
+      trust_status:      'Authenticated · Saudi Business Center',
       trust_cr:          'Commercial Registration · 7041576534',
-      trust_verify_aria: 'Verify the commercial registration at the Ministry of Commerce (opens in a new window)'
+      trust_verify_aria: 'Verify the company contract authentication at the Saudi Business Center (opens in a new window)'
     }
   };
 

@@ -2371,7 +2371,7 @@ html[lang="en"] .trust-badge { direction: ltr; }
   font-family: var(--f);
   font-size: .72rem;
   line-height: 1.6;
-  color: rgba(255,255,255,.7);
+  color: var(--text-secondary);
 }
 
 .lm__consent input[type="checkbox"] {
@@ -2644,8 +2644,4 @@ html[lang="en"] .trust-badge { direction: ltr; }
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(10,6,18,.55);
   border-color: rgba(197,165,114,.4);
-}
-
-@media (min-width: 860px) {
-  .wa-float { display: none; }
 }

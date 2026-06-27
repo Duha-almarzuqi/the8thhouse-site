@@ -1914,15 +1914,34 @@ html[lang="en"] .footer__logo-ar { display: none; }
   background: rgba(26,11,46,.12);
 }
 
+.trust-badge__cr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  direction: ltr;
+  gap: 1px;
+  transform: translateY(5px);
+}
+
+html[lang="en"] .trust-badge__cr { align-items: flex-start; }
+
+.trust-badge__cr-label {
+  font-size: .5rem;
+  font-weight: 600;
+  color: #2c2c3a;
+  letter-spacing: .03em;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
 .trust-badge__cr-num {
-  align-self: center;
   font-size: .6rem;
   font-weight: 600;
   color: #2c2c3a;
   letter-spacing: .04em;
+  line-height: 1.05;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  transform: translateY(10px);
 }
 
 html[lang="en"] .trust-badge { direction: ltr; }

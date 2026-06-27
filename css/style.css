@@ -1959,8 +1959,15 @@ html[lang="en"] .trust-badge { direction: ltr; }
 
 .footer__btm-legal {
   display: flex;
-  flex-direction: column;
-  gap: .4rem;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.footer__btm-dot {
+  color: rgba(245,241,235,.25);
+  font-size: .68rem;
 }
 
 .footer__btm p {

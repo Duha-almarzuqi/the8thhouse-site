@@ -142,7 +142,7 @@
       lm_email:             'إيميل',
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
-      lm_consent:           'أوافق على معالجة بياناتي الشخصية من قِبل البيت الثامن للتواصل معي وتقييم خدمتي، وعلى مشاركتها مع مزوّد المنصة (Google) كمعالِج، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>. يمكنني سحب موافقتي في أي وقت.',
+      lm_consent:           'أوافق على تزويد البيت الثامن ببياناتي للتواصل وتقييم طلبي، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
 
       faq_label:  'الأسئلة الشائعة',
       faq_title:  'أسئلة يسألها المُلاك',
@@ -322,7 +322,7 @@
       lm_email:             'Email',
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
-      lm_consent:           'I consent to The 8th House processing my personal data to contact me and assess my service, and to sharing it with our platform provider (Google) as a processor, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I may withdraw consent at any time.',
+      lm_consent:           'I consent to The 8th House using my details to contact me and review my request, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
 
       faq_label:  'FAQ',
       faq_title:  'Questions Property Owners Ask',

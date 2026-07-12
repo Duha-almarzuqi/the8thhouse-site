@@ -139,26 +139,126 @@
   });
 
   /* ── LEAD MODAL ────────────────────────────────────────────── */
-  var lm        = document.getElementById('leadModal');
-  var lmOpen    = document.getElementById('openLead');
-  var lmClose   = document.getElementById('lmClose');
-  var lmOverlay = document.getElementById('lmOverlay');
+  var lm          = document.getElementById('leadModal');
+  var lmOpen      = document.getElementById('openLead');
+  var lmClose     = document.getElementById('lmClose');
+  var lmOverlay   = document.getElementById('lmOverlay');
+  var lmBox       = document.querySelector('.lm__box');
+  var lmHead      = document.querySelector('.lm__head');
+  var lmForm      = document.querySelector('.lm__form');
+  var lmSubmit    = lmForm ? lmForm.querySelector('.lm__submit[type="submit"]') : null;
+  var lmNext      = document.getElementById('lmNext');
+  var lmBack      = document.getElementById('lmBack');
+  var lmDone      = document.getElementById('lmDone');
+  var lmDoneClose = document.getElementById('lmDoneClose');
+  var lmStatus    = document.getElementById('lmStatus');
+  var lmStepCount = document.getElementById('lmStepCount');
+  var lmProgress  = document.querySelector('.lm__progress-track');
+  var lmProgressBar = document.getElementById('lmProgressBar');
+  var lmSteps     = lmForm ? Array.from(lmForm.querySelectorAll('.lm__step')) : [];
+  var lmStepLabels = lmForm ? Array.from(lmForm.querySelectorAll('[data-step-label]')) : [];
 
   var contactInput = document.getElementById('lm-contact');
   var contactLabel = document.getElementById('lm-contact-label');
 
-  var contactHints = {
-    'واتساب': { label: 'رقم الواتساب', placeholder: '05xxxxxxxx' },
-    'مكالمة': { label: 'رقم الجوال',   placeholder: '05xxxxxxxx' },
-    'إيميل':  { label: 'البريد الإلكتروني', placeholder: 'example@email.com' }
-  };
+  var lmCurrentStep = 1;
+  var lmLastFocused = null;
+  var lmIsSubmitting = false;
+
+  function lmIsEnglish() {
+    return document.documentElement.lang === 'en';
+  }
+
+  function lmCopy(ar, en) {
+    return lmIsEnglish() ? en : ar;
+  }
+
+  function getContactHint(value) {
+    var hints = {
+      ar: {
+        'واتساب': { label: 'رقم الواتساب', placeholder: '05xxxxxxxx', type: 'tel' },
+        'مكالمة': { label: 'رقم الجوال', placeholder: '05xxxxxxxx', type: 'tel' },
+        'إيميل':  { label: 'البريد الإلكتروني', placeholder: 'example@email.com', type: 'email' }
+      },
+      en: {
+        'واتساب': { label: 'WhatsApp Number', placeholder: '05xxxxxxxx', type: 'tel' },
+        'مكالمة': { label: 'Phone Number', placeholder: '05xxxxxxxx', type: 'tel' },
+        'إيميل':  { label: 'Email Address', placeholder: 'example@email.com', type: 'email' }
+      }
+    };
+    return hints[lmIsEnglish() ? 'en' : 'ar'][value] || hints.ar['واتساب'];
+  }
+
+  function applyContactHint(value) {
+    var hint = getContactHint(value);
+    if (!contactLabel || !contactInput) return;
+    contactLabel.textContent = hint.label;
+    contactInput.placeholder = hint.placeholder;
+    contactInput.type = hint.type;
+    contactInput.inputMode = hint.type === 'email' ? 'email' : 'tel';
+    contactInput.autocomplete = hint.type === 'email' ? 'email' : 'tel';
+    contactInput.setCustomValidity('');
+    contactInput.removeAttribute('aria-invalid');
+  }
+
+  function setLeadStatus(message, type) {
+    if (!lmStatus) return;
+    lmStatus.textContent = message || '';
+    lmStatus.classList.toggle('lm__status--error', type === 'error');
+  }
+
+  function clearLeadStatus() {
+    setLeadStatus('', '');
+  }
+
+  function setLeadStep(step, moveFocus) {
+    lmCurrentStep = step === 2 ? 2 : 1;
+
+    lmSteps.forEach(function (el) {
+      el.hidden = Number(el.getAttribute('data-step')) !== lmCurrentStep;
+    });
+
+    lmStepLabels.forEach(function (el) {
+      el.hidden = Number(el.getAttribute('data-step-label')) !== lmCurrentStep;
+    });
+
+    if (lmStepCount) lmStepCount.textContent = lmCurrentStep + ' / 2';
+    if (lmProgress) lmProgress.setAttribute('aria-valuenow', String(lmCurrentStep));
+    if (lmProgressBar) lmProgressBar.style.width = lmCurrentStep === 1 ? '50%' : '100%';
+
+    clearLeadStatus();
+
+    if (lmBox) lmBox.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (moveFocus) {
+      var activeStep = lmSteps.find(function (el) {
+        return Number(el.getAttribute('data-step')) === lmCurrentStep;
+      });
+      var firstField = activeStep && activeStep.querySelector(
+        'select, input:not([type="hidden"]):not([type="radio"]), button'
+      );
+      if (firstField) setTimeout(function () { firstField.focus(); }, 60);
+    }
+  }
+
+  function getModalFocusable() {
+    if (!lm) return [];
+    return Array.from(lm.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )).filter(function (el) {
+      return !el.hidden && el.offsetParent !== null;
+    });
+  }
 
   function openModal() {
     if (!lm) return;
+    lmLastFocused = document.activeElement;
     lm.classList.add('open');
     lm.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    setTimeout(function () { lm.querySelector('.lm__close').focus(); }, 50);
+    setTimeout(function () {
+      if (lmClose) lmClose.focus();
+    }, 50);
   }
 
   function closeModal() {
@@ -166,7 +266,10 @@
     lm.classList.remove('open');
     lm.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    if (lmOpen) lmOpen.focus();
+    var restoreTarget = lmLastFocused && typeof lmLastFocused.focus === 'function'
+      ? lmLastFocused
+      : lmOpen;
+    if (restoreTarget) restoreTarget.focus();
   }
 
   if (lmOpen)    lmOpen.addEventListener('click', openModal);
@@ -174,7 +277,27 @@
   if (lmOverlay) lmOverlay.addEventListener('click', closeModal);
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lm && lm.classList.contains('open')) closeModal();
+    if (!lm || !lm.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      var focusable = getModalFocusable();
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   /* ── NEIGHBOURHOOD SEARCHABLE DROPDOWN ────────────────────── */
@@ -201,20 +324,24 @@
   }
 
   function nbhdToggle() {
+    if (!nbhdWidget) return;
     nbhdWidget.getAttribute('aria-expanded') === 'true' ? nbhdClose() : nbhdOpen();
   }
 
   function nbhdFilter(q) {
-    var query = q.trim();
+    if (!nbhdPanel) return;
+    var query = q.trim().toLowerCase();
     var anyVisible = false;
+
     nbhdOpts.forEach(function (opt) {
-      var match = !query || opt.textContent.toLowerCase().includes(query.toLowerCase());
+      var ar = opt.getAttribute('data-ar') || opt.textContent.trim();
+      var visibleText = opt.textContent.trim();
+      var match = !query || ar.toLowerCase().includes(query) || visibleText.toLowerCase().includes(query);
       opt.hidden = !match;
       if (match) anyVisible = true;
     });
-    /* hide group headers with no visible children */
-    var groups = nbhdPanel.querySelectorAll('.nbhd__group');
-    groups.forEach(function (grp) {
+
+    nbhdPanel.querySelectorAll('.nbhd__group').forEach(function (grp) {
       var next = grp.nextElementSibling;
       var hasVisible = false;
       while (next && !next.classList.contains('nbhd__group')) {
@@ -223,38 +350,60 @@
       }
       grp.hidden = !hasVisible;
     });
+
     if (nbhdEmpty) nbhdEmpty.hidden = anyVisible;
   }
 
-  function nbhdSelect(val) {
+  function nbhdSelect(opt) {
+    if (!opt) return;
+    var arValue = opt.getAttribute('data-ar') || opt.textContent.trim();
+
     if (nbhdDisplay) {
-      nbhdDisplay.textContent = val;
+      nbhdDisplay.textContent = opt.textContent.trim();
       nbhdDisplay.classList.add('selected');
     }
-    if (nbhdValInp) nbhdValInp.value = val;
-    nbhdOpts.forEach(function (o) { o.classList.toggle('chosen', o.textContent === val); });
+
+    if (nbhdValInp) nbhdValInp.value = arValue;
+
+    nbhdOpts.forEach(function (item) {
+      var itemAr = item.getAttribute('data-ar') || item.textContent.trim();
+      item.classList.toggle('chosen', itemAr === arValue);
+      item.setAttribute('aria-selected', String(itemAr === arValue));
+    });
+
+    if (nbhdWidget) nbhdWidget.removeAttribute('aria-invalid');
     nbhdClose();
+    clearLeadStatus();
     if (nbhdTrigger) nbhdTrigger.focus();
   }
 
   if (nbhdTrigger) {
     nbhdTrigger.addEventListener('click', nbhdToggle);
     nbhdTrigger.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nbhdToggle(); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        nbhdToggle();
+      }
     });
   }
 
   if (nbhdSearch) {
     nbhdSearch.addEventListener('input', function () { nbhdFilter(this.value); });
     nbhdSearch.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') nbhdClose();
+      if (e.key === 'Escape') {
+        nbhdClose();
+        if (nbhdTrigger) nbhdTrigger.focus();
+      }
     });
   }
 
   nbhdOpts.forEach(function (opt) {
-    opt.addEventListener('click', function () { nbhdSelect(opt.textContent.trim()); });
+    opt.addEventListener('click', function () { nbhdSelect(opt); });
     opt.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nbhdSelect(opt.textContent.trim()); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        nbhdSelect(opt);
+      }
     });
   });
 
@@ -262,105 +411,336 @@
     if (nbhdWidget && !nbhdWidget.contains(e.target)) nbhdClose();
   });
 
-  /* ── GOOGLE FORMS — fetch no-cors submit ────────────────────── */
-  var lmForm   = document.querySelector('.lm__form');
-  var lmSubmit = lmForm ? lmForm.querySelector('.lm__submit') : null;
-  var lmBox    = document.querySelector('.lm__box');
-
-  /* convert Arabic-Indic (٠-٩) & Persian (۰-۹) digits to Western 0-9
-     so "عدد الوحدات" and phone numbers work when typed in Arabic numerals */
+  /* ── FORM VALIDATION + TWO-STEP EXPERIENCE ─────────────────── */
   function toWesternDigits(s) {
     return s
       .replace(/[٠-٩]/g, function (d) { return String(d.charCodeAt(0) - 0x0660); })
       .replace(/[۰-۹]/g, function (d) { return String(d.charCodeAt(0) - 0x06F0); });
   }
 
-  /* count fields: normalize digits + keep digits only */
   ['lm-count', 'lm-rooms'].forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', function () {
-        var v = toWesternDigits(this.value).replace(/[^0-9]/g, '');
-        if (v !== this.value) this.value = v;
-      });
-    }
+    if (!el) return;
+    el.addEventListener('input', function () {
+      var value = toWesternDigits(this.value).replace(/[^0-9]/g, '');
+      if (value !== this.value) this.value = value;
+      this.setCustomValidity('');
+      this.removeAttribute('aria-invalid');
+      clearLeadStatus();
+    });
   });
 
-  /* contact field: normalize Arabic digits (harmless for emails) */
-  var lmContactNum = document.getElementById('lm-contact');
-  if (lmContactNum) {
-    lmContactNum.addEventListener('input', function () {
-      var pos = this.selectionStart;
-      var v = toWesternDigits(this.value);
-      if (v !== this.value) {
-        this.value = v;
-        try { this.setSelectionRange(pos, pos); } catch (e) {}
+  if (contactInput) {
+    contactInput.addEventListener('input', function () {
+      var position = this.selectionStart;
+      var value = toWesternDigits(this.value);
+      if (value !== this.value) {
+        this.value = value;
+        try { this.setSelectionRange(position, position); } catch (e) {}
       }
+      this.setCustomValidity('');
+      this.removeAttribute('aria-invalid');
+      clearLeadStatus();
     });
   }
 
-  function showSuccess() {
-    if (!lmBox) return;
-    var isEn = document.documentElement.lang === 'en';
-    lmBox.innerHTML =
-      '<div class="lm__done">' +
-        '<div class="lm__done-icon">✓</div>' +
-        '<h3 class="lm__done-title">' + (isEn ? 'Request Received' : 'تم استلام طلبك') + '</h3>' +
-        '<p class="lm__done-sub">' + (isEn ? "We'll be in touch shortly" : 'سنتواصل معك بأقرب وقت') + '</p>' +
-        '<button class="lm__submit" id="lmDoneClose" style="margin-top:1.5rem">' +
-          (isEn ? 'Close' : 'إغلاق') +
-        '</button>' +
-      '</div>';
-    var doneClose = document.getElementById('lmDoneClose');
-    if (doneClose) {
-      doneClose.addEventListener('click', function () {
-        var modal = document.getElementById('leadModal');
-        if (modal) modal.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+  function markInvalid(el, message) {
+    if (!el) return;
+    if (typeof el.setCustomValidity === 'function') el.setCustomValidity(message || '');
+    el.setAttribute('aria-invalid', 'true');
+  }
+
+  function clearInvalid(el) {
+    if (!el) return;
+    if (typeof el.setCustomValidity === 'function') el.setCustomValidity('');
+    el.removeAttribute('aria-invalid');
+  }
+
+  function focusInvalid(el) {
+    if (!el) return;
+    if (el === nbhdWidget) {
+      nbhdOpen();
+      return;
     }
+    if (typeof el.reportValidity === 'function') {
+      try { el.reportValidity(); } catch (e) {}
+    }
+    if (typeof el.focus === 'function') el.focus();
+  }
+
+  function validatePropertyStep(focusError) {
+    var valid = true;
+    var firstInvalid = null;
+    var furnishing = lmForm ? lmForm.querySelector('input[name="entry.1461119662"]:checked') : null;
+    var furnishingGroup = lmForm ? lmForm.querySelector('.lm__fieldset') : null;
+    var furnishingInputs = lmForm ? lmForm.querySelectorAll('input[name="entry.1461119662"]') : [];
+
+    if (furnishingGroup) furnishingGroup.removeAttribute('aria-invalid');
+    if (!furnishing) {
+      valid = false;
+      if (furnishingGroup) furnishingGroup.setAttribute('aria-invalid', 'true');
+      firstInvalid = furnishingInputs[0] || furnishingGroup;
+    }
+
+    ['lm-ptype', 'lm-count', 'lm-rooms'].forEach(function (id) {
+      var field = document.getElementById(id);
+      if (!field) return;
+      clearInvalid(field);
+
+      if ((id === 'lm-count' || id === 'lm-rooms') && field.value &&
+          !/^[1-9][0-9]*$/.test(field.value)) {
+        markInvalid(field, lmCopy('أدخل رقمًا صحيحًا أكبر من صفر.', 'Enter a valid number greater than zero.'));
+      }
+
+      if (!field.checkValidity()) {
+        valid = false;
+        markInvalid(field, field.validationMessage);
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (nbhdWidget) nbhdWidget.removeAttribute('aria-invalid');
+    if (nbhdValInp && !nbhdValInp.value) {
+      valid = false;
+      if (nbhdWidget) nbhdWidget.setAttribute('aria-invalid', 'true');
+      if (!firstInvalid) firstInvalid = nbhdWidget;
+    }
+
+    if (!valid) {
+      setLeadStatus(
+        lmCopy('أكمل الحقول المطلوبة قبل المتابعة.', 'Complete the required fields before continuing.'),
+        'error'
+      );
+      if (focusError) focusInvalid(firstInvalid);
+    }
+
+    return valid;
+  }
+
+  function validateContactStep(focusError) {
+    var valid = true;
+    var firstInvalid = null;
+    var nameField = document.getElementById('lm-name');
+    var consent = document.getElementById('lm-consent');
+    var method = lmForm ? lmForm.querySelector('input[name="entry.25795692"]:checked') : null;
+
+    [nameField, contactInput, consent].forEach(clearInvalid);
+
+    if (nameField && !nameField.checkValidity()) {
+      valid = false;
+      markInvalid(nameField, nameField.validationMessage);
+      firstInvalid = nameField;
+    }
+
+    if (contactInput) {
+      var contactValue = contactInput.value.trim();
+      var methodValue = method ? method.value : 'واتساب';
+
+      if (methodValue === 'إيميل') {
+        contactInput.type = 'email';
+        if (!contactInput.checkValidity()) {
+          valid = false;
+          markInvalid(
+            contactInput,
+            lmCopy('أدخل بريدًا إلكترونيًا صحيحًا.', 'Enter a valid email address.')
+          );
+          if (!firstInvalid) firstInvalid = contactInput;
+        }
+      } else {
+        contactInput.type = 'tel';
+        var digits = contactValue.replace(/\D/g, '');
+        if (digits.length < 9 || digits.length > 15) {
+          valid = false;
+          markInvalid(
+            contactInput,
+            lmCopy('أدخل رقم تواصل صحيحًا.', 'Enter a valid contact number.')
+          );
+          if (!firstInvalid) firstInvalid = contactInput;
+        }
+      }
+    }
+
+    if (consent && !consent.checked) {
+      valid = false;
+      markInvalid(
+        consent,
+        lmCopy('يلزم قبول سياسة الخصوصية لإرسال الطلب.', 'Accept the Privacy Policy to send the request.')
+      );
+      var consentLabel = consent.closest('.lm__consent');
+      if (consentLabel) consentLabel.classList.add('lm__consent--err');
+      if (!firstInvalid) firstInvalid = consent;
+    }
+
+    if (!valid) {
+      setLeadStatus(
+        lmCopy('أكمل الحقول المطلوبة قبل إرسال الطلب.', 'Complete the required fields before sending.'),
+        'error'
+      );
+      if (focusError) focusInvalid(firstInvalid);
+    }
+
+    return valid;
+  }
+
+  if (lmNext) {
+    lmNext.addEventListener('click', function () {
+      if (validatePropertyStep(true)) setLeadStep(2, true);
+    });
+  }
+
+  if (lmBack) {
+    lmBack.addEventListener('click', function () {
+      setLeadStep(1, true);
+    });
   }
 
   if (lmForm) {
-    var lmHoneypot = document.getElementById('lm-website');
-    var lmConsent  = document.getElementById('lm-consent');
+    lmForm.addEventListener('input', function (e) {
+      clearInvalid(e.target);
+      var consentLabel = e.target.closest && e.target.closest('.lm__consent');
+      if (consentLabel) consentLabel.classList.remove('lm__consent--err');
+    });
 
+    lmForm.addEventListener('change', function (e) {
+      clearInvalid(e.target);
+      var fieldset = e.target.closest && e.target.closest('.lm__fieldset');
+      if (fieldset) fieldset.removeAttribute('aria-invalid');
+      clearLeadStatus();
+    });
+  }
+
+  /* ── GOOGLE FORMS SUBMIT + MEASUREMENT EVENT ───────────────── */
+  var lmHoneypot = document.getElementById('lm-website');
+  var lmConsent  = document.getElementById('lm-consent');
+
+  function setSubmitting(state) {
+    lmIsSubmitting = state;
+    if (!lmSubmit) return;
+    lmSubmit.disabled = state;
+    var label = lmSubmit.querySelector('[data-i18n="lm_submit"]');
+    if (label) {
+      label.textContent = state
+        ? lmCopy('جاري الإرسال…', 'Sending…')
+        : lmCopy('إرسال الطلب', 'Submit Request');
+    }
+  }
+
+  function emitLeadSuccess() {
+    var params = new URLSearchParams(window.location.search);
+    var eventData = {
+      event: 'generate_lead',
+      form_name: 'property_registration',
+      lead_type: 'property_owner',
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || ''
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(eventData);
+
+    try {
+      window.dispatchEvent(new CustomEvent('the8house:lead-success', {
+        detail: eventData
+      }));
+    } catch (e) {}
+  }
+
+  function showSuccess(shouldMeasure) {
+    setSubmitting(false);
+    clearLeadStatus();
+
+    if (lmHead) lmHead.hidden = true;
+    if (lmForm) lmForm.hidden = true;
+    if (lmDone) {
+      lmDone.hidden = false;
+      lmDone.focus();
+    }
+
+    if (shouldMeasure) emitLeadSuccess();
+  }
+
+  function showSubmitError() {
+    setSubmitting(false);
+    setLeadStatus(
+      lmCopy(
+        'تعذر إرسال الطلب. تحقق من الاتصال وحاول مرة أخرى.',
+        'We could not send your request. Check your connection and try again.'
+      ),
+      'error'
+    );
+    if (lmStatus) lmStatus.focus();
+  }
+
+  function resetLeadForm() {
+    if (!lmForm) return;
+    lmForm.reset();
+    setSubmitting(false);
+
+    if (nbhdValInp) nbhdValInp.value = '';
+    if (nbhdDisplay) {
+      nbhdDisplay.textContent = lmCopy('اختر الحي', 'Choose neighbourhood');
+      nbhdDisplay.classList.remove('selected');
+    }
+    nbhdOpts.forEach(function (opt) {
+      opt.classList.remove('chosen');
+      opt.setAttribute('aria-selected', 'false');
+    });
+
+    if (nbhdWidget) {
+      nbhdWidget.removeAttribute('aria-invalid');
+      nbhdWidget.setAttribute('aria-expanded', 'false');
+    }
+
+    lmForm.querySelectorAll('[aria-invalid="true"]').forEach(function (el) {
+      el.removeAttribute('aria-invalid');
+    });
+    lmForm.querySelectorAll('.lm__consent--err').forEach(function (el) {
+      el.classList.remove('lm__consent--err');
+    });
+
+    if (lmHead) lmHead.hidden = false;
+    lmForm.hidden = false;
+    if (lmDone) lmDone.hidden = true;
+
+    applyContactHint('واتساب');
+    setLeadStep(1, false);
+  }
+
+  if (lmDoneClose) {
+    lmDoneClose.addEventListener('click', function () {
+      closeModal();
+      setTimeout(resetLeadForm, 350);
+    });
+  }
+
+  if (lmForm) {
     lmForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (lmIsSubmitting) return;
 
-      /* anti-bot: honeypot must stay empty — silently drop bot submissions */
+      if (lmCurrentStep !== 2) {
+        if (validatePropertyStep(true)) setLeadStep(2, true);
+        return;
+      }
+
+      if (!validatePropertyStep(false)) {
+        setLeadStep(1, false);
+        setTimeout(function () { validatePropertyStep(true); }, 0);
+        return;
+      }
+
+      if (!validateContactStep(true)) return;
+
       if (lmHoneypot && lmHoneypot.value.trim() !== '') {
-        showSuccess(); /* show same UI to the bot, but never send */
+        showSuccess(false);
         return;
       }
 
-      /* privacy consent must be checked (PDPL) */
-      if (lmConsent && !lmConsent.checked) {
-        var consentLabel = lmConsent.closest('.lm__consent');
-        if (consentLabel) {
-          consentLabel.classList.add('lm__consent--err');
-          setTimeout(function () { consentLabel.classList.remove('lm__consent--err'); }, 2500);
-        }
-        return;
-      }
-
-      /* validate neighbourhood */
-      if (nbhdValInp && !nbhdValInp.value) {
-        if (nbhdTrigger) {
-          nbhdTrigger.style.borderColor = '#c0392b';
-          nbhdOpen();
-          setTimeout(function () { nbhdTrigger.style.borderColor = ''; }, 2000);
-        }
-        return;
-      }
-
-      if (lmSubmit) {
-        lmSubmit.disabled = true;
-        var submitSpan = lmSubmit.querySelector('[data-i18n="lm_submit"]');
-        var sendingText = document.documentElement.lang === 'en' ? 'Sending…' : 'جاري الإرسال…';
-        if (submitSpan) submitSpan.textContent = sendingText;
-        else lmSubmit.textContent = sendingText;
-      }
+      setSubmitting(true);
+      setLeadStatus(lmCopy('جاري إرسال طلبك…', 'Sending your request…'), '');
 
       var body = new URLSearchParams(new FormData(lmForm)).toString();
 
@@ -370,21 +750,40 @@
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body
       })
-        .then(function () { showSuccess(); })
-        .catch(function () { showSuccess(); });
+        .then(function () {
+          showSuccess(true);
+        })
+        .catch(function () {
+          showSubmitError();
+        });
     });
   }
 
-  /* update contact field label/placeholder based on method */
   document.querySelectorAll('input[name="entry.25795692"]').forEach(function (radio) {
     radio.addEventListener('change', function () {
-      var hint = contactHints[this.value];
-      if (!hint || !contactLabel || !contactInput) return;
-      contactLabel.textContent  = hint.label;
-      contactInput.placeholder  = hint.placeholder;
-      contactInput.type = this.value === 'إيميل' ? 'email' : 'tel';
+      applyContactHint(this.value);
+      clearLeadStatus();
     });
   });
+
+  window.addEventListener('the8house:language-change', function () {
+    var selectedMethod = lmForm
+      ? lmForm.querySelector('input[name="entry.25795692"]:checked')
+      : null;
+    applyContactHint(selectedMethod ? selectedMethod.value : 'واتساب');
+
+    if (nbhdValInp && nbhdValInp.value && nbhdDisplay) {
+      var selectedOpt = nbhdOpts.find(function (opt) {
+        return (opt.getAttribute('data-ar') || opt.textContent.trim()) === nbhdValInp.value;
+      });
+      if (selectedOpt) nbhdDisplay.textContent = selectedOpt.textContent.trim();
+    }
+
+    clearLeadStatus();
+  });
+
+  setLeadStep(1, false);
+  applyContactHint('واتساب');
 
   /* ── BELT SWIPE + TAP TO HIGHLIGHT ───────────────────────────── */
   (function () {

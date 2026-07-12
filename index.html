@@ -34,7 +34,7 @@
 
   <link rel="preload" as="image" href="assets/img/hero-new.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=77">
+  <link rel="stylesheet" href="css/style.css?v=78">
 </head>
 <body>
 
@@ -951,6 +951,21 @@
             method="POST"
             novalidate>
 
+        <div class="lm__progress" id="lmProgress" aria-label="تقدم النموذج">
+          <div class="lm__progress-copy">
+            <span data-step-label="1" data-i18n="lm_step_property">بيانات العقار</span>
+            <span data-step-label="2" data-i18n="lm_step_contact" hidden>بيانات التواصل</span>
+            <span class="lm__progress-count" id="lmStepCount">1 / 2</span>
+          </div>
+          <div class="lm__progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="2" aria-valuenow="1">
+            <span class="lm__progress-bar" id="lmProgressBar"></span>
+          </div>
+        </div>
+
+        <p class="lm__status" id="lmStatus" role="status" aria-live="polite" tabindex="-1"></p>
+
+        <div class="lm__step" data-step="1">
+
         <!-- حالة التأثيث -->
         <fieldset class="lm__fieldset">
           <legend class="lm__legend" data-i18n="lm_unit_type">حالة التأثيث</legend>
@@ -984,6 +999,8 @@
           </select>
         </div>
 
+        <div class="lm__grid lm__grid--2">
+
         <!-- عدد العقارات -->
         <div class="lm__field">
           <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد العقارات</label>
@@ -998,6 +1015,8 @@
           <input class="lm__input" type="text" id="lm-rooms" name="entry.147340700"
                  inputmode="numeric" pattern="[0-9]*" maxlength="2"
                  placeholder="مثال: 2" data-i18n-placeholder="lm_rooms_ph" required>
+        </div>
+
         </div>
 
         <!-- الحي — searchable dropdown -->
@@ -1131,6 +1150,18 @@
           </div>
         </div>
 
+        <div class="lm__step-actions">
+          <button class="lm__submit" type="button" id="lmNext">
+            <span data-i18n="lm_next">التالي</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        </div>
+
+        <div class="lm__step" data-step="2" hidden>
+
         <!-- الاسم -->
         <div class="lm__field">
           <label class="lm__label" for="lm-name" data-i18n="lm_name_label">الاسم</label>
@@ -1161,7 +1192,7 @@
         <!-- رقم / إيميل -->
         <div class="lm__field">
           <label class="lm__label" for="lm-contact" id="lm-contact-label" data-i18n="lm_phone_label">رقم الجوال</label>
-          <input class="lm__input" type="text" id="lm-contact" name="entry.1132443070"
+          <input class="lm__input" type="tel" id="lm-contact" name="entry.1132443070"
                  placeholder="05xxxxxxxx" required autocomplete="tel" maxlength="80" inputmode="tel">
         </div>
 
@@ -1188,14 +1219,29 @@
           </span>
         </label>
 
-        <button class="lm__submit" type="submit">
-          <span data-i18n="lm_submit">إرسال الطلب</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+        <div class="lm__step-actions lm__step-actions--split">
+          <button class="lm__back" type="button" id="lmBack">
+            <span data-i18n="lm_back">السابق</span>
+          </button>
+          <button class="lm__submit" type="submit">
+            <span data-i18n="lm_submit">إرسال الطلب</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        </div>
 
       </form>
+
+      <div class="lm__done" id="lmDone" role="status" aria-live="polite" tabindex="-1" hidden>
+        <div class="lm__done-icon" aria-hidden="true">✓</div>
+        <h3 class="lm__done-title" data-i18n="lm_success_title">تم إرسال طلبك</h3>
+        <p class="lm__done-sub" data-i18n="lm_success_sub">شكرًا لك، سنتواصل معك بأقرب وقت.</p>
+        <button class="lm__submit" id="lmDoneClose" type="button">
+          <span data-i18n="lm_close_done">إغلاق</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1208,7 +1254,7 @@
     <span data-i18n="contact_whatsapp_short">واتساب</span>
   </a>
 
-  <script src="js/i18n.js?v=16"></script>
-  <script src="js/main.js?v=4"></script>
+  <script src="js/i18n.js?v=17"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

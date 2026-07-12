@@ -143,6 +143,18 @@
       lm_phone_label:       'رقم الجوال',
       lm_submit:            'إرسال الطلب',
       lm_consent:           'أوافق على تزويد البيت الثامن ببياناتي للتواصل وتقييم طلبي، وفق <a href="privacy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>.',
+      lm_step_property:     'بيانات العقار',
+      lm_step_contact:      'بيانات التواصل',
+      lm_next:              'التالي',
+      lm_back:              'السابق',
+      lm_sending:           'جاري الإرسال…',
+      lm_success_title:     'تم إرسال طلبك',
+      lm_success_sub:       'شكرًا لك، سنتواصل معك بأقرب وقت.',
+      lm_close_done:        'إغلاق',
+      lm_required_error:    'أكمل الحقول المطلوبة قبل المتابعة.',
+      lm_positive_error:    'أدخل رقمًا صحيحًا أكبر من صفر.',
+      lm_contact_error:     'أدخل وسيلة تواصل صحيحة.',
+      lm_submit_error:      'تعذر إرسال الطلب. تحقق من الاتصال وحاول مرة أخرى.',
 
       faq_label:  'الأسئلة الشائعة',
       faq_title:  'أسئلة يسألها المُلاك',
@@ -323,6 +335,18 @@
       lm_phone_label:       'Phone Number',
       lm_submit:            'Submit Request',
       lm_consent:           'I consent to The 8th House using my details to contact me and review my request, per the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
+      lm_step_property:     'Property Details',
+      lm_step_contact:      'Contact Details',
+      lm_next:              'Next',
+      lm_back:              'Back',
+      lm_sending:           'Sending…',
+      lm_success_title:     'Request Sent',
+      lm_success_sub:       'Thank you. We will contact you shortly.',
+      lm_close_done:        'Close',
+      lm_required_error:    'Complete the required fields before continuing.',
+      lm_positive_error:    'Enter a valid number greater than zero.',
+      lm_contact_error:     'Enter valid contact details.',
+      lm_submit_error:      'We could not send your request. Check your connection and try again.',
 
       faq_label:  'FAQ',
       faq_title:  'Questions Property Owners Ask',
@@ -504,6 +528,12 @@
     if (btn) btn.textContent = lang === 'ar' ? 'EN' : 'عر';
 
     try { localStorage.setItem('lang', lang); } catch (e) {}
+
+    try {
+      window.dispatchEvent(new CustomEvent('the8house:language-change', {
+        detail: { lang: lang }
+      }));
+    } catch (e) {}
   }
 
   function initI18n() {

@@ -2893,15 +2893,22 @@ html[lang="en"] .why__stat-label {
 
 /* Audience section */
 .about::before {
-  content: '8';
+  content: '';
   position: absolute;
-  inset-inline-start: clamp(-1rem, 2vw, 2rem);
+  inset-inline-start: clamp(-6rem, -4vw, -2.5rem);
   top: 50%;
+  height: clamp(34rem, 68vw, 66rem);
+  aspect-ratio: 50 / 104;
   transform: translateY(-50%);
-  color: rgba(197,165,114,.06);
-  font-size: clamp(18rem, 34vw, 34rem);
-  font-weight: 800;
-  line-height: .75;
+  background: rgba(197,165,114,.075);
+  -webkit-mask-image: url('../assets/brand-eight.svg');
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('../assets/brand-eight.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
   pointer-events: none;
 }
 
@@ -3102,14 +3109,21 @@ html[lang="en"] .about__image-note {
 
 /* Evidence section */
 .why::after {
-  content: '8';
+  content: '';
   position: absolute;
-  inset-inline-end: -2rem;
-  bottom: -4rem;
-  color: rgba(43,21,86,.025);
-  font-size: clamp(18rem, 32vw, 32rem);
-  font-weight: 800;
-  line-height: .8;
+  inset-inline-end: clamp(-6rem, -4vw, -2.5rem);
+  bottom: clamp(-14rem, -10vw, -7rem);
+  height: clamp(32rem, 62vw, 60rem);
+  aspect-ratio: 50 / 104;
+  background: rgba(43,21,86,.032);
+  -webkit-mask-image: url('../assets/brand-eight.svg');
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url('../assets/brand-eight.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
   pointer-events: none;
 }
 

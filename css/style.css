@@ -333,7 +333,7 @@ html[lang="ar"] .values__h       { margin-left: 0; margin-right: 0; }
 html[lang="en"] .hero__body       { direction: ltr; text-align: left; }
 html[lang="en"] .hero__sub        { text-align: left; direction: ltr; }
 html[lang="en"] .hero__actions    { justify-content: flex-start; }
-html[lang="en"] .hero__cta svg    { transform: scaleX(-1); }
+html[lang="en"] .hero__cta-icon--directional { transform: scaleX(-1); }
 html[lang="en"] .about__inner    { direction: ltr; }
 html[lang="en"] .about__lead     { direction: ltr; text-align: left; }
 html[lang="en"] .about__pillars  { direction: ltr; }
@@ -384,8 +384,8 @@ html[lang="en"] .lm__eyebrow        { text-align: left; }
 /* lead modal full LTR flip */
 html[lang="en"] .lm__box            { direction: ltr; }
 html[lang="en"] .lm__close          { left: auto; right: 1.25rem; }
-html[lang="en"] .lm__title          { text-align: center; }
-html[lang="en"] .lm__sub            { text-align: center; }
+html[lang="en"] .lm__title          { text-align: left; }
+html[lang="en"] .lm__sub            { text-align: left; }
 html[lang="en"] .lm__legend         { text-align: left; }
 html[lang="en"] .lm__label          { text-align: left; }
 html[lang="en"] .lm__input,
@@ -547,7 +547,7 @@ html[lang="en"] .lm__type-en   {
 }
 
 .hero__title {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: .01em;
@@ -568,7 +568,7 @@ html[lang="en"] .lm__type-en   {
 
 .hero__title-rest {
   color: var(--text-secondary);
-  font-size: .72em;
+  font-size: .82em;
   font-weight: 300;
   letter-spacing: .02em;
 }
@@ -641,6 +641,16 @@ html[lang="en"] .lm__type-en   {
   padding: 1rem 2.25rem;
   border: 1px solid var(--gold);
   transition: background .4s ease, color .4s ease, border-color .4s ease, opacity .4s ease;
+}
+
+.hero__cta > span {
+  line-height: 1.35;
+}
+
+.hero__cta-icon {
+  display: block;
+  flex: 0 0 auto;
+  transform-origin: center;
 }
 
 @media (min-width: 860px) {
@@ -2529,6 +2539,24 @@ html[lang="en"] .trust-badge { direction: ltr; }
   transition: background .35s ease, transform .2s ease;
 }
 
+.lm__submit > span {
+  line-height: 1.35;
+}
+
+.lm__submit-icon {
+  display: block;
+  flex: 0 0 auto;
+  transform-origin: center;
+}
+
+html[lang="en"] .lm__submit {
+  direction: ltr;
+}
+
+html[lang="en"] .lm__submit-icon--directional {
+  transform: scaleX(-1);
+}
+
 .lm__submit:hover {
   background: var(--purple-royal);
   transform: translateY(-1px);
@@ -2815,6 +2843,52 @@ section[id] {
 html[lang="en"] .hero__title,
 html[lang="en"] .hero__helper {
   text-align: left;
+}
+
+html[lang="en"] .hero__title {
+  max-width: 52ch;
+  margin-bottom: 3rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.9rem);
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+html[lang="en"] .hero__title-rest {
+  color: var(--warm-white);
+  font-size: .82em;
+  text-shadow: 0 1px 10px rgba(10,6,18,.55);
+}
+
+html[lang="en"] .hero__actions,
+html[lang="en"] .hero__cta {
+  direction: ltr;
+}
+
+html[lang="en"] .about__h {
+  max-width: 30ch;
+  line-height: 1.3;
+}
+
+html[lang="en"] .faq__q,
+html[lang="en"] .faq__a p {
+  text-align: left;
+}
+
+html[lang="en"] .why__stat-label {
+  max-width: 22ch;
+  margin-inline: auto;
+  line-height: 1.55;
+}
+
+@media (min-width: 861px) and (max-width: 1120px) {
+  html[lang="en"] .nav__links {
+    gap: 1.1rem;
+  }
+
+  html[lang="en"] .nav__link,
+  html[lang="en"] .nav__cta {
+    font-size: .6rem;
+  }
 }
 
 /* Audience section */
@@ -3283,6 +3357,11 @@ html[lang="en"] .journey__steps::before {
 
   html[lang="ar"] .hero__title {
     margin-bottom: 2rem;
+  }
+
+  html[lang="en"] .hero__title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.15rem, 6vw, 1.55rem);
   }
 
   .hero__helper {

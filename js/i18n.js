@@ -9,6 +9,17 @@
       nav_testimonials: 'تجارب الضيوف',
       nav_faq:          'الأسئلة الشائعة',
       nav_cta:          'تواصل معنا',
+      a11y_home:        'البيت الثامن — الصفحة الرئيسية',
+      a11y_main_nav:    'القائمة الرئيسية',
+      a11y_mobile_nav:  'قائمة الجوال',
+      a11y_menu:        'قائمة التنقل',
+      a11y_lang_toggle: 'التبديل إلى الإنجليزية',
+      a11y_about_image: 'مدخل عقار سكني احترافي بإطلالة طبيعية على أبراج الرياض',
+      a11y_reviews_rating: 'تقييم 5 نجوم',
+      a11y_footer_nav:  'روابط التذييل',
+      a11y_sbc_logo:    'المركز السعودي للأعمال',
+      a11y_form_progress: 'تقدم النموذج',
+      a11y_whatsapp:    'تواصل معنا عبر واتساب',
 
       hero_label_city:  'الرياض',
       hero_label_since: ' · منذ 2019',
@@ -66,11 +77,14 @@
       test_label:    'تجارب الضيوف',
       test_title:    'ما يقوله ضيوف وحدات تولّى البيت الثامن تشغيلها',
       test_sub:      'تعكس هذه المراجعات تجربة الضيف وجودة التشغيل، وليست شهادات ملاك عن العائد.',
+      review4_text:  'أنصح بها وبشدة — نظيفة ومتكاملة والمضيف مرن ومتعاون. أشكره على حسن تعامله وسرعة رده. مكان العقار جميل جدًا والحي هادئ.',
+      review4_name:  'منيرة',
+      review4_meta:  'المملكة العربية السعودية · أغسطس 2025',
 
       brand_name:    'البيت الثامن',
 
       contact_label:    'تواصل معنا',
-      contact_title:    'ابدأ شراكتك مع البيت الثامن اليوم',
+      contact_title:    'ابدأ شراكتك مع<br>البيت الثامن اليوم',
       contact_sub:      'سواء كنت تملك عقارًا قائمًا أو تقيّم عقارًا قبل الشراء، تواصل معنا لنوضح ملاءمته الأولية لنموذج التشغيل والخطوات التالية.',
       contact_whatsapp: '966-56-994-5365+',
 
@@ -162,6 +176,17 @@
       nav_testimonials: 'Guest Experiences',
       nav_faq:          'FAQ',
       nav_cta:          'Contact Us',
+      a11y_home:        'The 8th House — Home',
+      a11y_main_nav:    'Main navigation',
+      a11y_mobile_nav:  'Mobile navigation',
+      a11y_menu:        'Navigation menu',
+      a11y_lang_toggle: 'Switch to Arabic',
+      a11y_about_image: 'A professionally presented residential property entrance with a natural view of Riyadh’s skyline',
+      a11y_reviews_rating: '5-star rating',
+      a11y_footer_nav:  'Footer navigation',
+      a11y_sbc_logo:    'Saudi Business Center',
+      a11y_form_progress: 'Form progress',
+      a11y_whatsapp:    'Contact us on WhatsApp',
 
       hero_label_city:  'Riyadh',
       hero_label_since: ' · Since 2019',
@@ -219,11 +244,14 @@
       test_label:    'Guest Experiences',
       test_title:    'What Guests of Units Operated by The 8th House Say',
       test_sub:      'These reviews reflect the guest experience and operating quality; they are not owner testimonials about returns.',
+      review4_text:  'Highly recommended — clean, fully equipped, and the host is flexible and helpful. Thank you for the warm service and quick responses. The property is in a lovely location and the neighbourhood is quiet.',
+      review4_name:  'Munira',
+      review4_meta:  'Saudi Arabia · August 2025',
 
       brand_name:    'The 8th House',
 
       contact_label:    'Contact Us',
-      contact_title:    'Begin Your Partnership with The 8th House Today',
+      contact_title:    'Begin Your Partnership with<br>The 8th House Today',
       contact_sub:      'Whether you own an existing property or are evaluating one before purchase, contact us to discuss its initial fit with our operating model and the next steps.',
       contact_whatsapp: '+966-56-994-5365',
 
@@ -432,6 +460,11 @@
     document.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria-label');
       if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-alt');
+      if (t[key] !== undefined) el.setAttribute('alt', t[key]);
     });
 
     document.querySelectorAll('.nbhd__opt').forEach(function (el) {

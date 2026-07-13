@@ -86,7 +86,7 @@
 
   <link rel="preload" as="image" href="assets/img/hero-new.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=80">
+  <link rel="stylesheet" href="css/style.css?v=81">
 </head>
 <body>
 
@@ -96,12 +96,12 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
 
-      <a href="#hero" class="nav__logo" aria-label="البيت الثامن — الصفحة الرئيسية">
+      <a href="#hero" class="nav__logo" aria-label="البيت الثامن — الصفحة الرئيسية" data-i18n-aria-label="a11y_home">
         <img src="assets/logo-final.png" class="nav__logo-img nav__logo-ar" alt="البيت الثامن">
         <img src="assets/logo-en.png"    class="nav__logo-img nav__logo-en" alt="The 8th House">
       </a>
 
-      <nav class="nav__links" aria-label="القائمة الرئيسية">
+      <nav class="nav__links" aria-label="القائمة الرئيسية" data-i18n-aria-label="a11y_main_nav">
         <a href="#about"        class="nav__link" data-i18n="nav_about">من نحن</a>
         <a href="#services"     class="nav__link" data-i18n="nav_services">خدماتنا</a>
         <a href="#why"          class="nav__link" data-i18n="nav_why">لماذا نحن</a>
@@ -110,8 +110,8 @@
         <a href="#contact"      class="nav__cta" data-i18n="nav_cta">تواصل معنا</a>
       </nav>
 
-      <button class="nav__lang" id="langToggle" type="button" aria-label="Switch language">EN</button>
-      <button class="nav__burger" id="navBurger" type="button" aria-label="فتح القائمة" aria-expanded="false">
+      <button class="nav__lang" id="langToggle" type="button" aria-label="التبديل إلى الإنجليزية" data-i18n-aria-label="a11y_lang_toggle">EN</button>
+      <button class="nav__burger" id="navBurger" type="button" aria-label="قائمة التنقل" data-i18n-aria-label="a11y_menu" aria-expanded="false">
         <span></span>
         <span></span>
       </button>
@@ -121,7 +121,7 @@
 
   <!-- Mobile drawer -->
   <div class="drawer" id="drawer" aria-hidden="true">
-    <nav class="drawer__nav" aria-label="قائمة الجوال">
+    <nav class="drawer__nav" aria-label="قائمة الجوال" data-i18n-aria-label="a11y_mobile_nav">
       <a href="#about"        class="drawer__link" data-i18n="nav_about">من نحن</a>
       <a href="#services"     class="drawer__link" data-i18n="nav_services">خدماتنا</a>
       <a href="#why"          class="drawer__link" data-i18n="nav_why">لماذا نحن</a>
@@ -160,13 +160,13 @@
       <div class="hero__actions">
         <a href="#contact" class="hero__cta">
           <span data-i18n="hero_cta_start">ابدأ الشراكة</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <svg class="hero__cta-icon hero__cta-icon--directional" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
         <button class="hero__cta hero__cta--outline" id="openLead" type="button">
           <span data-i18n="hero_cta_register">سجّل عقارك</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <svg class="hero__cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
             <path d="M9 22V13h6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
@@ -223,6 +223,7 @@
           <img
             src="assets/img/about-riyadh.webp"
             alt="مدخل عقار سكني احترافي بإطلالة طبيعية على أبراج الرياض"
+            data-i18n-alt="a11y_about_image"
             class="about__img"
             loading="lazy"
             width="1122"
@@ -405,7 +406,7 @@
     <div class="testimonials__hd">
       <p class="label" data-i18n="test_label">تجارب الضيوف</p>
       <h2 class="testimonials__h" id="testimonials-title" data-i18n="test_title">ما يقوله ضيوف وحدات تولّى البيت الثامن تشغيلها</h2>
-      <p class="testimonials__stars" role="img" aria-label="تقييم 5 نجوم">★★★★★</p>
+      <p class="testimonials__stars" role="img" aria-label="تقييم 5 نجوم" data-i18n-aria-label="a11y_reviews_rating">★★★★★</p>
       <p class="testimonials__sub" data-i18n="test_sub">تعكس هذه المراجعات تجربة الضيف وجودة التشغيل، وليست شهادات ملاك عن العائد.</p>
     </div>
 
@@ -439,10 +440,10 @@
 
       <blockquote class="review-card js-reveal" style="--d:.21s">
         <span class="review-card__mark" aria-hidden="true">”</span>
-        <p class="review-card__text">أنصح بها وبشدة — نظيفة ومتكاملة والمضيف مرن ومتعاون. أشكره على حسن تعامله وسرعة رده. مكان العقار جميل جدًا والحي هادئ.</p>
+        <p class="review-card__text" data-i18n="review4_text">أنصح بها وبشدة — نظيفة ومتكاملة والمضيف مرن ومتعاون. أشكره على حسن تعامله وسرعة رده. مكان العقار جميل جدًا والحي هادئ.</p>
         <footer class="review-card__foot">
-          <cite>منيرة</cite>
-          <span>المملكة العربية السعودية · أغسطس 2025</span>
+          <cite data-i18n="review4_name">منيرة</cite>
+          <span data-i18n="review4_meta">المملكة العربية السعودية · أغسطس 2025</span>
         </footer>
       </blockquote>
     </div>
@@ -546,7 +547,7 @@
         <p class="footer__tagline" data-i18n="footer_tagline">إدارة وتشغيل العقارات السكنية · الرياض</p>
       </div>
 
-      <nav class="footer__nav" aria-label="روابط التذييل">
+      <nav class="footer__nav" aria-label="روابط التذييل" data-i18n-aria-label="a11y_footer_nav">
         <div class="footer__col">
           <p class="footer__col-hd" data-i18n="footer_nav1">التنقل</p>
           <a href="#about"        data-i18n="nav_about">من نحن</a>
@@ -579,6 +580,7 @@
       <div class="trust-badge">
         <img class="trust-badge__logo" src="assets/img/sbc-logo.png"
              alt="المركز السعودي للأعمال — Saudi Business Center"
+             data-i18n-alt="a11y_sbc_logo"
              width="124" height="35" loading="lazy" decoding="async">
         <span class="trust-badge__sep" aria-hidden="true"></span>
         <span class="trust-badge__cr">
@@ -613,7 +615,7 @@
             method="POST"
             novalidate>
 
-        <div class="lm__progress" id="lmProgress" aria-label="تقدم النموذج">
+        <div class="lm__progress" id="lmProgress" aria-label="تقدم النموذج" data-i18n-aria-label="a11y_form_progress">
           <div class="lm__progress-copy">
             <span data-step-label="1" data-i18n="lm_step_property">بيانات العقار</span>
             <span data-step-label="2" data-i18n="lm_step_contact" hidden>بيانات التواصل</span>
@@ -815,7 +817,7 @@
         <div class="lm__step-actions">
           <button class="lm__submit" type="button" id="lmNext">
             <span data-i18n="lm_next">التالي</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <svg class="lm__submit-icon lm__submit-icon--directional" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -887,7 +889,7 @@
           </button>
           <button class="lm__submit" type="submit">
             <span data-i18n="lm_submit">إرسال الطلب</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <svg class="lm__submit-icon lm__submit-icon--directional" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -909,14 +911,14 @@
 
   <!-- Floating WhatsApp button (mobile) -->
   <a class="wa-float" id="waFloat" href="https://wa.me/966569945365"
-     rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
+     rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب" data-i18n-aria-label="a11y_whatsapp">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
     <span data-i18n="contact_whatsapp_short">واتساب</span>
   </a>
 
-  <script src="js/i18n.js?v=18"></script>
+  <script src="js/i18n.js?v=19"></script>
   <script src="js/main.js?v=5"></script>
 </body>
 </html>

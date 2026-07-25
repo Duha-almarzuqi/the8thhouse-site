@@ -14,4 +14,4 @@
   gtmScript.async = true;
   gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId + dataLayerQuery;
   firstScript.parentNode.insertBefore(gtmScript, firstScript);
-})(window, document, 'script', 'dataLayer', 'GTM-NQFMZTML');
+})(window, document, 'script', 'dataLayer', 'GTM-WWZN2QVH');

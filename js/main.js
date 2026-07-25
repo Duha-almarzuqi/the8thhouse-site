@@ -612,6 +612,71 @@
   /* ── GOOGLE FORMS SUBMIT + MEASUREMENT EVENT ───────────────── */
   var lmHoneypot = document.getElementById('lm-website');
   var lmConsent  = document.getElementById('lm-consent');
+  var lmLastSubmittedAttribution = null;
+  var lmAttributionStorageKey = 'the8house:lead-attribution';
+  var lmAttributionKeys = [
+    'gclid',
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_content',
+    'utm_term'
+  ];
+  var lmTrackingInputs = {
+    gclid: document.getElementById('lm-track-gclid'),
+    utm_source: document.getElementById('lm-track-utm-source'),
+    utm_medium: document.getElementById('lm-track-utm-medium'),
+    utm_campaign: document.getElementById('lm-track-utm-campaign'),
+    utm_content: document.getElementById('lm-track-utm-content'),
+    utm_term: document.getElementById('lm-track-utm-term'),
+    page_language: document.getElementById('lm-track-page-language'),
+    landing_page: document.getElementById('lm-track-landing-page')
+  };
+
+  function getLeadAttribution() {
+    var params = new URLSearchParams(window.location.search);
+    var hasCurrentAttribution = lmAttributionKeys.some(function (key) {
+      return Boolean(params.get(key));
+    });
+    var attribution = {};
+
+    if (!hasCurrentAttribution) {
+      try {
+        attribution = JSON.parse(window.sessionStorage.getItem(lmAttributionStorageKey) || '{}');
+      } catch (e) {
+        attribution = {};
+      }
+    }
+
+    if (hasCurrentAttribution) {
+      lmAttributionKeys.forEach(function (key) {
+        attribution[key] = params.get(key) || '';
+      });
+      attribution.landing_page = window.location.href.split('#')[0];
+    } else if (!attribution.landing_page) {
+      attribution.landing_page = window.location.href.split('#')[0];
+    }
+
+    attribution.page_language = document.documentElement.lang || 'ar';
+
+    try {
+      window.sessionStorage.setItem(lmAttributionStorageKey, JSON.stringify(attribution));
+    } catch (e) {}
+
+    return attribution;
+  }
+
+  function syncLeadAttributionFields() {
+    var attribution = getLeadAttribution();
+
+    Object.keys(lmTrackingInputs).forEach(function (key) {
+      if (lmTrackingInputs[key]) {
+        lmTrackingInputs[key].value = attribution[key] || '';
+      }
+    });
+
+    return attribution;
+  }
 
   function setSubmitting(state) {
     lmIsSubmitting = state;
@@ -626,16 +691,17 @@
   }
 
   function emitLeadSuccess() {
-    var params = new URLSearchParams(window.location.search);
+    var attribution = lmLastSubmittedAttribution || syncLeadAttributionFields();
     var eventData = {
       event: 'generate_lead',
       form_name: 'property_registration',
       lead_type: 'property_owner',
-      utm_source: params.get('utm_source') || '',
-      utm_medium: params.get('utm_medium') || '',
-      utm_campaign: params.get('utm_campaign') || '',
-      utm_content: params.get('utm_content') || '',
-      utm_term: params.get('utm_term') || ''
+      utm_source: attribution.utm_source || '',
+      utm_medium: attribution.utm_medium || '',
+      utm_campaign: attribution.utm_campaign || '',
+      utm_content: attribution.utm_content || '',
+      utm_term: attribution.utm_term || '',
+      page_language: attribution.page_language || ''
     };
 
     window.dataLayer = window.dataLayer || [];
@@ -742,6 +808,7 @@
       setSubmitting(true);
       setLeadStatus(lmCopy('جاري إرسال طلبك…', 'Sending your request…'), '');
 
+      lmLastSubmittedAttribution = syncLeadAttributionFields();
       var body = new URLSearchParams(new FormData(lmForm)).toString();
 
       fetch(lmForm.action, {
@@ -758,6 +825,8 @@
         });
     });
   }
+
+  syncLeadAttributionFields();
 
   document.querySelectorAll('input[name="entry.25795692"]').forEach(function (radio) {
     radio.addEventListener('change', function () {

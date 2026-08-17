@@ -165,6 +165,7 @@
   var lmLastFocused = null;
   var lmIsSubmitting = false;
   var lmLeadEventSent = false;
+  var lmFormStartSent = false;
 
   function lmIsEnglish() {
     return document.documentElement.lang === 'en';
@@ -689,6 +690,26 @@
         ? lmCopy('جاري الإرسال…', 'Sending…')
         : lmCopy('إرسال الطلب', 'Submit Request');
     }
+  }
+
+  function emitFormStart() {
+    /* first interaction with any field — once per page load, for funnel visibility */
+    if (lmFormStartSent) return;
+    lmFormStartSent = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_start',
+      form_name: 'property_registration',
+      page_language: document.documentElement.lang || 'ar'
+    });
+  }
+
+  if (lmForm) {
+    /* focusin also covers the neighbourhood widget, which is not a native field */
+    ['focusin', 'input', 'change'].forEach(function (evt) {
+      lmForm.addEventListener(evt, emitFormStart);
+    });
   }
 
   function emitLeadSuccess() {

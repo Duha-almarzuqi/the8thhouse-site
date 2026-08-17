@@ -164,6 +164,7 @@
   var lmCurrentStep = 1;
   var lmLastFocused = null;
   var lmIsSubmitting = false;
+  var lmLeadEventSent = false;
 
   function lmIsEnglish() {
     return document.documentElement.lang === 'en';
@@ -691,6 +692,10 @@
   }
 
   function emitLeadSuccess() {
+    /* one lead event per page load — a repeat submission must not double-count */
+    if (lmLeadEventSent) return;
+    lmLeadEventSent = true;
+
     var attribution = lmLastSubmittedAttribution || syncLeadAttributionFields();
     var eventData = {
       event: 'generate_lead',
@@ -999,6 +1004,20 @@
     window.addEventListener('mouseup',  onEnd);
     window.addEventListener('touchend', onEnd);
   })();
+
+  /* ── WHATSAPP CLICK MEASUREMENT ───────────────────────────── */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
+    if (!link) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'whatsapp_click',
+      link_url: link.href,
+      link_location: link.id === 'waFloat' ? 'floating_button' : (link.closest('footer') ? 'footer' : 'page'),
+      page_language: document.documentElement.lang || 'ar'
+    });
+  }, true);
 
   /* ── FLOATING WHATSAPP BUTTON ─────────────────────────────── */
   var waFloat = document.getElementById('waFloat');

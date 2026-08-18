@@ -164,6 +164,8 @@
   var lmCurrentStep = 1;
   var lmLastFocused = null;
   var lmIsSubmitting = false;
+  var lmLeadEventSent = false;
+  var waClickEventSent = false;
 
   function lmIsEnglish() {
     return document.documentElement.lang === 'en';
@@ -482,22 +484,15 @@
       firstInvalid = furnishingInputs[0] || furnishingGroup;
     }
 
-    ['lm-ptype', 'lm-count', 'lm-rooms'].forEach(function (id) {
-      var field = document.getElementById(id);
-      if (!field) return;
-      clearInvalid(field);
-
-      if ((id === 'lm-count' || id === 'lm-rooms') && field.value &&
-          !/^[1-9][0-9]*$/.test(field.value)) {
-        markInvalid(field, lmCopy('أدخل رقمًا صحيحًا أكبر من صفر.', 'Enter a valid number greater than zero.'));
-      }
-
-      if (!field.checkValidity()) {
+    var ptype = document.getElementById('lm-ptype');
+    if (ptype) {
+      clearInvalid(ptype);
+      if (!ptype.checkValidity()) {
         valid = false;
-        markInvalid(field, field.validationMessage);
-        if (!firstInvalid) firstInvalid = field;
+        markInvalid(ptype, ptype.validationMessage);
+        if (!firstInvalid) firstInvalid = ptype;
       }
-    });
+    }
 
     if (nbhdWidget) nbhdWidget.removeAttribute('aria-invalid');
     if (nbhdValInp && !nbhdValInp.value) {
@@ -525,6 +520,18 @@
     var method = lmForm ? lmForm.querySelector('input[name="entry.25795692"]:checked') : null;
 
     [nameField, contactInput, consent].forEach(clearInvalid);
+
+    /* optional detail fields — only checked when the visitor actually filled them */
+    ['lm-count', 'lm-rooms'].forEach(function (id) {
+      var field = document.getElementById(id);
+      if (!field) return;
+      clearInvalid(field);
+      if (field.value && !/^[1-9][0-9]*$/.test(field.value)) {
+        valid = false;
+        markInvalid(field, lmCopy('أدخل رقمًا صحيحًا أكبر من صفر.', 'Enter a valid number greater than zero.'));
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
 
     if (nameField && !nameField.checkValidity()) {
       valid = false;
@@ -691,6 +698,10 @@
   }
 
   function emitLeadSuccess() {
+    /* one lead event per page load — a repeat submission must not double-count */
+    if (lmLeadEventSent) return;
+    lmLeadEventSent = true;
+
     var attribution = lmLastSubmittedAttribution || syncLeadAttributionFields();
     var eventData = {
       event: 'generate_lead',
@@ -999,6 +1010,24 @@
     window.addEventListener('mouseup',  onEnd);
     window.addEventListener('touchend', onEnd);
   })();
+
+  /* ── WHATSAPP CLICK MEASUREMENT ───────────────────────────── */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href^="https://wa.me/"]') : null;
+    if (!link) return;
+
+    /* one WhatsApp event per page load — repeat taps are the same intent */
+    if (waClickEventSent) return;
+    waClickEventSent = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'whatsapp_click',
+      link_url: link.href,
+      link_location: link.id === 'waFloat' ? 'floating_button' : (link.closest('footer') ? 'footer' : 'page'),
+      page_language: document.documentElement.lang || 'ar'
+    });
+  }, true);
 
   /* ── FLOATING WHATSAPP BUTTON ─────────────────────────────── */
   var waFloat = document.getElementById('waFloat');

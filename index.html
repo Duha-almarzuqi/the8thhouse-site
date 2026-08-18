@@ -670,26 +670,6 @@
           </select>
         </div>
 
-        <div class="lm__grid lm__grid--2">
-
-        <!-- عدد العقارات -->
-        <div class="lm__field">
-          <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد العقارات</label>
-          <input class="lm__input" type="text" id="lm-count" name="entry.1884290589"
-                 inputmode="numeric" pattern="[0-9]*" maxlength="3"
-                 placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder" required>
-        </div>
-
-        <!-- عدد الغرف -->
-        <div class="lm__field">
-          <label class="lm__label" for="lm-rooms" data-i18n="lm_rooms_label">عدد الغرف</label>
-          <input class="lm__input" type="text" id="lm-rooms" name="entry.147340700"
-                 inputmode="numeric" pattern="[0-9]*" maxlength="2"
-                 placeholder="مثال: 2" data-i18n-placeholder="lm_rooms_ph" required>
-        </div>
-
-        </div>
-
         <!-- الحي — searchable dropdown -->
         <div class="lm__field">
           <label class="lm__label" id="lm-nbhd-label" data-i18n="lm_nbhd_label">الحي · الرياض</label>
@@ -865,6 +845,27 @@
           <label class="lm__label" for="lm-contact" id="lm-contact-label" data-i18n="lm_phone_label">رقم الجوال</label>
           <input class="lm__input" type="tel" id="lm-contact" name="entry.1132443070"
                  placeholder="05xxxxxxxx" required autocomplete="tel" maxlength="80" inputmode="tel">
+        </div>
+
+        <!-- تفاصيل إضافية — اختيارية، نُقلت من الخطوة الأولى لتخفيف الاحتكاك -->
+        <div class="lm__grid lm__grid--2">
+
+        <!-- عدد العقارات -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-count" data-i18n="lm_count_label">عدد العقارات (اختياري)</label>
+          <input class="lm__input" type="text" id="lm-count" name="entry.1884290589"
+                 inputmode="numeric" pattern="[0-9]*" maxlength="3"
+                 placeholder="مثال: 3" data-i18n-placeholder="lm_count_placeholder">
+        </div>
+
+        <!-- عدد الغرف -->
+        <div class="lm__field">
+          <label class="lm__label" for="lm-rooms" data-i18n="lm_rooms_label">عدد الغرف (اختياري)</label>
+          <input class="lm__input" type="text" id="lm-rooms" name="entry.147340700"
+                 inputmode="numeric" pattern="[0-9]*" maxlength="2"
+                 placeholder="مثال: 2" data-i18n-placeholder="lm_rooms_ph">
+        </div>
+
         </div>
 
         <!-- Anti-bot honeypot (must stay empty; hidden from real users) -->

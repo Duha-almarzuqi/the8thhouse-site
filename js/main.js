@@ -816,6 +816,15 @@
         return;
       }
 
+      /* Already submitted successfully on this page load — show the confirmation
+         again instead of posting a second row to the responses sheet. Closing the
+         success panel resets the form, so without this guard a second submit
+         creates a duplicate lead that carries no generate_lead event. */
+      if (lmLeadEventSent) {
+        showSuccess(false);
+        return;
+      }
+
       setSubmitting(true);
       setLeadStatus(lmCopy('جاري إرسال طلبك…', 'Sending your request…'), '');
 

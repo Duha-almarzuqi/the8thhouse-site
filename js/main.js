@@ -620,6 +620,7 @@
   var lmHoneypot = document.getElementById('lm-website');
   var lmConsent  = document.getElementById('lm-consent');
   var lmLastSubmittedAttribution = null;
+  var lmLastSubmittedBody = '';
   var lmAttributionStorageKey = 'the8house:lead-attribution';
   var lmAttributionKeys = [
     'gclid',
@@ -816,11 +817,16 @@
         return;
       }
 
-      /* Already submitted successfully on this page load — show the confirmation
-         again instead of posting a second row to the responses sheet. Closing the
-         success panel resets the form, so without this guard a second submit
-         creates a duplicate lead that carries no generate_lead event. */
-      if (lmLeadEventSent) {
+      var attribution = syncLeadAttributionFields();
+      var body = new URLSearchParams(new FormData(lmForm)).toString();
+
+      /* Identical repeat of a submission that already succeeded on this page
+         load. Two leads in the responses sheet arrived twice, seconds apart,
+         and the extra rows carried no generate_lead event — so they were posted
+         while lmLeadEventSent was already true. Re-show the confirmation rather
+         than write a second row. Comparing the payload keeps an owner with a
+         second, different property able to submit again. */
+      if (lmLeadEventSent && body === lmLastSubmittedBody) {
         showSuccess(false);
         return;
       }
@@ -828,8 +834,8 @@
       setSubmitting(true);
       setLeadStatus(lmCopy('جاري إرسال طلبك…', 'Sending your request…'), '');
 
-      lmLastSubmittedAttribution = syncLeadAttributionFields();
-      var body = new URLSearchParams(new FormData(lmForm)).toString();
+      lmLastSubmittedAttribution = attribution;
+      lmLastSubmittedBody = body;
 
       fetch(lmForm.action, {
         method: 'POST',

@@ -213,6 +213,15 @@
           <input type="text" id="lp-website" name="b_website_url" tabindex="-1" autocomplete="off">
         </div>
 
+        <!-- ثلاثة حقول يَسِمها نموذج Google بـ«مطلوب». نقطة formResponse لا
+             تفرض الوسم فعلياً (صفوف في شيت الردود وصلت بعدد عقارات وغرف
+             فارغين)، لكن ذلك مُثبت لقيمة فارغة مُرسَلة لا لمفتاح محذوف —
+             فتُرسَل فارغة كي تطابق الحمولة شكل الصفحة الرئيسية المُثبت.
+             لا تُملأ بقيم افتراضية: ما لم يقله الزائر لا يُكتب عنه. -->
+        <input type="hidden" name="entry.1884290589" value="">
+        <input type="hidden" name="entry.147340700"  value="">
+        <input type="hidden" name="entry.25795692"   value="">
+
         <!-- حقول يشترطها نموذج Google — قيمها مطابقة للصفحة الرئيسية -->
         <input type="hidden" name="fvv"             value="1">
         <input type="hidden" name="fbzx"            value="-3082437196889274287">

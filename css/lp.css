@@ -1,0 +1,272 @@
+/* ============================================================
+   THE 8TH HOUSE — صفحات الهبوط الإعلانية
+   ملف مستقل عن style.css عمداً: صفحة الهبوط تُقاس بسرعتها، وتحميل
+   تنسيق الصفحة الرئيسية كاملاً يُبطل الغرض. نفس رموز الهوية، بأقل
+   قدر ممكن من الشيفرة.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('../assets/fonts/cairo-arabic.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url('../assets/fonts/cairo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --cream:      #F5F1EB;
+  --ivory:      #FAF7F2;
+  --white:      #FFFEFA;
+  --purple:     #2B1556;
+  --purple-dk:  #1A0B2E;
+  --gold:       #C5A572;
+  --gold-ink:   #7A6233;
+  --text:       #2B1556;
+  --muted:      #5C4A70;
+  --line:       #E2D9CC;
+  --good:       #146B45;
+  --f: 'Cairo', system-ui, sans-serif;
+  /* تصميم فاتح مقصود: بدون هذا يرسم المتصفح في الوضع الداكن
+     القوائم ومربعات الاختيار بألوان نظامه فتتعارض مع بطاقة النموذج. */
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--f);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--cream);
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--purple); }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+
+/* ── الترويسة ─────────────────────────────────────────────── */
+.lp-head {
+  background: var(--purple-dk);
+  padding-block: 14px;
+}
+.lp-head__in {
+  max-width: 1080px; margin: 0 auto; padding-inline: 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.lp-head img { height: 40px; width: auto; }
+.lp-tel {
+  color: var(--gold); text-decoration: none; font-weight: 600; font-size: 14px;
+  white-space: nowrap; direction: ltr; unicode-bidi: isolate;
+}
+.lp-tel:hover { color: #E0C793; }
+
+/* ── الهيرو + النموذج ─────────────────────────────────────── */
+.lp-hero {
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+  padding-block: 32px 40px;
+  border-bottom: 1px solid var(--line);
+}
+.lp-hero__grid {
+  display: grid; gap: 28px;
+  grid-template-columns: 1fr;
+}
+.lp-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .12em;
+  color: var(--gold-ink); margin: 0 0 10px;
+}
+h1 {
+  font-size: clamp(26px, 6vw, 40px); line-height: 1.25; font-weight: 800;
+  color: var(--purple); margin: 0 0 12px; text-wrap: balance;
+}
+.lp-sub { font-size: 17px; color: var(--muted); margin: 0 0 18px; max-width: 54ch; }
+.lp-qual {
+  background: var(--white); border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--gold);
+  padding: 13px 16px; border-radius: 3px; font-size: 14.5px; margin: 0 0 20px;
+}
+.lp-qual strong { color: var(--purple); }
+
+/* ── بطاقة النموذج ────────────────────────────────────────── */
+.lp-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 6px; padding: 22px 20px;
+  box-shadow: 0 2px 20px rgba(43, 21, 86, .06);
+}
+.lp-card h2 { font-size: 19px; margin: 0 0 4px; color: var(--purple); font-weight: 700; }
+.lp-card__note { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+
+.lp-field { margin-bottom: 14px; }
+.lp-field label {
+  display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; color: var(--text);
+}
+.lp-field input, .lp-field select {
+  width: 100%; font-family: var(--f); font-size: 16px; color: var(--text);
+  padding: 11px 13px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--ivory); transition: border-color .15s;
+}
+.lp-field input:focus, .lp-field select:focus {
+  outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold);
+}
+.lp-field input[aria-invalid="true"], .lp-field select[aria-invalid="true"] { border-color: #9A2B3F; }
+.lp-field input::placeholder { color: #9A8FA8; }
+.lp-err { display: block; font-size: 12.5px; color: #9A2B3F; margin-top: 4px; min-height: 1em; }
+
+fieldset.lp-field { border: 0; padding: 0; margin: 0 0 14px; min-width: 0; }
+fieldset.lp-field legend {
+  padding: 0; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; color: var(--text);
+}
+
+.lp-toggle { display: flex; gap: 10px; }
+/* الراديو يرث width:100% من قاعدة حقول النموذج، فيخرج 44px خارج الإطار
+   رغم أنه شفّاف — الحجم يُثبَّت هنا صراحةً. */
+.lp-toggle input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.lp-toggle label {
+  flex: 1; margin: 0; text-align: center; cursor: pointer;
+  padding: 10px 8px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--ivory); font-weight: 600; font-size: 14px; transition: all .15s;
+}
+.lp-toggle input:checked + label { background: var(--purple); color: var(--white); border-color: var(--purple); }
+.lp-toggle input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+/* فخّ البوتات يُخفى بالقصّ لا بالإزاحة: left:-9999px على عنصر مطلق بلا
+   أب مُموضَع يمدّ عرض تمرير المستند ~10000px، وفي مستند RTL يدفع المحتوى
+   كله خارج الإطار المرسوم — صفحة فارغة تماماً. */
+.lp-hp {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.lp-consent {
+  display: flex; gap: 9px; align-items: flex-start;
+  font-size: 12.5px; line-height: 1.65; color: var(--muted); margin: 4px 0 14px;
+}
+.lp-consent input { margin: 3px 0 0; width: 16px; height: 16px; flex: none; accent-color: var(--purple); }
+.lp-consent a { color: var(--purple); }
+
+.lp-btn {
+  width: 100%; font-family: var(--f); font-size: 16.5px; font-weight: 700;
+  color: var(--purple-dk); background: var(--gold); border: none; border-radius: 4px;
+  padding: 14px; cursor: pointer; margin-top: 4px; transition: background .15s;
+}
+.lp-btn:hover:not(:disabled) { background: #D4B585; }
+.lp-btn:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
+.lp-btn:disabled { opacity: .6; cursor: default; }
+
+.lp-status { font-size: 13.5px; margin-top: 10px; min-height: 1.2em; color: var(--muted); }
+.lp-status.is-error { color: #9A2B3F; font-weight: 600; }
+.lp-fine { font-size: 12px; color: var(--muted); margin: 12px 0 0; line-height: 1.6; }
+
+.lp-done { text-align: center; padding: 18px 4px; }
+.lp-done h2 { color: var(--good); font-size: 21px; margin: 0 0 8px; }
+.lp-done p { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+
+/* ── شريط الأرقام ─────────────────────────────────────────── */
+.lp-proof {
+  background: var(--purple-dk); color: var(--white);
+  padding-block: 22px;
+}
+.lp-proof__grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 12px;
+  max-width: 1080px; margin: 0 auto; padding-inline: 20px;
+}
+.lp-proof dt { font-size: 12.5px; color: #C9BBDD; margin-bottom: 3px; }
+.lp-proof dd {
+  margin: 0; font-size: 22px; font-weight: 800; color: var(--gold);
+  direction: ltr; unicode-bidi: isolate; text-align: right;
+}
+
+/* ── الأقسام ──────────────────────────────────────────────── */
+section { padding-block: 40px; }
+h2.lp-h { font-size: clamp(21px, 4.4vw, 28px); color: var(--purple); margin: 0 0 8px; font-weight: 800; }
+.lp-lede { font-size: 16px; color: var(--muted); margin: 0 0 24px; max-width: 62ch; }
+
+.lp-steps { display: grid; gap: 16px; grid-template-columns: 1fr; counter-reset: s; list-style: none; padding: 0; margin: 0; }
+.lp-steps li {
+  background: var(--white); border: 1px solid var(--line); border-radius: 5px;
+  padding: 18px 20px; counter-increment: s; position: relative;
+}
+.lp-steps li::before {
+  content: counter(s); position: absolute; inset-inline-start: 20px; top: 16px;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--purple); color: var(--white);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700;
+}
+.lp-steps h3 { margin: 0 0 4px; font-size: 16.5px; color: var(--purple); padding-inline-start: 36px; }
+.lp-steps p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+.lp-list { display: grid; gap: 10px; grid-template-columns: 1fr; list-style: none; padding: 0; margin: 0; }
+.lp-list li {
+  background: var(--white); border: 1px solid var(--line); border-radius: 4px;
+  padding: 12px 16px; font-size: 15px;
+}
+.lp-list li strong { color: var(--purple); }
+
+details.lp-faq {
+  background: var(--white); border: 1px solid var(--line); border-radius: 4px;
+  padding: 14px 16px; margin-bottom: 10px;
+}
+details.lp-faq summary {
+  cursor: pointer; font-weight: 700; color: var(--purple); font-size: 15.5px; list-style: none;
+}
+details.lp-faq summary::-webkit-details-marker { display: none; }
+details.lp-faq summary::after { content: ' +'; color: var(--gold); font-weight: 800; }
+details.lp-faq[open] summary::after { content: ' −'; }
+details.lp-faq p { margin: 10px 0 0; font-size: 14.5px; color: var(--muted); }
+
+.lp-cta-band { background: var(--white); border-block: 1px solid var(--line); text-align: center; }
+.lp-cta-band .lp-btn { max-width: 330px; margin-inline: auto; display: block; }
+
+/* ── التذييل ──────────────────────────────────────────────── */
+.lp-foot {
+  background: var(--purple-dk); color: #C9BBDD; padding-block: 26px; font-size: 13px;
+}
+.lp-foot a { color: var(--gold); }
+.lp-foot p { margin: 0 0 5px; }
+.lp-foot .ltr { direction: ltr; unicode-bidi: isolate; }
+
+/* ── زر ثابت على الجوال ───────────────────────────────────── */
+.lp-sticky {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 40;
+  background: var(--white); border-top: 1px solid var(--line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  display: none;
+}
+.lp-sticky a {
+  display: block; text-align: center; background: var(--gold); color: var(--purple-dk);
+  font-weight: 700; padding: 12px; border-radius: 4px; text-decoration: none; font-size: 16px;
+}
+
+@media (max-width: 860px) {
+  .lp-sticky { display: block; }
+  body { padding-bottom: 74px; }
+}
+
+@media (min-width: 861px) {
+  .lp-hero__grid { grid-template-columns: 1fr 420px; align-items: start; gap: 44px; }
+  .lp-proof__grid { grid-template-columns: repeat(4, 1fr); }
+  .lp-steps { grid-template-columns: repeat(3, 1fr); }
+  .lp-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

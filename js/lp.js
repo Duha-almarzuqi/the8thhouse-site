@@ -243,5 +243,19 @@
     }
   });
 
+  /* الشريط الثابت يحمل نداء الإرسال نفسه، فحين يظهر زر الإرسال الحقيقي
+     يصير الشريط نداءً توأماً يغطّيه ولا يفعل شيئاً. يختفي عند ظهور الزر
+     (أو شاشة التأكيد) ويعود متى غابا — يُراقَب الزر لا البطاقة، لأن
+     وظيفة الشريط أن يوصل الزائر إليه. */
+  var sticky = document.querySelector('.lp-sticky');
+  if (sticky && 'IntersectionObserver' in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
+      sticky.classList.toggle('is-hidden', Object.keys(seen).some(function (k) { return seen[k]; }));
+    }, { threshold: 0.6 });
+    [submit, done].forEach(function (el) { if (el) io.observe(el); });
+  }
+
   syncAttribution();
 })();

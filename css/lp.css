@@ -262,6 +262,11 @@ details.lp-faq p { margin: 10px 0 0; font-size: 14.5px; color: var(--muted); }
   body { padding-bottom: 74px; }
 }
 
+/* الشريط الثابت يحمل نداء الإرسال نفسه، فإن ظهر والنموذج على الشاشة
+   غطّى زر الإرسال الحقيقي بنداء توأم لا يفعل شيئاً. يختفي ما دام
+   النموذج مرئياً — يُبدّله lp.js عبر IntersectionObserver. */
+.lp-sticky.is-hidden { display: none; }
+
 @media (min-width: 861px) {
   .lp-hero__grid { grid-template-columns: 1fr 420px; align-items: start; gap: 44px; }
   .lp-proof__grid { grid-template-columns: repeat(4, 1fr); }

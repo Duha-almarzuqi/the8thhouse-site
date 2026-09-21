@@ -18,6 +18,9 @@
   var done    = document.getElementById('lpDone');
   var hp      = document.getElementById('lp-website');
 
+  /* نداء الزر يختلف بين الصفحات — يُلتقط عند التهيئة ليُستعاد كما هو */
+  var submitLabel = submit ? submit.textContent.trim() : 'أرسل الطلب';
+
   var isSubmitting = false;
   var leadEventSent = false;
   var lastSubmittedBody = '';
@@ -91,7 +94,7 @@
     isSubmitting = state;
     if (!submit) return;
     submit.disabled = state;
-    submit.textContent = state ? 'جاري الإرسال…' : 'أرسل الطلب';
+    submit.textContent = state ? 'جاري الإرسال…' : submitLabel;
   }
 
   function setStatus(msg, kind) {
@@ -129,6 +132,13 @@
     form.querySelectorAll('.lp-err').forEach(function (el) { el.textContent = ''; });
   }
 
+  function isSaudiMobile(v) {
+    var d = v.replace(/[\s\-().]/g, '');
+    d = d.replace(/^\+966/, '0').replace(/^00966/, '0').replace(/^966/, '0');
+    if (/^5\d{8}$/.test(d)) d = '0' + d;
+    return /^05\d{8}$/.test(d);
+  }
+
   function validate() {
     clearErrors();
     var ok = true;
@@ -148,7 +158,7 @@
     });
 
     var phone = document.getElementById('lp-contact');
-    if (phone && phone.value.trim() && !/^0?5\d{8}$/.test(phone.value.replace(/[\s-]/g, ''))) {
+    if (phone && phone.value.trim() && !isSaudiMobile(phone.value)) {
       fieldError(phone, 'رقم جوال سعودي يبدأ بـ 05');
       ok = false; first = first || phone;
     }

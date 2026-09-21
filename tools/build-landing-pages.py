@@ -279,7 +279,7 @@ def build(page, nbhd_options):
       </ul>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="الأسئلة">
       <h2 class="lp-h">أسئلة يسألها الملّاك</h2>
 {faq}
     </section>

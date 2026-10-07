@@ -124,7 +124,7 @@
 
   /* field id → { url param, default, min, max } */
   var FIELDS = {
-    calcUnits:    { q: 'u',  def: 1,    min: 1,   max: 50 },
+    calcUnits:    { q: 'u',  def: 1,    min: 1,   max: 50, whole: true },
     calcPrice:    { q: 'p',  def: 500,  min: 100, max: 5000 },
     calcOcc:      { q: 'o',  def: 65,   min: 10,  max: 98 },
     calcComm:     { q: 'c',  def: 15,   min: 0,   max: 40 },
@@ -159,7 +159,10 @@
     return isFinite(n) ? n : NaN;
   }
 
-  function clamp(v, f) { return Math.min(f.max, Math.max(f.min, v)); }
+  function clamp(v, f) {
+    var c = Math.min(f.max, Math.max(f.min, v));
+    return f.whole ? Math.round(c) : c;
+  }
 
   function read() {
     var v = {};
@@ -240,10 +243,10 @@
     var parts = [
       { k: 'split_comm', v: comm, cls: 'comm' },
       { k: 'split_fee', v: fee, cls: 'fee' },
-      { k: 'split_exp', v: Math.min(exp, Math.max(0, 100 - comm - fee)), cls: 'exp' },
+      { k: 'split_exp', v: Math.min(exp, Math.max(0, 100 - comm - fee)), cls: 'exp', label: exp },
     ];
     var used = parts.reduce(function (a, p) { return a + p.v; }, 0);
-    parts.push({ k: 'split_net', v: Math.max(0, 100 - used), cls: 'net' });
+    parts.push({ k: 'split_net', v: Math.max(0, 100 - used), cls: 'net', label: 100 - comm - fee - exp });
     setText('calcSplitTitle', t('split_title'));
     var bar = el('calcSplitBar'), legend = el('calcSplitLegend');
     bar.innerHTML = ''; legend.innerHTML = '';
@@ -256,7 +259,7 @@
       bar.appendChild(seg);
       var li = document.createElement('li');
       li.innerHTML = '<span class="calc-key calc-key--' + p.cls + '" aria-hidden="true"></span>';
-      li.appendChild(document.createTextNode(t(p.k) + ': ' + Math.round(p.v)));
+      li.appendChild(document.createTextNode(t(p.k) + ': ' + Math.round(p.label != null ? p.label : p.v)));
       legend.appendChild(li);
     });
 
@@ -509,7 +512,6 @@
       if (ok) pushEvent('calculator_link_copied');
       setTimeout(function () { copyStatus.textContent = ''; }, 3500);
     }
-    try { history.replaceState(null, '', url); } catch (e) {}
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
     } else {
@@ -523,9 +525,19 @@
     var opened = [el('calcTableWrap'), el('calcAdvanced')].filter(function (d) { return d && !d.open; });
     opened.forEach(function (d) { d.open = true; });
     document.body.classList.add('is-printing-calc');
+    /* Safari on iOS returns from print() before printing, so the page is
+       restored only once the print dialog is done with it */
+    var restored = false;
+    function restore() {
+      if (restored) return;
+      restored = true;
+      window.removeEventListener('afterprint', restore);
+      document.body.classList.remove('is-printing-calc');
+      opened.forEach(function (d) { d.open = false; });
+    }
+    window.addEventListener('afterprint', restore);
     window.print();
-    document.body.classList.remove('is-printing-calc');
-    opened.forEach(function (d) { d.open = false; });
+    if (!('onafterprint' in window)) restore();
   });
 
   if (loadFromUrl()) {

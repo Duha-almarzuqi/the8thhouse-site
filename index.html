@@ -86,7 +86,7 @@
 
   <link rel="preload" as="image" href="assets/img/hero-new.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/style.css?v=82">
+  <link rel="stylesheet" href="css/style.css?v=83">
 
   <!-- Google Tag Manager: configuration is managed in GTM-WWZN2QVH. -->
   <script src="js/gtm.js"></script>
@@ -112,6 +112,7 @@
         <a href="#about"        class="nav__link" data-i18n="nav_about">من نحن</a>
         <a href="#services"     class="nav__link" data-i18n="nav_services">خدماتنا</a>
         <a href="#why"          class="nav__link" data-i18n="nav_why">لماذا نحن</a>
+        <a href="#calculator"   class="nav__link" data-i18n="nav_calc">الحاسبة</a>
         <a href="#testimonials" class="nav__link" data-i18n="nav_testimonials">تجارب الضيوف</a>
         <a href="#faq"          class="nav__link" data-i18n="nav_faq">الأسئلة الشائعة</a>
         <a href="#contact"      class="nav__cta" data-i18n="nav_cta">تواصل معنا</a>
@@ -132,6 +133,7 @@
       <a href="#about"        class="drawer__link" data-i18n="nav_about">من نحن</a>
       <a href="#services"     class="drawer__link" data-i18n="nav_services">خدماتنا</a>
       <a href="#why"          class="drawer__link" data-i18n="nav_why">لماذا نحن</a>
+      <a href="#calculator"   class="drawer__link" data-i18n="nav_calc">الحاسبة</a>
       <a href="#testimonials" class="drawer__link" data-i18n="nav_testimonials">تجارب الضيوف</a>
       <a href="#faq"          class="drawer__link" data-i18n="nav_faq">الأسئلة الشائعة</a>
       <a href="#contact"      class="drawer__link drawer__link--cta" data-i18n="nav_cta">تواصل معنا</a>
@@ -406,6 +408,105 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════
+       حاسبة الدخل
+  ══════════════════════════════════════════════════════ -->
+  <section class="calc" id="calculator" aria-labelledby="calc-title">
+    <div class="calc__inner">
+
+      <header class="calc__hd js-reveal">
+        <p class="label" data-i18n="calc_label">حاسبة الدخل</p>
+        <h2 class="calc__h" id="calc-title" data-i18n="calc_title">احسب الدخل المتوقع لعقارك</h2>
+        <p class="calc__intro" data-i18n="calc_intro"></p>
+      </header>
+
+      <div class="calc__grid">
+
+        <form class="calc__form" id="calcForm" action="#" novalidate>
+          <div class="calc-field"><label class="calc-field__label" id="calcUnitsL" for="calcUnits" data-i18n="calc_units"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcUnits" value="1" dir="ltr"></div></div>
+          <div class="calc-field"><label class="calc-field__label" id="calcPriceL" for="calcPrice" data-i18n="calc_price"></label><div class="calc-field__row"><input class="calc-range" type="range" min="100" max="3000" step="10" aria-labelledby="calcPriceL" data-calc-sync="calcPrice"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcPrice" value="500" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_price_hint"></p></div>
+          <div class="calc-field"><label class="calc-field__label" id="calcOccL" for="calcOcc" data-i18n="calc_occ"></label><div class="calc-field__row"><input class="calc-range" type="range" min="10" max="98" step="1" aria-labelledby="calcOccL" data-calc-sync="calcOcc"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcOcc" value="65" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_occ_hint"></p></div>
+          <details class="calc-adv" id="calcAdvanced">
+            <summary class="calc-adv__sum" data-i18n="calc_adv">إعدادات متقدمة</summary>
+            <div class="calc-adv__body">
+              <div class="calc-field"><label class="calc-field__label" id="calcCommL" for="calcComm" data-i18n="calc_comm"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="decimal" autocomplete="off" id="calcComm" value="15" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_comm_hint"></p></div>
+              <div class="calc-field"><label class="calc-field__label" id="calcFeeL" for="calcFee" data-i18n="calc_fee"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="decimal" autocomplete="off" id="calcFee" value="20" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_fee_hint"></p></div>
+              <div class="calc-field"><label class="calc-field__label" id="calcExpL" for="calcExp" data-i18n="calc_exp"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcExp" value="2000" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_exp_hint"></p></div>
+              <div class="calc-field"><label class="calc-field__label" id="calcRentL" for="calcRent" data-i18n="calc_rent"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcRent" value="0" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_rent_hint"></p></div>
+              <div class="calc-field"><label class="calc-field__label" id="calcRentExpL" for="calcRentExp" data-i18n="calc_rentexp"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcRentExp" value="0" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_rentexp_hint"></p></div>
+              <div class="calc-field"><label class="calc-field__label" id="calcFurnishL" for="calcFurnish" data-i18n="calc_furnish"></label><div class="calc-field__row"><input class="calc-num" type="text" inputmode="numeric" autocomplete="off" id="calcFurnish" value="0" dir="ltr"></div><p class="calc-field__hint" data-i18n="calc_furnish_hint"></p></div>
+            </div>
+          </details>
+        </form>
+
+        <div class="calc__results" aria-live="polite">
+
+          <div class="calc-hero">
+            <p class="calc-hero__label" id="calcNetLabel"></p>
+            <p class="calc-hero__value"><span class="calc-hero__num" id="calcNetMonth">0</span> <span class="calc-hero__cur" id="calcNetCurrency"></span></p>
+            <p class="calc-hero__sub" id="calcNetSub"></p>
+          </div>
+
+          <dl class="calc-kpis">
+            <div><dt id="calcKpiGrossL"></dt><dd id="calcKpiGross"></dd></div>
+            <div><dt id="calcKpiNightsL"></dt><dd id="calcKpiNights"></dd></div>
+            <div><dt id="calcKpiRevparL"></dt><dd id="calcKpiRevpar"></dd></div>
+            <div><dt id="calcKpiShareL"></dt><dd id="calcKpiShare"></dd></div>
+          </dl>
+
+          <div class="calc-block">
+            <h3 class="calc-block__h" id="calcSplitTitle"></h3>
+            <div class="calc-split" id="calcSplitBar" aria-hidden="true"></div>
+            <ul class="calc-legend" id="calcSplitLegend"></ul>
+          </div>
+
+          <div class="calc-block">
+            <h3 class="calc-block__h" id="calcChartTitle"></h3>
+            <div class="calc-chart">
+              <div class="calc-chart__plot" id="calcChartPlot"></div>
+              <span class="calc-chart__zero" id="calcChartZero" aria-hidden="true"></span>
+              <span class="calc-chart__rent" id="calcChartRent" aria-hidden="true" hidden></span>
+              <div class="calc-chart__tip" id="calcChartTip" aria-hidden="true"></div>
+            </div>
+            <div class="calc-chart__labels" id="calcChartLabels" aria-hidden="true"></div>
+            <ul class="calc-legend" id="calcChartLegend"></ul>
+            <p class="calc-note" id="calcChartNote"></p>
+            <details class="calc-table-wrap" id="calcTableWrap">
+              <summary id="calcTableToggle"></summary>
+              <div class="calc-table-scroll"><table class="calc-table" id="calcTable"></table></div>
+            </details>
+          </div>
+
+          <div class="calc-block">
+            <h3 class="calc-block__h" id="calcScTitle"></h3>
+            <div class="calc-table-scroll"><table class="calc-table calc-table--sc" id="calcScenarios"></table></div>
+            <p class="calc-note" id="calcScNote"></p>
+          </div>
+
+          <div class="calc-block">
+            <h3 class="calc-block__h" id="calcRentTitle"></h3>
+            <div id="calcRentBody"></div>
+          </div>
+
+          <div class="calc-block" id="calcPayback" hidden>
+            <h3 class="calc-block__h" id="calcPayTitle"></h3>
+            <p class="calc-pay" id="calcPayText"></p>
+          </div>
+
+          <div class="calc-actions">
+            <button type="button" class="calc-btn calc-btn--primary" id="calcCta" data-i18n="calc_cta">اطلب دراسة مفصّلة لعقارك</button>
+            <button type="button" class="calc-btn" id="calcCopy" data-i18n="calc_copy">نسخ رابط النتيجة</button>
+            <button type="button" class="calc-btn" id="calcPrint" data-i18n="calc_print">طباعة أو حفظ PDF</button>
+            <p class="calc-actions__status" id="calcCopyStatus" role="status"></p>
+          </div>
+
+          <p class="calc-disclaimer" data-i18n="calc_disclaimer"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
        5. آراء العملاء
   ══════════════════════════════════════════════════════ -->
   <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
@@ -560,6 +661,7 @@
           <a href="#about"        data-i18n="nav_about">من نحن</a>
           <a href="#services"     data-i18n="nav_services">خدماتنا</a>
           <a href="#why"          data-i18n="nav_why">لماذا نحن</a>
+          <a href="#calculator"   data-i18n="nav_calc">الحاسبة</a>
           <a href="#testimonials" data-i18n="nav_testimonials">تجارب الضيوف</a>
         </div>
         <div class="footer__col">
@@ -936,7 +1038,8 @@
     <span data-i18n="contact_whatsapp_short">واتساب</span>
   </a>
 
-  <script src="js/i18n.js?v=19"></script>
+  <script src="js/i18n.js?v=20"></script>
   <script src="js/main.js?v=6"></script>
+  <script src="js/calculator.js?v=1"></script>
 </body>
 </html>

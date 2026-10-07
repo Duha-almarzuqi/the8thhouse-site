@@ -252,6 +252,61 @@
     });
   }
 
+  /* ── REPORT MODE (opened from the calculator) ─────────────── */
+  var lmMode = 'default';
+  var lmCalcSnapshot = '';
+  var lmEyebrow = lm ? lm.querySelector('.lm__eyebrow') : null;
+  var lmTitle   = document.getElementById('lm-title');
+  var lmSub     = lm ? lm.querySelector('.lm__sub') : null;
+  var lmDoneSub = lm ? lm.querySelector('.lm__done-sub') : null;
+  var lmHeadKeys = { 'default': ['lm_eyebrow', 'lm_title', 'lm_sub'],
+                     'report':  ['lm_eyebrow_report', 'lm_title_report', 'lm_sub_report'] };
+  var lmHeadCopy = {
+    lm_eyebrow_report: ['تقرير الدخل المتوقع', 'Expected-income report'],
+    lm_title_report:   ['إلى أين نرسل تقريرك؟', 'Where should we send your report?'],
+    lm_sub_report:     ['يصلك التقرير خلال يومي عمل على القناة التي تختارها، مع رسالة من فريقنا.',
+                        'Your report arrives within two business days on the channel you choose, with a note from our team.'],
+    lm_eyebrow: ['استفسار عقاري', 'Property Inquiry'],
+    lm_title:   ['أخبرنا عن عقارك', 'Tell Us About Your Property'],
+    lm_sub:     ['سنتواصل معك بأقرب وقت', "We'll get back to you as soon as possible"]
+  };
+
+  function setLeadMode(mode, snapshot) {
+    lmMode = mode === 'report' ? 'report' : 'default';
+    lmCalcSnapshot = lmMode === 'report' ? (snapshot || '') : '';
+    if (lm) lm.setAttribute('data-mode', lmMode);
+    /* the heading keys are swapped so a later language toggle keeps the mode's copy */
+    [lmEyebrow, lmTitle, lmSub].forEach(function (el, i) {
+      if (!el) return;
+      var key = lmHeadKeys[lmMode][i];
+      el.setAttribute('data-i18n', key);
+      var copy = lmHeadCopy[key];
+      if (copy) el.textContent = lmCopy(copy[0], copy[1]);
+    });
+    /* a report goes out on WhatsApp or e-mail; a phone call cannot carry it */
+    var callRadio = document.getElementById('lm-call');
+    if (callRadio && lmMode === 'report' && callRadio.checked) {
+      var wa = document.getElementById('lm-wa');
+      if (wa) { wa.checked = true; applyContactHint('واتساب'); }
+    }
+    if (lmDoneSub) {
+      if (lmMode === 'report') lmDoneSub.removeAttribute('data-i18n');
+      else lmDoneSub.setAttribute('data-i18n', 'lm_success_sub');
+    }
+  }
+
+  function leadChannel() {
+    var checked = lmForm ? lmForm.querySelector('input[name="entry.25795692"]:checked') : null;
+    return checked ? checked.value : '';
+  }
+
+  window.addEventListener('the8house:open-lead', function (e) {
+    var d = (e && e.detail) || {};
+    setLeadMode(d.mode, d.snapshot);
+    openModal();
+    if (e && e.preventDefault) e.preventDefault();
+  });
+
   function openModal() {
     if (!lm) return;
     lmLastFocused = document.activeElement;
@@ -274,7 +329,7 @@
     if (restoreTarget) restoreTarget.focus();
   }
 
-  if (lmOpen)    lmOpen.addEventListener('click', openModal);
+  if (lmOpen)    lmOpen.addEventListener('click', function () { setLeadMode('default'); openModal(); });
   if (lmClose)   lmClose.addEventListener('click', closeModal);
   if (lmOverlay) lmOverlay.addEventListener('click', closeModal);
 
@@ -670,6 +725,23 @@
       window.sessionStorage.setItem(lmAttributionStorageKey, JSON.stringify(attribution));
     } catch (e) {}
 
+    /* report mode: the calculator's share link (calc_* params) is merged into
+       the landing-page value, so the owner's inputs reach the CRM row; the
+       stored attribution itself is left untouched */
+    if (lmMode === 'report' && lmCalcSnapshot) {
+      var merged = Object.assign({}, attribution);
+      try {
+        var base = new URL(attribution.landing_page || window.location.href.split('#')[0]);
+        var snap = new URL(lmCalcSnapshot);
+        snap.searchParams.forEach(function (v, k) { if (k.indexOf('calc_') === 0) base.searchParams.set(k, v); });
+        base.searchParams.set('calc_report', '1');
+        merged.landing_page = base.toString();
+      } catch (e) {
+        merged.landing_page = lmCalcSnapshot;
+      }
+      return merged;
+    }
+
     return attribution;
   }
 
@@ -705,8 +777,8 @@
     var attribution = lmLastSubmittedAttribution || syncLeadAttributionFields();
     var eventData = {
       event: 'generate_lead',
-      form_name: 'property_registration',
-      lead_type: 'property_owner',
+      form_name: lmMode === 'report' ? 'calculator_report' : 'property_registration',
+      lead_type: lmMode === 'report' ? 'calculator_report' : 'property_owner',
       utm_source: attribution.utm_source || '',
       utm_medium: attribution.utm_medium || '',
       utm_campaign: attribution.utm_campaign || '',
@@ -731,6 +803,11 @@
 
     if (lmHead) lmHead.hidden = true;
     if (lmForm) lmForm.hidden = true;
+    if (lmMode === 'report' && lmDoneSub) {
+      lmDoneSub.textContent = leadChannel() === 'إيميل'
+        ? lmCopy('استلمنا طلبك. يصلك التقرير على بريدك خلال يومي عمل.', 'Request received. Your report will reach you by e-mail within two business days.')
+        : lmCopy('استلمنا طلبك. يصلك التقرير على واتساب خلال يومي عمل.', 'Request received. Your report will reach you on WhatsApp within two business days.');
+    }
     if (lmDone) {
       lmDone.hidden = false;
       lmDone.focus();
@@ -755,6 +832,8 @@
     if (!lmForm) return;
     lmForm.reset();
     setSubmitting(false);
+    setLeadMode('default');
+    if (lmDoneSub) lmDoneSub.textContent = lmCopy('شكرًا لك، سنتواصل معك بأقرب وقت.', 'Thank you. We will contact you shortly.');
 
     if (nbhdValInp) nbhdValInp.value = '';
     if (nbhdDisplay) {

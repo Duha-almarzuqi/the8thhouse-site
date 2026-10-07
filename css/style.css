@@ -3896,3 +3896,6 @@ html[lang="en"] .journey__steps::before {
   pointer-events: none;
   font-variant-numeric: tabular-nums;
 }
+
+/* report mode of the lead modal: a phone call cannot carry the report */
+.lm[data-mode="report"] .lm__radio--call { display: none; }

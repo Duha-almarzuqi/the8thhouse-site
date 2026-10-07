@@ -504,6 +504,21 @@
     else location.hash = '#contact';
   });
 
+  /* "send me this report": the lead modal opens in report mode and carries
+     the share link, so the owner's inputs reach the CRM with the request */
+  var sendBtn = el('calcSend');
+  if (sendBtn) sendBtn.addEventListener('click', function () {
+    pushEvent('calculator_report_request');
+    var url = lastUrl || shareUrl(read());
+    var handled = false;
+    try {
+      handled = window.dispatchEvent(new CustomEvent('the8house:open-lead', {
+        cancelable: true, detail: { mode: 'report', snapshot: url }
+      })) === false;
+    } catch (e) {}
+    if (!handled) { var open = el('openLead'); if (open) open.click(); }
+  });
+
   var copyBtn = el('calcCopy'), copyStatus = el('calcCopyStatus');
   if (copyBtn) copyBtn.addEventListener('click', function () {
     var url = lastUrl || shareUrl(read());
